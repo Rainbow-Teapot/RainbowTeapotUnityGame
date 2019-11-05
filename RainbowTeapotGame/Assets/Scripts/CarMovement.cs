@@ -9,12 +9,15 @@ public class CarMovement : MonoBehaviour
     private Camera carCamera;
 
     [SerializeField]
-    private float speed = 10.0f;
+    private float horSpeed;
+    [SerializeField]
+    private float vertSpeed;
     [SerializeField]
     private float speedRotation = 3.0f;
 
     private Rigidbody rb;
     private Vector3 target;
+    private float xOffset;
     private Vector3 direction;
 
     // Start is called before the first frame update
@@ -26,6 +29,7 @@ public class CarMovement : MonoBehaviour
     private void Start()
     {
         target = transform.position;
+        xOffset = 0;
         direction = new Vector3(0,0,0);
     }
 
@@ -48,24 +52,27 @@ public class CarMovement : MonoBehaviour
                 
         }
 
+        xOffset = target.x - transform.position.x;
+
         direction = new Vector3(target.x,0,0) - transform.position;
-        //direction.y = 0;
         direction.Normalize();
+
         DrawDirection();
     }
 
     private void moveCharacter()
     {
-        Vector3 dirToMove = new Vector3(direction.x, 0,0);
-        
-        rb.MovePosition(transform.position + (dirToMove * speed * Time.deltaTime));
+        Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset,-4,4), 0,-1);
+        Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed);
 
-        transform.LookAt(transform.position + new Vector3(direction.x * 2, 0, transform.forward.z * 4) * speedRotation * Time.deltaTime);
+        rb.MovePosition(transform.position + (vel * Time.deltaTime));
+
+        transform.LookAt(transform.position + new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, transform.forward.z * 4) * speedRotation * Time.deltaTime);
         
     }
 
     private void DrawDirection()
     {
-        Debug.DrawLine(transform.position, transform.position + new Vector3(direction.x * 2, 0 , transform.forward.z * 4), Color.red);
+        Debug.DrawLine(transform.position, transform.position + new Vector3(Mathf.Clamp(xOffset, -1, 1), 0 , transform.forward.z * 4), Color.red);
     }
 }
