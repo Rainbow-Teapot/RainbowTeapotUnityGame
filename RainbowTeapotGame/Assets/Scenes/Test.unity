@@ -468,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.24634345
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.y
@@ -501,9 +501,11 @@ GameObject:
   - component: {fileID: 788918512}
   - component: {fileID: 788918511}
   - component: {fileID: 788918510}
+  - component: {fileID: 788918518}
   - component: {fileID: 788918514}
   - component: {fileID: 788918515}
   - component: {fileID: 788918516}
+  - component: {fileID: 788918517}
   m_Layer: 0
   m_Name: Car
   m_TagString: Car
@@ -568,7 +570,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788918509}
-  m_Mesh: {fileID: 4300000, guid: 30aa5da28a6390d4ca230437a5af88bb, type: 3}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &788918513
 Transform:
   m_ObjectHideFlags: 0
@@ -667,6 +669,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0.76}
+--- !u!95 &788918517
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788918509}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88d40020722bbd149b4a71b6129b6e84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &788918518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788918509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dac149b0fce1649a07a7320eb1843c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carCamera: {fileID: 1754957095}
 --- !u!1 &804435621
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.106
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -921,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.24634345
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.y
@@ -933,7 +967,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.490247
+      value: -1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
@@ -948,9 +990,12 @@ GameObject:
   - component: {fileID: 1394604394}
   - component: {fileID: 1394604393}
   - component: {fileID: 1394604392}
-  - component: {fileID: 1394604391}
+  - component: {fileID: 1394604396}
   - component: {fileID: 1394604395}
+  - component: {fileID: 1394604391}
   - component: {fileID: 1394604390}
+  - component: {fileID: 1394604397}
+  - component: {fileID: 1394604398}
   m_Layer: 0
   m_Name: AI Car
   m_TagString: Car
@@ -985,7 +1030,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3, y: 1, z: 1.3}
+  m_Size: {x: 1.3, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1394604392
 MeshRenderer:
@@ -1057,11 +1102,94 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394604389}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dee62d40418932468c03ac122f6ee7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carCamera: {fileID: 1754957095}
+  horSpeed: 20
+  vertSpeed: 20
+  speedRotation: 1
+  speedMultiplier: 1
+  recoilDistance: 6
+  currentRecoil: 0
+  recoilSumMultiplier: 10
+  boostTransition:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.025
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1394604396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394604389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efb377be79cb00848834550479ae7f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horSpeed: 20
-  speedMultiplier: 1
+--- !u!95 &1394604397
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394604389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88d40020722bbd149b4a71b6129b6e84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1394604398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394604389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0.76}
 --- !u!1001 &1553347294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,37 +1287,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
---- !u!1 &1686744370 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1362196388}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1686744371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb,
     type: 3}
   m_PrefabInstance: {fileID: 1362196388}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1686744372
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686744370}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 88d40020722bbd149b4a71b6129b6e84, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1754957093
 GameObject:
   m_ObjectHideFlags: 0
