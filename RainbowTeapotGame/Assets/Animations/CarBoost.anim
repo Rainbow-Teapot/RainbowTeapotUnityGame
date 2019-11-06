@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleCar
+  m_Name: CarBoost
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -14,13 +14,14 @@ AnimationClip:
   m_RotationCurves: []
   m_CompressedRotationCurves: []
   m_EulerCurves: []
-  m_PositionCurves:
+  m_PositionCurves: []
+  m_ScaleCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.07596352, y: -1.490247, z: 0.00000019217413}
+        value: {x: 0.24634345, y: 0.37491, z: 0.37491012}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -29,25 +30,25 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.083333336
-        value: {x: 0.07596352, y: -1.64, z: 0.00000019217413}
-        inSlope: {x: 0, y: -1.6785178, z: 0}
-        outSlope: {x: 0, y: -1.6785178, z: 0}
+        value: {x: 0.2, y: 0.37491, z: 0.37491012}
+        inSlope: {x: -0.6380607, y: 0, z: 0}
+        outSlope: {x: -0.6380607, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.16666667
-        value: {x: 0.07596352, y: -1.77, z: 0.00000019217413}
-        inSlope: {x: 0, y: -1.4400002, z: 0}
-        outSlope: {x: 0, y: -1.4400002, z: 0}
+        value: {x: 0.14, y: 0.37491, z: 0.37491012}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.25
-        value: {x: 0.07596352, y: -1.88, z: 0.00000019217413}
+        value: {x: 0.38, y: 0.37491, z: 0.37491012}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -56,25 +57,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 0.07596352, y: -1.77, z: 0.00000019217413}
-        inSlope: {x: 0, y: 1.4400002, z: 0}
-        outSlope: {x: 0, y: 1.4400002, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.41666666
-        value: {x: 0.07596352, y: -1.64, z: 0.00000019217413}
-        inSlope: {x: 0, y: 1.6785179, z: 0}
-        outSlope: {x: 0, y: 1.6785179, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 0.5
-        value: {x: 0.07596352, y: -1.490247, z: 0.00000019217413}
+        value: {x: 0.24634345, y: 0.37491, z: 0.37491012}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -84,8 +67,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: CCar_01
-  m_ScaleCurves: []
+    path: CartoonCars_#1
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -96,8 +78,8 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3982467574
-      attribute: 1
+      path: 463414333
+      attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
@@ -108,12 +90,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -129,7 +111,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.07596352
+        value: 0.24634345
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -138,16 +120,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: 0.07596352
-        inSlope: 0
-        outSlope: 0
+        value: 0.2
+        inSlope: -0.6380607
+        outSlope: -0.6380607
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 0.07596352
+        value: 0.14
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -156,7 +138,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: 0.07596352
+        value: 0.38
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -165,25 +147,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.07596352
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.41666666
-        value: 0.07596352
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5
-        value: 0.07596352
+        value: 0.24634345
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -193,8 +157,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalPosition.x
-    path: CCar_01
+    attribute: m_LocalScale.x
+    path: CartoonCars_#1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -202,7 +166,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1.490247
+        value: 0.37491
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -211,25 +175,25 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: -1.64
-        inSlope: -1.6785178
-        outSlope: -1.6785178
+        value: 0.37491
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: -1.77
-        inSlope: -1.4400002
-        outSlope: -1.4400002
+        value: 0.37491
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: -1.88
+        value: 0.37491
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -238,25 +202,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: -1.77
-        inSlope: 1.4400002
-        outSlope: 1.4400002
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.41666666
-        value: -1.64
-        inSlope: 1.6785179
-        outSlope: 1.6785179
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5
-        value: -1.490247
+        value: 0.37491
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -266,8 +212,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalPosition.y
-    path: CCar_01
+    attribute: m_LocalScale.y
+    path: CartoonCars_#1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -275,7 +221,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000019217413
+        value: 0.37491012
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -284,7 +230,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: 0.00000019217413
+        value: 0.37491012
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -293,7 +239,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 0.00000019217413
+        value: 0.37491012
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -302,7 +248,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.25
-        value: 0.00000019217413
+        value: 0.37491012
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -311,25 +257,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0.00000019217413
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.41666666
-        value: 0.00000019217413
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5
-        value: 0.00000019217413
+        value: 0.37491012
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -339,8 +267,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalPosition.z
-    path: CCar_01
+    attribute: m_LocalScale.z
+    path: CartoonCars_#1
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

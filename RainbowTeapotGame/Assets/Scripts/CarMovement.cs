@@ -16,8 +16,6 @@ public class CarMovement : MonoBehaviour
     private float speedRotation = 3.0f;
 
     private Rigidbody rb;
-    private Vector3 target;
-    private float xOffset;
 
     [SerializeField]
     private float speedMultiplier = 1.0f;
@@ -38,21 +36,28 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     private AnimationCurve boostTransition;
     private float limitBoostTransition = 0.5f;
-    private bool isBoosting = false;
 
+    private Animator anim;
+
+    private IMovement movement;
+    private float xOffset;
+
+    public enum carStates { IDLE, BOOST, HIT};
+    private carStates currentState;
 
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
+        movement = GetComponent<IMovement>();
     }
 
     private void Start()
     {
-        target = transform.position;
-        xOffset = 0;
-       
+        currentState = carStates.IDLE;
     }
+
 
     private void FixedUpdate()
     {
@@ -61,6 +66,7 @@ public class CarMovement : MonoBehaviour
 
     private void moveCharacter()
     {
+        xOffset = movement.GetXOffset();
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
         Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
 
@@ -72,26 +78,30 @@ public class CarMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Ray ray = carCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray,out hit))
-            {
-                target = hit.point;
-            }
-                
-        }
-
-        xOffset = target.x - transform.position.x;
         forwardDirection = new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, transform.forward.z * forwardMultiplier);
-
         Recoil();
 
-        //DrawDirection();
+        CarBehaviour();
+
     }
 
-    
+    private void CarBehaviour()
+    {
+        switch (currentState)
+        {
+            case carStates.IDLE:
+                Recoil();
+                break;
+            case carStates.BOOST:
+                Boost();
+                break;
+            case carStates.HIT:
+                break;
+            default:
+                Debug.LogError("Impossible Car State");
+                break;
+        }
+    }
 
     private void Recoil()
     {
@@ -106,54 +116,47 @@ public class CarMovement : MonoBehaviour
         }
 
         currentRecoil = Mathf.Clamp(currentRecoil, MIN_RECOIL, MAX_RECOIL);
-        if(currentRecoil == MAX_RECOIL || isBoosting)
+        DrawRecoilDirection();
+
+        if (currentRecoil == MAX_RECOIL)
         {
-            Boost();
+            currentState = carStates.BOOST;
         }
 
-        //Debug.Log("RECOIL: " + currentRecoil);
-        DrawRecoilDirection();
     }
 
 
     private void Boost() {
 
         sumBoostTransition += Time.deltaTime;
-        isBoosting = true;
+       
         if (sumBoostTransition <= limitBoostTransition)
         {
-
+            anim.SetBool("isBoosting", true);
             speedMultiplier = boostTransition.Evaluate(sumBoostTransition);
         }
         else
         {
-            isBoosting = false;
             sumBoostTransition = 0.0f;
             currentRecoil = 0.0f;
             speedMultiplier = 1.0f;
+            currentState = carStates.HIT;
+            anim.SetBool("isBoosting", false);
         }
 
     }
 
     private bool IsCarInFront()
     {
-
         RaycastHit hit;
         Ray ray = new Ray(transform.position + transform.forward * 1.7f, transform.forward);
         if (Physics.Raycast(ray, out hit, recoilDistance))
         {
-            if (hit.collider.tag == "Car")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return hit.collider.tag == "Car";
+           
         }
 
         return false;
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -161,8 +164,8 @@ public class CarMovement : MonoBehaviour
         if(collision.collider.tag == "Car")
         {
             Debug.Log("He chocado");
-            AutomatedCar autoCar = collision.transform.GetComponent<AutomatedCar>();
-            autoCar.speedMultiplier = 4.0f;
+            CarMovement car = collision.transform.GetComponent<CarMovement>();
+            car.speedMultiplier = 4.0f;
             speedMultiplier = 1.0f;
         }
     }
