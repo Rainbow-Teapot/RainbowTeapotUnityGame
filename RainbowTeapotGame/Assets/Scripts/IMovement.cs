@@ -1,4 +1,5 @@
 ﻿public interface IMovement
 {
-    float GetXOffset();    
+    float GetXOffset();
+    
 }

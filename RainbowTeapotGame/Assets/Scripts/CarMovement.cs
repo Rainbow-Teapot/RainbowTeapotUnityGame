@@ -34,16 +34,22 @@ public class CarMovement : MonoBehaviour
 
     private float sumBoostTransition = 0.0f;
     [SerializeField]
-    private AnimationCurve boostTransition;
+    private AnimationCurve successHitAnotherCar;
+    [SerializeField]
+    private AnimationCurve failHitAnotherCar;
+
     private float limitBoostTransition = 0.5f;
 
     private Animator anim;
 
     private IMovement movement;
-    private float xOffset;
+    public float xOffset;
 
     public enum carStates { IDLE, BOOST, HIT};
     private carStates currentState;
+    private float hitDistance = -1;
+
+    private bool hitOtherCar = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -66,23 +72,31 @@ public class CarMovement : MonoBehaviour
 
     private void moveCharacter()
     {
+
+        rb.velocity = Vector3.zero;
+
         xOffset = movement.GetXOffset();
+        
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
+        //dirToMove.Normalize();
         Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
 
+        //transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
+
         rb.MovePosition(transform.position + (vel * Time.deltaTime));
-
-        transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
-
+        rb.MoveRotation(Quaternion.LookRotation(forwardDirection.normalized,Vector3.up));
     }
 
     void Update()
     {
-        forwardDirection = new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, transform.forward.z * forwardMultiplier);
+        //isColliding = false;
+        forwardDirection = new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, -Vector3.forward.z * forwardMultiplier);
+        //forwardDirection.Normalize();
+        DrawDirection();
         Recoil();
 
         CarBehaviour();
-
+        
     }
 
     private void CarBehaviour()
@@ -96,6 +110,7 @@ public class CarMovement : MonoBehaviour
                 Boost();
                 break;
             case carStates.HIT:
+                Hit();
                 break;
             default:
                 Debug.LogError("Impossible Car State");
@@ -105,7 +120,8 @@ public class CarMovement : MonoBehaviour
 
     private void Recoil()
     {
-        if (IsCarInFront())
+
+        if (IsCarInFront(out hitDistance))
         {
             currentRecoil += Time.deltaTime * recoilSumMultiplier;
             //Debug.Log("Aumentando el RECOIL");
@@ -116,11 +132,12 @@ public class CarMovement : MonoBehaviour
         }
 
         currentRecoil = Mathf.Clamp(currentRecoil, MIN_RECOIL, MAX_RECOIL);
-        DrawRecoilDirection();
+        //DrawRecoilDirection();
 
         if (currentRecoil == MAX_RECOIL)
         {
             currentState = carStates.BOOST;
+            anim.SetBool("isBoosting", true);
         }
 
     }
@@ -132,42 +149,71 @@ public class CarMovement : MonoBehaviour
        
         if (sumBoostTransition <= limitBoostTransition)
         {
-            anim.SetBool("isBoosting", true);
-            speedMultiplier = boostTransition.Evaluate(sumBoostTransition);
+            if (hitOtherCar)
+            {
+                speedMultiplier = 0.5f;
+               
+            }
+            else
+            {
+                speedMultiplier = failHitAnotherCar.Evaluate(sumBoostTransition);
+            }
         }
         else
         {
+            hitOtherCar = false;
             sumBoostTransition = 0.0f;
             currentRecoil = 0.0f;
-            speedMultiplier = 1.0f;
-            currentState = carStates.HIT;
+            speedMultiplier = 1.0f;            
+            currentState = carStates.IDLE;
             anim.SetBool("isBoosting", false);
         }
 
     }
 
-    private bool IsCarInFront()
+    private void Hit()
+    {
+        if(speedMultiplier > 1.0f)
+        {
+            speedMultiplier -= Time.deltaTime * 6;
+        }
+        else{
+            speedMultiplier = 1.0f;
+            currentState = carStates.IDLE;
+        }
+    }
+
+    private bool IsCarInFront(out float distance)
     {
         RaycastHit hit;
+        distance = -1;
+
         Ray ray = new Ray(transform.position + transform.forward * 1.7f, transform.forward);
         if (Physics.Raycast(ray, out hit, recoilDistance))
         {
+            distance = hit.distance;
             return hit.collider.tag == "Car";
            
         }
-
+        
         return false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Car")
+        if(collision.collider.tag == "Car" && collision.collider.transform.position.z < transform.position.z
+            && currentState == carStates.BOOST)
         {
-            Debug.Log("He chocado");
+            hitOtherCar = true;
+            Debug.Log("He chocado con: " +  collision.collider.name);
             CarMovement car = collision.transform.GetComponent<CarMovement>();
-            car.speedMultiplier = 4.0f;
+            car.transform.rotation = Quaternion.Euler(0, 180, 0);
+            car.speedMultiplier = 3.0f;
+            car.currentState = carStates.HIT;
             speedMultiplier = 1.0f;
+            
         }
+        
     }
 
     private void DrawDirection()
