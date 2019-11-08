@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Loading...
+  m_Text: 'Loading..
 
 '
 --- !u!222 &1678150014
@@ -1275,6 +1275,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: LobbyController
       objectReference: {fileID: 0}
+    - target: {fileID: 7572603425435439737, guid: 445a5c572ff06e24e922bac2c4ec381a,
+        type: 3}
+      propertyPath: delayStartButton
+      value: 
+      objectReference: {fileID: 1834923346}
+    - target: {fileID: 7572603425435439737, guid: 445a5c572ff06e24e922bac2c4ec381a,
+        type: 3}
+      propertyPath: delayCancelButton
+      value: 
+      objectReference: {fileID: 1426437002}
     - target: {fileID: 5075636902391300153, guid: 445a5c572ff06e24e922bac2c4ec381a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1330,16 +1340,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7572603425435439737, guid: 445a5c572ff06e24e922bac2c4ec381a,
-        type: 3}
-      propertyPath: delayStartButton
-      value: 
-      objectReference: {fileID: 1834923346}
-    - target: {fileID: 7572603425435439737, guid: 445a5c572ff06e24e922bac2c4ec381a,
-        type: 3}
-      propertyPath: delayCancelButton
-      value: 
-      objectReference: {fileID: 1426437002}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 445a5c572ff06e24e922bac2c4ec381a, type: 3}
 --- !u!1001 &4594954350876516711
