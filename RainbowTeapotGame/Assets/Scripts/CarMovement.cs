@@ -19,6 +19,8 @@ public class CarMovement : MonoBehaviour
 
     [SerializeField]
     private float speedMultiplier = 1.0f;
+    [SerializeField]
+    private float brakingMultiplier = 0.1f;
 
     private Vector3 forwardDirection;
     private float forwardMultiplier = 4.0f;
@@ -92,7 +94,7 @@ public class CarMovement : MonoBehaviour
         forwardDirection = new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, -Vector3.forward.z * forwardMultiplier);
         //forwardDirection.Normalize();
         DrawDirection();
-        Recoil();
+        //Recoil();
 
         CarBehaviour();
         
@@ -103,7 +105,11 @@ public class CarMovement : MonoBehaviour
         switch (currentState)
         {
             case carStates.IDLE:
-                Recoil();
+                if(speedMultiplier > 1.0f)
+                {
+                    approach(speedMultiplier,brakingMultiplier,1.0f);
+                }
+                //Recoil();
                 break;
             case carStates.BOOST:
                 Boost();
@@ -148,6 +154,8 @@ public class CarMovement : MonoBehaviour
        
         if (sumBoostTransition <= limitBoostTransition)
         {
+            currentState = carStates.BOOST;
+
             if (hitOtherCar)
             {
                 speedMultiplier = 0.5f;
@@ -221,6 +229,7 @@ public class CarMovement : MonoBehaviour
 
         if(obstacle != null)
         {
+            Debug.Log("Colisionando con el obstáculo: " + other.name);
             obstacle.ApplyEffect(this);
         }
     }
@@ -250,5 +259,21 @@ public class CarMovement : MonoBehaviour
     {
         Debug.DrawLine(transform.position, transform.position + transform.forward * recoilDistance, Color.green);
     }
-   
+
+    private float approach(float current, float approach, float final)
+    {
+        if (current < final)
+        {
+            return Mathf.Min(current + approach,final);
+        }
+        else if(current > final)
+        {
+            return Mathf.Max(current - approach, final);
+        }
+        else
+        {
+            return final;
+        }
+    }
+
 }
