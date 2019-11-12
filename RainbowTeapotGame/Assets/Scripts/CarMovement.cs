@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum carStates { IDLE, BOOST, HIT };
+
 public class CarMovement : MonoBehaviour
 {
 
@@ -47,7 +49,7 @@ public class CarMovement : MonoBehaviour
     private IMovement movement;
     public float xOffset;
 
-    public enum carStates { IDLE, BOOST, HIT};
+    
     private carStates currentState;
     private float hitDistance = -1;
 
@@ -105,10 +107,10 @@ public class CarMovement : MonoBehaviour
         switch (currentState)
         {
             case carStates.IDLE:
-                if(speedMultiplier > 1.0f)
-                {
-                    approach(speedMultiplier,brakingMultiplier,1.0f);
-                }
+               
+                
+                speedMultiplier = Approach(speedMultiplier,brakingMultiplier,1.0f);
+                
                 //Recoil();
                 break;
             case carStates.BOOST:
@@ -154,7 +156,7 @@ public class CarMovement : MonoBehaviour
        
         if (sumBoostTransition <= limitBoostTransition)
         {
-            currentState = carStates.BOOST;
+            
 
             if (hitOtherCar)
             {
@@ -234,6 +236,16 @@ public class CarMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        IObstacle obstacle = other.GetComponent<IObstacle>();
+
+        if (obstacle != null)
+        {
+            obstacle.ApplyEffect(this);
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         IObstacle obstacle = other.GetComponent<IObstacle>();
@@ -250,6 +262,11 @@ public class CarMovement : MonoBehaviour
         this.speedMultiplier = speedMultiplier;
     }
 
+    public void SetCurrentCarState(carStates currentState)
+    {
+        this.currentState = currentState;
+    }
+
     private void DrawDirection()
     {
         Debug.DrawLine(transform.position, transform.position + forwardDirection, Color.red);
@@ -260,7 +277,7 @@ public class CarMovement : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + transform.forward * recoilDistance, Color.green);
     }
 
-    private float approach(float current, float approach, float final)
+    private float Approach(float current, float approach, float final)
     {
         if (current < final)
         {
