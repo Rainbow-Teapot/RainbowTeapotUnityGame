@@ -64,7 +64,6 @@ public class CarMovement : MonoBehaviour
         currentState = carStates.IDLE;
     }
 
-
     private void FixedUpdate()
     {
         moveCharacter();   
@@ -143,7 +142,7 @@ public class CarMovement : MonoBehaviour
     }
 
 
-    private void Boost() {
+    public void Boost() {
 
         sumBoostTransition += Time.deltaTime;
        
@@ -214,6 +213,32 @@ public class CarMovement : MonoBehaviour
             
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        IObstacle obstacle = other.GetComponent<IObstacle>();
+
+        if(obstacle != null)
+        {
+            obstacle.ApplyEffect(this);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IObstacle obstacle = other.GetComponent<IObstacle>();
+
+        if (obstacle != null)
+        {
+            obstacle.DeApplyEffect(this);
+        }
+    }
+
+
+    public void SetSpeedMultiplier(float speedMultiplier)
+    {
+        this.speedMultiplier = speedMultiplier;
     }
 
     private void DrawDirection()
