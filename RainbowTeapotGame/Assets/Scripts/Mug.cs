@@ -9,7 +9,7 @@ public class Mug : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
-        Debug.Log("Reduzco la velocidad");
+        
         if(car.GetSpeedMultiplier() > speedMultiplier)
             car.SetSpeedMultiplier(speedMultiplier);
     }

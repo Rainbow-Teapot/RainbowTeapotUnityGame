@@ -9,7 +9,7 @@ public class Ramp : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
-        Debug.Log("Estoy acelerando: ");
+        //Debug.Log("Estoy acelerando: ");
         //car.SetSpeedMultiplier(speedMultiplier);
         car.SetCurrentCarState(carStates.BOOST);
         //car.Boost();
