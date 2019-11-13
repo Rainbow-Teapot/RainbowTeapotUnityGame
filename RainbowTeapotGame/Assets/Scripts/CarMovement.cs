@@ -257,6 +257,11 @@ public class CarMovement : MonoBehaviour
     }
 
 
+    public float GetSpeedMultiplier()
+    {
+        return speedMultiplier;
+    }
+
     public void SetSpeedMultiplier(float speedMultiplier)
     {
         this.speedMultiplier = speedMultiplier;
