@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum carStates { IDLE, BOOST, HIT };
+public enum carStates { IDLE, BOOST, HIT, ZIGZAG };
 
 public class CarMovement : MonoBehaviour
 {
@@ -54,6 +54,7 @@ public class CarMovement : MonoBehaviour
     private float hitDistance = -1;
 
     private bool hitOtherCar = false;
+    private bool inputedMovement = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -78,7 +79,8 @@ public class CarMovement : MonoBehaviour
 
         rb.velocity = Vector3.zero;
 
-        xOffset = movement.GetXOffset();
+        if(inputedMovement)
+            xOffset = movement.GetXOffset();
         
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
         //dirToMove.Normalize();
@@ -99,7 +101,12 @@ public class CarMovement : MonoBehaviour
         //Recoil();
 
         CarBehaviour();
-        
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            currentState = carStates.ZIGZAG;
+        }
+
     }
 
     private void CarBehaviour()
@@ -107,17 +114,20 @@ public class CarMovement : MonoBehaviour
         switch (currentState)
         {
             case carStates.IDLE:
-               
-                
+
+                inputedMovement = true;
                 speedMultiplier = Approach(speedMultiplier,brakingMultiplier,1.0f);
                 
-                //Recoil();
+                Recoil();
                 break;
             case carStates.BOOST:
                 Boost();
                 break;
             case carStates.HIT:
                 Hit();
+                break;
+            case carStates.ZIGZAG:
+                Zigzag();
                 break;
             default:
                 Debug.LogError("Impossible Car State");
@@ -192,6 +202,12 @@ public class CarMovement : MonoBehaviour
         }
     }
 
+    private void Zigzag()
+    {
+        inputedMovement = false;
+        xOffset = Mathf.Sign(xOffset);
+    }
+
     private bool IsCarInFront(out float distance)
     {
         RaycastHit hit;
@@ -223,6 +239,12 @@ public class CarMovement : MonoBehaviour
             
         }
         
+        if(currentState == carStates.ZIGZAG)
+        {
+            OppositeHorDirection();
+            
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -257,6 +279,16 @@ public class CarMovement : MonoBehaviour
     }
 
 
+    public void OppositeHorDirection()
+    {
+        xOffset = -xOffset;
+    }
+
+    public int GetHorFacing()
+    {
+        return (int) Mathf.Sign(xOffset);
+    }
+
     public float GetSpeedMultiplier()
     {
         return speedMultiplier;
@@ -270,6 +302,11 @@ public class CarMovement : MonoBehaviour
     public void SetCurrentCarState(carStates currentState)
     {
         this.currentState = currentState;
+    }
+
+    public carStates GetCurrentCarState()
+    {
+        return currentState;
     }
 
     private void DrawDirection()
