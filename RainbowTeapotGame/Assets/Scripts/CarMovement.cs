@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum carStates { IDLE, BOOST, HIT, ZIGZAG };
+
 public class CarMovement : MonoBehaviour
 {
 
@@ -19,6 +21,8 @@ public class CarMovement : MonoBehaviour
 
     [SerializeField]
     private float speedMultiplier = 1.0f;
+    [SerializeField]
+    private float brakingMultiplier = 0.1f;
 
     private Vector3 forwardDirection;
     private float forwardMultiplier = 4.0f;
@@ -45,11 +49,12 @@ public class CarMovement : MonoBehaviour
     private IMovement movement;
     public float xOffset;
 
-    public enum carStates { IDLE, BOOST, HIT};
+    
     private carStates currentState;
     private float hitDistance = -1;
 
     private bool hitOtherCar = false;
+    private bool inputedMovement = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -74,7 +79,8 @@ public class CarMovement : MonoBehaviour
 
         rb.velocity = Vector3.zero;
 
-        xOffset = movement.GetXOffset();
+        if(inputedMovement)
+            xOffset = movement.GetXOffset();
         
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
         //dirToMove.Normalize();
@@ -92,10 +98,15 @@ public class CarMovement : MonoBehaviour
         forwardDirection = new Vector3(Mathf.Clamp(xOffset, -1.5f, 1.5f), 0, -Vector3.forward.z * forwardMultiplier);
         //forwardDirection.Normalize();
         DrawDirection();
-        Recoil();
+        //Recoil();
 
         CarBehaviour();
-        
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            currentState = carStates.ZIGZAG;
+        }
+
     }
 
     private void CarBehaviour()
@@ -103,6 +114,10 @@ public class CarMovement : MonoBehaviour
         switch (currentState)
         {
             case carStates.IDLE:
+
+                inputedMovement = true;
+                speedMultiplier = Approach(speedMultiplier,brakingMultiplier,1.0f);
+                
                 Recoil();
                 break;
             case carStates.BOOST:
@@ -110,6 +125,9 @@ public class CarMovement : MonoBehaviour
                 break;
             case carStates.HIT:
                 Hit();
+                break;
+            case carStates.ZIGZAG:
+                Zigzag();
                 break;
             default:
                 Debug.LogError("Impossible Car State");
@@ -148,6 +166,8 @@ public class CarMovement : MonoBehaviour
        
         if (sumBoostTransition <= limitBoostTransition)
         {
+            
+
             if (hitOtherCar)
             {
                 speedMultiplier = 0.5f;
@@ -182,6 +202,12 @@ public class CarMovement : MonoBehaviour
         }
     }
 
+    private void Zigzag()
+    {
+        inputedMovement = false;
+        xOffset = Mathf.Sign(xOffset);
+    }
+
     private bool IsCarInFront(out float distance)
     {
         RaycastHit hit;
@@ -213,6 +239,12 @@ public class CarMovement : MonoBehaviour
             
         }
         
+        if(currentState == carStates.ZIGZAG)
+        {
+            OppositeHorDirection();
+            
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -220,6 +252,17 @@ public class CarMovement : MonoBehaviour
         IObstacle obstacle = other.GetComponent<IObstacle>();
 
         if(obstacle != null)
+        {
+            Debug.Log("Colisionando con el obstáculo: " + other.name);
+            obstacle.ApplyEffect(this);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        IObstacle obstacle = other.GetComponent<IObstacle>();
+
+        if (obstacle != null)
         {
             obstacle.ApplyEffect(this);
         }
@@ -236,9 +279,34 @@ public class CarMovement : MonoBehaviour
     }
 
 
+    public void OppositeHorDirection()
+    {
+        xOffset = -xOffset;
+    }
+
+    public int GetHorFacing()
+    {
+        return (int) Mathf.Sign(xOffset);
+    }
+
+    public float GetSpeedMultiplier()
+    {
+        return speedMultiplier;
+    }
+
     public void SetSpeedMultiplier(float speedMultiplier)
     {
         this.speedMultiplier = speedMultiplier;
+    }
+
+    public void SetCurrentCarState(carStates currentState)
+    {
+        this.currentState = currentState;
+    }
+
+    public carStates GetCurrentCarState()
+    {
+        return currentState;
     }
 
     private void DrawDirection()
@@ -250,5 +318,21 @@ public class CarMovement : MonoBehaviour
     {
         Debug.DrawLine(transform.position, transform.position + transform.forward * recoilDistance, Color.green);
     }
-   
+
+    private float Approach(float current, float approach, float final)
+    {
+        if (current < final)
+        {
+            return Mathf.Min(current + approach,final);
+        }
+        else if(current > final)
+        {
+            return Mathf.Max(current - approach, final);
+        }
+        else
+        {
+            return final;
+        }
+    }
+
 }
