@@ -929,6 +929,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  carPrefab: {fileID: 1024507622}
 --- !u!114 &675003028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1440,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  carPrefab: {fileID: 1282265345}
 --- !u!54 &788918515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1826,6 +1828,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1282265345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1362196388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1362196388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2185,6 +2193,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  carPrefab: {fileID: 1121774694}
 --- !u!114 &1394604396
 MonoBehaviour:
   m_ObjectHideFlags: 0

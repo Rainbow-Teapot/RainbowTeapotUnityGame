@@ -98,6 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpSmoothing: 20
+  realPosition: {x: 0, y: 0, z: 0}
+  positionAtLastPacket: {x: 0, y: 0, z: 0}
+  currentTime: 0
+  currentPacketTime: 0
+  lastPacketTime: 0
+  timeToReachGoal: 0
 --- !u!65 &3475138885214656592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -258,6 +264,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  carPrefab: {fileID: 3474986600319748840}
 --- !u!54 &3475138885214656589
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -406,6 +413,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+--- !u!1 &3474986600319748840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb,
+    type: 3}
+  m_PrefabInstance: {fileID: 3475138883638353690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3473429364811211736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb,

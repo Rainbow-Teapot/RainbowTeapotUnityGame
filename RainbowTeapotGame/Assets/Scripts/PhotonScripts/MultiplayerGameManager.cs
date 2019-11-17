@@ -253,7 +253,7 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartRace()
         {
             Debug.Log("Empieza la carrera");
-            player.GetComponent<NetworkPlayer>().CalloutStartRace();
+            player.GetComponent<PlayerController>().CalloutStartRace();
             
             //player.GetComponent<CarMovement>().vertSpeed = 20;
         }

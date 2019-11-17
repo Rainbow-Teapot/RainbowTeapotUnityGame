@@ -57,6 +57,8 @@ public class CarMovement : MonoBehaviour
     private bool hitOtherCar = false;
     private bool inputedMovement = true;
 
+    [SerializeField]
+    private GameObject carPrefab;
 
     // Start is called before the first frame update
     void Awake()
@@ -80,7 +82,7 @@ public class CarMovement : MonoBehaviour
     private void moveCharacter()
     {
 
-        //rb.velocity = new Vector3(0,0, 20 * speedMultiplier + currentRecoil * -0.1f);
+        rb.velocity = Vector3.zero;
 
         if(inputedMovement)
             xOffset = movement.GetXOffset();
@@ -88,10 +90,12 @@ public class CarMovement : MonoBehaviour
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
         //dirToMove.Normalize();
         Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
-        rb.velocity = new Vector3(0,0,vel.z);
+        //rb.velocity = new Vector3(0,0,vel.z);
         //transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
 
         rb.MovePosition(transform.position + (vel * Time.deltaTime));
+        
+        //carPrefab.transform.rotation = Quaternion.LookRotation(forwardDirection.normalized, Vector3.up);
         rb.MoveRotation(Quaternion.LookRotation(forwardDirection.normalized,Vector3.up));
     }
 
