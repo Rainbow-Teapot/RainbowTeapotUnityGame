@@ -1,3 +1,4 @@
+ 
 Shader "GUI/3D Text Shader" { 
 	Properties {
 		_MainTex ("Font Texture", 2D) = "white" {}
