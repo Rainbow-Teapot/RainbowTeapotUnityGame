@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     private float horSpeed;
     [SerializeField]
-    private float vertSpeed;
+    public float vertSpeed;
     [SerializeField]
     private float speedRotation = 3.0f;
 
@@ -56,12 +57,16 @@ public class CarMovement : MonoBehaviour
     private bool hitOtherCar = false;
     private bool inputedMovement = true;
 
+    [SerializeField]
+    private GameObject carPrefab;
+
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         movement = GetComponent<IMovement>();
+        
     }
 
     private void Start()
@@ -85,10 +90,12 @@ public class CarMovement : MonoBehaviour
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
         //dirToMove.Normalize();
         Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
-
+        //rb.velocity = new Vector3(0,0,vel.z);
         //transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
 
         rb.MovePosition(transform.position + (vel * Time.deltaTime));
+        
+        //carPrefab.transform.rotation = Quaternion.LookRotation(forwardDirection.normalized, Vector3.up);
         rb.MoveRotation(Quaternion.LookRotation(forwardDirection.normalized,Vector3.up));
     }
 

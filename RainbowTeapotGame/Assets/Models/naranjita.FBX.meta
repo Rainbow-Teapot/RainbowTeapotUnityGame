@@ -1,10 +1,13 @@
 fileFormatVersion: 2
+
 guid: 7ee16886a5384a941a6978371a7e1a4d
+
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Box002
     100002: Cylinder001
+
     100004: Cylinder003
     100006: //RootNode
     400000: Box002
@@ -21,6 +24,7 @@ ModelImporter:
     4300000: Box002
     4300002: Cylinder001
     4300004: Cylinder003
+
   externalObjects: {}
   materials:
     importMaterials: 1

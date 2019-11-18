@@ -14,21 +14,21 @@ using System.Collections;
 
 using Photon.Pun.Demo.SlotRacer.Utils;
 using Photon.Pun.UtilityScripts;
+using Photon.Pun;
+using Photon.Pun.Demo.SlotRacer;
 
-namespace Photon.Pun.Demo.SlotRacer
-{
-    /// <summary>
-    /// Player control. 
-    /// Interface the User Inputs and PUN
-    /// Handle the Car instance 
-    /// </summary>
-    [RequireComponent(typeof(SplineWalker))]
-    public class PlayerControl : MonoBehaviourPun, IPunObservable
+/// <summary>
+/// Player control. 
+/// Interface the User Inputs and PUN
+/// Handle the Car instance 
+/// </summary>
+[RequireComponent(typeof(SplineWalker))]
+    public class PlayerController : MonoBehaviourPun, IPunObservable
     {
         /// <summary>
         /// The car prefabs to pick depending on the grid position.
         /// </summary>
-        public GameObject[] CarPrefabs;
+        public GameObject CarPrefab;
 
         /// <summary>
         /// The maximum speed. Maximum speed is reached with a 1 unit per seconds acceleration
@@ -44,7 +44,7 @@ namespace Photon.Pun.Demo.SlotRacer
         /// The current speed.
         /// Only used for locaPlayer
         /// </summary>
-        private float CurrentSpeed;
+        private float CurrentSpeed = 0;
 
         /// <summary>
         /// The current distance on the spline
@@ -97,9 +97,9 @@ namespace Photon.Pun.Demo.SlotRacer
                     this.m_firstTake = false;
                 }
 
-                this.CurrentDistance = (float) stream.ReceiveNext();
-                this.CurrentSpeed = (float) stream.ReceiveNext();
-                this.m_input = (float) stream.ReceiveNext();
+                this.CurrentDistance = (float)stream.ReceiveNext();
+                this.CurrentSpeed = (float)stream.ReceiveNext() + 1f;
+                this.m_input = (float)stream.ReceiveNext();
             }
         }
 
@@ -120,7 +120,8 @@ namespace Photon.Pun.Demo.SlotRacer
             this.SplineWalker.ExecutePositioning();
 
             // create a new car
-            this.CarInstance = (GameObject) Instantiate(this.CarPrefabs[gridStartIndex], this.transform.position, this.transform.rotation);
+            //this.CarInstance = (GameObject)Instantiate(this.CarPrefab, this.transform.position, this.transform.rotation);
+            this.CarInstance = this.CarPrefab;
 
             // We'll wait for the first serializatin to pass, else we'll have a glitch where the car is positioned at the wrong position.
             if (!this.photonView.IsMine)
@@ -134,7 +135,7 @@ namespace Photon.Pun.Demo.SlotRacer
                 this.m_firstTake = false;
             }
 
-            this.CarInstance.transform.SetParent(this.transform);
+            //this.CarInstance.transform.SetParent(this.transform);
         }
 
         #endregion private
@@ -160,10 +161,15 @@ namespace Photon.Pun.Demo.SlotRacer
             // Wait until a Player Number is assigned
             // PlayerNumbering component must be in the scene.
             yield return new WaitUntil(() => this.photonView.Owner.GetPlayerNumber() >= 0);
-
+        //transform.position += Vector3.back * 0.25f;
+        
             // now we can set it up.
             this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
-        }
+
+        
+    }
+
+
 
         /// <summary>
         /// Make sure we delete instances linked to this component, else when user is leaving the room, its car instance would remain 
@@ -186,35 +192,37 @@ namespace Photon.Pun.Demo.SlotRacer
                 this.m_input = Input.GetAxis("Vertical");
                 if (this.m_input == 0f)
                 {
-                    this.CurrentSpeed -= Time.deltaTime * this.Drag;
+                    //this.CurrentSpeed -= Time.deltaTime * this.Drag;
                 }
                 else
                 {
-                    this.CurrentSpeed += this.m_input;
+                    //this.CurrentSpeed += this.m_input;
                 }
-                this.CurrentSpeed = 5;
-                this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
+                //this.CurrentSpeed = 5;
+                //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
                 this.SplineWalker.Speed = this.CurrentSpeed;
 
                 this.CurrentDistance = this.SplineWalker.currentDistance;
             }
             else
             {
-				if (this.m_input == 0f)
-				{
-					this.CurrentSpeed -= Time.deltaTime * this.Drag;
-				}
+                if (this.m_input == 0f)
+                {
+                    //this.CurrentSpeed -= Time.deltaTime * this.Drag;
+                }
 
-				this.CurrentSpeed = Mathf.Clamp (this.CurrentSpeed, 0f, this.MaximumSpeed);
-				this.SplineWalker.Speed = this.CurrentSpeed;
+                //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
+                this.SplineWalker.Speed = this.CurrentSpeed;
+            //this.SplineWalker.currentDistance = this.CurrentDistance + 1;
+            //this.CurrentDistance = this.CurrentDistance + 1f;
 
 
-
-				if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
-				{
-					//Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
-					this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
-				}
+                if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
+                {
+                    //Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
+                    this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
+                
+                }
 
             }
 
@@ -222,12 +230,24 @@ namespace Photon.Pun.Demo.SlotRacer
             if (!this.m_firstTake && !this.CarInstance.activeSelf)
             {
                 this.CarInstance.SetActive(true);
-				this.SplineWalker.Speed = this.CurrentSpeed;
-				this.SplineWalker.SetPositionOnSpline (this.CurrentDistance);
+                this.SplineWalker.Speed = this.CurrentSpeed;
+                this.SplineWalker.SetPositionOnSpline(this.CurrentDistance);
 
             }
         }
 
         #endregion Monobehaviour
-    }
+
+        public void CalloutStartRace()
+        {
+            this.photonView.RPC("RPC_StartRacing", RpcTarget.AllViaServer);
+        }
+
+
+        [PunRPC]
+        void RPC_StartRacing()
+        {
+            this.CurrentSpeed = 6.0f;
+        }
 }
+

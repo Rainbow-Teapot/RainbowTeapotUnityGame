@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class InputedMovement : MonoBehaviour, IMovement
     private Vector3 target;
     [SerializeField]
     private Camera carCamera;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,6 @@ public class InputedMovement : MonoBehaviour, IMovement
     void Update()
     {
         
-
         if (Input.GetMouseButton(0))
         {
             Ray ray = carCamera.ScreenPointToRay(Input.mousePosition);
@@ -36,20 +37,16 @@ public class InputedMovement : MonoBehaviour, IMovement
         {
             xOffset = 0.0f;
         }
-
-        
-
-
-
-
-
-
-
-
+       
     }
 
     public float GetXOffset()
     {
         return xOffset;
+    }
+
+    public void SetCarCamera(Camera carCamera)
+    {
+        this.carCamera = carCamera;
     }
 }
