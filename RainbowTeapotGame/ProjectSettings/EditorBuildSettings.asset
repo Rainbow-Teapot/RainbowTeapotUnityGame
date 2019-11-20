@@ -20,16 +20,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Multiplayer.unity
     guid: a36fcb0c622ed7d4db02f5bec1e3071d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-LobbyScene.unity
     guid: c8a9d1312a49dc8488a9b32d83d659c7
   - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-GameScene.unity
     guid: 98efc37d6307844488eb3e4247dde7e9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: 20e08f0b7a6a98241b418191f7e98c83
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MultiplayerTest.unity
     guid: 5c1c7b22906afa54ca00ed44164181b0
   - enabled: 0
