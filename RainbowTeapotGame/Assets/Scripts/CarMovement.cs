@@ -57,8 +57,12 @@ public class CarMovement : MonoBehaviour
     private bool hitOtherCar = false;
     private bool inputedMovement = true;
 
+    public float velZ;
+
     [SerializeField]
     private GameObject carPrefab;
+
+    private PlayerControllerNetwork playerNetwork;
 
     // Start is called before the first frame update
     void Awake()
@@ -66,7 +70,7 @@ public class CarMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         movement = GetComponent<IMovement>();
-        
+        playerNetwork = GetComponent<PlayerControllerNetwork>();
     }
 
     private void Start()
@@ -92,6 +96,15 @@ public class CarMovement : MonoBehaviour
         Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
         //rb.velocity = new Vector3(0,0,vel.z);
         //transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
+
+        if (playerNetwork)
+        {
+            velZ = vel.z;
+            vel.z = 0;
+            if(playerNetwork.startRacing)
+                playerNetwork.CurrentSpeed = -velZ;
+            
+        }
 
         rb.MovePosition(transform.position + (vel * Time.deltaTime));
         
@@ -173,8 +186,6 @@ public class CarMovement : MonoBehaviour
        
         if (sumBoostTransition <= limitBoostTransition)
         {
-            
-
             if (hitOtherCar)
             {
                 speedMultiplier = 0.5f;

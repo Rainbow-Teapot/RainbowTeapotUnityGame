@@ -23,43 +23,21 @@ using Photon.Pun.Demo.SlotRacer;
 /// Handle the Car instance 
 /// </summary>
 [RequireComponent(typeof(SplineWalker))]
-    public class PlayerController : MonoBehaviourPun, IPunObservable
+    public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     {
-        /// <summary>
-        /// The car prefabs to pick depending on the grid position.
-        /// </summary>
+
         public GameObject CarPrefab;
-
-        /// <summary>
-        /// The maximum speed. Maximum speed is reached with a 1 unit per seconds acceleration
-        /// </summary>
         public float MaximumSpeed = 20;
-
-        /// <summary>
-        /// The drag when user is not accelerating
-        /// </summary>
         public float Drag = 5;
 
-        /// <summary>
-        /// The current speed.
-        /// Only used for locaPlayer
-        /// </summary>
-        private float CurrentSpeed = 0;
+        public bool startRacing = false;
 
-        /// <summary>
-        /// The current distance on the spline
         /// Only used for locaPlayer
-        /// </summary>
+        public float CurrentSpeed = 0;
+        /// Only used for locaPlayer
         private float CurrentDistance;
 
-        /// <summary>
-        /// The car instance.
-        /// </summary>
         private GameObject CarInstance;
-
-        /// <summary>
-        /// The spline walker. Must be on this GameObject
-        /// </summary>
         private SplineWalker SplineWalker;
 
 
@@ -86,6 +64,7 @@ using Photon.Pun.Demo.SlotRacer;
             //  Data could be wrapped as a vector2 or vector3 to save a couple of bytes
             if (stream.IsWriting)
             {
+                //mandar además la posición en X y la velocidad en X
                 stream.SendNext(this.CurrentDistance);
                 stream.SendNext(this.CurrentSpeed);
                 stream.SendNext(this.m_input);
@@ -165,7 +144,10 @@ using Photon.Pun.Demo.SlotRacer;
         
             // now we can set it up.
             this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
-
+        if (photonView.IsMine)
+        {
+            GetComponent<CarMovement>().enabled = true;
+        }
         
     }
 
@@ -189,40 +171,24 @@ using Photon.Pun.Demo.SlotRacer;
 
             if (this.photonView.IsMine)
             {
-                this.m_input = Input.GetAxis("Vertical");
-                if (this.m_input == 0f)
-                {
-                    //this.CurrentSpeed -= Time.deltaTime * this.Drag;
-                }
-                else
-                {
-                    //this.CurrentSpeed += this.m_input;
-                }
-                //this.CurrentSpeed = 5;
-                //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
+           
+                //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
+                //la POSICIÓN EN Z la pone la CURVA DE BEZIER
                 this.SplineWalker.Speed = this.CurrentSpeed;
-
                 this.CurrentDistance = this.SplineWalker.currentDistance;
             }
-            else
+            else //EL COCHE SIMULADO
             {
-                if (this.m_input == 0f)
-                {
-                    //this.CurrentSpeed -= Time.deltaTime * this.Drag;
-                }
 
-                //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
+                //para la posición en la Z               
                 this.SplineWalker.Speed = this.CurrentSpeed;
-            //this.SplineWalker.currentDistance = this.CurrentDistance + 1;
-            //this.CurrentDistance = this.CurrentDistance + 1f;
-
-
                 if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
                 {
                     //Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
                     this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
-                
                 }
+
+                //para la posición en la X
 
             }
 
@@ -247,7 +213,7 @@ using Photon.Pun.Demo.SlotRacer;
         [PunRPC]
         void RPC_StartRacing()
         {
-            this.CurrentSpeed = 6.0f;
+            this.startRacing = true;
         }
 }
 
