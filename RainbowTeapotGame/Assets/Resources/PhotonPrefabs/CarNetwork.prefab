@@ -246,6 +246,7 @@ MonoBehaviour:
   reverse: 0
   currentDistance: 0
   currentClampedDistance: 0
+  networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
 --- !u!114 &8404656184899968935
 MonoBehaviour:
@@ -265,6 +266,7 @@ MonoBehaviour:
   reverse: 0
   currentDistance: 0
   currentClampedDistance: 0
+  networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
 --- !u!114 &6747009856111510434
 MonoBehaviour:
@@ -283,6 +285,7 @@ MonoBehaviour:
   Drag: 5
   startRacing: 0
   CurrentSpeed: 0
+  networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
 --- !u!95 &3475138885214656587
 Animator:

@@ -39,7 +39,7 @@ using Photon.Pun.Demo.SlotRacer;
 
         private GameObject CarInstance;
         private SplineWalker SplineWalker;
-
+    public Vector3 networkPosition;
 
     public float velX = 0;
         /// <summary>
@@ -69,6 +69,7 @@ using Photon.Pun.Demo.SlotRacer;
                 stream.SendNext(this.CurrentDistance);
                 stream.SendNext(this.CurrentSpeed);
                 stream.SendNext(this.m_input);
+            stream.SendNext(transform.position);
             stream.SendNext(velX);
             }
             else
@@ -81,7 +82,9 @@ using Photon.Pun.Demo.SlotRacer;
                 this.CurrentDistance = (float)stream.ReceiveNext();
                 this.CurrentSpeed = (float)stream.ReceiveNext() + 1f;
                 this.m_input = (float)stream.ReceiveNext();
+            networkPosition = (Vector3)stream.ReceiveNext();
             this.velX = (float)stream.ReceiveNext();
+            
         }
         }
 
@@ -194,7 +197,9 @@ using Photon.Pun.Demo.SlotRacer;
                 }
 
             //para la posición en la X
+            this.SplineWalker.networkPosition = networkPosition;
             this.SplineWalker.velX = velX;
+            
             }
 
             // Only activate the car if we are sure we have the proper positioning, else it will glitch visually during the initialisation process.
