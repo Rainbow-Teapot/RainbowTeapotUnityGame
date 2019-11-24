@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 6
+  vertSpeed: 10
   speedRotation: 1
   speedMultiplier: 1
   brakingMultiplier: 0.05
@@ -246,6 +246,7 @@ MonoBehaviour:
   reverse: 0
   currentDistance: 0
   currentClampedDistance: 0
+  velX: 0
 --- !u!114 &8404656184899968935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +265,7 @@ MonoBehaviour:
   reverse: 0
   currentDistance: 0
   currentClampedDistance: 0
+  velX: 0
 --- !u!114 &6747009856111510434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +283,7 @@ MonoBehaviour:
   Drag: 5
   startRacing: 0
   CurrentSpeed: 0
+  velX: 0
 --- !u!95 &3475138885214656587
 Animator:
   serializedVersion: 3

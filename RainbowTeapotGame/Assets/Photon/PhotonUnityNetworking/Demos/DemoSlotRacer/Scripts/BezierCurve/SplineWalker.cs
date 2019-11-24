@@ -30,6 +30,8 @@ namespace Photon.Pun.Demo.SlotRacer.Utils
 
 		public float currentClampedDistance;
 
+        public float velX;
+
 		public void SetPositionOnSpline(float position)
 		{
 			currentDistance = position;
@@ -50,7 +52,9 @@ namespace Photon.Pun.Demo.SlotRacer.Utils
 				return;
 			}
 			// move the transform to the new point
-			transform.position = spline.GetPositionAtDistance(currentDistance,this.reverse);
+			Vector3 bezierPosition = spline.GetPositionAtDistance(currentDistance,this.reverse);
+
+            transform.position = new Vector3(transform.position.x + velX, bezierPosition.y, bezierPosition.z);
 
 			// update the distance used.
 			currentDistance += Speed * Time.deltaTime;

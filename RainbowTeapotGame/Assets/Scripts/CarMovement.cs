@@ -100,13 +100,23 @@ public class CarMovement : MonoBehaviour
         if (playerNetwork)
         {
             velZ = vel.z;
-            vel.z = 0;
-            if(playerNetwork.startRacing)
+
+            if (playerNetwork.startRacing)
+            {
                 playerNetwork.CurrentSpeed = -velZ;
-            
+                playerNetwork.velX = vel.x * Time.deltaTime;
+            }
+            else
+            {
+                vel.z = 0;
+            }
+        }
+        else
+        {
+            rb.MovePosition(transform.position + (vel * Time.deltaTime));
         }
 
-        rb.MovePosition(transform.position + (vel * Time.deltaTime));
+        
         
         //carPrefab.transform.rotation = Quaternion.LookRotation(forwardDirection.normalized, Vector3.up);
         rb.MoveRotation(Quaternion.LookRotation(forwardDirection.normalized,Vector3.up));

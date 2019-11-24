@@ -41,6 +41,7 @@ using Photon.Pun.Demo.SlotRacer;
         private SplineWalker SplineWalker;
 
 
+    public float velX = 0;
         /// <summary>
         /// flag to force latest data to avoid initial drifts when player is instantiated.
         /// </summary>
@@ -68,6 +69,7 @@ using Photon.Pun.Demo.SlotRacer;
                 stream.SendNext(this.CurrentDistance);
                 stream.SendNext(this.CurrentSpeed);
                 stream.SendNext(this.m_input);
+            stream.SendNext(velX);
             }
             else
             {
@@ -79,7 +81,8 @@ using Photon.Pun.Demo.SlotRacer;
                 this.CurrentDistance = (float)stream.ReceiveNext();
                 this.CurrentSpeed = (float)stream.ReceiveNext() + 1f;
                 this.m_input = (float)stream.ReceiveNext();
-            }
+            this.velX = (float)stream.ReceiveNext();
+        }
         }
 
         #endregion IPunObservable implementation
@@ -147,6 +150,7 @@ using Photon.Pun.Demo.SlotRacer;
         if (photonView.IsMine)
         {
             GetComponent<CarMovement>().enabled = true;
+            GetComponent<InputedMovement>().enabled = true;
         }
         
     }
@@ -176,7 +180,8 @@ using Photon.Pun.Demo.SlotRacer;
                 //la POSICIÓN EN Z la pone la CURVA DE BEZIER
                 this.SplineWalker.Speed = this.CurrentSpeed;
                 this.CurrentDistance = this.SplineWalker.currentDistance;
-            }
+            this.SplineWalker.velX = velX;
+        }
             else //EL COCHE SIMULADO
             {
 
@@ -188,8 +193,8 @@ using Photon.Pun.Demo.SlotRacer;
                     this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
                 }
 
-                //para la posición en la X
-
+            //para la posición en la X
+            this.SplineWalker.velX = velX;
             }
 
             // Only activate the car if we are sure we have the proper positioning, else it will glitch visually during the initialisation process.
