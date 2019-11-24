@@ -123,7 +123,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("DemoAsteroids-LobbyScene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         }
 
         public override void OnLeftRoom()
@@ -255,7 +255,7 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartRace()
         {
             Debug.Log("Empieza la carrera");
-            player.GetComponent<PlayerController>().CalloutStartRace();
+            player.GetComponent<PlayerControllerNetwork>().CalloutStartRace();
             
             //player.GetComponent<CarMovement>().vertSpeed = 20;
         }
