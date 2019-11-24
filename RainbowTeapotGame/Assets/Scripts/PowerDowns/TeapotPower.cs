@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeapotPower : MonoBehaviour
+public class TeapotPower : MonoBehaviour, IPowerDown
 {
+    public void Activate()
+    {
+        Debug.Log("[POWER-DOWN]: " + name);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

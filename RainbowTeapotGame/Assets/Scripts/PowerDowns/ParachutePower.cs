@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParachutePower : MonoBehaviour
+public class ParachutePower : MonoBehaviour, IPowerDown
 {
+    public void Activate()
+    {
+        Debug.Log("[POWER-DOWN]: " + name);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

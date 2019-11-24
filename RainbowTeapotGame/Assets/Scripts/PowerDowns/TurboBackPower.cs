@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurboBackPower : MonoBehaviour
+public class TurboBackPower : MonoBehaviour, IPowerDown
 {
+    public void Activate()
+    {
+        Debug.Log("[POWER-DOWN]: " + name);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3475138885214656587}
   - component: {fileID: 3475138885214656584}
   - component: {fileID: 3475138885214656588}
+  - component: {fileID: 5476447083887698127}
   - component: {fileID: 4669707929141555012}
   m_Layer: 0
   m_Name: Car
@@ -234,6 +235,18 @@ MonoBehaviour:
     m_RotationOrder: 4
   xOffset: 0
   carPrefab: {fileID: 3474986600319748840}
+--- !u!114 &5476447083887698127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475138885214656595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9708721857d62141b4d87a324c82978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4669707929141555012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,6 +259,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDebug: 1
+  powerDownsToDebug:
+  - {fileID: 8367007788799292446, guid: a6752fd77b4923949a06717179356818, type: 3}
+  - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
+  - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
+  - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
+  - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
 --- !u!1001 &3475138883638353690
 PrefabInstance:
   m_ObjectHideFlags: 0
