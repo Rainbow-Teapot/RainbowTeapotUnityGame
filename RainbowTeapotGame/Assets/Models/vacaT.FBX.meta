@@ -17,7 +17,22 @@ ModelImporter:
     3300002: Box003
     4300000: Box002
     4300002: Box003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 0248e52f6a15dfd4e915631ccf620187, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 6952b58434308b446a7db4aa8e2168d7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Textura_Vaca
+    second: {fileID: 2800000, guid: eabbfae6dee0efb4896c2833b52a3357, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
