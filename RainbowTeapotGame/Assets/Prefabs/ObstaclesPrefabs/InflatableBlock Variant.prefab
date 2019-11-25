@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_Name
-      value: ' InflatableBlock'
+      value: InflatableBlock Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7400039202909422574, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7400039202909422572, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f65ebf1800056784d9ff4a81ef3bdb87, type: 2}
     - target: {fileID: 7400039202909422570, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: speedMultiplier

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mug : MonoBehaviour, IObstacle
+public class Mud : MonoBehaviour, IObstacle
 {
     [SerializeField]
     private float speedMultiplier = 0.45f;
