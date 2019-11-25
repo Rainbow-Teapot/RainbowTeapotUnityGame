@@ -23,112 +23,25 @@ using Photon.Pun.Demo.SlotRacer;
 /// Handle the Car instance 
 /// </summary>
 [RequireComponent(typeof(SplineWalker))]
-<<<<<<< HEAD:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerControllerNetwork.cs
-    public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
-    {
+public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
+{
 
-        public GameObject CarPrefab;
-        public float MaximumSpeed = 20;
-        public float Drag = 5;
+    public GameObject CarPrefab;
+    public float MaximumSpeed = 20;
+    public float Drag = 5;
 
-        public bool startRacing = false;
+    public bool startRacing = false;
 
-        /// Only used for locaPlayer
-        public float CurrentSpeed = 0;
-        /// Only used for locaPlayer
-        private float CurrentDistance;
+    /// Only used for locaPlayer
+    public float CurrentSpeed = 0;
+    /// Only used for locaPlayer
+    private float CurrentDistance;
 
-        private GameObject CarInstance;
-        private SplineWalker SplineWalker;
+    private GameObject CarInstance;
+    private SplineWalker SplineWalker;
     public Vector3 networkPosition;
 
     public float velX = 0;
-        /// <summary>
-        /// flag to force latest data to avoid initial drifts when player is instantiated.
-        /// </summary>
-        private bool m_firstTake = true;
-
-
-        private float m_input;
-
-
-        #region IPunObservable implementation
-
-        /// <summary>
-        /// this is where data is sent and received for this Component from the PUN Network.
-        /// </summary>
-        /// <param name="stream">Stream.</param>
-        /// <param name="info">Info.</param>
-        void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-        {
-            // currently there is no strategy to improve on bandwidth, just passing the current distance and speed is enough, 
-            // Input could be passed and then used to better control speed value
-            //  Data could be wrapped as a vector2 or vector3 to save a couple of bytes
-            if (stream.IsWriting)
-            {
-                //mandar además la posición en X y la velocidad en X
-                stream.SendNext(this.CurrentDistance);
-                stream.SendNext(this.CurrentSpeed);
-                stream.SendNext(this.m_input);
-            stream.SendNext(transform.position);
-            stream.SendNext(velX);
-            }
-            else
-            {
-                if (this.m_firstTake)
-                {
-                    this.m_firstTake = false;
-                }
-
-                this.CurrentDistance = (float)stream.ReceiveNext();
-                this.CurrentSpeed = (float)stream.ReceiveNext() + 1f;
-                this.m_input = (float)stream.ReceiveNext();
-            networkPosition = (Vector3)stream.ReceiveNext();
-            this.velX = (float)stream.ReceiveNext();
-            
-        }
-        }
-=======
-public class PlayerController : MonoBehaviourPun, IPunObservable
-{
-    /// <summary>
-    /// The car prefabs to pick depending on the grid position.
-    /// </summary>
-    public GameObject CarPrefab;
-
-    /// <summary>
-    /// The maximum speed. Maximum speed is reached with a 1 unit per seconds acceleration
-    /// </summary>
-    public float MaximumSpeed = 20;
-
-    /// <summary>
-    /// The drag when user is not accelerating
-    /// </summary>
-    public float Drag = 5;
-
-    /// <summary>
-    /// The current speed.
-    /// Only used for locaPlayer
-    /// </summary>
-    private float CurrentSpeed = 0;
-
-    /// <summary>
-    /// The current distance on the spline
-    /// Only used for locaPlayer
-    /// </summary>
-    private float CurrentDistance;
-
-    /// <summary>
-    /// The car instance.
-    /// </summary>
-    private GameObject CarInstance;
-
-    /// <summary>
-    /// The spline walker. Must be on this GameObject
-    /// </summary>
-    private SplineWalker SplineWalker;
-
-
     /// <summary>
     /// flag to force latest data to avoid initial drifts when player is instantiated.
     /// </summary>
@@ -152,9 +65,12 @@ public class PlayerController : MonoBehaviourPun, IPunObservable
         //  Data could be wrapped as a vector2 or vector3 to save a couple of bytes
         if (stream.IsWriting)
         {
+            //mandar además la posición en X y la velocidad en X
             stream.SendNext(this.CurrentDistance);
             stream.SendNext(this.CurrentSpeed);
             stream.SendNext(this.m_input);
+            stream.SendNext(transform.position);
+            stream.SendNext(velX);
         }
         else
         {
@@ -162,15 +78,15 @@ public class PlayerController : MonoBehaviourPun, IPunObservable
             {
                 this.m_firstTake = false;
             }
->>>>>>> ft/Power-Downs:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerController.cs
 
             this.CurrentDistance = (float)stream.ReceiveNext();
             this.CurrentSpeed = (float)stream.ReceiveNext() + 1f;
             this.m_input = (float)stream.ReceiveNext();
+            networkPosition = (Vector3)stream.ReceiveNext();
+            this.velX = (float)stream.ReceiveNext();
+            
         }
     }
-
-    #endregion IPunObservable implementation
 
 
     #region private
@@ -228,23 +144,19 @@ public class PlayerController : MonoBehaviourPun, IPunObservable
         // Wait until a Player Number is assigned
         // PlayerNumbering component must be in the scene.
         yield return new WaitUntil(() => this.photonView.Owner.GetPlayerNumber() >= 0);
-    //transform.position += Vector3.back * 0.25f;
+        //transform.position += Vector3.back * 0.25f;
         
-<<<<<<< HEAD:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerControllerNetwork.cs
+
             // now we can set it up.
-            this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
+        this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
         if (photonView.IsMine)
         {
             GetComponent<CarMovement>().enabled = true;
             GetComponent<InputedMovement>().enabled = true;
         }
-=======
-        // now we can set it up.
-        this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
 
->>>>>>> ft/Power-Downs:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerController.cs
         
-}
+    }
 
 
 
@@ -273,59 +185,28 @@ public class PlayerController : MonoBehaviourPun, IPunObservable
             }
             else
             {
-<<<<<<< HEAD:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerControllerNetwork.cs
-           
                 //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
                 //la POSICIÓN EN Z la pone la CURVA DE BEZIER
                 this.SplineWalker.Speed = this.CurrentSpeed;
                 this.CurrentDistance = this.SplineWalker.currentDistance;
-            this.SplineWalker.velX = velX;
-        }
-            else //EL COCHE SIMULADO
-            {
+                this.SplineWalker.velX = velX;
+            }
 
-                //para la posición en la Z               
-                this.SplineWalker.Speed = this.CurrentSpeed;
-                if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
-                {
-                    //Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
-                    this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
-                }
+        } else //EL COCHE SIMULADO
+        {
+
+            //para la posición en la Z               
+            this.SplineWalker.Speed = this.CurrentSpeed;
+            if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
+            {
+                //Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
+                this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
+            }
 
             //para la posición en la X
             this.SplineWalker.networkPosition = networkPosition;
             this.SplineWalker.velX = velX;
             
-=======
-                //this.CurrentSpeed += this.m_input;
-            }
-            //this.CurrentSpeed = 5;
-            //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
-            this.SplineWalker.Speed = this.CurrentSpeed;
-
-            this.CurrentDistance = this.SplineWalker.currentDistance;
-        }
-        else
-        {
-            if (this.m_input == 0f)
-            {
-                //this.CurrentSpeed -= Time.deltaTime * this.Drag;
-            }
-
-            //this.CurrentSpeed = Mathf.Clamp(this.CurrentSpeed, 0f, this.MaximumSpeed);
-            this.SplineWalker.Speed = this.CurrentSpeed;
-        //this.SplineWalker.currentDistance = this.CurrentDistance + 1;
-        //this.CurrentDistance = this.CurrentDistance + 1f;
-
-
-            if (this.CurrentDistance != 0 && this.SplineWalker.currentDistance != this.CurrentDistance)
-            {
-                //Debug.Log ("SplineWalker.currentDistance=" + SplineWalker.currentDistance + " CurrentDistance=" + CurrentDistance);
-                this.SplineWalker.Speed += (this.CurrentDistance - this.SplineWalker.currentDistance) * Time.deltaTime * 50f;
-                
->>>>>>> ft/Power-Downs:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerController.cs
-            }
-
         }
 
         // Only activate the car if we are sure we have the proper positioning, else it will glitch visually during the initialisation process.
@@ -337,27 +218,20 @@ public class PlayerController : MonoBehaviourPun, IPunObservable
 
         }
     }
-
+    
     #endregion Monobehaviour
-
-<<<<<<< HEAD:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerControllerNetwork.cs
-        [PunRPC]
-        void RPC_StartRacing()
-        {
-            this.startRacing = true;
-        }
-=======
-    public void CalloutStartRace()
-    {
-        this.photonView.RPC("RPC_StartRacing", RpcTarget.AllViaServer);
-    }
 
 
     [PunRPC]
     void RPC_StartRacing()
     {
-        this.CurrentSpeed = 6.0f;
+        this.startRacing = true;
     }
->>>>>>> ft/Power-Downs:RainbowTeapotGame/Assets/Scripts/PhotonScripts/PlayerController.cs
-}
 
+    public void CalloutStartRace()
+    {
+        this.photonView.RPC("RPC_StartRacing", RpcTarget.AllViaServer);
+    }
+
+}
+#endregion
