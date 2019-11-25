@@ -9,6 +9,7 @@ public class PowerDownUser : MonoBehaviour
 
     private IPowerDown currentPowerDown = null;
     private DoubleClickChecker dbChecker;
+    private CarMovement car;
 
     public bool isDebug = true;
     public GameObject[] powerDownsToDebug;
@@ -16,6 +17,7 @@ public class PowerDownUser : MonoBehaviour
     private void Awake()
     {
         dbChecker = GetComponent<DoubleClickChecker>();
+        car = GetComponent<CarMovement>();
     }
 
     // Start is called before the first frame update
@@ -38,7 +40,7 @@ public class PowerDownUser : MonoBehaviour
     {
         if(currentPowerDown != null)
         {
-            currentPowerDown.Activate();
+            currentPowerDown.Activate(car);
             currentPowerDown = null;
         }
     }

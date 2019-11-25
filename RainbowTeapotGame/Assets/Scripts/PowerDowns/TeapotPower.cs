@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class TeapotPower : MonoBehaviour, IPowerDown
 {
-    public void Activate()
+    [SerializeField]
+    private GameObject teapotPrefab;
+
+    public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
+        Instantiate(teapotPrefab, car.transform.position + Vector3.up * 1.25f + Vector3.back * 2f, Quaternion.identity);
     }
 
     // Start is called before the first frame update
