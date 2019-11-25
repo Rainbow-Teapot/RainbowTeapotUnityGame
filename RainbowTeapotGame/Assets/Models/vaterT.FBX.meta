@@ -1,17 +1,19 @@
 fileFormatVersion: 2
-guid: 63ccbf57e1bd6f644b1013e9756e799f
+guid: 900e63b715b5c8b46a7e0c668c6b0fe4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Cylinder003
     100002: TAPA
-    100004: //RootNode
-    100006: 'Vaterok '
+    100004: 'Vaterok '
+    100006: //RootNode
     400000: Cylinder003
     400002: TAPA
-    400004: //RootNode
-    400006: 'Vaterok '
-    2100000: No Name
+    400004: 'Vaterok '
+    400006: //RootNode
+    2100000: 'Material #2'
+    2100002: No Name
+    2100004: 'Material #3'
     2300000: Cylinder003
     2300002: TAPA
     2300004: 'Vaterok '
@@ -21,7 +23,27 @@ ModelImporter:
     4300000: 'Vaterok '
     4300002: TAPA
     4300004: Cylinder003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: c345ad1986ccdb642aecafdc6072fb99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #3'
+    second: {fileID: 2100000, guid: abff5ae80b70e6b479cc2f830078050e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 191aa9c41bceeb34185828a14a025236, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: textura_vater_tree3
+    second: {fileID: 2800000, guid: 501ead484d426e64199fa681009ba53a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
