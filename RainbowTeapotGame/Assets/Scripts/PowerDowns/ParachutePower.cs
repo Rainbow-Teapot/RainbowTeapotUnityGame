@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParachutePower : MonoBehaviour, IPowerDown
 {
-    public void Activate()
+    public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
     }

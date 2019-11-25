@@ -8,13 +8,15 @@ public class PowerDownBox : MonoBehaviour, IObstacle
 {
     [SerializeField]
     private GameObject[] powerDowns;
-   
+
+
     public void ApplyEffect(CarMovement car)
     {
         PowerDownUser user = car.GetComponent<PowerDownUser>();
         if(user != null)
             user.SetCurrentPowerDown(PickPowerDown(0));
         Destroy(gameObject);
+     
     }
 
     public void DeApplyEffect(CarMovement car)

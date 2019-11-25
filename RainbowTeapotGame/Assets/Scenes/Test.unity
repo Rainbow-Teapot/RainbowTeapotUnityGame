@@ -427,6 +427,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  velZ: 0
   carPrefab: {fileID: 1909665924}
 --- !u!114 &71871746
 MonoBehaviour:
@@ -691,7 +692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &112503163
 Transform:
   m_ObjectHideFlags: 0
@@ -806,6 +807,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675003031}
     m_Modifications:
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Name
+      value: CartoonCars_#1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -861,14 +870,6 @@ PrefabInstance:
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.37491012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Name
-      value: CartoonCars_#1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1165,6 +1166,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 675003031}
     m_Modifications:
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1208,14 +1217,6 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -2320,6 +2321,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  velZ: 0
   carPrefab: {fileID: 1024507622}
 --- !u!114 &675003028
 MonoBehaviour:
@@ -2564,6 +2566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1394604394}
     m_Modifications:
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Name
+      value: CartoonCars_#1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -2619,14 +2629,6 @@ PrefabInstance:
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.37491012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Name
-      value: CartoonCars_#1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3517,6 +3519,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1394604394}
     m_Modifications:
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3560,14 +3570,6 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -3667,6 +3669,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 71871749}
     m_Modifications:
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3710,14 +3720,6 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -4426,6 +4428,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   xOffset: 0
+  velZ: 0
   carPrefab: {fileID: 1121774694}
 --- !u!114 &1394604396
 MonoBehaviour:
@@ -5065,6 +5068,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 71871749}
     m_Modifications:
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Name
+      value: CartoonCars_#1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -5120,14 +5131,6 @@ PrefabInstance:
     - target: {fileID: 4000013127711938, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.37491012
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Name
-      value: CartoonCars_#1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013461476850, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000010991846836, guid: d863ff2fe81f33f409837a143f1c5deb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5527,6 +5530,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1018229694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977949351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 170308, guid: 4c4ea267b7f410b418aa1a42c46bacd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119934830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1977949355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977949351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.999999, y: 0.30324697, z: 9.999999}
+  m_Center: {x: 0, y: -0.16797984, z: 0}
 --- !u!1001 &2017925074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6347,7 +6369,7 @@ PrefabInstance:
     - target: {fileID: 6552489766602030375, guid: 4b1e5fd5e0bbeb74986af88c5ce71684,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6552489766602030368, guid: 4b1e5fd5e0bbeb74986af88c5ce71684,
         type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DalsyPower : MonoBehaviour, IPowerDown
 {
-    public void Activate()
+    public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
     }
