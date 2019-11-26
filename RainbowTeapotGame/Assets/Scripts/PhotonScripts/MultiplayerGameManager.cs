@@ -178,7 +178,7 @@ namespace Photon.Pun.Demo.Asteroids
             
             Vector3 position = new Vector3(playerNumber * 3 - 3, 1.0f, 0.0f);
             
-            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "CarNetwork"), position, Quaternion.identity, 0);
+            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "CarritoNetwork"), position, Quaternion.identity, 0);
 
             //PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), position, Quaternion.identity, 0);
 

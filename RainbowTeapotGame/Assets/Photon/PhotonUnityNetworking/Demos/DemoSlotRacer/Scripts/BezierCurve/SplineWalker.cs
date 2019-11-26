@@ -64,12 +64,12 @@ namespace Photon.Pun.Demo.SlotRacer.Utils
 
             if (pv.IsMine)
             {
-                transform.position = new Vector3(transform.position.x + velX, bezierPosition.y, bezierPosition.z);
+                transform.position = new Vector3(transform.position.x + velX,transform.position.y, bezierPosition.z);
             }
             else
             {
                 Vector3 realPosition = Vector3.Lerp(transform.position, networkPosition, 0.1f);
-                transform.position = new Vector3(realPosition.x, bezierPosition.y, bezierPosition.z);
+                transform.position = new Vector3(realPosition.x, transform.position.y, bezierPosition.z);
             }
 			// update the distance used.
 			currentDistance += Speed * Time.deltaTime;
