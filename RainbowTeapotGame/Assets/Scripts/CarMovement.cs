@@ -269,7 +269,7 @@ public class CarMovement : MonoBehaviour
         
         if(currentState == carStates.ZIGZAG)
         {
-            OppositeHorDirection();
+            //OppositeHorDirection();
             
         }
 

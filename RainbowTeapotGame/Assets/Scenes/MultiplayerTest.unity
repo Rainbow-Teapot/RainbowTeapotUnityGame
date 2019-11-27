@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 34433271}
   - component: {fileID: 34433275}
   m_Layer: 2
-  m_Name: TriggerRetutnToStart
+  m_Name: TriggerReturnToStart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
