@@ -11,13 +11,29 @@ ModelImporter:
     400004: //RootNode
     2100000: 'Material #2'
     2100002: No Name
+    2100004: 'Material #3'
     2300000: Box002
     2300002: Cylinder009
     3300000: Box002
     3300002: Cylinder009
     4300000: Box002
     4300002: Cylinder009
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 9d7340d548e7d4e4588348ab7dcc6e0a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1afc749f704c6c54fbd6e11cf4050f3e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "naranjita_se\xF1al"
+    second: {fileID: 2800000, guid: 80536fac02c310247aae5f8d97c6d3d8, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

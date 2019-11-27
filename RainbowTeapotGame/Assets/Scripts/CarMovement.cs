@@ -45,7 +45,7 @@ public class CarMovement : MonoBehaviour
 
     private float limitBoostTransition = 0.5f;
 
-    private Animator anim;
+    //private Animator anim;
 
     private IMovement movement;
     public float xOffset;
@@ -68,7 +68,7 @@ public class CarMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         movement = GetComponent<IMovement>();
         playerNetwork = GetComponent<PlayerControllerNetwork>();
     }
@@ -184,7 +184,7 @@ public class CarMovement : MonoBehaviour
         if (currentRecoil == MAX_RECOIL)
         {
             currentState = carStates.BOOST;
-            anim.SetBool("isBoosting", true);
+            //anim.SetBool("isBoosting", true);
         }
 
     }
@@ -213,7 +213,7 @@ public class CarMovement : MonoBehaviour
             currentRecoil = 0.0f;
             speedMultiplier = 1.0f;            
             currentState = carStates.IDLE;
-            anim.SetBool("isBoosting", false);
+            //anim.SetBool("isBoosting", false);
         }
 
     }
@@ -269,7 +269,7 @@ public class CarMovement : MonoBehaviour
         
         if(currentState == carStates.ZIGZAG)
         {
-            OppositeHorDirection();
+            //OppositeHorDirection();
             
         }
 

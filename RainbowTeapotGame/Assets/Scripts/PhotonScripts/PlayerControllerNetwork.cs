@@ -178,19 +178,13 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
 
         if (this.photonView.IsMine)
         {
-            this.m_input = Input.GetAxis("Vertical");
-            if (this.m_input == 0f)
-            {
-                //this.CurrentSpeed -= Time.deltaTime * this.Drag;
-            }
-            else
-            {
+            
                 //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
                 //la POSICIÓN EN Z la pone la CURVA DE BEZIER
                 this.SplineWalker.Speed = this.CurrentSpeed;
                 this.CurrentDistance = this.SplineWalker.currentDistance;
                 this.SplineWalker.velX = velX;
-            }
+            
 
         } else //EL COCHE SIMULADO
         {
