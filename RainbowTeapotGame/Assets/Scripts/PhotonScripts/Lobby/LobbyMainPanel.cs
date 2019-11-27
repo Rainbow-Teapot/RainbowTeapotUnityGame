@@ -16,11 +16,20 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("Selection Panel")]
         public GameObject SelectionPanel;
 
+        [Header("Configuration Panel")]
+        public GameObject ConfigurationPanel;
+
+        [Header("Credits Panel")]
+        public GameObject CreditsPanel;
+
         [Header("Create Room Panel")]
         public GameObject CreateRoomPanel;
 
         public InputField RoomNameInputField;
         public InputField MaxPlayersInputField;
+
+        [Header("Character Selection Panel")]
+        public GameObject CharacterSelectionPanel;
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
@@ -33,6 +42,9 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("Inside Room Panel")]
         public GameObject InsideRoomPanel;
+
+        [Header("End Game Panel")]
+        public GameObject EndGamePanel;
 
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
@@ -109,7 +121,7 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 GameObject entry = Instantiate(PlayerListEntryPrefab);
                 entry.transform.SetParent(InsideRoomPanel.transform);
-                entry.transform.localScale = new Vector3(0.5f,1.0f,1.0f);
+                entry.transform.localScale = new Vector3(1.0f,1.0f,1.0f);
                 entry.GetComponent<PlayerListEntry>().Initialize(p.ActorNumber, p.NickName);
 
                 object isPlayerReady;
@@ -204,7 +216,7 @@ namespace Photon.Pun.Demo.Asteroids
 
             SetActivePanel(SelectionPanel.name);
         }
-
+         
         public void OnCreateRoomButtonClicked()
         {
             string roomName = RoomNameInputField.text;
@@ -221,10 +233,26 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void OnJoinRandomRoomButtonClicked()
         {
-            SetActivePanel(JoinRandomRoomPanel.name);
 
+            SetActivePanel(CharacterSelectionPanel.name);
+
+            //SET ONCE THE CHARACTER IS SELECTED
+            //SetActivePanel(JoinRandomRoomPanel.name);
+            //PhotonNetwork.JoinRandomRoom();
+        }
+        public void OnCharacterClicked() {
+            //Asign the character to the player
+            SetActivePanel(JoinRandomRoomPanel.name);
             PhotonNetwork.JoinRandomRoom();
         }
+        public void OnConfigurationButtonClicked() {
+            SetActivePanel(ConfigurationPanel.name);
+        }
+
+        public void OnCreditsButtonClicked() {
+            SetActivePanel(CreditsPanel.name);
+        }
+
 
         public void OnLeaveGameButtonClicked()
         {
@@ -315,6 +343,10 @@ namespace Photon.Pun.Demo.Asteroids
             JoinRandomRoomPanel.SetActive(activePanel.Equals(JoinRandomRoomPanel.name));
             RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
             InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
+            CharacterSelectionPanel.SetActive(activePanel.Equals(CharacterSelectionPanel.name));
+            ConfigurationPanel.SetActive(activePanel.Equals(ConfigurationPanel.name));
+            CreditsPanel.SetActive(activePanel.Equals(CreditsPanel.name));
+            EndGamePanel.SetActive(activePanel.Equals(EndGamePanel.name));
         }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)

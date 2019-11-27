@@ -25,6 +25,8 @@ namespace Photon.Pun.Demo.Asteroids
         public Image PlayerColorImage;
         public Button PlayerReadyButton;
         public Image PlayerReadyImage;
+        public Sprite tick;
+        public Sprite tickOK;
 
         private int ownerId;
         private bool isPlayerReady;
@@ -83,14 +85,15 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 if (p.ActorNumber == ownerId)
                 {
-                    PlayerColorImage.color = GameStateInfo.GetColor(p.GetPlayerNumber());
+                    //PlayerColorImage.color = GameStateInfo.GetColor(p.GetPlayerNumber());
                 }
             }
         }
 
         public void SetPlayerReady(bool playerReady)
         {
-            PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
+           // PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
+            PlayerReadyButton.image.overrideSprite = playerReady ? tickOK : tick;
             PlayerReadyImage.enabled = playerReady;
         }
     }
