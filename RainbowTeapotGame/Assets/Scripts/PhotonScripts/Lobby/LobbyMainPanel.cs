@@ -109,7 +109,7 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 GameObject entry = Instantiate(PlayerListEntryPrefab);
                 entry.transform.SetParent(InsideRoomPanel.transform);
-                entry.transform.localScale = new Vector3(0.5f,1.0f,1.0f);
+                entry.transform.localScale = new Vector3(1.0f,1.0f,1.0f);
                 entry.GetComponent<PlayerListEntry>().Initialize(p.ActorNumber, p.NickName);
 
                 object isPlayerReady;
