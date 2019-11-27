@@ -30,6 +30,8 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("Character Selection Panel")]
         public GameObject CharacterSelectionPanel;
+        public GameObject CharacterSelector;
+        public GameObject CharacterShowcase;
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
@@ -240,10 +242,14 @@ namespace Photon.Pun.Demo.Asteroids
             //SetActivePanel(JoinRandomRoomPanel.name);
             //PhotonNetwork.JoinRandomRoom();
         }
-        public void OnCharacterClicked() {
+        public void OnCharacterClicked(Button button) {
+            Debug.Log(button.name);
+            //iniciar animación y después de un segundo mostrar el coche
+            CharacterSelector.SetActive(false);
+            CharacterShowcase.SetActive(true);
             //Asign the character to the player
-            SetActivePanel(JoinRandomRoomPanel.name);
-            PhotonNetwork.JoinRandomRoom();
+            //SetActivePanel(JoinRandomRoomPanel.name);
+            //PhotonNetwork.JoinRandomRoom();
         }
         public void OnConfigurationButtonClicked() {
             SetActivePanel(ConfigurationPanel.name);
