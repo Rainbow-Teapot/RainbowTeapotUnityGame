@@ -43,6 +43,9 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("Inside Room Panel")]
         public GameObject InsideRoomPanel;
 
+        [Header("End Game Panel")]
+        public GameObject EndGamePanel;
+
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
 
@@ -343,6 +346,7 @@ namespace Photon.Pun.Demo.Asteroids
             CharacterSelectionPanel.SetActive(activePanel.Equals(CharacterSelectionPanel.name));
             ConfigurationPanel.SetActive(activePanel.Equals(ConfigurationPanel.name));
             CreditsPanel.SetActive(activePanel.Equals(CreditsPanel.name));
+            EndGamePanel.SetActive(activePanel.Equals(EndGamePanel.name));
         }
 
         private void UpdateCachedRoomList(List<RoomInfo> roomList)
