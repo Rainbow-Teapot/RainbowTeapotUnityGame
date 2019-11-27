@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3405197628848346992}
   - component: {fileID: 3405197628848346991}
   m_Layer: 0
-  m_Name: Mug
+  m_Name: Mud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3405197628848346990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.14, y: 0.6, z: 0}
-  m_LocalScale: {x: 1.4004, y: 0.11817, z: 3.1278}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 0.002, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cce706b022797094f99f644a68260cc5, type: 2}
+  - {fileID: 2100000, guid: 33eb38dc8a7e8fa4cb747d2495e959c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,8 +90,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8, y: 100, z: 0.9}
+  m_Center: {x: 0, y: 50, z: 0}
 --- !u!114 &3405197628848346991
 MonoBehaviour:
   m_ObjectHideFlags: 0

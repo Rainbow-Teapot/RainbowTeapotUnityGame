@@ -13,6 +13,7 @@ ModelImporter:
     400006: Soporte1
     2100000: 'Material #2'
     2100002: No Name
+    2100004: 'Material #3'
     2300000: Box001
     2300002: Rueda_1
     2300004: Soporte1
@@ -22,7 +23,22 @@ ModelImporter:
     4300000: Box001
     4300002: Rueda_1
     4300004: Soporte1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: dded0d7e397ad044eb71d4d37284bf2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 905645332e266f54586423398d114fdd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "carrito_telara\xF1a"
+    second: {fileID: 2800000, guid: b418931d4a592ed4e8821b00f684fb54, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

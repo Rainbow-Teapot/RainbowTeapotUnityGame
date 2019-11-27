@@ -11,13 +11,29 @@ ModelImporter:
     400004: //RootNode
     2100000: 'Material #2'
     2100002: No Name
+    2100004: 'Material #3'
     2300000: Box002
     2300002: Box003
     3300000: Box002
     3300002: Box003
     4300000: Box002
     4300002: Box003
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 0248e52f6a15dfd4e915631ccf620187, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 6952b58434308b446a7db4aa8e2168d7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Textura_Vaca
+    second: {fileID: 2800000, guid: 71eb8385a0e58aa46997930f9b066570, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
