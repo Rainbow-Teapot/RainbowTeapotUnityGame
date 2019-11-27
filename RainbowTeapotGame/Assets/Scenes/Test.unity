@@ -1488,7 +1488,7 @@ MonoBehaviour:
   - {fileID: 7946241541733676504, guid: 7c06f45529287a64aa8d8f8fa3b4d18d, type: 3}
   startingPos: {fileID: 1957884545}
   mainCamera: {fileID: 1754957095}
-  vehiclePick: 2
+  vehiclePick: 3
   isDebug: 1
 --- !u!1 &385114335
 GameObject:

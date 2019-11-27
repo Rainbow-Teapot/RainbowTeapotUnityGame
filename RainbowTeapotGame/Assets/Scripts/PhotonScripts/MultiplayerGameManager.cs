@@ -28,7 +28,13 @@ namespace Photon.Pun.Demo.Asteroids
         private Camera mainCamera;
         private GameObject player;
 
+        public bool isDebug = true;
+        public vehicles vehiclePicked;
+
         private PhotonView pv;
+
+        [SerializeField]
+        private Transform startPosition;
 
         #region UNITY
 
@@ -175,10 +181,19 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartGame()
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
-            
-            Vector3 position = new Vector3(playerNumber * 3 - 3, 1.0f, 0.0f);
-            
-            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "CarritoNetwork"), position, Quaternion.identity, 0);
+
+            Vector3 position = new Vector3((playerNumber * 3 - 3), startPosition.position.y, startPosition.position.z);
+
+            //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
+
+            string vehicleName = "CarNetwork";
+
+            if (isDebug)
+            {
+                vehicleName = ChooseVehicle(vehiclePicked);
+            }
+
+            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", vehicleName), position, Quaternion.identity, 0);
 
             //PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), position, Quaternion.identity, 0);
 
@@ -258,6 +273,11 @@ namespace Photon.Pun.Demo.Asteroids
             player.GetComponent<PlayerControllerNetwork>().CalloutStartRace();
             
             //player.GetComponent<CarMovement>().vertSpeed = 20;
+        }
+
+        private string ChooseVehicle(vehicles vehicle)
+        {
+            return vehicle.ToString() + "Network";
         }
     }
 }

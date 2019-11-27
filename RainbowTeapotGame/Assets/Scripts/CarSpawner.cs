@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum vehicles { CARRITO, NARANJITA, VATER, TELEFONO, VACA };
+public enum vehicles { Carrito, Naranjita, Vater, Telefono, Vaca };
 
 public class CarSpawner : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class CarSpawner : MonoBehaviour
     [SerializeField]
     private Camera mainCamera;
 
-    public vehicles vehiclePick;
+    public vehicles vehiclePicked;
     public bool isDebug = true;
 
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class CarSpawner : MonoBehaviour
         }
         else
         {
-            vehicle = Instantiate(carPrefabs[(int)vehiclePick], startingPos.position, Quaternion.identity);
+            vehicle = Instantiate(carPrefabs[(int)vehiclePicked], startingPos.position, Quaternion.identity);
 
         }
         InputedMovement inputedCar = vehicle.GetComponent<InputedMovement>();
