@@ -33,7 +33,7 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject CharacterSelector;
         public GameObject CharacterShowcasePanel;
         public CharacterShowcase CharacterShowcase;
-        public GameObject VehicleChoosen;
+        
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
@@ -49,6 +49,9 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("End Game Panel")]
         public GameObject EndGamePanel;
+
+        [Header("Player Info")]
+        public GameObject PlayerInfo;
 
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
@@ -247,8 +250,8 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnCharacterClicked(Button button) {
             Debug.Log(button.name);
             VehicleButton vehicleClicked = button.GetComponent<VehicleButton>();
-            VehicleChoose vehicleChoose = VehicleChoosen.GetComponent<VehicleChoose>();
-            vehicleChoose.vehiclePicked = vehicleClicked.vehicle;
+            PlayerInfo playerInfo = PlayerInfo.GetComponent<PlayerInfo>();
+            playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
             //iniciar animación y después de un segundo mostrar el coche
             CharacterSelectionPanel.SetActive(false);
@@ -274,7 +277,18 @@ namespace Photon.Pun.Demo.Asteroids
             SetActivePanel(CreditsPanel.name);
         }
 
-
+        /// <summary>
+        /// /////////////////////////////////
+        /// </summary>
+        public void OnJoinButtonClicked()
+        {
+            SetActivePanel(JoinRandomRoomPanel.name);
+            PhotonNetwork.JoinRandomRoom();
+        }
+        /// <summary>
+        /// ////////////////////////
+        /// </summary>
+        
         public void OnLeaveGameButtonClicked()
         {
             PhotonNetwork.LeaveRoom();
@@ -365,6 +379,7 @@ namespace Photon.Pun.Demo.Asteroids
             RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
             InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
             CharacterSelectionPanel.SetActive(activePanel.Equals(CharacterSelectionPanel.name));
+            CharacterShowcasePanel.SetActive(activePanel.Equals(CharacterShowcasePanel.name));
             ConfigurationPanel.SetActive(activePanel.Equals(ConfigurationPanel.name));
             CreditsPanel.SetActive(activePanel.Equals(CreditsPanel.name));
             EndGamePanel.SetActive(activePanel.Equals(EndGamePanel.name));

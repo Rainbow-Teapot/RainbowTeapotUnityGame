@@ -21,7 +21,7 @@ public class CharacterShowcase : MonoBehaviour
     private float scaleFactor;
 
     [SerializeField]
-    private VehicleChoose choose;
+    private PlayerInfo playerInfo;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +71,7 @@ public class CharacterShowcase : MonoBehaviour
     private void SwapVehicle()
     {
         Debug.Log(carPicked);
-        choose.vehiclePicked = carPicked;
+        playerInfo.vehiclePicked = carPicked;
 
 
         if (carShowcased != null)

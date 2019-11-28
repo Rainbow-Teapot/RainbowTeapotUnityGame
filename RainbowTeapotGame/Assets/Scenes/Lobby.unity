@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
+      propertyPath: choose
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eaec1d986e414a48bbf4f8bb791072b, type: 3}
 --- !u!114 &241819849 stripped
@@ -458,6 +463,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 63.623005, y: 0, z: 0}
+--- !u!114 &1212744935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+    type: 3}
+  m_PrefabInstance: {fileID: 5126609986131670276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fd812a67908014cb408f749ca7a55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1310044696 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5126609985157760796, guid: 3900d229879385040be6f6302477af44,
@@ -519,6 +536,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: VehicleChoosen
+      value: 
+      objectReference: {fileID: 508218700}
+    - target: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: CharacterShowcase
+      value: 
+      objectReference: {fileID: 241819849}
+    - target: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: PlayerInfo
+      value: 
+      objectReference: {fileID: 508218700}
     - target: {fileID: 5126609985157760796, guid: 3900d229879385040be6f6302477af44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -624,16 +656,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+    - target: {fileID: 5126609986526079321, guid: 3900d229879385040be6f6302477af44,
         type: 3}
-      propertyPath: VehicleChoosen
-      value: 
-      objectReference: {fileID: 508218700}
-    - target: {fileID: 5126609985157760797, guid: 3900d229879385040be6f6302477af44,
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 444031186441241929, guid: 3900d229879385040be6f6302477af44,
         type: 3}
-      propertyPath: CharacterShowcase
-      value: 
-      objectReference: {fileID: 241819849}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7712374872578973978, guid: 3900d229879385040be6f6302477af44,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -654,6 +686,45 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PreviousVehicle
       objectReference: {fileID: 0}
+    - target: {fileID: 2044869990, guid: 3900d229879385040be6f6302477af44, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064543263564885044, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_Name
+      value: StartGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1212744935}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnJoinButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576306212553768984, guid: 3900d229879385040be6f6302477af44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3900d229879385040be6f6302477af44, type: 3}
 --- !u!1001 &8650603152515107691
@@ -666,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 1763844973339136507, guid: 48a8d159bcf477948ba6d1584b2b2eed,
         type: 3}
       propertyPath: m_Name
-      value: VehicleChoose
+      value: PlayerInfo
       objectReference: {fileID: 0}
     - target: {fileID: 233395320798055858, guid: 48a8d159bcf477948ba6d1584b2b2eed,
         type: 3}

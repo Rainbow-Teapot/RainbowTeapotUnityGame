@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleChoose : MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
     public vehicles vehiclePicked;
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+    }
 }
