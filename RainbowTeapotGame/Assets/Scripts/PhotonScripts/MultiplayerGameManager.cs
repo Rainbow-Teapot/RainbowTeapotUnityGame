@@ -17,6 +17,7 @@ using Photon.Realtime;
 using Photon.Pun.UtilityScripts;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 namespace Photon.Pun.Demo.Asteroids
 {
@@ -68,7 +69,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             base.OnDisable();
 
-            //CountdownTimer.OnCountdownTimerHasExpired -= OnCountdownTimerIsExpired;
+            CountdownTimer.OnCountdownTimerHasExpired -= OnCountdownTimerIsExpired;
         }
 
         #endregion
@@ -91,21 +92,31 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.LeaveRoom();
         }
 
+        public void EndOfRace()
+        {
+            PhotonNetwork.LeaveRoom();
+            
+            
+        }
+
         #endregion
 
         #region PUN CALLBACKS
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            if (pv.IsMine)
-            {
+            /*if (pv.IsMine)
+            //{
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
-            }
+            //}*/
         }
 
         public override void OnLeftRoom()
         {
-            PhotonNetwork.Disconnect();
+            
+                SceneManager.LoadScene("GameOver");
+            
+            //PhotonNetwork.Disconnect();
         }
 
         public override void OnMasterClientSwitched(Player newMasterClient)
@@ -193,7 +204,7 @@ namespace Photon.Pun.Demo.Asteroids
             return true;
         }
 
-        private void CheckEndOfGame()
+        public void CheckEndOfGame()
         {
             bool allDestroyed = true;
 
@@ -229,7 +240,7 @@ namespace Photon.Pun.Demo.Asteroids
                     }
                 }
 
-                //StartCoroutine(EndOfGame(winner, score));
+                StartCoroutine(EndOfGame(winner, score));
             }
         }
 

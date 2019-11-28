@@ -73,6 +73,23 @@ namespace Photon.Pun.Demo.Asteroids
             PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
         }
 
+        private void Start()
+        {
+            
+                playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+            
+
+            if (playerInfo.hasBeenLogged)
+            {
+                SetActivePanel(SelectionPanel.name);
+            }
+        }
+
+        private void Update()
+        {
+            
+        }
+
         #endregion
 
         #region PUN CALLBACKS
@@ -307,7 +324,7 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnLoginButtonClicked()
         {
             string playerName = PlayerNameInput.text;
-
+            playerInfo.hasBeenLogged = true;
             if (!playerName.Equals(""))
             {
                 PhotonNetwork.LocalPlayer.NickName = playerName;
