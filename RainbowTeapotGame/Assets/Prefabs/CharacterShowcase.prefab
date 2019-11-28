@@ -84,6 +84,7 @@ MonoBehaviour:
   showcasePosition: {fileID: 119371059371079284}
   hiddenPosition: {fileID: 119371059903525573}
   scaleFactor: 50
+  playerInfo: {fileID: 0}
 --- !u!1 &119371059903525572
 GameObject:
   m_ObjectHideFlags: 0

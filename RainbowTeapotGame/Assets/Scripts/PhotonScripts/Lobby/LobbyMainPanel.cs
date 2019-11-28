@@ -2,6 +2,7 @@
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Photon.Pun.Demo.Asteroids
@@ -51,7 +52,7 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject EndGamePanel;
 
         [Header("Player Info")]
-        public GameObject PlayerInfo;
+        public PlayerInfo playerInfo;
 
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
@@ -238,19 +239,21 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CreateRoom(roomName, options, null);
         }
 
+        public void OnTrainingButtonClicked()
+        {
+            playerInfo.online = false;
+            SetActivePanel(CharacterSelectionPanel.name);
+        }
+
         public void OnJoinRandomRoomButtonClicked()
         {
-
+            playerInfo.online = true;
             SetActivePanel(CharacterSelectionPanel.name);
-
-            //SET ONCE THE CHARACTER IS SELECTED
-            //SetActivePanel(JoinRandomRoomPanel.name);
-            //PhotonNetwork.JoinRandomRoom();
         }
         public void OnCharacterClicked(Button button) {
             Debug.Log(button.name);
             VehicleButton vehicleClicked = button.GetComponent<VehicleButton>();
-            PlayerInfo playerInfo = PlayerInfo.GetComponent<PlayerInfo>();
+            
             playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
             //iniciar animación y después de un segundo mostrar el coche
@@ -282,8 +285,15 @@ namespace Photon.Pun.Demo.Asteroids
         /// </summary>
         public void OnJoinButtonClicked()
         {
-            SetActivePanel(JoinRandomRoomPanel.name);
-            PhotonNetwork.JoinRandomRoom();
+            if (playerInfo.online)
+            {
+                SetActivePanel(JoinRandomRoomPanel.name);
+                PhotonNetwork.JoinRandomRoom();
+            }
+            else
+            {
+                SceneManager.LoadScene("Test");
+            }
         }
         /// <summary>
         /// ////////////////////////

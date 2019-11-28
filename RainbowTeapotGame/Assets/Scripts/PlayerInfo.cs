@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInfo : MonoBehaviour
 {
     public vehicles vehiclePicked;
+    public bool online = false;
 
     private void Start()
     {

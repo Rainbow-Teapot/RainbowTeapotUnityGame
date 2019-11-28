@@ -19,9 +19,14 @@ public class CarSpawner : MonoBehaviour
     public vehicles vehiclePicked;
     public bool isDebug = true;
 
+    private PlayerInfo playerInfo;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+
         GameObject vehicle;
         if (!isDebug)
         {
@@ -29,7 +34,7 @@ public class CarSpawner : MonoBehaviour
         }
         else
         {
-            vehicle = Instantiate(carPrefabs[(int)vehiclePicked], startingPos.position, Quaternion.identity);
+            vehicle = Instantiate(carPrefabs[(int)playerInfo.vehiclePicked], startingPos.position, Quaternion.identity);
 
         }
         InputedMovement inputedCar = vehicle.GetComponent<InputedMovement>();
