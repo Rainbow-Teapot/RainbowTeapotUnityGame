@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66588e339275bd43ba99d5f6e70ed94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakablePrefab: {fileID: 6505583959466663663, guid: 366f71ce963346945b0cc1352dfb4002,
+  breakablePrefab: {fileID: 4533808049424064526, guid: a0a1d9ce9230b7e43a18dabf15713d8a,
     type: 3}
 --- !u!1 &7922682562193432048
 GameObject:

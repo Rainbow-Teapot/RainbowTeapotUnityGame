@@ -1,47 +1,20 @@
 fileFormatVersion: 2
-guid: a64098337a60acc46a7d3f53fd90dcb4
+guid: 988c83f820ce4ad43ba6ed687cd9b7a6
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box001
-    100002: Cylinder002
-    100004: Cylinder003
-    100006: Cylinder004
-    100008: Cylinder005
-    100010: Cylinder006
-    100012: Cylinder007
-    100014: //RootNode
-    400000: Box001
-    400002: Cylinder002
-    400004: Cylinder003
-    400006: Cylinder004
-    400008: Cylinder005
-    400010: Cylinder006
-    400012: Cylinder007
-    400014: //RootNode
-    2100000: No Name
-    2300000: Box001
-    2300002: Cylinder002
-    2300004: Cylinder003
-    2300006: Cylinder004
-    2300008: Cylinder005
-    2300010: Cylinder006
-    2300012: Cylinder007
-    3300000: Box001
-    3300002: Cylinder002
-    3300004: Cylinder003
-    3300006: Cylinder004
-    3300008: Cylinder005
-    3300010: Cylinder006
-    3300012: Cylinder007
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #3'
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Box001
-    4300002: Cylinder002
-    4300004: Cylinder003
-    4300006: Cylinder004
-    4300008: Cylinder005
-    4300010: Cylinder006
-    4300012: Cylinder007
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #3'
+    second: {fileID: 2100000, guid: 37b1e199d960bac4cb4d8deb589fe61d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
