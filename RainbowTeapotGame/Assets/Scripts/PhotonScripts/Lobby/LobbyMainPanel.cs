@@ -2,6 +2,7 @@
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Photon.Pun.Demo.Asteroids
@@ -30,6 +31,10 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("Character Selection Panel")]
         public GameObject CharacterSelectionPanel;
+        public GameObject CharacterSelector;
+        public GameObject CharacterShowcasePanel;
+        public CharacterShowcase CharacterShowcase;
+        
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
@@ -45,6 +50,9 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("End Game Panel")]
         public GameObject EndGamePanel;
+
+        [Header("Player Info")]
+        public PlayerInfo playerInfo;
 
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
@@ -231,20 +239,39 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CreateRoom(roomName, options, null);
         }
 
+        public void OnTrainingButtonClicked()
+        {
+            playerInfo.online = false;
+            SetActivePanel(CharacterSelectionPanel.name);
+        }
+
         public void OnJoinRandomRoomButtonClicked()
         {
-
+            playerInfo.online = true;
             SetActivePanel(CharacterSelectionPanel.name);
+        }
+        public void OnCharacterClicked(Button button) {
+            Debug.Log(button.name);
+            VehicleButton vehicleClicked = button.GetComponent<VehicleButton>();
+            
+            playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
-            //SET ONCE THE CHARACTER IS SELECTED
+            //iniciar animación y después de un segundo mostrar el coche
+            CharacterSelectionPanel.SetActive(false);
+            
+            CharacterShowcasePanel.SetActive(true);
+            CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
+            //Asign the character to the player
             //SetActivePanel(JoinRandomRoomPanel.name);
             //PhotonNetwork.JoinRandomRoom();
         }
-        public void OnCharacterClicked() {
-            //Asign the character to the player
-            SetActivePanel(JoinRandomRoomPanel.name);
-            PhotonNetwork.JoinRandomRoom();
+
+        public void OnBackCharacterShowcaseClicked()
+        {
+            CharacterSelectionPanel.SetActive(true);
+            CharacterShowcasePanel.SetActive(false);
         }
+
         public void OnConfigurationButtonClicked() {
             SetActivePanel(ConfigurationPanel.name);
         }
@@ -253,7 +280,25 @@ namespace Photon.Pun.Demo.Asteroids
             SetActivePanel(CreditsPanel.name);
         }
 
-
+        /// <summary>
+        /// /////////////////////////////////
+        /// </summary>
+        public void OnJoinButtonClicked()
+        {
+            if (playerInfo.online)
+            {
+                SetActivePanel(JoinRandomRoomPanel.name);
+                PhotonNetwork.JoinRandomRoom();
+            }
+            else
+            {
+                SceneManager.LoadScene("Test");
+            }
+        }
+        /// <summary>
+        /// ////////////////////////
+        /// </summary>
+        
         public void OnLeaveGameButtonClicked()
         {
             PhotonNetwork.LeaveRoom();
@@ -344,6 +389,7 @@ namespace Photon.Pun.Demo.Asteroids
             RoomListPanel.SetActive(activePanel.Equals(RoomListPanel.name));    // UI should call OnRoomListButtonClicked() to activate this
             InsideRoomPanel.SetActive(activePanel.Equals(InsideRoomPanel.name));
             CharacterSelectionPanel.SetActive(activePanel.Equals(CharacterSelectionPanel.name));
+            CharacterShowcasePanel.SetActive(activePanel.Equals(CharacterShowcasePanel.name));
             ConfigurationPanel.SetActive(activePanel.Equals(ConfigurationPanel.name));
             CreditsPanel.SetActive(activePanel.Equals(CreditsPanel.name));
             EndGamePanel.SetActive(activePanel.Equals(EndGamePanel.name));

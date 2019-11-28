@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum vehicles { Carrito, Naranjita, Vater, Telefono, Vaca };
+public enum vehicles { Carrito, Naranjita, Vaca, Vater,Telefono };
 
 public class CarSpawner : MonoBehaviour
 {
@@ -19,9 +19,14 @@ public class CarSpawner : MonoBehaviour
     public vehicles vehiclePicked;
     public bool isDebug = true;
 
+    private PlayerInfo playerInfo;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+
         GameObject vehicle;
         if (!isDebug)
         {
@@ -29,13 +34,15 @@ public class CarSpawner : MonoBehaviour
         }
         else
         {
-            vehicle = Instantiate(carPrefabs[(int)vehiclePicked], startingPos.position, Quaternion.identity);
+            vehicle = Instantiate(carPrefabs[(int)playerInfo.vehiclePicked], startingPos.position, Quaternion.identity);
 
         }
         InputedMovement inputedCar = vehicle.GetComponent<InputedMovement>();
-        inputedCar.SetCarCamera(mainCamera);
+        if(inputedCar != null)
+            inputedCar.SetCarCamera(mainCamera);
         CameraController cameraController = mainCamera.GetComponent<CameraController>();
-        cameraController.setTarget(vehicle);
+        if(cameraController != null)
+            cameraController.setTarget(vehicle);
     }
 
     // Update is called once per frame
