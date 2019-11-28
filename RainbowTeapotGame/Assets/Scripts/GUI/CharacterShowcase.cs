@@ -26,6 +26,8 @@ public class CharacterShowcase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+
         carShowcaseObjects = new GameObject[carShowcasePrebaf.Length];
 
         int i = 0;

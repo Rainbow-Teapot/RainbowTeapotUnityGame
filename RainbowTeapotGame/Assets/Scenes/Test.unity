@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43807638, g: 0.48606014, b: 0.5663381, a: 1}
+  m_IndirectSpecularColor: {r: 0.4380626, g: 0.4860468, b: 0.56632626, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posToStart: {fileID: 1957884545}
+  manager: {fileID: 0}
 --- !u!1 &71871741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,9 +1484,9 @@ MonoBehaviour:
   carPrefabs:
   - {fileID: 1513397761146819771, guid: a481c0b8c78e5bd4189611044b48cb7e, type: 3}
   - {fileID: 4936954752930164098, guid: e735f1be853765a4395a899a3cb19953, type: 3}
+  - {fileID: 7946241541733676504, guid: 7c06f45529287a64aa8d8f8fa3b4d18d, type: 3}
   - {fileID: 4347562700194382530, guid: dea7fa7b8b205254d8bc62ff67a15ae1, type: 3}
   - {fileID: 7263966245663794683, guid: 16ca992ab894efa4aaf3d5c0e4c115d3, type: 3}
-  - {fileID: 7946241541733676504, guid: 7c06f45529287a64aa8d8f8fa3b4d18d, type: 3}
   startingPos: {fileID: 1957884545}
   mainCamera: {fileID: 1754957095}
   vehiclePicked: 4
