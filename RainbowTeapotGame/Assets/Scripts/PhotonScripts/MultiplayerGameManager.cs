@@ -109,6 +109,8 @@ namespace Photon.Pun.Demo.Asteroids
             //{
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             //}*/
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
+            //SceneManager.LoadScene("GameOver");
         }
 
         public override void OnLeftRoom()
@@ -129,7 +131,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            CheckEndOfGame();
+            //CheckEndOfGame();
         }
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
