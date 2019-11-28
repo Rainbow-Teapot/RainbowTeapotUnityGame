@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnClickLog : MonoBehaviour
+public class VehicleButton : MonoBehaviour
 {
-    
+    public vehicles vehicle;
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum vehicles { Carrito, Naranjita, Vater, Telefono, Vaca };
+public enum vehicles { Carrito, Naranjita, Vaca, Vater,Telefono };
 
 public class CarSpawner : MonoBehaviour
 {
@@ -33,9 +33,11 @@ public class CarSpawner : MonoBehaviour
 
         }
         InputedMovement inputedCar = vehicle.GetComponent<InputedMovement>();
-        inputedCar.SetCarCamera(mainCamera);
+        if(inputedCar != null)
+            inputedCar.SetCarCamera(mainCamera);
         CameraController cameraController = mainCamera.GetComponent<CameraController>();
-        cameraController.setTarget(vehicle);
+        if(cameraController != null)
+            cameraController.setTarget(vehicle);
     }
 
     // Update is called once per frame
