@@ -12,7 +12,7 @@ public class TriggerReturnToStart : MonoBehaviour
 
     [SerializeField]
     private MultiplayerGameManager manager;
-    private bool isDebug = false;
+    public bool isDebug = false;
 
     private void Start()
     {
