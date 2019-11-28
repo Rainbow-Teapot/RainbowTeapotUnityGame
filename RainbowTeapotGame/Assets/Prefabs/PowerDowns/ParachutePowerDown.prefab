@@ -43,3 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04d9dd09d403be49864bddfd89d18c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parachutePrefab: {fileID: 9054352153219454092, guid: bf1f926470dec7449a2ba51620a7350c,
+    type: 3}
