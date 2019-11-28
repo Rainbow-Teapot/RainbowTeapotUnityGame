@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerReturnToStart : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TriggerReturnToStart : MonoBehaviour
 
     [SerializeField]
     private MultiplayerGameManager manager;
+    private bool isDebug = false;
 
     private void Start()
     {
@@ -24,7 +26,11 @@ public class TriggerReturnToStart : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("El coche ha sido puesto al principio");
-        if (playerInfo != null)
+        if(isDebug)
+        {
+            other.transform.position = new Vector3(other.transform.position.x, posToStart.position.y, posToStart.position.z);
+        }
+        else if (playerInfo != null && manager != null)
         {
             Debug.Log("ME DESCONECTO");
             manager.EndOfRace();
@@ -32,7 +38,7 @@ public class TriggerReturnToStart : MonoBehaviour
         }
         else
         {
-            other.transform.position = new Vector3(other.transform.position.x, posToStart.position.y, posToStart.position.z);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
