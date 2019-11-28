@@ -1,17 +1,38 @@
 fileFormatVersion: 2
-
-guid: 72b60d8b4439ebf4193b516bd1f9fbc2
-
+guid: 893dc4aebc9518f40a280f85808729f7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Box001
+    100002: Box002
+    100004: //RootNode
+    400000: Box001
+    400002: Box002
+    400004: //RootNode
+    2100000: 'Material #4'
+    2100002: 'Material #2'
+    2300000: Box001
+    2300002: Box002
+    3300000: Box001
+    3300002: Box002
     4300000: Box001
-  externalObjects: {}
+    4300002: Box002
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 5c4d8ad89aa35bf41922b461b9f2f5a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #4'
+    second: {fileID: 2100000, guid: 8f70781bb1bc13145b7ecdb8874ba3ac, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "folio_algod\xF3n_cajita"
+    second: {fileID: 2800000, guid: bbd54c6dc93be154c9528087846f2111, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

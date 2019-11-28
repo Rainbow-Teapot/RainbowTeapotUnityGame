@@ -1,22 +1,64 @@
 fileFormatVersion: 2
-guid: 0e6d6e12f3915c9429593ef88e504239
+guid: df52ed835391d074c917cf4261519806
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Box001
-    100002: Box002
-    100004: //RootNode
+    100002: Cylinder003
+    100004: lazo003
+    100006: lazo1
+    100008: lazo2
+    100010: lazo3
+    100012: //RootNode
     400000: Box001
-    400002: Box002
-    400004: //RootNode
-    2100000: No Name
+    400002: Cylinder003
+    400004: lazo003
+    400006: lazo1
+    400008: lazo2
+    400010: lazo3
+    400012: //RootNode
+    2100000: 'Material #4'
+    2100002: 'Material #2'
+    2100004: 'Material #3'
     2300000: Box001
-    2300002: Box002
+    2300002: Cylinder003
+    2300004: lazo003
+    2300006: lazo1
+    2300008: lazo2
+    2300010: lazo3
     3300000: Box001
-    3300002: Box002
+    3300002: Cylinder003
+    3300004: lazo003
+    3300006: lazo1
+    3300008: lazo2
+    3300010: lazo3
     4300000: Box001
-    4300002: Box002
-  externalObjects: {}
+    4300002: Cylinder003
+    4300004: lazo1
+    4300006: lazo3
+    4300008: lazo2
+    4300010: lazo003
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: 19a24a300ab6fea49a51a24fdba65bfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #3'
+    second: {fileID: 2100000, guid: 3f0ee733cae3a0840bddc3bcdb0fface, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #4'
+    second: {fileID: 2100000, guid: 1fc2f12fa1d3f0544b980270fbcd5851, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: textura_patin
+    second: {fileID: 2800000, guid: a406e820a0d1a5a49ac54d6b50478e10, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

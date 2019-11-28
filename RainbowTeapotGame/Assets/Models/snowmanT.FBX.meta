@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 57068e8e7dc30844483b7b4252a0b347
+guid: ff630b33470a48248b82ea25cd8ba13b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Box001
-    100002: Cylinder003
-    100004: Cylinder005
-    100006: Cylinder006
-    100008: Cylinder007
-    100010: //RootNode
-    400000: Box001
-    400002: Cylinder003
-    400004: Cylinder005
-    400006: Cylinder006
-    400008: Cylinder007
-    400010: //RootNode
-    2100000: No Name
-    2300000: Box001
-    2300002: Cylinder003
-    2300004: Cylinder005
-    2300006: Cylinder006
-    2300008: Cylinder007
-    3300000: Box001
-    3300002: Cylinder003
-    3300004: Cylinder005
-    3300006: Cylinder006
-    3300008: Cylinder007
+    100000: //RootNode
+    400000: //RootNode
+    2100000: 'Material #2'
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Box001
-    4300002: Cylinder003
-    4300004: Cylinder005
-    4300006: Cylinder006
-    4300008: Cylinder007
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #2'
+    second: {fileID: 2100000, guid: a671b608246079947bc622e7d1f1c1fc, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: textura_snowman
+    second: {fileID: 2800000, guid: 2c6b2aeb858de554b86f4384c59f4ec4, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
