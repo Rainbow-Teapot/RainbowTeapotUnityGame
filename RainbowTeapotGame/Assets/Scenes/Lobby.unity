@@ -186,6 +186,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
         type: 3}
+      propertyPath: carShowcasePrebaf.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
       propertyPath: playerInfo
       value: 
       objectReference: {fileID: 508218701}
@@ -219,6 +224,30 @@ PrefabInstance:
       propertyPath: rotationSpeedDrag
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
+      propertyPath: carShowcasePrebaf.Array.data[5]
+      value: 
+      objectReference: {fileID: 7263966245663794683, guid: 99f5e387577818846acf4bf225df846e,
+        type: 3}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
+      propertyPath: carShowcasePrebaf.Array.data[2]
+      value: 
+      objectReference: {fileID: 3823989086717596483, guid: 1153c556f48e8c54babb549e42dff1ff,
+        type: 3}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
+      propertyPath: carShowcasePrebaf.Array.data[3]
+      value: 
+      objectReference: {fileID: 7946241541733676504, guid: 734a2b416be9fd445a3ffd6b52c7199d,
+        type: 3}
+    - target: {fileID: 119371059831507265, guid: 6eaec1d986e414a48bbf4f8bb791072b,
+        type: 3}
+      propertyPath: carShowcasePrebaf.Array.data[4]
+      value: 
+      objectReference: {fileID: 4347562700194382530, guid: 6f8305424a4b668408ede43abd46c5c7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eaec1d986e414a48bbf4f8bb791072b, type: 3}
 --- !u!114 &241819849 stripped
