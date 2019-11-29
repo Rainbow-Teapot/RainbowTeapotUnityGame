@@ -16,8 +16,11 @@ GameObject:
   - component: {fileID: 114464829704581330}
   - component: {fileID: 1388911865861780656}
   - component: {fileID: 131940528563636337}
+  - component: {fileID: 114884762022134658}
+  - component: {fileID: 114521985138836138}
+  - component: {fileID: 114072141594798886}
   m_Layer: 0
-  m_Name: PatinCar
+  m_Name: PatinNetwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +96,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3823989086717596483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78dac149b0fce1649a07a7320eb1843c, type: 3}
   m_Name: 
@@ -107,14 +110,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3823989086717596483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3dee62d40418932468c03ac122f6ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 20
+  vertSpeed: 10
   speedRotation: 1
   speedMultiplier: 1
   brakingMultiplier: 0.05
@@ -266,6 +269,67 @@ MonoBehaviour:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+--- !u!114 &114884762022134658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823989086717596483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 0}
+  Speed: 0
+  lookForward: 0
+  reverse: 0
+  currentDistance: 0
+  currentClampedDistance: 0
+  networkPosition: {x: 0, y: 0, z: 0}
+  velX: 0
+--- !u!114 &114521985138836138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823989086717596483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd725e7502af1e4bbea488b4a82366c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarPrefab: {fileID: 1469742618945938826}
+  MaximumSpeed: 20
+  Drag: 5
+  startRacing: 0
+  CurrentSpeed: 0
+  networkPosition: {x: 0, y: 0, z: 0}
+  velX: 0
+--- !u!114 &114072141594798886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823989086717596483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114521985138836138}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1469742618946036518
 PrefabInstance:
   m_ObjectHideFlags: 0

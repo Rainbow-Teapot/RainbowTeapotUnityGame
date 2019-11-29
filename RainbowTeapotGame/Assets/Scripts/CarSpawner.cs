@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum vehicles { Carrito, Naranjita, Vaca, Vater,Telefono };
+public enum vehicles { Carrito, Naranjita, Patin, Vaca, Vater,Telefono };
 
 public class CarSpawner : MonoBehaviour
 {
