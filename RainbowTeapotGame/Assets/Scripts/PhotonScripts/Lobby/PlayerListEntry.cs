@@ -22,6 +22,12 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("UI References")]
         public Text PlayerNameText;
 
+        [Header("Vehicles Images")]
+        [SerializeField]
+        private Sprite[] vehiclesImages;
+
+        
+
         public Image PlayerColorImage;
         public Button PlayerReadyButton;
         public Image PlayerReadyImage;
@@ -31,21 +37,28 @@ namespace Photon.Pun.Demo.Asteroids
         private int ownerId;
         private bool isPlayerReady;
 
+        private PlayerInfo playerInfo;
+        
         #region UNITY
 
         public void OnEnable()
         {
+            playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+            Hashtable props = new Hashtable() {{ GameStateInfo.VEHICLE, playerInfo.vehiclePicked} };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
             PlayerNumbering.OnPlayerNumberingChanged += OnPlayerNumberingChanged;
         }
 
         public void Start()
         {
+            
             if (PhotonNetwork.LocalPlayer.ActorNumber != ownerId)
             {
                 PlayerReadyButton.gameObject.SetActive(false);
             }
             else
             {
+                PlayerReadyImage.gameObject.SetActive(false);
                 Hashtable initialProps = new Hashtable() {{GameStateInfo.PLAYER_READY, isPlayerReady}};
                 PhotonNetwork.LocalPlayer.SetCustomProperties(initialProps);
                 PhotonNetwork.LocalPlayer.SetScore(0);
@@ -55,7 +68,7 @@ namespace Photon.Pun.Demo.Asteroids
                     isPlayerReady = !isPlayerReady;
                     SetPlayerReady(isPlayerReady);
 
-                    Hashtable props = new Hashtable() {{GameStateInfo.PLAYER_READY, isPlayerReady}};
+                    Hashtable props = new Hashtable() {{GameStateInfo.PLAYER_READY, isPlayerReady} };
                     PhotonNetwork.LocalPlayer.SetCustomProperties(props);
 
                     if (PhotonNetwork.IsMasterClient)
@@ -83,9 +96,14 @@ namespace Photon.Pun.Demo.Asteroids
         {
             foreach (Player p in PhotonNetwork.PlayerList)
             {
+                
                 if (p.ActorNumber == ownerId)
                 {
                     //PlayerColorImage.color = GameStateInfo.GetColor(p.GetPlayerNumber());
+                    object playerVehicle;
+                    if(p.CustomProperties.TryGetValue(GameStateInfo.VEHICLE, out playerVehicle))
+                    PlayerColorImage.sprite = GetImageVehiclePicked((vehicles) playerVehicle);
+                    PlayerColorImage.color = Color.white;
                 }
             }
         }
@@ -94,7 +112,14 @@ namespace Photon.Pun.Demo.Asteroids
         {
            // PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
             PlayerReadyButton.image.overrideSprite = playerReady ? tickOK : tick;
-            PlayerReadyImage.enabled = playerReady;
+
+            if (PhotonNetwork.LocalPlayer.ActorNumber != ownerId)
+                PlayerReadyImage.enabled = playerReady;
+        }
+
+        private Sprite GetImageVehiclePicked(vehicles vehiclePicked)
+        {
+            return vehiclesImages[(int)vehiclePicked];
         }
     }
 }

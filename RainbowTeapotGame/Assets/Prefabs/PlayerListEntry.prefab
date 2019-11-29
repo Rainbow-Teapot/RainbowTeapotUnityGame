@@ -193,12 +193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd293dc32f4aaf94e8274f2fac2cdf89, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc79d2f0161502449826fd5a979b0c74, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -220,10 +220,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: 50
-  m_MinHeight: 50
-  m_PreferredWidth: 50
-  m_PreferredHeight: 50
+  m_MinWidth: 140
+  m_MinHeight: 140
+  m_PreferredWidth: 140
+  m_PreferredHeight: 140
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -384,12 +384,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+  m_Color: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c8238d5df3473e499cd2bc6af068ea5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -553,6 +553,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNameText: {fileID: 11470916}
+  vehiclesImages:
+  - {fileID: 21300000, guid: e8091e02ef3f12246ac1243e3512ac5b, type: 3}
+  - {fileID: 21300000, guid: dd5581b975994da47bc8c8944ccb31c8, type: 3}
+  - {fileID: 21300000, guid: eed222b3383050b4ab35cbc38c938a97, type: 3}
+  - {fileID: 21300000, guid: a1990f2e865e66643826ebfc1ba8ff7d, type: 3}
+  - {fileID: 21300000, guid: c750c09adb336994c8bc8dc6e49f66e4, type: 3}
+  - {fileID: 21300000, guid: 30ee79bf4c617b14ca2a663f12774ab9, type: 3}
   PlayerColorImage: {fileID: 11495884}
   PlayerReadyButton: {fileID: 11412146}
   PlayerReadyImage: {fileID: 11450088}
