@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9077353517431097753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9077353517431097752}
+  - component: {fileID: 9077353517431097755}
+  m_Layer: 0
+  m_Name: carSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9077353517431097752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077353517431097753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9077353517431097755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077353517431097753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec2b06cbb49b734d8a9cae9fb1fb391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefabs:
+  - {fileID: 1513397761146819771, guid: a481c0b8c78e5bd4189611044b48cb7e, type: 3}
+  - {fileID: 4936954752930164098, guid: e735f1be853765a4395a899a3cb19953, type: 3}
+  - {fileID: 3823989086717596483, guid: b7adaab2b7063004f8642c6c249ed1aa, type: 3}
+  - {fileID: 7946241541733676504, guid: 734a2b416be9fd445a3ffd6b52c7199d, type: 3}
+  - {fileID: 4347562700194382530, guid: 6f8305424a4b668408ede43abd46c5c7, type: 3}
+  - {fileID: 7263966245663794683, guid: 16ca992ab894efa4aaf3d5c0e4c115d3, type: 3}
+  startingPos: {fileID: 0}
+  mainCamera: {fileID: 0}
+  vehiclePicked: 4
+  isDebug: 1

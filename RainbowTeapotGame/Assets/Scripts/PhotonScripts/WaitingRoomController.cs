@@ -14,13 +14,15 @@ public class WaitingRoomController : MonoBehaviourPunCallbacks
     [SerializeField]
     private int multiplayerSceneIndex;
     [SerializeField]
-    private int menuSceneIndex;
+    private int mainMenuSceneIndex;
     // number of players in the room out of the total room size
     private int playerCount;
     private int roomSize;
     [SerializeField]
     private int minPlayersToStart;
     // text variables for holding the displays for the countdown timer and player count
+    [SerializeField]
+    private Text roomName;
     [SerializeField]
     private Text playerCountDisplay;
     [SerializeField]
@@ -45,6 +47,7 @@ public class WaitingRoomController : MonoBehaviourPunCallbacks
         fullRoomTimer = maxFullRoomWaitTime;
         notFullRoomTimer = maxWaitTime;
         timerToStartGame = maxWaitTime;
+        roomName.text += "-" + PhotonNetwork.CurrentRoom.Name;
         PlayerCountUpdate();
     }
     void PlayerCountUpdate()
@@ -146,6 +149,6 @@ public class WaitingRoomController : MonoBehaviourPunCallbacks
     {
         //public function paired to cancel button in waiting room scene
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(menuSceneIndex);
+        SceneManager.LoadScene(mainMenuSceneIndex);
     }
 }
