@@ -23,6 +23,21 @@ public class CharacterShowcase : MonoBehaviour
     [SerializeField]
     private PlayerInfo playerInfo;
 
+    [SerializeField]
+    private float maxRotationSpeed;
+    [SerializeField]
+    private float minRotationSpeed;
+    [SerializeField]
+    private float rotationSpeed;
+    [SerializeField]
+    private float approachMultiplier;
+
+    [SerializeField]
+    private float rotationSpeedDrag = 40.0f;
+    [SerializeField]
+    private float lerpSpeed = 1.0f;
+    private float xDeg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +59,35 @@ public class CharacterShowcase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rotacion
+
+        if (Input.GetMouseButton(0))
+        {
+            xDeg -= Input.GetAxis("Mouse X") * rotationSpeedDrag;
+            //yDeg += Input.GetAxis("Mouse Y") * speed * friction;
+            Quaternion fromRotation = transform.rotation;
+            Quaternion toRotation = Quaternion.Euler(0, xDeg, 0);
+            transform.rotation = Quaternion.Lerp(fromRotation, toRotation, Time.deltaTime * lerpSpeed);
+            rotationSpeed = minRotationSpeed;
+        }
+        else { 
+
+            if (rotationSpeed > minRotationSpeed)
+            {
+                rotationSpeed -= approachMultiplier;
+            }
+            else
+            {
+                rotationSpeed = minRotationSpeed;
+            }
+
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
     }
 
     public void NextVehicle()
     {
         carPicked = (vehicles)(((int)carPicked + 1) % carShowcasePrebaf.Length);
+        
         SwapVehicle();
     }
 
@@ -73,8 +111,9 @@ public class CharacterShowcase : MonoBehaviour
     private void SwapVehicle()
     {
         Debug.Log(carPicked);
+        transform.rotation = Quaternion.identity;
         playerInfo.vehiclePicked = carPicked;
-
+        rotationSpeed = maxRotationSpeed;
 
         if (carShowcased != null)
         {
@@ -92,7 +131,9 @@ public class CharacterShowcase : MonoBehaviour
     public void SetCarPicked(vehicles carPicked)
     {
         this.carPicked = carPicked;
-        if(carShowcased != null)
+        transform.rotation = Quaternion.identity;
+        rotationSpeed = maxRotationSpeed;
+        if (carShowcased != null)
         {
             carShowcased.transform.position = hiddenPosition.position;
         }

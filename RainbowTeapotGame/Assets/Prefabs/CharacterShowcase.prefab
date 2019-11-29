@@ -85,6 +85,12 @@ MonoBehaviour:
   hiddenPosition: {fileID: 119371059903525573}
   scaleFactor: 50
   playerInfo: {fileID: 0}
+  maxRotationSpeed: 0
+  minRotationSpeed: 0
+  rotationSpeed: 0
+  approachMultiplier: 0
+  rotationSpeedDrag: 40
+  lerpSpeed: 1
 --- !u!1 &119371059903525572
 GameObject:
   m_ObjectHideFlags: 0
