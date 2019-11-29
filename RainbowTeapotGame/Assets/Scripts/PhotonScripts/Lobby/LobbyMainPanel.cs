@@ -1,5 +1,6 @@
 ﻿using ExitGames.Client.Photon;
 using Photon.Realtime;
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -274,13 +275,19 @@ namespace Photon.Pun.Demo.Asteroids
             playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
             //iniciar animación y después de un segundo mostrar el coche
-            CharacterSelectionPanel.SetActive(false);
             
-            CharacterShowcasePanel.SetActive(true);
             CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
+            StartCoroutine("ShowShowcaseCoroutine");
             //Asign the character to the player
             //SetActivePanel(JoinRandomRoomPanel.name);
             //PhotonNetwork.JoinRandomRoom();
+        }
+
+        private System.Collections.IEnumerator ShowShowcaseCoroutine()
+        {
+            yield return new WaitForSeconds(0.35f);
+            CharacterSelectionPanel.SetActive(false);
+            CharacterShowcasePanel.SetActive(true);
         }
 
         public void OnBackCharacterShowcaseClicked()
