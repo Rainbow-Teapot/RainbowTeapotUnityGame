@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4380626, g: 0.4860468, b: 0.56632626, a: 1}
+  m_IndirectSpecularColor: {r: 0.43807638, g: 0.48606014, b: 0.5663381, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7159,5 +7159,17 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1754957095}
+    - target: {fileID: 9077353517431097755, guid: 8f85b95873b7a2845b5675a6a782923f,
+        type: 3}
+      propertyPath: carPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 7946241541733676504, guid: 7c06f45529287a64aa8d8f8fa3b4d18d,
+        type: 3}
+    - target: {fileID: 9077353517431097755, guid: 8f85b95873b7a2845b5675a6a782923f,
+        type: 3}
+      propertyPath: carPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4347562700194382530, guid: dea7fa7b8b205254d8bc62ff67a15ae1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f85b95873b7a2845b5675a6a782923f, type: 3}
