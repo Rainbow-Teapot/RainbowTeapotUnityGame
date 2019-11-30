@@ -182,7 +182,6 @@ namespace Photon.Pun.Demo.Asteroids
             //PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), position, Quaternion.identity, 0);
 
             player.GetComponent<InputedMovement>().SetCarCamera(mainCamera);
-            //player.GetComponent<CarMovement>().horSpeed = 0.0f;
             mainCamera.GetComponent<CameraController>().setTarget(player);
         }
 

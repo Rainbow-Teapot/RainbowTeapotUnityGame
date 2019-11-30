@@ -95,10 +95,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 20
+  maxVertSpeed: 20
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -175,8 +176,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.050106704
-      value: -0.020432472
+      time: 0.11529301
+      value: 3.5972707
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -184,8 +185,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.15176225
-      value: 5.0043573
+      time: 0.16608918
+      value: 1.6715372
       inSlope: -0.09641887
       outSlope: -0.09641887
       tangentMode: 0
@@ -193,17 +194,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.13123171
     - serializedVersion: 3
-      time: 0.3000816
-      value: 1.9976776
-      inSlope: -21.21441
-      outSlope: -21.21441
+      time: 0.2883858
+      value: 1.117693
+      inSlope: -3.9252155
+      outSlope: -3.9252155
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.20075908
     - serializedVersion: 3
-      time: 0.3986748
-      value: 1.5013113
+      time: 0.397332
+      value: 1.0422049
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -215,7 +216,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   xOffset: 0
   velZ: 0
-  carPrefab: {fileID: 0}
+  carPrefab: {fileID: 1469742618945938826, guid: b7adaab2b7063004f8642c6c249ed1aa,
+    type: 3}
 --- !u!114 &2371114229846873657
 MonoBehaviour:
   m_ObjectHideFlags: 0

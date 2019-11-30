@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ee238f8ea4d644095b0dee86327507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMultiplier: 0.25
+  speedMultiplier: 0
 --- !u!114 &114190399139301936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,22 +83,6 @@ PrefabInstance:
     - target: {fileID: 100004, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
       propertyPath: m_Name
       value: foliopalitoT2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -143,6 +127,22 @@ PrefabInstance:
     - target: {fileID: 400004, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893dc4aebc9518f40a280f85808729f7, type: 3}

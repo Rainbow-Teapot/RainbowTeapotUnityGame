@@ -153,6 +153,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         {
             GetComponent<CarMovement>().enabled = true;
             GetComponent<InputedMovement>().enabled = true;
+            GetComponent<DoubleClickChecker>().enabled = true;
+            GetComponent<PowerDownUser>().enabled = true;
         }
 
         

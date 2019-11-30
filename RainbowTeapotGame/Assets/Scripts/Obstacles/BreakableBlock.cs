@@ -9,7 +9,8 @@ public class BreakableBlock : MonoBehaviour,IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
-        car.SetSpeedMultiplier(speedMultiplier);
+        //car.SetSpeedMultiplier(speedMultiplier);
+        car.SetVertSpeed(speedMultiplier);
         car.SetCurrentCarState(carStates.IDLE);
         Destroy(gameObject);
     }
