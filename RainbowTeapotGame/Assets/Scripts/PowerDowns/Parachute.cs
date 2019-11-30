@@ -8,10 +8,11 @@ public class Parachute : MonoBehaviour
     [SerializeField]
     private float speedMultiplier;
     [SerializeField]
-    private float timeOfUse = 1.2f;
+    public float timeOfUse = 1.2f;
 
     private IEnumerator destroyParachuteCoroutine;
     private SpeedMultiplierDecorator parachuteDecorator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,11 @@ public class Parachute : MonoBehaviour
     private IEnumerator destroyParachute()
     {
         yield return new WaitForSeconds(timeOfUse);
+        DestroyParachute();
+    }
+
+    public void DestroyParachute()
+    {
         car.RemoveSpeedDecorator(parachuteDecorator);
         Destroy(gameObject);
     }

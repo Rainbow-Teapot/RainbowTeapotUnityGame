@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 515573451403622297}
   - component: {fileID: 1860471422082907136}
   - component: {fileID: 8210880686695279195}
+  - component: {fileID: 2831856493496324893}
   m_Layer: 0
   m_Name: VaterCar
   m_TagString: Untagged
@@ -326,6 +327,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2831856493496324893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347562700194382530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &807215197610652323
 PrefabInstance:
   m_ObjectHideFlags: 0

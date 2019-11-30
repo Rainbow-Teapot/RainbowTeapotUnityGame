@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 9094333399734226536}
   - component: {fileID: 6618174616573713542}
   - component: {fileID: 114095670556176084}
+  - component: {fileID: 5311716224147712502}
   m_Layer: 0
   m_Name: CarritoNetwork
   m_TagString: Untagged
@@ -310,6 +311,7 @@ MonoBehaviour:
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
+  hasDalsy: 0
 --- !u!114 &114095670556176084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +334,18 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5311716224147712502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513397761146819771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &7330168472214342771
 Animator:
   serializedVersion: 3

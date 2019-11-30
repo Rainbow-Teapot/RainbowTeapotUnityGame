@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 159381342983773118}
   - component: {fileID: 2371114229846873657}
   - component: {fileID: 2472793550204993067}
+  - component: {fileID: 8629573409400068168}
   m_Layer: 0
   m_Name: VacaCar
   m_TagString: Untagged
@@ -249,6 +250,18 @@ MonoBehaviour:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+--- !u!114 &8629573409400068168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946241541733676504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8136886326255620582
 Animator:
   serializedVersion: 3

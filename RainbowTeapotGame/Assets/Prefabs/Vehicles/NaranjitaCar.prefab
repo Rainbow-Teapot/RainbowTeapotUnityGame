@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6597514823523060589}
   - component: {fileID: 6562494691809182655}
   - component: {fileID: 3109405439253680343}
+  - component: {fileID: 422782788147578140}
   m_Layer: 0
   m_Name: NaranjitaCar
   m_TagString: Untagged
@@ -269,6 +270,18 @@ MonoBehaviour:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+--- !u!114 &422782788147578140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936954752930164098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &3945065059220036634
 Animator:
   serializedVersion: 3
