@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3405197628848346992}
   - component: {fileID: 3405197628848346991}
   m_Layer: 0
-  m_Name: Mud
+  m_Name: Chocolate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33eb38dc8a7e8fa4cb747d2495e959c0, type: 2}
+  - {fileID: 2100000, guid: e4d2b052d24c91c4ba97650c0c75ea9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
