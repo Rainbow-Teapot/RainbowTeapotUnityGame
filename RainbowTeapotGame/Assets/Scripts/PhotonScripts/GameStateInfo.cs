@@ -6,6 +6,8 @@ public class GameStateInfo
 { 
     public const string PLAYER_READY = "IsPlayerReady";
     public const string PLAYER_LOADED_LEVEL = "PlayerLoadedLevel";
+    public const string CURRENT_DISTANCE = "CurrentDistance";
+    public const string POSITION = "Position";
     public const string VEHICLE = "PlayerVehicle";
 
     public static Color GetColor(int colorChoice)

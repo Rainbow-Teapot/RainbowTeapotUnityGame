@@ -37,6 +37,11 @@ namespace Photon.Pun.Demo.Asteroids
         [SerializeField]
         private Transform startPosition;
 
+        [SerializeField]
+        private ControllerGUI controller;
+
+        private float[] playerDistances;
+
         #region UNITY
 
         public void Awake()
@@ -55,6 +60,7 @@ namespace Photon.Pun.Demo.Asteroids
         public void Start()
         {
             //InfoText.text = "Waiting for other players...";
+            playerDistances = new float[PhotonNetwork.PlayerList.Length];
 
             StartGame();
 
@@ -63,6 +69,7 @@ namespace Photon.Pun.Demo.Asteroids
                 {GameStateInfo.PLAYER_LOADED_LEVEL, true}
             };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+            
         }
 
         public override void OnDisable()
@@ -116,7 +123,7 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnLeftRoom()
         {
             
-                SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
             
             //PhotonNetwork.Disconnect();
         }
@@ -136,15 +143,36 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
-            if (changedProps.ContainsKey(AsteroidsGame.PLAYER_LIVES))
+            /*if (changedProps.ContainsKey(AsteroidsGame.PLAYER_LIVES))
             {
                 CheckEndOfGame();
                 return;
+            }*/
+            if (targetPlayer.GetPlayerNumber() == PhotonNetwork.LocalPlayer.GetPlayerNumber())
+            {
+                if (changedProps.ContainsKey(GameStateInfo.POSITION))
+                {
+                    object playerPosition;
+                    targetPlayer.CustomProperties.TryGetValue(GameStateInfo.POSITION, out playerPosition);
+                    controller.AssignPositionGUI((int)playerPosition);
+                }
             }
+
 
             if (!PhotonNetwork.IsMasterClient)
             {
                 return;
+            }
+
+            if (changedProps.ContainsKey(GameStateInfo.CURRENT_DISTANCE))
+            {
+                int position = GetCurrentPosition(targetPlayer);
+                Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.POSITION, position}
+                    };
+                targetPlayer.SetCustomProperties(props);
+                Debug.Log("[MASTER_CLIENT]For player: " + targetPlayer.GetPlayerNumber() + " position: " + position);
             }
 
             if (changedProps.ContainsKey(GameStateInfo.PLAYER_LOADED_LEVEL))
@@ -185,6 +213,8 @@ namespace Photon.Pun.Demo.Asteroids
 
             player.GetComponent<InputedMovement>().SetCarCamera(mainCamera);
             mainCamera.GetComponent<CameraController>().setTarget(player);
+
+            
         }
 
         private bool CheckAllPlayerLoadedLevel()
@@ -264,6 +294,31 @@ namespace Photon.Pun.Demo.Asteroids
         {
             PlayerInfo vehicleChosen = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
             return vehicleChosen.vehiclePicked.ToString() + "Network";
+        }
+
+        private int GetCurrentPosition(Player player)
+        {
+            object currentDistance;
+            int playerNumber = player.GetPlayerNumber();
+            player.CustomProperties.TryGetValue(GameStateInfo.CURRENT_DISTANCE, out currentDistance);
+            if(playerNumber < 0 || playerNumber > playerDistances.Length)
+            {
+                return playerDistances.Length;
+            }
+            playerDistances[playerNumber] = (float)currentDistance;
+            int position = 1;
+            for(int i = 0; i < playerDistances.Length; i++)
+            {
+                if(i != playerNumber)
+                {
+                    if((float)currentDistance > playerDistances[i])
+                    {
+                        position++;
+                    }
+                }
+            }
+
+            return position;
         }
     }
 }

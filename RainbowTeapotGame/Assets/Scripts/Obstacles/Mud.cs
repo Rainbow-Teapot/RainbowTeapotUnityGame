@@ -10,6 +10,7 @@ public class Mud : MonoBehaviour, IObstacle
     private SpeedMultiplierDecorator mudDecorator;
     private bool runOver = false;
 
+
     private void Start()
     {
         mudDecorator = new SpeedMultiplierDecorator(speedMultiplier);
@@ -19,18 +20,21 @@ public class Mud : MonoBehaviour, IObstacle
     {
         //if(car.GetSpeedMultiplier() > speedMultiplier)
         //car.SetSpeedMultiplier(speedMultiplier);
-        if (!runOver)
+        if (!car.GetSpeedMultiplierDecorators().Contains(mudDecorator))
         {
-            runOver = true;
             car.AddSpeedDecorator(mudDecorator);
+            
         }
+        
     }
 
     public void DeApplyEffect(CarMovement car)
     {
 
         //car.SetSpeedMultiplier(1.0f);
-        runOver = false;
+        
         car.RemoveSpeedDecorator(mudDecorator);
     }
+
+    
 }
