@@ -359,6 +359,11 @@ public class CarMovement : MonoBehaviour
         return currentState;
     }
 
+    public List<SpeedMultiplierDecorator> GetSpeedMultiplierDecorators()
+    {
+        return speedDecorators;
+    }
+
     public void AddSpeedDecorator(SpeedMultiplierDecorator decorator)
     {
         speedDecorators.Add(decorator);

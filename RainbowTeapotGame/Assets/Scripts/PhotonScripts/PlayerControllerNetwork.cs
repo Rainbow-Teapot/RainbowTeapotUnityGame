@@ -11,7 +11,7 @@
 using UnityEngine;
 
 using System.Collections;
-
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Pun.Demo.SlotRacer.Utils;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
@@ -195,12 +195,17 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
         if (this.photonView.IsMine)
         {
             
-                //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
-                //la POSICIÓN EN Z la pone la CURVA DE BEZIER
-                this.SplineWalker.Speed = this.CurrentSpeed;
-                this.CurrentDistance = this.SplineWalker.currentDistance;
-                this.SplineWalker.velX = velX;
-            
+            //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
+            //la POSICIÓN EN Z la pone la CURVA DE BEZIER
+            this.SplineWalker.Speed = this.CurrentSpeed;
+            this.CurrentDistance = this.SplineWalker.currentDistance;
+            this.SplineWalker.velX = velX;
+
+            Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.CURRENT_DISTANCE, this.CurrentDistance}
+                    };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
 
         } else //EL COCHE SIMULADO
         {
