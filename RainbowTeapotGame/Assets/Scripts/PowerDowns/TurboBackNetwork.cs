@@ -28,7 +28,6 @@ public class TurboBackNetwork : MonoBehaviourPun, IPunInstantiateMagicCallback, 
             carOwner = carObject;
 
         }
-        
     }
 
     private void Awake()
@@ -45,17 +44,13 @@ public class TurboBackNetwork : MonoBehaviourPun, IPunInstantiateMagicCallback, 
         if (pv.IsMine)
         {
             turboBack.enabled = true;
-            //turboBack.ownerCar = GetComponent<CarMovement>();
-            //destroyParachuteCoroutine = destroyParachute();
-            //StartCoroutine(destroyParachuteCoroutine);
+            
         }
-    }
-
-    private IEnumerator destroyParachute()
-    {
-        yield return new WaitForSeconds(2.0f);
-        //parachute.DestroyParachute();
-        PhotonNetwork.Destroy(gameObject);
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        
     }
 
     // Update is called once per frame
@@ -66,14 +61,11 @@ public class TurboBackNetwork : MonoBehaviourPun, IPunInstantiateMagicCallback, 
 
     public void ApplyEffect(CarMovement car)
     {
-        if(car.gameObject != carOwner)
-        {
-            Debug.Log("JAJAJAAJAJAJ");
-        }
+        turboBack.ApplyEffect(car);
     }
 
     public void DeApplyEffect(CarMovement car)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }

@@ -50,7 +50,8 @@ public class TurboBack : MonoBehaviour, IObstacle
                 hasCollide = true;
                 transform.parent = car.transform;
                 transform.localPosition = new Vector3(0, 2, -1);
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                //transform.localRotation = Quaternion.Euler(0, 180, 0);
+                transform.Rotate(new Vector3(0, 180, 0));
                 car.AddSpeedDecorator(turboDecorator);
                 StartCoroutine(destroyTurboHitCoroutine);
             }
