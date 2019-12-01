@@ -20,4 +20,12 @@ public class Ramp : MonoBehaviour, IObstacle
     {
         //throw new System.NotImplementedException();
     }
+
+    private void Start()
+    {
+        if (GameObject.Find("GameManager"))
+        {
+            speedMultiplier *= 0.6f;
+        }
+    }
 }
