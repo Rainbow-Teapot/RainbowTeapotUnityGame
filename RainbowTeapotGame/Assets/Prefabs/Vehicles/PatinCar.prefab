@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114464829704581330}
   - component: {fileID: 1388911865861780656}
   - component: {fileID: 131940528563636337}
+  - component: {fileID: 114865070766527600}
   m_Layer: 0
   m_Name: PatinCar
   m_TagString: Untagged
@@ -115,10 +116,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 20
+  maxVertSpeed: 20
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -195,8 +197,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.050106704
-      value: -0.020432472
+      time: 0.11529301
+      value: 3.5972707
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -204,8 +206,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.15176225
-      value: 5.0043573
+      time: 0.16608918
+      value: 1.6715372
       inSlope: -0.09641887
       outSlope: -0.09641887
       tangentMode: 0
@@ -213,17 +215,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.13123171
     - serializedVersion: 3
-      time: 0.3000816
-      value: 1.9976776
-      inSlope: -21.21441
-      outSlope: -21.21441
+      time: 0.2883858
+      value: 1.117693
+      inSlope: -3.9252155
+      outSlope: -3.9252155
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.20075908
     - serializedVersion: 3
-      time: 0.3986748
-      value: 1.5013113
+      time: 0.397332
+      value: 1.0422049
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -262,11 +264,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDebug: 1
   powerDownsToDebug:
+  - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8367007788799292446, guid: a6752fd77b4923949a06717179356818, type: 3}
-  - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
-  - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+  - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
+--- !u!114 &114865070766527600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823989086717596483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1469742618946036518
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -177,12 +177,13 @@ namespace Photon.Pun.Demo.Asteroids
                 vehicleName = ChooseVehicle();
             }
 
-            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", vehicleName), position, Quaternion.identity, 0);
+            object[] data = new object[1];
+            data[0] = playerNumber;
+            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", vehicleName), position, Quaternion.identity, 0,data);
 
             //PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), position, Quaternion.identity, 0);
 
             player.GetComponent<InputedMovement>().SetCarCamera(mainCamera);
-            //player.GetComponent<CarMovement>().horSpeed = 0.0f;
             mainCamera.GetComponent<CameraController>().setTarget(player);
         }
 

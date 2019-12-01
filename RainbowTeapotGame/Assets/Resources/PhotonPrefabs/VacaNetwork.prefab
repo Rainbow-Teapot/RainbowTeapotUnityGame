@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6102542828486267574}
   - component: {fileID: 3260880704550344265}
   - component: {fileID: 6513492774663786287}
+  - component: {fileID: 5237285159143595348}
   m_Layer: 0
   m_Name: VacaNetwork
   m_TagString: Untagged
@@ -98,10 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 10
+  maxVertSpeed: 10
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -238,7 +240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7946241541733676504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
@@ -289,6 +291,7 @@ MonoBehaviour:
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
+  hasDalsy: 0
 --- !u!114 &6513492774663786287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +314,18 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5237285159143595348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946241541733676504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8136886326255620582
 Animator:
   serializedVersion: 3

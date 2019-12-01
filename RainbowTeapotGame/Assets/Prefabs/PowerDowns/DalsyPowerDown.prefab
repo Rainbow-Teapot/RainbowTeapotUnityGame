@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b782b5025ca9bbb4cb76dac4dacbdc40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedMultiplier: 0.65
+  timeOfUse: 2
+  dalsyPrefab: {fileID: 4752438453657314448, guid: 4dadaeb498cdb3b40af16ff7f0329f51,
+    type: 3}

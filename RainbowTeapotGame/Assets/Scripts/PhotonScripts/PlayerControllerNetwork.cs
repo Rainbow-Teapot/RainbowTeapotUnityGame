@@ -23,7 +23,7 @@ using Photon.Pun.Demo.SlotRacer;
 /// Handle the Car instance 
 /// </summary>
 [RequireComponent(typeof(SplineWalker))]
-public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
+public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunInstantiateMagicCallback
 {
 
     public GameObject CarPrefab;
@@ -47,9 +47,13 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     /// </summary>
     private bool m_firstTake = true;
 
+    private int playerNumber;
 
     private float m_input;
 
+    private ChangeMaterialColors ChangeColors;
+    public bool hasDalsy = false;
+    private bool firstTimeDalsy = true;
 
     #region IPunObservable implementation
 
@@ -71,6 +75,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             stream.SendNext(this.m_input);
             stream.SendNext(transform.position);
             stream.SendNext(velX);
+            stream.SendNext(hasDalsy);
+            
         }
         else
         {
@@ -84,10 +90,12 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             this.m_input = (float)stream.ReceiveNext();
             networkPosition = (Vector3)stream.ReceiveNext();
             this.velX = (float)stream.ReceiveNext();
-            
+            this.hasDalsy = (bool)stream.ReceiveNext();
         }
     }
 
+
+    
 
     #region private
 
@@ -132,6 +140,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     private void Awake()
     {
         this.SplineWalker = this.GetComponent<SplineWalker>();
+        this.ChangeColors = this.GetComponent<ChangeMaterialColors>();
         this.m_firstTake = true;
     }
 
@@ -153,7 +162,14 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         {
             GetComponent<CarMovement>().enabled = true;
             GetComponent<InputedMovement>().enabled = true;
+            GetComponent<DoubleClickChecker>().enabled = true;
+            GetComponent<PowerDownUser>().enabled = true;
         }
+        else
+        {
+            gameObject.name = "EmulatedCar" + playerNumber;
+        }
+        
 
         
     }
@@ -200,6 +216,15 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             //para la posición en la X
             this.SplineWalker.networkPosition = networkPosition;
             this.SplineWalker.velX = velX;
+
+            if (this.hasDalsy)
+            {
+                ChangeColors.ChangeColor(Color.red);
+                firstTimeDalsy = false;
+            }
+            else if(!this.firstTimeDalsy){
+                ChangeColors.ResetColor();
+            }
             
         }
 
@@ -227,5 +252,12 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         this.photonView.RPC("RPC_StartRacing", RpcTarget.AllViaServer);
     }
 
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        
+        playerNumber = (int)info.photonView.InstantiationData[0];
+        Debug.Log(playerNumber);
+        
+    }
 }
 #endregion

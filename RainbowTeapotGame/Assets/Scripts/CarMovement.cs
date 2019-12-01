@@ -14,7 +14,10 @@ public class CarMovement : MonoBehaviour
     [SerializeField]
     private float horSpeed;
     [SerializeField]
-    public float vertSpeed;
+    public float maxVertSpeed;
+
+    private float vertSpeed;
+
     [SerializeField]
     private float speedRotation = 3.0f;
 
@@ -22,8 +25,11 @@ public class CarMovement : MonoBehaviour
 
     [SerializeField]
     private float speedMultiplier = 1.0f;
+
     [SerializeField]
     private float brakingMultiplier = 0.1f;
+    [SerializeField]
+    private float accelerationMultiplier = 0.1f;
 
     private Vector3 forwardDirection;
     private float forwardMultiplier = 4.0f;
@@ -44,6 +50,9 @@ public class CarMovement : MonoBehaviour
     private AnimationCurve failHitAnotherCar;
 
     private float limitBoostTransition = 0.5f;
+
+    [SerializeField]
+    private List<SpeedMultiplierDecorator> speedDecorators = new List<SpeedMultiplierDecorator>();
 
     //private Animator anim;
 
@@ -76,6 +85,7 @@ public class CarMovement : MonoBehaviour
     private void Start()
     {
         currentState = carStates.IDLE;
+        vertSpeed = maxVertSpeed;
     }
 
     private void FixedUpdate()
@@ -92,10 +102,27 @@ public class CarMovement : MonoBehaviour
             xOffset = movement.GetXOffset();
         
         Vector3 dirToMove = new Vector3(Mathf.Clamp(xOffset, -4, 4), 0, -1);
-        //dirToMove.Normalize();
-        Vector3 vel = new Vector3(dirToMove.x * horSpeed, 0, dirToMove.z * vertSpeed * speedMultiplier + currentRecoil * -0.1f);
-        //rb.velocity = new Vector3(0,0,vel.z);
-        //transform.LookAt(transform.position + forwardDirection * speedRotation * Time.deltaTime);
+
+        if (vertSpeed < maxVertSpeed)
+        {
+            
+            vertSpeed = Approach(vertSpeed, accelerationMultiplier, maxVertSpeed);
+            //Debug.Log("ESTOY ACELERADNOOOOOO: " + vertSpeed + "_" + accelerationMultiplier);
+        }
+        else if(vertSpeed > maxVertSpeed)
+        {
+            vertSpeed = Approach(vertSpeed, brakingMultiplier, maxVertSpeed);
+        }
+
+        speedMultiplier = 1.0f;
+
+        for(int i = 0; i < speedDecorators.Count; i++)
+        {
+            speedMultiplier *= speedDecorators[i].ComputeSpeedMultiplier();
+        }
+
+        Vector3 vel = new Vector3(dirToMove.x * horSpeed * speedMultiplier, 0, dirToMove.z * speedMultiplier * vertSpeed + currentRecoil * -0.1f);
+        
 
         if (playerNetwork)
         {
@@ -116,9 +143,6 @@ public class CarMovement : MonoBehaviour
             rb.MovePosition(transform.position + (vel * Time.deltaTime));
         }
 
-        
-        
-        //carPrefab.transform.rotation = Quaternion.LookRotation(forwardDirection.normalized, Vector3.up);
         rb.MoveRotation(Quaternion.LookRotation(forwardDirection.normalized,Vector3.up));
     }
 
@@ -131,12 +155,6 @@ public class CarMovement : MonoBehaviour
         //Recoil();
 
         CarBehaviour();
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            currentState = carStates.ZIGZAG;
-        }
-
     }
 
     private void CarBehaviour()
@@ -146,9 +164,9 @@ public class CarMovement : MonoBehaviour
             case carStates.IDLE:
 
                 inputedMovement = true;
-                speedMultiplier = Approach(speedMultiplier,brakingMultiplier,1.0f);
+                //speedMultiplier = Approach(speedMultiplier,brakingMultiplier,1.0f);
                 
-                Recoil();
+                //Recoil();
                 break;
             case carStates.BOOST:
                 Boost();
@@ -198,12 +216,12 @@ public class CarMovement : MonoBehaviour
         {
             if (hitOtherCar)
             {
-                speedMultiplier = 0.5f;
+                speedMultiplier *= 0.5f;
                
             }
             else
             {
-                speedMultiplier = failHitAnotherCar.Evaluate(sumBoostTransition);
+                speedMultiplier *= failHitAnotherCar.Evaluate(sumBoostTransition);
             }
         }
         else
@@ -306,7 +324,6 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-
     public void OppositeHorDirection()
     {
         xOffset = -xOffset;
@@ -327,6 +344,11 @@ public class CarMovement : MonoBehaviour
         this.speedMultiplier = speedMultiplier;
     }
 
+    public void SetVertSpeed(float vertSpeed)
+    {
+        this.vertSpeed = vertSpeed;
+    }
+
     public void SetCurrentCarState(carStates currentState)
     {
         this.currentState = currentState;
@@ -335,6 +357,16 @@ public class CarMovement : MonoBehaviour
     public carStates GetCurrentCarState()
     {
         return currentState;
+    }
+
+    public void AddSpeedDecorator(SpeedMultiplierDecorator decorator)
+    {
+        speedDecorators.Add(decorator);
+    }
+
+    public void RemoveSpeedDecorator(SpeedMultiplierDecorator decorator)
+    {
+        speedDecorators.Remove(decorator);
     }
 
     private void DrawDirection()

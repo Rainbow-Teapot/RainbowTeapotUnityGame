@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 114884762022134658}
   - component: {fileID: 114521985138836138}
   - component: {fileID: 114072141594798886}
+  - component: {fileID: 114234768879197862}
   m_Layer: 0
   m_Name: PatinNetwork
   m_TagString: Untagged
@@ -118,10 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 10
+  maxVertSpeed: 10
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -258,14 +260,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3823989086717596483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDebug: 1
   powerDownsToDebug:
-  - {fileID: 8367007788799292446, guid: a6752fd77b4923949a06717179356818, type: 3}
+  - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
   - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
@@ -309,6 +311,7 @@ MonoBehaviour:
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
   velX: 0
+  hasDalsy: 0
 --- !u!114 &114072141594798886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +334,18 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &114234768879197862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3823989086717596483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1469742618946036518
 PrefabInstance:
   m_ObjectHideFlags: 0
