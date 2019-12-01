@@ -7,7 +7,7 @@ public class TurboBack : MonoBehaviour, IObstacle
 
     private CarMovement car;
 
-    public CarMovement ownerCar { get; set; }
+    public CarMovement ownerCar;
 
     [SerializeField]
     private float speedMultiplier = 1.7f;
@@ -42,15 +42,18 @@ public class TurboBack : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
-        if (!hasCollide && ownerCar != car)
+        if (enabled)
         {
-            this.car = car;
-            hasCollide = true;
-            transform.parent = car.transform;
-            transform.localPosition = new Vector3(0, 2, -1);
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-            car.AddSpeedDecorator(turboDecorator);
-            StartCoroutine(destroyTurboHitCoroutine);
+            if (!hasCollide && ownerCar != car)
+            {
+                this.car = car;
+                hasCollide = true;
+                transform.parent = car.transform;
+                transform.localPosition = new Vector3(0, 2, -1);
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                car.AddSpeedDecorator(turboDecorator);
+                StartCoroutine(destroyTurboHitCoroutine);
+            }
         }
     }
 

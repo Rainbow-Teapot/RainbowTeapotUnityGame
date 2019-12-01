@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParachuteNetwork : MonoBehaviourPun, IPunObservable, IPunInstantiateMagicCallback
+public class ParachuteNetwork : MonoBehaviourPun, IPunInstantiateMagicCallback
 {
     private Parachute parachute;
 
@@ -24,23 +24,6 @@ public class ParachuteNetwork : MonoBehaviourPun, IPunObservable, IPunInstantiat
                 transform.parent = carObject.transform;
                 //parachute.car = car;
             
-        }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            
-            //stream.SendNext(parachute.car);
-            
-        }
-        else
-        {
-            //CarMovement car = (CarMovement)stream.ReceiveNext();
-            //parachute.transform.parent = car.transform;
-            //parachute.car = car;
-
         }
     }
 
