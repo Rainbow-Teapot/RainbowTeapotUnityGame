@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 524799402618695647}
   - component: {fileID: 2635735052064487934}
   - component: {fileID: 65146732542171052}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TreePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,6 +68,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
       propertyPath: m_Name
       value: treeT
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
       propertyPath: m_LocalPosition.x

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SidePropsSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private CameraController camera;
 
     private float speed;
 
@@ -36,6 +34,9 @@ public class SidePropsSpawner : MonoBehaviour
     [SerializeField]
     private bool prioritySupport = false;
 
+    [SerializeField]
+    private float probabilityPrioryObject = 80.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,24 +48,35 @@ public class SidePropsSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = camera.speed;
-        speed = 4.0f;
-        
+       
     }
 
     public void CreateSideProps(int numProps)
     {
-        int propToCreate = Random.Range(0, 100);
-
-        if (propToCreate != 0)
+        int propToCreate;
+        if (prioritySupport)
         {
-            numProps = 1;
+            float priotityObject = Random.Range(0.0f, 100.0f);
+
+            if (priotityObject > probabilityPrioryObject)
+            {
+                numProps = 1;
+                propToCreate = Random.Range(1, propsPrefab.Length);
+            }
+            else
+            {
+                propToCreate = 0;
+            }
+        }
+        else
+        {
+            propToCreate = Random.Range(0, propsPrefab.Length);
         }
 
         for (int i = 0; i < numProps; i++)
         {
             xAxis = Random.Range(transform.position.x - width, transform.position.x + width);
-            zAxis = Random.Range(transform.position.z - height, transform.position.z + height);
+            zAxis = Random.Range(transform.position.z - height, transform.position.z);
            
             GameObject prop = Instantiate(propsPrefab[propToCreate], new Vector3(xAxis, yAxis, zAxis), Quaternion.identity);
             prop.transform.parent = decoration.transform;
