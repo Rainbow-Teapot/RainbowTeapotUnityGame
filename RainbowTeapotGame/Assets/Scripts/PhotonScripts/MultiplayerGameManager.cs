@@ -118,6 +118,7 @@ namespace Photon.Pun.Demo.Asteroids
             //UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             //SceneManager.LoadScene("GameOver");
             //StartCoroutine(Load());
+            player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
         }
 
         public override void OnLeftRoom()
@@ -170,7 +171,15 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 return;
             }
+            if (changedProps.ContainsKey(GameStateInfo.EXIT_GAME)) {
 
+                object hasExitedGame;
+                targetPlayer.CustomProperties.TryGetValue(GameStateInfo.EXIT_GAME, out hasExitedGame);
+                if (!(bool)hasExitedGame)
+                {
+                    playerDistances[targetPlayer.GetPlayerNumber()] = 0;
+                }
+            }
             if (changedProps.ContainsKey(GameStateInfo.CURRENT_DISTANCE))
             {
                 int position = GetCurrentPosition(targetPlayer);
@@ -192,6 +201,21 @@ namespace Photon.Pun.Demo.Asteroids
                     };
                     PhotonNetwork.CurrentRoom.SetCustomProperties(props);
                 }
+            }
+        }
+
+        //OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            base.OnPlayerLeftRoom(otherPlayer);
+            if(PhotonNetwork.IsMasterClient)
+            {
+                Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.CURRENT_DISTANCE, 0}
+                    };
+                otherPlayer.SetCustomProperties(props);
+                playerDistances[otherPlayer.GetPlayerNumber()] = 0;
             }
         }
 
@@ -318,8 +342,9 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 if(i != playerNumber)
                 {
-                    if((float)currentDistance > playerDistances[i])
+                    if((float)currentDistance > playerDistances[i] && playerDistances[i] > 0 && !PhotonNetwork.PlayerList[i].IsInactive)
                     {
+                       
                         position++;
                     }
                 }
