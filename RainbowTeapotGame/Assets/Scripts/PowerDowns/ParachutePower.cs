@@ -14,7 +14,7 @@ public class ParachutePower : MonoBehaviour, IPowerDown
     {
         Debug.Log("[POWER-DOWN]: " + name);
 
-        Vector3 posToSpawn = car.transform.position + new Vector3(0,1, 2);
+        Vector3 posToSpawn = car.transform.position + new Vector3(0, 1, 3);
         Parachute parachute;
 
         if (!car.GetComponent<PlayerControllerNetwork>())
