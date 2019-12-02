@@ -35,6 +35,10 @@ namespace Photon.Pun.Demo.Asteroids
         public Button buttonFlag;
         public Sprite EngFlag;
         public Sprite SpaFlag;
+        public Button buttonSound;
+        public Button buttonMusic;
+        public Sprite tick;
+        public Sprite tickOK; 
 
         [Header("Credits Panel")]
         public GameObject CreditsPanel;
@@ -308,36 +312,23 @@ namespace Photon.Pun.Demo.Asteroids
 
             FindObjectOfType<AudioManager>().Character(playerInfo.vehiclePicked.ToString());
         
-        /*
-        if (button.name.Equals("VacaButton"))
-        {
-            FindObjectOfType<AudioManager>().Play("Cow1");
-        }
-        else if (button.name.Equals("CarritoButton")) {
-            FindObjectOfType<AudioManager>().Play("Cart1");
-        }
-        else if (button.name.Equals("NaranjitaButton"))
-        {
-            FindObjectOfType<AudioManager>().Play("Orange1");
-        }
-        else if (button.name.Equals("PatinButton"))
-        {
-            FindObjectOfType<AudioManager>().Play("Skate1");
-        }
-        else if (button.name.Equals("VaterButton"))
-        {
-            FindObjectOfType<AudioManager>().Play("Toilet1");
-        }
-        else if (button.name.Equals("TelefonoButton"))
-        {
-            FindObjectOfType<AudioManager>().Play("Phone1");
-        }
-        */
+        
         //iniciar animación y después de un segundo mostrar el coche
 
         CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
             StartCoroutine("ShowShowcaseCoroutine");
             
+        }
+
+        public void OnMusicButtonClicked(Button button) {
+            FindObjectOfType<PlayerInfo>().musicOn = (!FindObjectOfType<PlayerInfo>().musicOn);
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
+            FindObjectOfType<MusicManager>().PlayOrPause("MenuTheme");
+        }
+
+        public void OnSoundButtonClicked(Button button) {
+            FindObjectOfType<PlayerInfo>().soundsOn = (!FindObjectOfType<PlayerInfo>().soundsOn);
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
         }
 
         public void OnChangeLanguageClicked()

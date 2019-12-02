@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour
 {
 
     public Sound[] sounds;
-    public bool generalMusic = true;
+    
 
     private void Awake()
     {
@@ -28,18 +28,18 @@ public class MusicManager : MonoBehaviour
         
         if (SceneManager.GetActiveScene().name.Equals("Lobby"))
         {
-            Play("MenuTheme");
+            PlayOrPause("MenuTheme");
         }
 
         if (SceneManager.GetActiveScene().name.Equals("MultiplayerTest"))
         {
 
-            Play("Level1");
+            PlayOrPause("Level1");
         }
         
     }
 
-    public void Play(string name)
+    public void PlayOrPause(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -47,7 +47,12 @@ public class MusicManager : MonoBehaviour
             Debug.LogWarning("Sound " + name + " not found!");
             return;
         }
-        if(generalMusic)
+        if (FindObjectOfType<PlayerInfo>().musicOn)
             s.source.Play();
+        else {
+            s.source.Pause();
+        }
     }
+
+   
 }

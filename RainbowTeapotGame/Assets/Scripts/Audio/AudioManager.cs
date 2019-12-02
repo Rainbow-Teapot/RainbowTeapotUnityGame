@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
 
-    public Sound[] sounds;    
-    public bool generalSounds; 
+    public Sound[] sounds;
+    
 
     private void Awake()
     {
@@ -29,7 +29,8 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound " +name+ " not found!");
             return; 
         }
-        s.source.Play();
+        if(FindObjectOfType<PlayerInfo>().soundsOn)
+            s.source.Play();
     }
 
     public void Character(string name) {

@@ -8,6 +8,8 @@ public class PlayerInfo : MonoBehaviour
     public bool online = false;
     public bool hasBeenLogged = false;
     public int lang;
+    public bool musicOn = true;
+    public bool soundsOn = true;
     
 
     private void Awake()
