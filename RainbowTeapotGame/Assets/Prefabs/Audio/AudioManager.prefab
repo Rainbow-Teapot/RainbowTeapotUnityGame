@@ -222,7 +222,7 @@ MonoBehaviour:
   - name: Bounce
     clip: {fileID: 8300000, guid: e1d02f70ed82b2c49af231725db466ae, type: 3}
     volume: 0.517
-    pitch: 1
+    pitch: 1.307
     loop: 0
     source: {fileID: 0}
   - name: Breakable
@@ -234,7 +234,12 @@ MonoBehaviour:
   - name: Lego
     clip: {fileID: 8300000, guid: cb48962dc1f069543a64c70e69c120a8, type: 3}
     volume: 0.517
+    pitch: 1.12
+    loop: 0
+    source: {fileID: 0}
+  - name: Paper
+    clip: {fileID: 8300000, guid: 95823bbdaeace184f98a04f61e9300ed, type: 3}
+    volume: 0.517
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  generalSounds: 1
