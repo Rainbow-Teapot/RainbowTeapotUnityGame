@@ -13,6 +13,7 @@ public class PowerDownBox : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
+        FindObjectOfType<AudioManager>().Character(FindObjectOfType<PlayerInfo>().vehiclePicked.ToString());
         if (!hasCrashed)
         {
             hasCrashed = true;

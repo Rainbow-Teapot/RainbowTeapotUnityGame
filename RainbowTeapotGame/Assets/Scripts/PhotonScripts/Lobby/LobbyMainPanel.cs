@@ -306,13 +306,38 @@ namespace Photon.Pun.Demo.Asteroids
             
             playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
-            //iniciar animación y después de un segundo mostrar el coche
-            
-            CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
+            FindObjectOfType<AudioManager>().Character(playerInfo.vehiclePicked.ToString());
+        
+        /*
+        if (button.name.Equals("VacaButton"))
+        {
+            FindObjectOfType<AudioManager>().Play("Cow1");
+        }
+        else if (button.name.Equals("CarritoButton")) {
+            FindObjectOfType<AudioManager>().Play("Cart1");
+        }
+        else if (button.name.Equals("NaranjitaButton"))
+        {
+            FindObjectOfType<AudioManager>().Play("Orange1");
+        }
+        else if (button.name.Equals("PatinButton"))
+        {
+            FindObjectOfType<AudioManager>().Play("Skate1");
+        }
+        else if (button.name.Equals("VaterButton"))
+        {
+            FindObjectOfType<AudioManager>().Play("Toilet1");
+        }
+        else if (button.name.Equals("TelefonoButton"))
+        {
+            FindObjectOfType<AudioManager>().Play("Phone1");
+        }
+        */
+        //iniciar animación y después de un segundo mostrar el coche
+
+        CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
             StartCoroutine("ShowShowcaseCoroutine");
-            //Asign the character to the player
-            //SetActivePanel(JoinRandomRoomPanel.name);
-            //PhotonNetwork.JoinRandomRoom();
+            
         }
 
         public void OnChangeLanguageClicked()
