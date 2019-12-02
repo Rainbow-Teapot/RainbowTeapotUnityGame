@@ -100,11 +100,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4261711921453171403}
     m_Modifications:
-    - target: {fileID: 1165061112307472862, guid: ccfa5af22b76b4a4683d9d08041c0392,
-        type: 3}
-      propertyPath: m_Name
-      value: ParachutePrefab
-      objectReference: {fileID: 0}
     - target: {fileID: 7988748616156809041, guid: ccfa5af22b76b4a4683d9d08041c0392,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -159,6 +154,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165061112307472862, guid: ccfa5af22b76b4a4683d9d08041c0392,
+        type: 3}
+      propertyPath: m_Name
+      value: ParachutePrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccfa5af22b76b4a4683d9d08041c0392, type: 3}
