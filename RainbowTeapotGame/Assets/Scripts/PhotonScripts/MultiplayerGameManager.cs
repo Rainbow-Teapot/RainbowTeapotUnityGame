@@ -53,7 +53,7 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnEnable()
         {
             base.OnEnable();
-
+            PhotonNetwork.AutomaticallySyncScene = false;
             CountdownTimer.OnCountdownTimerHasExpired += OnCountdownTimerIsExpired;
         }
 
@@ -83,7 +83,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         #region COROUTINES
 
-        private IEnumerator EndOfGame(string winner, int score)
+        /*private IEnumerator EndOfGame(string winner, int score)
         {
             float timer = 5.0f;
 
@@ -97,13 +97,11 @@ namespace Photon.Pun.Demo.Asteroids
             }
 
             PhotonNetwork.LeaveRoom();
-        }
+        }*/
 
         public void EndOfRace()
         {
             PhotonNetwork.LeaveRoom();
-            
-            
         }
 
         #endregion
@@ -122,13 +120,20 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnLeftRoom()
         {
-            
-            SceneManager.LoadScene("GameOver");
-            
+
+            //SceneManager.LoadScene("GameOver");
+
             //PhotonNetwork.Disconnect();
+            StartCoroutine(Load());
         }
 
-        public override void OnMasterClientSwitched(Player newMasterClient)
+        private IEnumerator Load()
+        {
+            while (PhotonNetwork.InRoom)
+                yield return null;
+            SceneManager.LoadScene("GameOver");
+        }
+        /*public override void OnMasterClientSwitched(Player newMasterClient)
         {
             if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
             {
@@ -138,8 +143,8 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            //CheckEndOfGame();
-        }
+            
+        }*/
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
@@ -172,7 +177,7 @@ namespace Photon.Pun.Demo.Asteroids
                         {GameStateInfo.POSITION, position}
                     };
                 targetPlayer.SetCustomProperties(props);
-                Debug.Log("[MASTER_CLIENT]For player: " + targetPlayer.GetPlayerNumber() + " position: " + position);
+                //Debug.Log("[MASTER_CLIENT]For player: " + targetPlayer.GetPlayerNumber() + " position: " + position);
             }
 
             if (changedProps.ContainsKey(GameStateInfo.PLAYER_LOADED_LEVEL))
@@ -239,7 +244,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void CheckEndOfGame()
         {
-            bool allDestroyed = true;
+            /*bool allDestroyed = true;
 
             foreach (Player p in PhotonNetwork.PlayerList)
             {
@@ -274,7 +279,7 @@ namespace Photon.Pun.Demo.Asteroids
                 }
 
                 StartCoroutine(EndOfGame(winner, score));
-            }
+            }*/
         }
 
         private void OnCountdownTimerIsExpired()

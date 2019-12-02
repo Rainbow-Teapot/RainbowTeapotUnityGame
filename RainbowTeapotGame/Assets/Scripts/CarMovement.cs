@@ -299,7 +299,7 @@ public class CarMovement : MonoBehaviour
 
         if(obstacle != null)
         {
-            Debug.Log("Colisionando con el obstáculo: " + other.name);
+            //Debug.Log("Colisionando con el obstáculo: " + other.name);
             obstacle.ApplyEffect(this);
         }
     }

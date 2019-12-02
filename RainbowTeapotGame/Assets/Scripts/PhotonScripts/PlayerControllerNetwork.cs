@@ -168,6 +168,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
         else
         {
             gameObject.name = "EmulatedCar" + playerNumber;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         
 
