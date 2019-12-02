@@ -7,6 +7,7 @@ public class PlayerInfo : MonoBehaviour
     public vehicles vehiclePicked;
     public bool online = false;
     public bool hasBeenLogged = false;
+    public int lang;
     
 
     private void Awake()
@@ -19,5 +20,7 @@ public class PlayerInfo : MonoBehaviour
         else { 
         DontDestroyOnLoad(this);
             }
+
+        lang = 1;
     }
 }

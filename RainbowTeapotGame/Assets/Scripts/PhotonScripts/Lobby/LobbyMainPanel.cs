@@ -5,24 +5,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Photon.Pun.Demo.Asteroids
 {
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
+
+        LanguageManager lang = new LanguageManager();
+
         [Header("Login Panel")]
         public GameObject LoginPanel;
-
+        public TextMeshProUGUI nameText;
+        public TextMeshProUGUI enterPlayer;
+        public TextMeshProUGUI loginText;       
         public InputField PlayerNameInput;
 
         [Header("Selection Panel")]
         public GameObject SelectionPanel;
+        public TextMeshProUGUI trainingText;
+        public TextMeshProUGUI multiplayerText;
 
         [Header("Configuration Panel")]
         public GameObject ConfigurationPanel;
+        public TextMeshProUGUI configText;
+        public TextMeshProUGUI musicText;
+        public TextMeshProUGUI soundText;
+        public TextMeshProUGUI languageText;
+        public Button buttonFlag;
+        public Sprite EngFlag;
+        public Sprite SpaFlag;
 
         [Header("Credits Panel")]
         public GameObject CreditsPanel;
+        public TextMeshProUGUI creditsText;
 
         [Header("Create Room Panel")]
         public GameObject CreateRoomPanel;
@@ -35,19 +51,24 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject CharacterSelector;
         public GameObject CharacterShowcasePanel;
         public CharacterShowcase CharacterShowcase;
+        public TextMeshProUGUI chooseRiderText;
+        public TextMeshProUGUI startText;
         
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
+        public TextMeshProUGUI tryingToJoinText;
 
         [Header("Room List Panel")]
         public GameObject RoomListPanel;
-
         public GameObject RoomListContent;
         public GameObject RoomListEntryPrefab;
 
         [Header("Inside Room Panel")]
         public GameObject InsideRoomPanel;
+        public TextMeshProUGUI leaveGameText;
+        public TextMeshProUGUI startGameText;
+        public TextMeshProUGUI readyText;
 
         [Header("End Game Panel")]
         public GameObject EndGamePanel;
@@ -71,23 +92,34 @@ namespace Photon.Pun.Demo.Asteroids
             cachedRoomList = new Dictionary<string, RoomInfo>();
             roomListEntries = new Dictionary<string, GameObject>();
             
-            PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+           
         }
 
         private void Start()
         {
             
                 playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
-            
+                
 
             if (playerInfo.hasBeenLogged)
             {
                 SetActivePanel(SelectionPanel.name);
             }
+
+            Debug.Log(playerInfo.lang);
+            
+
+            updateTexts();
+            
+            
+
+
         }
 
         private void Update()
         {
+            
+            
             
         }
 
@@ -283,6 +315,21 @@ namespace Photon.Pun.Demo.Asteroids
             //PhotonNetwork.JoinRandomRoom();
         }
 
+        public void OnChangeLanguageClicked()
+        {
+            if (playerInfo.lang == 0) //ENG --> SPA
+            {
+                playerInfo.lang = 1;               
+            }
+            else { //SPA --> ENG
+                playerInfo.lang = 0;
+                
+            }
+            updateTexts();
+
+        }
+
+
         private System.Collections.IEnumerator ShowShowcaseCoroutine()
         {
             yield return new WaitForSeconds(0.35f);
@@ -458,6 +505,39 @@ namespace Photon.Pun.Demo.Asteroids
 
                 roomListEntries.Add(info.Name, entry);
             }
+        }
+
+
+        public void updateTexts() {
+
+            nameText.text = lang.getText(playerInfo.lang, 0);
+            PlayerNameInput.text = lang.getText(playerInfo.lang, 17) + " " + Random.Range(1000, 10000);
+            enterPlayer.text = lang.getText(playerInfo.lang, 1);
+            loginText.text = lang.getText(playerInfo.lang, 2);
+            trainingText.text = lang.getText(playerInfo.lang, 3);
+            multiplayerText.text = lang.getText(playerInfo.lang, 4);
+            creditsText.text = lang.getText(playerInfo.lang, 5);
+            configText.text = lang.getText(playerInfo.lang, 6);
+            musicText.text = lang.getText(playerInfo.lang, 7);
+            soundText.text = lang.getText(playerInfo.lang, 8);
+            languageText.text = lang.getText(playerInfo.lang, 9);
+            chooseRiderText.text = lang.getText(playerInfo.lang, 10);
+            startText.text = lang.getText(playerInfo.lang, 11);
+            tryingToJoinText.text = lang.getText(playerInfo.lang, 12);
+            leaveGameText.text = lang.getText(playerInfo.lang, 13);
+            startGameText.text = lang.getText(playerInfo.lang, 14);
+            readyText.text = lang.getText(playerInfo.lang, 15);
+
+
+            if (playerInfo.lang == 0)
+            {
+                buttonFlag.image.overrideSprite = SpaFlag;
+            }
+            else {
+                buttonFlag.image.overrideSprite = EngFlag;
+            }
+
+
         }
     }
 }
