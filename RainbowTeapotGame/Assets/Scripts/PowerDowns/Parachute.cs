@@ -30,6 +30,7 @@ public class Parachute : MonoBehaviour
 
     public void DestroyParachute()
     {
+        car.GetComponent<PowerDownUser>().ResetPowerDown();
         car.RemoveSpeedDecorator(parachuteDecorator);
         Destroy(gameObject);
     }

@@ -35,10 +35,11 @@ public class Dalsy : MonoBehaviour
 
     private IEnumerator FinishEffect()
     {
-        Debug.Log("HE ACTIVADO EL DALSY");
+       
         yield return new WaitForSeconds(timeOfUse);
-        Debug.Log("EL SALDY SE ACABA");
+        
         car.RemoveSpeedDecorator(dalsyDecorator);
+        car.GetComponent<PowerDownUser>().ResetPowerDown();
         car.GetComponent<ChangeMaterialColors>().ResetColor();
         car.SetCurrentCarState(carStates.IDLE);
 

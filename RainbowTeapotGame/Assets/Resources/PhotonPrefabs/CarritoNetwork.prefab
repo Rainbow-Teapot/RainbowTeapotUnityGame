@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebug: 1
+  isDebug: 0
   powerDownsToDebug:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}

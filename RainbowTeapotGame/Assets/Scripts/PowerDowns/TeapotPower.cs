@@ -13,7 +13,10 @@ public class TeapotPower : MonoBehaviour, IPowerDown
     {
         Debug.Log("[POWER-DOWN]: " + name);
         Vector3 posToSpawn = car.transform.position + Vector3.up * 1.25f + Vector3.back * 2f;
+
+        car.GetComponent<PowerDownUser>().ResetPowerDown();
         
+
         if (!car.GetComponent<PlayerControllerNetwork>())
         {
             

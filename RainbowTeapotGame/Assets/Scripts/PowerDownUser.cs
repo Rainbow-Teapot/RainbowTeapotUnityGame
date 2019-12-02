@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(DoubleClickChecker))]
 public class PowerDownUser : MonoBehaviour
@@ -13,6 +11,12 @@ public class PowerDownUser : MonoBehaviour
 
     public bool isDebug = true;
     public GameObject[] powerDownsToDebug;
+    [SerializeField]
+    private bool powerDownActivated;
+
+    private ControllerGUI controller;
+    [SerializeField]
+    private bool canUsePowerDown;
 
     private void Awake()
     {
@@ -23,7 +27,8 @@ public class PowerDownUser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        controller = GameObject.Find("ControllerGUI").GetComponent<ControllerGUI>();
+        controller.user = this;
     }
 
     // Update is called once per frame
@@ -38,21 +43,52 @@ public class PowerDownUser : MonoBehaviour
 
     private void usePowerDown()
     {
-        if(currentPowerDown != null)
+        if(currentPowerDown != null && !powerDownActivated && canUsePowerDown)
         {
+            powerDownActivated = true;
             currentPowerDown.Activate(car);
-            currentPowerDown = null;
+        }
+        if(powerDownActivated)
+        {
+            Debug.Log("NOOO, ya lo usé");
+        }
+        if (!canUsePowerDown)
+        {
+            Debug.Log("NOOO, aun no puedes usarlo");
+
+        }
+        if (currentPowerDown == null) {
+            Debug.Log("NOOOO, aun no lo tienes");
         }
     }
 
+    public void ResetPowerDown()
+    {
+        currentPowerDown = null;
+        powerDownActivated = false;
+        controller.WipeOutPowerDown();
+        //avisar al controllador de poner en alpha la imagen del powerdown
+    }
+
     public void SetCurrentPowerDown(IPowerDown currentPowerDown)
-    {   
+    {
+        canUsePowerDown = false;
+        this.currentPowerDown = currentPowerDown;
+
+    }
+    public void CanUsePowerDown()
+    {
+        canUsePowerDown = true;
+    }
+
+    public void PowerDownBoxPicked(IPowerDown powerDown, powerDown powerID)
+    {
         if (this.currentPowerDown == null)
         {
-            if(!isDebug)
-                this.currentPowerDown = currentPowerDown;
-            else
-                this.currentPowerDown = powerDownsToDebug[0].GetComponent<IPowerDown>();
-        }   
+            SetCurrentPowerDown(powerDown);
+            Debug.Log("[PLAYER]: TENEMOS EL " + powerID.ToString());
+            controller.InitGamblingEffectGUI(powerID);
+        }
+
     }
 }

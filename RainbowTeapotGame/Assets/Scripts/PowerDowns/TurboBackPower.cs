@@ -14,6 +14,9 @@ public class TurboBackPower : MonoBehaviour, IPowerDown
     {
         Vector3 posToSpawn = car.transform.position + Vector3.down * 0.50f + Vector3.up;
 
+        car.GetComponent<PowerDownUser>().ResetPowerDown();
+       
+
         Debug.Log("[POWER-DOWN]: " + name);
         if (!car.GetComponent<PlayerControllerNetwork>())
         {

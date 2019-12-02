@@ -15,6 +15,9 @@ public class LegoPower : MonoBehaviour, IPowerDown
 
         Vector3 posToSpawn = car.transform.position + Vector3.back * 3.5f + Vector3.up;
 
+        car.GetComponent<PowerDownUser>().ResetPowerDown();
+        
+
         if (!car.GetComponent<PlayerControllerNetwork>())
         {
             Instantiate(legoPrefab, posToSpawn, Quaternion.identity);

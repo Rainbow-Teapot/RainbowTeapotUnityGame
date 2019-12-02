@@ -12,6 +12,11 @@ public class ControllerGUI : MonoBehaviour
     [SerializeField]
     private Image currentPositionImage;
 
+    [SerializeField]
+    private Image currentPowerDownImage;
+
+    public PowerDownUser user { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +32,20 @@ public class ControllerGUI : MonoBehaviour
     public void AssignPositionGUI(int position)
     {
         currentPositionImage.sprite = positionImages[position - 1];
+    }
+
+    public void InitGamblingEffectGUI(powerDown powerID)
+    {
+        currentPowerDownImage.GetComponent<SpinGamblingEfect>().GamblingEffect(powerID);
+    }
+
+    public void FinishGambling()
+    {
+        user.CanUsePowerDown();
+    }
+
+    public void WipeOutPowerDown()
+    {
+        currentPowerDownImage.GetComponent<SpinGamblingEfect>().ClearImage();
     }
 }
