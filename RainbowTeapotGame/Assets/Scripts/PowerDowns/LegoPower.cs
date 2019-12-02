@@ -13,7 +13,7 @@ public class LegoPower : MonoBehaviour, IPowerDown
     {
         Debug.Log("[POWER-DOWN]: " + name);
 
-        Vector3 posToSpawn = car.transform.position + Vector3.back * 3.5f + Vector3.up;
+        Vector3 posToSpawn = car.transform.position + Vector3.back * 3.5f;
 
         car.GetComponent<PowerDownUser>().ResetPowerDown();
         
