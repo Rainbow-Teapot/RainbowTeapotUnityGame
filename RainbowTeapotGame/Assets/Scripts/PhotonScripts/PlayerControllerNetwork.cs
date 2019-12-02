@@ -16,6 +16,7 @@ using Photon.Pun.Demo.SlotRacer.Utils;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
 using Photon.Pun.Demo.SlotRacer;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Player control. 
@@ -246,6 +247,22 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     
     #endregion Monobehaviour
 
+    public void LeaveRoom()
+    {
+        if (photonView.IsMine)
+        {
+            StartCoroutine(Load());
+        }
+    }
+
+
+    private IEnumerator Load()
+    {
+        PhotonNetwork.LeaveRoom();
+        while (PhotonNetwork.InRoom)
+            yield return null;
+        SceneManager.LoadScene("GameOver");
+    }
 
     [PunRPC]
     void RPC_StartRacing()
