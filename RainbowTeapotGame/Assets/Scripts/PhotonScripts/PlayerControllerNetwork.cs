@@ -251,6 +251,11 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     {
         if (photonView.IsMine)
         {
+            Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.EXIT_GAME, true}
+                    };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
             StartCoroutine(Load());
         }
     }
@@ -259,6 +264,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     private IEnumerator Load()
     {
         PhotonNetwork.LeaveRoom();
+        this.CurrentDistance = 0;
         while (PhotonNetwork.InRoom)
             yield return null;
         SceneManager.LoadScene("GameOver");

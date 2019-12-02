@@ -8,7 +8,6 @@ public class Ice : MonoBehaviour, IObstacle
     private float speedMultiplier = 1.55f;
 
     private SpeedMultiplierDecorator iceDecorator;
-    private bool runOver = false;
 
     private void Start()
     {
@@ -18,9 +17,8 @@ public class Ice : MonoBehaviour, IObstacle
     public void ApplyEffect(CarMovement car)
     {
         //car.SetSpeedMultiplier(1.25f);
-        if (!runOver)
+        if (!car.GetSpeedMultiplierDecorators().Contains(iceDecorator))
         {
-            runOver = true;
             car.AddSpeedDecorator(iceDecorator);
             car.SetCurrentCarState(carStates.ZIGZAG);
         }
@@ -29,7 +27,7 @@ public class Ice : MonoBehaviour, IObstacle
     public void DeApplyEffect(CarMovement car)
     {
         //car.SetSpeedMultiplier(1.0f);
-        runOver = false;
+        
         car.RemoveSpeedDecorator(iceDecorator);
         car.SetCurrentCarState(carStates.IDLE);
     }

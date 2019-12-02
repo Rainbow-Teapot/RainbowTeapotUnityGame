@@ -22,7 +22,7 @@ public class PowerDownBox : MonoBehaviour, IObstacle
             if (user != null)
             {
                 //user.SetCurrentPowerDown(PickPowerDown(0));
-                int id = Random.Range(0, powerDowns.Length - 1);
+                int id = Random.Range(0, powerDowns.Length);
                 //Debug.Log("Ha tocado: " + ((powerDown)id).ToString());
                 user.PowerDownBoxPicked(PickPowerDown(0, id), (powerDown)id);
             }
