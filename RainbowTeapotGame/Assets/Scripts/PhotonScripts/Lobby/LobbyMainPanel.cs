@@ -12,7 +12,7 @@ namespace Photon.Pun.Demo.Asteroids
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
 
-        LanguageManager lang = new LanguageManager();
+        LanguageManager lang = new LanguageManager();        
 
         [Header("Login Panel")]
         public GameObject LoginPanel;
