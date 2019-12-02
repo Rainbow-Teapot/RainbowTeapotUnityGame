@@ -21,6 +21,6 @@ public class PlayerInfo : MonoBehaviour
         DontDestroyOnLoad(this);
             }
 
-        lang = 1;
+        lang = 0;
     }
 }
