@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3260880704550344265}
   - component: {fileID: 6513492774663786287}
   - component: {fileID: 5237285159143595348}
+  - component: {fileID: 8330433008076166869}
   m_Layer: 0
   m_Name: VacaNetwork
   m_TagString: Untagged
@@ -326,6 +327,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8330433008076166869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946241541733676504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a58189b1c6c69c41a71f338fbf18134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &8136886326255620582

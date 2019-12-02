@@ -5,13 +5,15 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player;
+    private GameObject target;
 
     [SerializeField]
     private float zOffset = 20;
 
     [SerializeField]
     private float yOffset = -2;
+
+    public float speed;
 
     private void Start()
     {
@@ -21,13 +23,16 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player != null)
-            transform.position = new Vector3(transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset);
+        if (target != null)
+        {
+            transform.position = new Vector3(transform.position.x, target.transform.position.y + yOffset, target.transform.position.z + zOffset);
+            //speed = target.GetComponent<CameraTarget>().speed;
+        }
         
     }
 
     public void setTarget(GameObject target)
     {
-        player = target;
+        this.target = target;
     }
 }
