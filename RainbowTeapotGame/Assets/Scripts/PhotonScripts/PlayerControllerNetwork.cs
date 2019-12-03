@@ -247,7 +247,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     
     #endregion Monobehaviour
 
-    public void LeaveRoom()
+    public void LeaveRoom(int caseID)
     {
         if (photonView.IsMine)
         {
@@ -256,18 +256,26 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
                         {GameStateInfo.EXIT_GAME, true}
                     };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
-            StartCoroutine(Load());
+            StartCoroutine(Load(caseID));
         }
     }
 
 
-    private IEnumerator Load()
+    private IEnumerator Load(int caseID)
     {
         PhotonNetwork.LeaveRoom();
         this.CurrentDistance = 0;
         while (PhotonNetwork.InRoom)
             yield return null;
-        SceneManager.LoadScene("GameOver");
+        if(caseID == -1)
+        {
+            SceneManager.LoadScene("Lobby");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        
     }
 
     [PunRPC]

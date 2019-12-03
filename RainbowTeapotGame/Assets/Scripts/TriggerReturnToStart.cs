@@ -35,7 +35,7 @@ public class TriggerReturnToStart : MonoBehaviour
         else if (playerInfo != null && manager != null)
         {
             Debug.Log("ME DESCONECTO");
-            other.GetComponent<PlayerControllerNetwork>().LeaveRoom();
+            other.GetComponent<PlayerControllerNetwork>().LeaveRoom(0);
             //manager.EndOfRace(PhotonNetwork.LocalPlayer.GetPlayerNumber());
 
         }
