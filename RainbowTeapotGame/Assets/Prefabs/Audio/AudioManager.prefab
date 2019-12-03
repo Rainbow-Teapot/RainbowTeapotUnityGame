@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4201397822709096034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4201397822709096031}
+  - component: {fileID: 4201397822709096032}
+  - component: {fileID: 4201397822709096033}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4201397822709096031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201397822709096034}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 561.1144, y: 576.89825, z: 356.6077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &4201397822709096032
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201397822709096034}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.354
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &4201397822709096033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4201397822709096034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f006d80d2c7b14eb4750c17f3c4d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Cow1
+    clip: {fileID: 8300000, guid: e333a2cac47af9e44be4624d7778bf56, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cow2
+    clip: {fileID: 8300000, guid: a48145f5f9cbb874d96121377312a081, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cart1
+    clip: {fileID: 8300000, guid: e9df339dcaeef6348929f2d13b761ff5, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Cart2
+    clip: {fileID: 8300000, guid: 43ed8af9f5834ab4a88736630c01fd3e, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Orange1
+    clip: {fileID: 8300000, guid: 1b8229eae1085d3428f8ab75b75e6c4c, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: 'Orange2 '
+    clip: {fileID: 8300000, guid: 1b8229eae1085d3428f8ab75b75e6c4c, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Skate1
+    clip: {fileID: 8300000, guid: ce16d4f75cf6a0542ba9555d39b4662c, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Skate2
+    clip: {fileID: 8300000, guid: 163ebaedd71f49d4c841bebf4d03db73, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Skate3
+    clip: {fileID: 8300000, guid: 30b358c47ef40bc40858cdbaa1a09d0f, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Phone1
+    clip: {fileID: 8300000, guid: 77898cec9150a0a409c432f8b5e5e97e, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Phone2
+    clip: {fileID: 8300000, guid: aa915aac8f50f7a40b7b7ae658e854cb, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Toilet1
+    clip: {fileID: 8300000, guid: d533de7a333e39644b203e5b01351e51, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Toilet2
+    clip: {fileID: 8300000, guid: 3025359956f23da488c8076f3270c726, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bounce
+    clip: {fileID: 8300000, guid: e1d02f70ed82b2c49af231725db466ae, type: 3}
+    volume: 0.517
+    pitch: 1.307
+    loop: 0
+    source: {fileID: 0}
+  - name: Breakable
+    clip: {fileID: 8300000, guid: 4c70488c64a5638489bb1e2190ee21c3, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lego
+    clip: {fileID: 8300000, guid: cb48962dc1f069543a64c70e69c120a8, type: 3}
+    volume: 0.517
+    pitch: 1.239
+    loop: 0
+    source: {fileID: 0}
+  - name: Paper
+    clip: {fileID: 8300000, guid: 95823bbdaeace184f98a04f61e9300ed, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

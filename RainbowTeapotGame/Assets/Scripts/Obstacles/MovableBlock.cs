@@ -9,6 +9,8 @@ public class MovableBlock : MonoBehaviour
 
     private int faceX = 1;
 
+    private string audioclip = "Paper";
+
     // Update is called once per frame
     void Update()
     {

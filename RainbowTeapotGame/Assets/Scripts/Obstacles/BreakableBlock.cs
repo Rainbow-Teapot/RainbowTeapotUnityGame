@@ -7,8 +7,11 @@ public class BreakableBlock : MonoBehaviour,IObstacle
     [SerializeField]
     private float speedMultiplier = 0.25f;
 
+    private string audioclip = "Lego";
+
     public void ApplyEffect(CarMovement car)
     {
+        FindObjectOfType<AudioManager>().Play(audioclip);
         //car.SetSpeedMultiplier(speedMultiplier);
         car.SetVertSpeed(speedMultiplier);
         car.SetCurrentCarState(carStates.IDLE);
