@@ -234,7 +234,7 @@ MonoBehaviour:
   - name: Lego
     clip: {fileID: 8300000, guid: cb48962dc1f069543a64c70e69c120a8, type: 3}
     volume: 0.517
-    pitch: 1.12
+    pitch: 1.239
     loop: 0
     source: {fileID: 0}
   - name: Paper
