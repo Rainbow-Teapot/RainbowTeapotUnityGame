@@ -8,7 +8,7 @@ public class SidePropsSpawner : MonoBehaviour
     private float speed;
 
     [SerializeField]
-    private GameObject[] propsPrefab;
+    private string[] propsPrefabTags;
 
     [SerializeField]
     private int maxProps;
@@ -37,9 +37,12 @@ public class SidePropsSpawner : MonoBehaviour
     [SerializeField]
     private float probabilityPrioryObject = 80.0f;
 
+    private ObjectPooler objectPooler;
+
     // Start is called before the first frame update
     void Start()
     {
+        objectPooler = ObjectPooler.Instance;
         yAxis = transform.position.y;
         //CreateSideProps(maxProps);
         StartCoroutine(CreateSomeSideProps());
@@ -61,7 +64,7 @@ public class SidePropsSpawner : MonoBehaviour
             if (priotityObject > probabilityPrioryObject)
             {
                 numProps = 1;
-                propToCreate = Random.Range(1, propsPrefab.Length);
+                propToCreate = Random.Range(1, propsPrefabTags.Length);
             }
             else
             {
@@ -70,15 +73,15 @@ public class SidePropsSpawner : MonoBehaviour
         }
         else
         {
-            propToCreate = Random.Range(0, propsPrefab.Length);
+            propToCreate = Random.Range(0, propsPrefabTags.Length);
         }
 
         for (int i = 0; i < numProps; i++)
         {
             xAxis = Random.Range(transform.position.x - width, transform.position.x + width);
             zAxis = Random.Range(transform.position.z - height, transform.position.z);
-           
-            GameObject prop = Instantiate(propsPrefab[propToCreate], new Vector3(xAxis, yAxis, zAxis), Quaternion.identity);
+
+            GameObject prop = objectPooler.SpawnFromPool(propsPrefabTags[propToCreate], new Vector3(xAxis, yAxis, zAxis), Quaternion.identity);
             prop.transform.parent = decoration.transform;
             //SideProp sideProp = prop.GetComponent<SideProp>();
         }

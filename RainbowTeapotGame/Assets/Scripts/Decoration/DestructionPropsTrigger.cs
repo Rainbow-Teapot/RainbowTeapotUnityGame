@@ -18,7 +18,7 @@ public class DestructionPropsTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<SideProp>())
-            Destroy(other.gameObject);
+        if (other.GetComponent<SideProp>())
+            other.gameObject.SetActive(false);
     }
 }

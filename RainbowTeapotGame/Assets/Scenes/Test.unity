@@ -2135,6 +2135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecorationSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8487648421588859249, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8487648421588859248, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2212,6 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
+      propertyPath: propsPrefabTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1754957097}
@@ -2229,6 +2239,26 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[0]
+      value: SnowyTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[1]
+      value: Iglu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[2]
+      value: SnowySign
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[3]
+      value: NormalCandyCane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 955557e86d500694fba69ae9874f52d7, type: 3}
@@ -5937,6 +5967,75 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 282d433b6e1b9b245ad45e6b4be6c5ca, type: 3}
+--- !u!1001 &5959450685709933015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5959450685465467789, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectPoolerLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5417578
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -35.185253
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.583748
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959450685465467787, guid: 522e45f7e7c158049ac1cac9c8b88240,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 522e45f7e7c158049ac1cac9c8b88240, type: 3}
 --- !u!1001 &7922682560885022509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6080,6 +6179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
+      propertyPath: propsPrefabTags.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 1754957097}
@@ -6097,6 +6201,26 @@ PrefabInstance:
         type: 3}
       propertyPath: height
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[0]
+      value: SnowyTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[1]
+      value: Iglu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[2]
+      value: SnowySign
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: propsPrefabTags.Array.data[3]
+      value: NormalCandyCane
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 955557e86d500694fba69ae9874f52d7, type: 3}

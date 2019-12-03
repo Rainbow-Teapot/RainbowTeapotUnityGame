@@ -12,9 +12,4 @@ public class SideProp : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
 }
