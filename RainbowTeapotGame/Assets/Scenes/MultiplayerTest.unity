@@ -3421,7 +3421,7 @@ GameObject:
   - component: {fileID: 277391553}
   - component: {fileID: 277391552}
   m_Layer: 5
-  m_Name: StartGameText
+  m_Name: ExitGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3758,7 +3758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &301786636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5680,6 +5680,9 @@ GameObject:
   - component: {fileID: 487969476}
   - component: {fileID: 487969475}
   - component: {fileID: 487969474}
+  - component: {fileID: 487969480}
+  - component: {fileID: 487969479}
+  - component: {fileID: 487969478}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -5704,7 +5707,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 152, y: -110}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 220, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487969474
 MonoBehaviour:
@@ -5812,6 +5815,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487969472}
   m_CullTransparentMesh: 0
+--- !u!114 &487969478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487969472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68115647718ca324cb1785210c259956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 487969480}
+  image: {fileID: 487969476}
+--- !u!114 &487969479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487969472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 487969478}
+          m_MethodName: MouseOver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 487969478}
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 487969478}
+          m_MethodName: MouseDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 487969478}
+          m_MethodName: MouseUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  delegates: []
+--- !u!95 &487969480
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487969472}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e474531239980545a5f9d1186dfefa9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &493732426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746159638189383359, guid: 84ccd166117902d4095ea15c6fb1676e,
@@ -22300,6 +22410,41 @@ PrefabInstance:
       propertyPath: levelMusicName
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: soundText
+      value: 
+      objectReference: {fileID: 2044452409}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: musicText
+      value: 
+      objectReference: {fileID: 2042343246}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 753334876}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: buttonMusic
+      value: 
+      objectReference: {fileID: 656345976}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: exitGameText
+      value: 
+      objectReference: {fileID: 277391552}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: leaveGameText
+      value: 
+      objectReference: {fileID: 277391552}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: optionsText
+      value: 
+      objectReference: {fileID: 576758020}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a89ba59af9a7ba47aff2b5c5f977897, type: 3}
 --- !u!114 &2990500689381141790 stripped

@@ -576,8 +576,8 @@ namespace Photon.Pun.Demo.Asteroids
                 buttonFlag.image.overrideSprite = EngFlag;
             }
 
-            buttonSound.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
-            buttonMusic.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
+            buttonSound.image.overrideSprite = playerInfo.soundsOn ? tickOK : tick;
+            buttonMusic.image.overrideSprite = playerInfo.musicOn ? tickOK : tick;
 
         }
     }
