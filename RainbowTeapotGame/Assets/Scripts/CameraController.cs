@@ -10,6 +10,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float zOffset = 20;
 
+    [SerializeField]
+    private float yOffset = -2;
+
     private void Start()
     {
         
@@ -19,7 +22,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if(player != null)
-            transform.position = new Vector3(transform.position.x, transform.position.y, player.transform.position.z + zOffset);
+            transform.position = new Vector3(transform.position.x, player.transform.position.y + yOffset, player.transform.position.z + zOffset);
         
     }
 
