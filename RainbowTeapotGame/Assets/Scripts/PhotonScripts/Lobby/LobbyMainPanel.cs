@@ -12,7 +12,7 @@ namespace Photon.Pun.Demo.Asteroids
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
 
-        LanguageManager lang = new LanguageManager();
+        LanguageManager lang = new LanguageManager();        
 
         [Header("Login Panel")]
         public GameObject LoginPanel;
@@ -35,6 +35,10 @@ namespace Photon.Pun.Demo.Asteroids
         public Button buttonFlag;
         public Sprite EngFlag;
         public Sprite SpaFlag;
+        public Button buttonSound;
+        public Button buttonMusic;
+        public Sprite tick;
+        public Sprite tickOK; 
 
         [Header("Credits Panel")]
         public GameObject CreditsPanel;
@@ -306,13 +310,25 @@ namespace Photon.Pun.Demo.Asteroids
             
             playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
-            //iniciar animación y después de un segundo mostrar el coche
-            
-            CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
+            FindObjectOfType<AudioManager>().Character(playerInfo.vehiclePicked.ToString());
+        
+        
+        //iniciar animación y después de un segundo mostrar el coche
+
+        CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
             StartCoroutine("ShowShowcaseCoroutine");
-            //Asign the character to the player
-            //SetActivePanel(JoinRandomRoomPanel.name);
-            //PhotonNetwork.JoinRandomRoom();
+            
+        }
+
+        public void OnMusicButtonClicked(Button button) {
+            FindObjectOfType<PlayerInfo>().musicOn = (!FindObjectOfType<PlayerInfo>().musicOn);
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
+            FindObjectOfType<MusicManager>().PlayOrPause("MenuTheme");
+        }
+
+        public void OnSoundButtonClicked(Button button) {
+            FindObjectOfType<PlayerInfo>().soundsOn = (!FindObjectOfType<PlayerInfo>().soundsOn);
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
         }
 
         public void OnChangeLanguageClicked()
@@ -537,6 +553,8 @@ namespace Photon.Pun.Demo.Asteroids
                 buttonFlag.image.overrideSprite = EngFlag;
             }
 
+            buttonSound.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
+            buttonMusic.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
 
         }
     }

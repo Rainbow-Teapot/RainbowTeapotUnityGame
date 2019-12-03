@@ -9,6 +9,8 @@ public class LegoPower : MonoBehaviour, IPowerDown
     [SerializeField]
     private GameObject legoPrefab;
 
+    private string audioclip = "Lego";
+
     public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
