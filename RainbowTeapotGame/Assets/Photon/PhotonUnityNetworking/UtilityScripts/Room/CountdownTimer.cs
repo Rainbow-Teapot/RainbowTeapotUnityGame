@@ -72,7 +72,9 @@ namespace Photon.Pun.UtilityScripts
             float timer = (float)PhotonNetwork.Time - startTime;
             float countdown = Countdown - timer;
 
-            Text.text = string.Format("{0}", countdown.ToString("n2"));
+            //Text.text = string.Format("{0}", countdown.ToString("n2"));
+
+            Text.text = ((int)countdown).ToString();
 
             if (countdown > 0.0f)
             {
