@@ -269,6 +269,8 @@ MonoBehaviour:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
+  powerDownActivated: 0
+  canUsePowerDown: 0
 --- !u!114 &114865070766527600
 MonoBehaviour:
   m_ObjectHideFlags: 0
