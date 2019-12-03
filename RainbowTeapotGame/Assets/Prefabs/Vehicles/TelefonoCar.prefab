@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 7712384651667685833}
   - component: {fileID: 4821755730498477498}
   - component: {fileID: 3098121221112135208}
-  - component: {fileID: 6743192036162932506}
   m_Layer: 0
   m_Name: TelefonoCar
   m_TagString: Untagged
@@ -490,18 +489,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6743192036162932506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7263966245663794683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a58189b1c6c69c41a71f338fbf18134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7263966245666059529

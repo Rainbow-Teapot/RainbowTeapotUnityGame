@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5311861825045323666}
-  - component: {fileID: 5276311719746200664}
-  - component: {fileID: 65503862542621876}
   m_Layer: 2
   m_Name: IgluPrefab
   m_TagString: Untagged
@@ -33,31 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5276311719746200664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7594111343662204641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111462b57a1b58749aa238b1cd572eb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &65503862542621876
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7594111343662204641}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6535147560920772548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65,14 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5311861825045323666}
     m_Modifications:
-    - target: {fileID: 100000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
-      propertyPath: m_Name
-      value: iglu
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -128,6 +93,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.05000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
+      propertyPath: m_Name
+      value: iglu
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: d822d436d111d184dba767bd48e450a8, type: 3}
       propertyPath: m_Materials.Array.data[0]

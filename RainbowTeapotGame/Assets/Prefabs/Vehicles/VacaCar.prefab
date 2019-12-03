@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 2371114229846873657}
   - component: {fileID: 2472793550204993067}
   - component: {fileID: 8629573409400068168}
-  - component: {fileID: 113513733539079768}
   m_Layer: 0
   m_Name: VacaCar
   m_TagString: Untagged
@@ -263,18 +262,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &113513733539079768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946241541733676504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a58189b1c6c69c41a71f338fbf18134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &8136886326255620582

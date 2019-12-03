@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: 2340959445912644461}
   - component: {fileID: 537953862317207326}
   - component: {fileID: 6027782273371590705}
-  - component: {fileID: 2939055863230907700}
   m_Layer: 0
   m_Name: VaterNetwork
   m_TagString: Untagged
@@ -404,18 +403,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2939055863230907700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4347562700194382530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a58189b1c6c69c41a71f338fbf18134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &807215197610652323

@@ -13,8 +13,6 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private float yOffset = -2;
 
-    public float speed;
-
     private void Start()
     {
         
@@ -26,7 +24,6 @@ public class CameraController : MonoBehaviour
         if (target != null)
         {
             transform.position = new Vector3(transform.position.x, target.transform.position.y + yOffset, target.transform.position.z + zOffset);
-            //speed = target.GetComponent<CameraTarget>().speed;
         }
         
     }
