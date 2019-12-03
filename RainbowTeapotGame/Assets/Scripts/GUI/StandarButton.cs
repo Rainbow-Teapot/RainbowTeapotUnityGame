@@ -12,7 +12,7 @@ public class StandarButton : MonoBehaviour
 
     private void Start()
     {
-        image.alphaHitTestMinimumThreshold = 0.5f;
+        //image.alphaHitTestMinimumThreshold = 0.5f;
     }
 
     public void MouseOver()

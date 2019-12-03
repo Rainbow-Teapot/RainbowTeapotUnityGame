@@ -12,7 +12,9 @@ namespace Photon.Pun.Demo.Asteroids
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
 
-        LanguageManager lang = new LanguageManager();        
+        LanguageManager lang = new LanguageManager();
+        Animator animLogin;
+       
 
         [Header("Login Panel")]
         public GameObject LoginPanel;
@@ -95,8 +97,10 @@ namespace Photon.Pun.Demo.Asteroids
 
             cachedRoomList = new Dictionary<string, RoomInfo>();
             roomListEntries = new Dictionary<string, GameObject>();
-            
-           
+
+            animLogin = LoginPanel.GetComponent<Animator>();          
+
+
         }
 
         private void Start()
@@ -107,6 +111,8 @@ namespace Photon.Pun.Demo.Asteroids
 
             if (playerInfo.hasBeenLogged)
             {
+
+                
                 SetActivePanel(SelectionPanel.name);
             }
 
@@ -114,9 +120,9 @@ namespace Photon.Pun.Demo.Asteroids
             
 
             updateTexts();
-            
-            
 
+
+            
 
         }
 
@@ -296,12 +302,14 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnTrainingButtonClicked()
         {
             playerInfo.online = false;
+            
             SetActivePanel(CharacterSelectionPanel.name);
         }
 
         public void OnJoinRandomRoomButtonClicked()
         {
             playerInfo.online = true;
+            
             SetActivePanel(CharacterSelectionPanel.name);
         }
         public void OnCharacterClicked(Button button) {
@@ -359,11 +367,11 @@ namespace Photon.Pun.Demo.Asteroids
             CharacterShowcasePanel.SetActive(false);
         }
 
-        public void OnConfigurationButtonClicked() {
+        public void OnConfigurationButtonClicked() {            
             SetActivePanel(ConfigurationPanel.name);
         }
 
-        public void OnCreditsButtonClicked() {
+        public void OnCreditsButtonClicked() {            
             SetActivePanel(CreditsPanel.name);
         }
 
@@ -393,15 +401,20 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void OnLoginButtonClicked()
         {
+            
             string playerName = PlayerNameInput.text;
             playerInfo.hasBeenLogged = true;
             if (!playerName.Equals(""))
             {
+                animLogin.SetBool("NextScreen", true);
                 PhotonNetwork.LocalPlayer.NickName = playerName;
                 PhotonNetwork.ConnectUsingSettings();
+                
+
             }
             else
             {
+                animLogin.SetBool("NextScreen", false);
                 Debug.LogError("Player Name is invalid.");
             }
         }
