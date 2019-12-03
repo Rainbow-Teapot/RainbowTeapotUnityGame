@@ -62,6 +62,7 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
         public TextMeshProUGUI tryingToJoinText;
+        private readonly int MAX_PLAYERS_PER_ROOM = 5;
 
         [Header("Room List Panel")]
         public GameObject RoomListPanel;
@@ -165,7 +166,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             string roomName = "Room " + Random.Range(1000, 10000);
 
-            RoomOptions options = new RoomOptions {MaxPlayers = 8};
+            RoomOptions options = new RoomOptions {MaxPlayers = (byte)MAX_PLAYERS_PER_ROOM};
 
             PhotonNetwork.CreateRoom(roomName, options, null);
         }
@@ -226,6 +227,12 @@ namespace Photon.Pun.Demo.Asteroids
 
             playerListEntries.Add(newPlayer.ActorNumber, entry);
 
+            if (PhotonNetwork.CurrentRoom.PlayerCount == MAX_PLAYERS_PER_ROOM)
+            {
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+            }
+
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -233,6 +240,9 @@ namespace Photon.Pun.Demo.Asteroids
         {
             Destroy(playerListEntries[otherPlayer.ActorNumber].gameObject);
             playerListEntries.Remove(otherPlayer.ActorNumber);
+
+            PhotonNetwork.CurrentRoom.IsOpen = true;
+            PhotonNetwork.CurrentRoom.IsVisible = true;
 
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
@@ -286,7 +296,7 @@ namespace Photon.Pun.Demo.Asteroids
 
             byte maxPlayers;
             byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
-            maxPlayers = (byte) Mathf.Clamp(maxPlayers, 2, 8);
+            maxPlayers = (byte) Mathf.Clamp(maxPlayers, 2, MAX_PLAYERS_PER_ROOM);
 
             RoomOptions options = new RoomOptions {MaxPlayers = maxPlayers};
 

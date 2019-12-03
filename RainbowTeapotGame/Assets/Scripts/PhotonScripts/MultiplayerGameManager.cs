@@ -35,7 +35,7 @@ namespace Photon.Pun.Demo.Asteroids
         private PhotonView pv;
 
         [SerializeField]
-        private Transform startPosition;
+        private Transform[] startingPositions;
 
         [SerializeField]
         private ControllerGUI controller;
@@ -225,7 +225,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
 
-            Vector3 position = new Vector3((playerNumber * 3 - 3), startPosition.position.y, startPosition.position.z);
+            Vector3 position = startingPositions[playerNumber].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
 
