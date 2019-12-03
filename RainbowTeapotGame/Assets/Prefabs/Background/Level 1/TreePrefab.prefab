@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524799402618695647}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TreePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,10 +38,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 524799402618695647}
     m_Modifications:
-    - target: {fileID: 100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
-      propertyPath: m_Name
-      value: treeT
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -97,6 +93,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.10000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
+      propertyPath: m_Name
+      value: treeT
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d00c05d1021f50428751e53f996cb7d, type: 3}
