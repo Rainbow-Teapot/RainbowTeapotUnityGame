@@ -25,18 +25,19 @@ public class GameManagerOffline : MonoBehaviour
     [SerializeField]
     private int countDown;
 
-    private readonly int MAX_VECHICLES = 5;
+    [SerializeField]
+    private Transform endPosition;
 
-    public vehicles vehiclePicked;
+    private readonly int MAX_VECHICLES = 5;
 
     private float[] playerDistances;
 
     private PlayerInfo playerInfo;
 
-
     // Start is called before the first frame update
     void Start()
     {
+        
         playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
         StartGame();
     }
@@ -44,7 +45,8 @@ public class GameManagerOffline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        int playerPosition = CurrentPlayerPosition();
+        controller.AssignPositionGUI(playerPosition);
     }
 
     private void StartGame()
@@ -71,6 +73,23 @@ public class GameManagerOffline : MonoBehaviour
         }
 
         StartCoroutine(CountDown());
+    }
+
+    private int CurrentPlayerPosition()
+    {
+        float distanceToEnd = Vector3.Distance(player.transform.position, endPosition.position);
+        int position = 1;
+        foreach(GameObject iaCar in vehiclesIAs)
+        {
+            if (iaCar != null) {
+                float distanceToEndIA = Vector3.Distance(iaCar.transform.position, endPosition.position);
+                if(distanceToEndIA > distanceToEnd)
+                {
+                    position++;
+                }
+            }
+        }
+        return position;
     }
 
     public void OnExitGameButtonCliked()

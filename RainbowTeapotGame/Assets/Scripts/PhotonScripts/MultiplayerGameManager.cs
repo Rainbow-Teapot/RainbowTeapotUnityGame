@@ -268,46 +268,6 @@ namespace Photon.Pun.Demo.Asteroids
             return true;
         }
 
-        public void CheckEndOfGame()
-        {
-            /*bool allDestroyed = true;
-
-            foreach (Player p in PhotonNetwork.PlayerList)
-            {
-                object lives;
-                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_LIVES, out lives))
-                {
-                    if ((int) lives > 0)
-                    {
-                        allDestroyed = false;
-                        break;
-                    }
-                }
-            }
-
-            if (allDestroyed)
-            {
-                if (PhotonNetwork.IsMasterClient)
-                {
-                    StopAllCoroutines();
-                }
-
-                string winner = "";
-                int score = -1;
-
-                foreach (Player p in PhotonNetwork.PlayerList)
-                {
-                    if (p.GetScore() > score)
-                    {
-                        winner = p.NickName;
-                        score = p.GetScore();
-                    }
-                }
-
-                StartCoroutine(EndOfGame(winner, score));
-            }*/
-        }
-
         private void OnCountdownTimerIsExpired()
         {
             StartRace();

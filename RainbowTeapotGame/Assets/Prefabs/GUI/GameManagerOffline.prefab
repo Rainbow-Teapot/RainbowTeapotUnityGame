@@ -58,4 +58,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   controller: {fileID: 0}
+  textCountDown: {fileID: 0}
+  countDown: 0
   vehiclePicked: 0
