@@ -11,6 +11,7 @@ public class PlayerInfo : MonoBehaviour
     public bool musicOn = true;
     public bool soundsOn = true;
     public bool hasFinishRace = false;
+    public int finalPos = 0; 
 
     private void Awake()
     {
