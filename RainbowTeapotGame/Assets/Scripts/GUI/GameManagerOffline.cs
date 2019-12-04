@@ -46,6 +46,7 @@ public class GameManagerOffline : MonoBehaviour
     void Update()
     {
         int playerPosition = CurrentPlayerPosition();
+        playerInfo.finalPos = playerPosition;
         controller.AssignPositionGUI(playerPosition);
     }
 
