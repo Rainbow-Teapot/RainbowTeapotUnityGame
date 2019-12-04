@@ -163,6 +163,9 @@ namespace Photon.Pun.Demo.Asteroids
                     object playerPosition;
                     targetPlayer.CustomProperties.TryGetValue(GameStateInfo.POSITION, out playerPosition);
                     controller.AssignPositionGUI((int)playerPosition);
+
+                    //ES AQUÍ
+                    FindObjectOfType<PlayerInfo>().finalPos = (int)playerPosition;
                 }
             }
 

@@ -70,8 +70,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.99, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.42, z: 0.18}
+  m_Size: {x: 1.99, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0.18}
 --- !u!54 &6524177031667077311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,14 +310,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1010394577065475852}
     m_Modifications:
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13
@@ -365,6 +357,14 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5219009
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -431,7 +431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: db04a4ea2f5b920489f0823c640ecb46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: db04a4ea2f5b920489f0823c640ecb46, type: 3}
       propertyPath: m_LocalPosition.z

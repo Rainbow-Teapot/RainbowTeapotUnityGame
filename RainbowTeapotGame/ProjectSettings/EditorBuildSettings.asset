@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Test2.unity
     guid: 20e08f0b7a6a98241b418191f7e98c83
   - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: fcbf6c426006cc14f813252111dec76e
+  - enabled: 1
     path: Assets/Scenes/MultiplayerTest.unity
     guid: 5c1c7b22906afa54ca00ed44164181b0
   - enabled: 1
