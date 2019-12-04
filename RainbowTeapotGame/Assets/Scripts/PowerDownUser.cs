@@ -87,7 +87,8 @@ public class PowerDownUser : MonoBehaviour
         {
             SetCurrentPowerDown(powerDown);
             Debug.Log("[PLAYER]: TENEMOS EL " + powerID.ToString());
-            controller.InitGamblingEffectGUI(powerID);
+            if(controller)
+                controller.InitGamblingEffectGUI(powerID);
         }
 
     }

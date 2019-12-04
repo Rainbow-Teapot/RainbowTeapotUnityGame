@@ -99,10 +99,10 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.LeaveRoom();
         }*/
 
-        public void EndOfRace(int caseID)
+        public void EndOfRace()
         {
             //if(playerNumber == PhotonNetwork.LocalPlayer.GetPlayerNumber() && pv.IsOwnerActive && pv.IsMine)
-            player.GetComponent<PlayerControllerNetwork>().LeaveRoom(caseID);
+            player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
         }
 
         #endregion
@@ -118,7 +118,7 @@ namespace Photon.Pun.Demo.Asteroids
             //UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             //SceneManager.LoadScene("GameOver");
             //StartCoroutine(Load());
-            player.GetComponent<PlayerControllerNetwork>().LeaveRoom(0);
+            player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
         }
 
         public override void OnLeftRoom()
@@ -224,7 +224,7 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartGame()
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
-
+            Debug.Log("EEEEEEEEEEEEEEEEEEEE" + playerNumber);
             Vector3 position = startingPositions[playerNumber].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);

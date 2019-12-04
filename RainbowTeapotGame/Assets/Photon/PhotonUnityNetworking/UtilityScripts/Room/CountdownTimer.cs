@@ -76,6 +76,10 @@ namespace Photon.Pun.UtilityScripts
 
             Text.text = ((int)countdown).ToString();
 
+            if((int)countdown == 0){
+                Text.text = "BRAKE DOWN!";
+            }
+
             if (countdown > 0.0f)
             {
                 return;

@@ -10,7 +10,7 @@ public class PlayerInfo : MonoBehaviour
     public int lang;
     public bool musicOn = true;
     public bool soundsOn = true;
-    
+    public bool hasFinishRace = false;
 
     private void Awake()
     {
