@@ -47,6 +47,11 @@ namespace Photon.Pun.UtilityScripts
 
         private float startTime;
 
+        [SerializeField]
+        private Text texto;
+
+        
+
         [Header("Reference to a Text component for visualizing the countdown")]
         public Text Text;
 
@@ -88,6 +93,7 @@ namespace Photon.Pun.UtilityScripts
             isTimerRunning = false;
 
             Text.text = string.Empty;
+            texto.text = string.Empty;
 
             if (OnCountdownTimerHasExpired != null)
             {

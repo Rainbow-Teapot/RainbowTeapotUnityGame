@@ -18,7 +18,8 @@ public class GUIManager : MonoBehaviour
     public TextMeshProUGUI soundText;
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI leaveGameText;
-    public TextMeshProUGUI optionsText; 
+    public TextMeshProUGUI optionsText;
+    public Text controlsText;
 
 
     public LanguageManager lang = new LanguageManager(); 
@@ -73,6 +74,7 @@ public class GUIManager : MonoBehaviour
         soundText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 8);
         leaveGameText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 13);
         optionsText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 21);
+        controlsText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 22);
 
     }
 }

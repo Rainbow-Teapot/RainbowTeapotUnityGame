@@ -18071,6 +18071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc398cf76e6d458caf303b5fceea504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  texto: {fileID: 1781093249}
   Text: {fileID: 1781093247}
   Countdown: 4
 --- !u!114 &1752275182
@@ -18820,6 +18821,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50c3b86d951bb904a9c8036f54037e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1781093249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7938903547516544700, guid: e45b612064d32e947bc04477232c6c82,
+    type: 3}
+  m_PrefabInstance: {fileID: 1781093243}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1790487830
@@ -22470,6 +22483,11 @@ PrefabInstance:
       propertyPath: optionsText
       value: 
       objectReference: {fileID: 576758020}
+    - target: {fileID: 2122167164815580036, guid: 1a89ba59af9a7ba47aff2b5c5f977897,
+        type: 3}
+      propertyPath: controlsText
+      value: 
+      objectReference: {fileID: 1781093249}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a89ba59af9a7ba47aff2b5c5f977897, type: 3}
 --- !u!114 &2990500689381141790 stripped
