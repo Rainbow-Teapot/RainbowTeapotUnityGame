@@ -444,7 +444,18 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("MultiplayerTest");
+
+            float random = Random.Range(0, 10.0f);
+
+            if (random < 5)
+            {
+                PhotonNetwork.LoadLevel("MultiplayerTest");
+            }
+            else
+            {
+                PhotonNetwork.LoadLevel("Level2");
+            }
+
         }
 
         #endregion

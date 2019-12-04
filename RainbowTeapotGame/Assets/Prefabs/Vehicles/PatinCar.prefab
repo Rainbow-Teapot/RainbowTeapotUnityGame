@@ -70,7 +70,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.12, y: 1, z: 1.85}
+  m_Size: {x: 1.12, y: 1.5, z: 1.85}
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!54 &1895485310045027236
 Rigidbody:
@@ -290,17 +290,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485264207126728666}
     m_Modifications:
-    - target: {fileID: 100012, guid: df52ed835391d074c917cf4261519806, type: 3}
-      propertyPath: m_Name
-      value: patinT
-      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.228
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.z
@@ -349,6 +345,10 @@ PrefabInstance:
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: df52ed835391d074c917cf4261519806, type: 3}
+      propertyPath: m_Name
+      value: patinT
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.x
@@ -555,14 +555,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485264207126728666}
     m_Modifications:
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13
@@ -610,6 +602,14 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5219009
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
