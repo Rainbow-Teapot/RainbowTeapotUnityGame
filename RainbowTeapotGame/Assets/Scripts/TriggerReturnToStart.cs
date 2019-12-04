@@ -42,7 +42,15 @@ public class TriggerReturnToStart : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("GameOver");
+            if (other.GetComponent<InputedMovement>().enabled)
+            {
+                playerInfo.hasFinishRace = true;
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }
