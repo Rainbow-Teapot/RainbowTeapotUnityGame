@@ -75,7 +75,10 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject InsideRoomPanel;
         public TextMeshProUGUI leaveGameText;
         public TextMeshProUGUI startGameText;
+        public TextMeshProUGUI startGameText2;
         public TextMeshProUGUI readyText;
+        public TextMeshProUGUI messageReadyText;
+        public TextMeshProUGUI messageStartGameText;
 
         [Header("End Game Panel")]
         public GameObject EndGamePanel;
@@ -83,7 +86,7 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("Player Info")]
         public PlayerInfo playerInfo;
 
-        public Button StartGameButton;
+        public Button StartGameButton;        
         public GameObject PlayerListEntryPrefab;
 
         private Dictionary<string, RoomInfo> cachedRoomList;
@@ -118,7 +121,6 @@ namespace Photon.Pun.Demo.Asteroids
             }
 
             Debug.Log(playerInfo.lang);
-            
 
             updateTexts();
 
@@ -201,7 +203,7 @@ namespace Photon.Pun.Demo.Asteroids
 
                 playerListEntries.Add(p.ActorNumber, entry);
             }
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
 
             Hashtable props = new Hashtable
@@ -238,7 +240,7 @@ namespace Photon.Pun.Demo.Asteroids
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
             }
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -249,7 +251,7 @@ namespace Photon.Pun.Demo.Asteroids
 
             PhotonNetwork.CurrentRoom.IsOpen = true;
             PhotonNetwork.CurrentRoom.IsVisible = true;
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -257,6 +259,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
             {
+                messageStartGameText.gameObject.SetActive(CheckPlayersReady());
                 StartGameButton.gameObject.SetActive(CheckPlayersReady());
             }
         }
@@ -277,7 +280,7 @@ namespace Photon.Pun.Demo.Asteroids
                     entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
                 }
             }
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -498,6 +501,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void LocalPlayerPropertiesUpdated()
         {
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -576,7 +580,10 @@ namespace Photon.Pun.Demo.Asteroids
             tryingToJoinText.text = lang.getText(playerInfo.lang, 12);
             leaveGameText.text = lang.getText(playerInfo.lang, 13);
             startGameText.text = lang.getText(playerInfo.lang, 14);
+            startGameText2.text = lang.getText(playerInfo.lang, 14);
             readyText.text = lang.getText(playerInfo.lang, 15);
+            messageReadyText.text = lang.getText(playerInfo.lang, 19);
+            messageStartGameText.text = lang.getText(playerInfo.lang, 20);
 
 
             if (playerInfo.lang == 0)

@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameOverPanel : MonoBehaviour
 {
 
     public TextMeshProUGUI backToMenu;
     public PlayerInfo playerInfo;
-    public ControllerGUI controllerGUI;
+    
+
+    [SerializeField]
+    private Sprite[] positionImages;
+
+    [SerializeField]
+    private Image currentPositionImage;
+
     LanguageManager lang = new LanguageManager(); 
 
     public void Start()
@@ -18,8 +26,11 @@ public class GameOverPanel : MonoBehaviour
         backToMenu.text = lang.getText(playerInfo.lang, 18);
 
         if (playerInfo.hasFinishRace)
-            controllerGUI.AssignPositionGUI(playerInfo.finalPos);
-        
+            currentPositionImage.sprite = positionImages[playerInfo.finalPos - 1];
+        else {
+            currentPositionImage.enabled = false;
+        }
+
     }
 
     public void OnReturnToMenuButtonClicked()

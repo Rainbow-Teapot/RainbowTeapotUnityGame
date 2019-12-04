@@ -72,7 +72,7 @@ public class GUIManager : MonoBehaviour
         musicText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 7);
         soundText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 8);
         leaveGameText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 13);
-        optionsText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 19);
+        optionsText.text = lang.getText(FindObjectOfType<PlayerInfo>().lang, 21);
 
     }
 }

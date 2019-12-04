@@ -36,7 +36,12 @@ public class MusicManager : MonoBehaviour
 
             PlayOrPause("Level1");
         }
-        
+        if (SceneManager.GetActiveScene().name.Equals("Level2"))
+        {
+
+            PlayOrPause("Level2");
+        }
+
     }
 
     public void PlayOrPause(string name)
