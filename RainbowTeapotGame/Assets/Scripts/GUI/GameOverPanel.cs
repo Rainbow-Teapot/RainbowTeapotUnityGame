@@ -9,12 +9,17 @@ public class GameOverPanel : MonoBehaviour
 
     public TextMeshProUGUI backToMenu;
     public PlayerInfo playerInfo;
+    public ControllerGUI controllerGUI;
     LanguageManager lang = new LanguageManager(); 
 
     public void Start()
     {
         playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
         backToMenu.text = lang.getText(playerInfo.lang, 18);
+
+        if (playerInfo.hasFinishRace)
+            controllerGUI.AssignPositionGUI(playerInfo.finalPos);
+        
     }
 
     public void OnReturnToMenuButtonClicked()

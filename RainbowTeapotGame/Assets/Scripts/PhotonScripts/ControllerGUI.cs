@@ -31,6 +31,7 @@ public class ControllerGUI : MonoBehaviour
 
     public void AssignPositionGUI(int position)
     {
+        
         currentPositionImage.sprite = positionImages[position - 1];
     }
 
