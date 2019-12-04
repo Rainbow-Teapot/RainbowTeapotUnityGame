@@ -7,7 +7,10 @@ public class BreakableBlock : MonoBehaviour,IObstacle
     [SerializeField]
     private float speedMultiplier = 0.25f;
 
-    private string audioclip = "Lego";
+    private string audioclip = "Breakable";
+   // private string audioclip = "Lego";
+   // private string audioclip = "Paper";
+    //private string audioclip = "Bounce";
 
     public void ApplyEffect(CarMovement car)
     {
