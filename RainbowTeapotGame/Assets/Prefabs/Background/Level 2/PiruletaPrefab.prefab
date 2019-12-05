@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3819211536451361963}
   m_Layer: 0
-  m_Name: Piruleta
+  m_Name: PiruletaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 56a32cb0b8f1a9f42b220873751a4d04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 56a32cb0b8f1a9f42b220873751a4d04, type: 3}
       propertyPath: m_LocalPosition.z

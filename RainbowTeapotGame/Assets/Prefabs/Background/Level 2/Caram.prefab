@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caram
       objectReference: {fileID: 0}
+    - target: {fileID: 205900676906352913, guid: c4aeeae8cf105834b92a90233ebcfb6b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f9cef2f33d3b2a4f92401f2ae2efee6, type: 2}
+    - target: {fileID: 205900676908254193, guid: c4aeeae8cf105834b92a90233ebcfb6b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1605632098863818442, guid: c4aeeae8cf105834b92a90233ebcfb6b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,10 +77,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 205900676906352913, guid: c4aeeae8cf105834b92a90233ebcfb6b,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7f9cef2f33d3b2a4f92401f2ae2efee6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4aeeae8cf105834b92a90233ebcfb6b, type: 3}
