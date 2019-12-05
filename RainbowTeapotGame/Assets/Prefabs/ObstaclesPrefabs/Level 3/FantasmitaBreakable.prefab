@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 65239026160338774}
   - component: {fileID: 114282208282911626}
   m_Layer: 0
-  m_Name: SnowmanPrefab
+  m_Name: FantasmitaBreakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0.25
+  audioclip: Breakable
 --- !u!1001 &1562368927910343948
 PrefabInstance:
   m_ObjectHideFlags: 0

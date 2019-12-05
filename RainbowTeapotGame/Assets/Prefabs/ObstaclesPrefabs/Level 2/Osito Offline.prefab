@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_Name
-      value: InflatableBlock Variant 1
+      value: Osito Offline
       objectReference: {fileID: 0}
     - target: {fileID: 7400039202909422574, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
@@ -165,6 +165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speedMultiplier
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114553143228976196, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: audioclip
+      value: Bounce
       objectReference: {fileID: 0}
     - target: {fileID: 65248128879624308, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}

@@ -166,6 +166,11 @@ PrefabInstance:
       propertyPath: speedMultiplier
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 114553143228976196, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: audioclip
+      value: Bounce
+      objectReference: {fileID: 0}
     - target: {fileID: 65248128879624308, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_Size.x

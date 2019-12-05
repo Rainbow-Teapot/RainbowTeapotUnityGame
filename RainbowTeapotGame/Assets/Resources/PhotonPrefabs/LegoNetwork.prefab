@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0
+  audioclip: Lego
 --- !u!114 &6946807132930126743
 MonoBehaviour:
   m_ObjectHideFlags: 0

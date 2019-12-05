@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0.25
+  audioclip: Breakable
 --- !u!1001 &1280416758525438205
 PrefabInstance:
   m_ObjectHideFlags: 0

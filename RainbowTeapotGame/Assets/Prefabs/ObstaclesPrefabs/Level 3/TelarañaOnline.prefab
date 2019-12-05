@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: -6
+  audioclip: Bounce
 --- !u!1001 &6939956929166430848
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0
+  audioclip: Paper
 --- !u!114 &114190399139301936
 MonoBehaviour:
   m_ObjectHideFlags: 0
