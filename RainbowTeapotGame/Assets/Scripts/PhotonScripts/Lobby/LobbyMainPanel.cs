@@ -343,12 +343,14 @@ namespace Photon.Pun.Demo.Asteroids
         }
 
         public void OnMusicButtonClicked(Button button) {
-            FindObjectOfType<PlayerInfo>().musicOn = (!FindObjectOfType<PlayerInfo>().musicOn);
+            FindObjectOfType<AudioManager>().Play("Check");
+            FindObjectOfType<PlayerInfo>().musicOn = (!FindObjectOfType<PlayerInfo>().musicOn);            
             button.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
             FindObjectOfType<MusicManager>().PlayOrPause("MenuTheme");
         }
 
         public void OnSoundButtonClicked(Button button) {
+            FindObjectOfType<AudioManager>().Play("Check");
             FindObjectOfType<PlayerInfo>().soundsOn = (!FindObjectOfType<PlayerInfo>().soundsOn);
             button.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
         }
