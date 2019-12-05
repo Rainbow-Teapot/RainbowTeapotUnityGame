@@ -11,6 +11,8 @@ public class GameOverPanel : MonoBehaviour
 
     public TextMeshProUGUI backToMenu;
     public PlayerInfo playerInfo;
+    public Text text1;
+    public Text text2;
     
 
     [SerializeField]
@@ -18,6 +20,15 @@ public class GameOverPanel : MonoBehaviour
 
     [SerializeField]
     private Image currentPositionImage;
+
+    [SerializeField]
+    private GameObject[] carShowcasePrebaf;
+    private GameObject carShowcaseObject;
+
+    [SerializeField]
+    private Transform PositionAppear;
+
+
 
     LanguageManager lang = new LanguageManager(); 
 
@@ -27,10 +38,22 @@ public class GameOverPanel : MonoBehaviour
         backToMenu.text = lang.getText(playerInfo.lang, 18);
 
         if (playerInfo.hasFinishRace)
+        {
             currentPositionImage.sprite = positionImages[playerInfo.finalPos - 1];
-        else {
-            currentPositionImage.enabled = false;
+            
         }
+        else
+        {
+            currentPositionImage.enabled = false;
+            text1.gameObject.SetActive(true);
+            text2.text = lang.getText(playerInfo.lang, 23);
+            text2.gameObject.SetActive(true);
+        }
+
+        GameObject car = carShowcasePrebaf[(int)playerInfo.vehiclePicked];
+        carShowcaseObject = Instantiate(car, PositionAppear.position, Quaternion.Euler(0, 200, 0));
+       
+
 
     }
 

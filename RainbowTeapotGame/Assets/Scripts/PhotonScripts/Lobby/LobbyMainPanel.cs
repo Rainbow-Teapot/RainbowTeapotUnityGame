@@ -19,6 +19,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         [Header("Login Panel")]
         public GameObject LoginPanel;
+        public TextMeshProUGUI breakToWinText;
         public TextMeshProUGUI nameText;
         public TextMeshProUGUI enterPlayer;
         public TextMeshProUGUI loginText;       
@@ -28,6 +29,7 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject SelectionPanel;
         public TextMeshProUGUI trainingText;
         public TextMeshProUGUI multiplayerText;
+        public TextMeshProUGUI breakToWinText2;
 
         [Header("Configuration Panel")]
         public GameObject ConfigurationPanel;
@@ -590,6 +592,8 @@ namespace Photon.Pun.Demo.Asteroids
             readyText.text = lang.getText(playerInfo.lang, 15);
             messageReadyText.text = lang.getText(playerInfo.lang, 19);
             messageStartGameText.text = lang.getText(playerInfo.lang, 20);
+            breakToWinText.text = lang.getText(playerInfo.lang, 24);
+            breakToWinText2.text = lang.getText(playerInfo.lang, 24);
 
 
             if (playerInfo.lang == 0)
