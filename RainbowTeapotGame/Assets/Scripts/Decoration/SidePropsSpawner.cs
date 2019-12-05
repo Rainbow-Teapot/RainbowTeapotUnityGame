@@ -57,6 +57,7 @@ public class SidePropsSpawner : MonoBehaviour
     public void CreateSideProps(int numProps)
     {
         int propToCreate;
+        Quaternion rotation = Quaternion.identity;
         if (prioritySupport)
         {
             float priotityObject = Random.Range(0.0f, 100.0f);
@@ -69,6 +70,7 @@ public class SidePropsSpawner : MonoBehaviour
             else
             {
                 propToCreate = 0;
+                rotation = Quaternion.Euler(0,Random.Range(0.0f,360.0f),0);
             }
         }
         else
@@ -81,7 +83,7 @@ public class SidePropsSpawner : MonoBehaviour
             xAxis = Random.Range(transform.position.x - width, transform.position.x + width);
             zAxis = Random.Range(transform.position.z - height, transform.position.z);
 
-            GameObject prop = objectPooler.SpawnFromPool(propsPrefabTags[propToCreate], new Vector3(xAxis, yAxis, zAxis), Quaternion.identity);
+            GameObject prop = objectPooler.SpawnFromPool(propsPrefabTags[propToCreate], new Vector3(xAxis, yAxis, zAxis), rotation);
             prop.transform.parent = decoration.transform;
             //SideProp sideProp = prop.GetComponent<SideProp>();
         }
