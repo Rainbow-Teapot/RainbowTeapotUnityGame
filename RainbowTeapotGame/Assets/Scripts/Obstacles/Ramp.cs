@@ -11,6 +11,7 @@ public class Ramp : MonoBehaviour, IObstacle
     {
         //Debug.Log("Estoy acelerando: ");
         //car.SetSpeedMultiplier(speedMultiplier);
+        FindObjectOfType<AudioManager>().Play("Boost");
         car.SetVertSpeed(speedMultiplier);
         //car.SetCurrentCarState(carStates.BOOST);
         //car.Boost();

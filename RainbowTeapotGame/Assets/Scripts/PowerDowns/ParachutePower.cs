@@ -13,6 +13,7 @@ public class ParachutePower : MonoBehaviour, IPowerDown
     public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
+        FindObjectOfType<AudioManager>().Play("Parachute");
 
         Vector3 posToSpawn = car.transform.position + new Vector3(0, 1, 3);
         Parachute parachute;

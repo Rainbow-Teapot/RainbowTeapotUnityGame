@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 65239026160338774}
   - component: {fileID: 114282208282911626}
   m_Layer: 0
-  m_Name: SnowmanPrefab
+  m_Name: AlgodonBreakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 0.25
+  audioclip: Breakable
 --- !u!1001 &1914162818968524988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,11 +67,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 746159638189383359}
     m_Modifications:
-    - target: {fileID: 4577902103500031678, guid: a86dbf2e2928ffb4fa34939c05903edc,
-        type: 3}
-      propertyPath: m_Name
-      value: AlgodonPrefab
-      objectReference: {fileID: 0}
     - target: {fileID: 646086756848716880, guid: a86dbf2e2928ffb4fa34939c05903edc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -125,6 +121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577902103500031678, guid: a86dbf2e2928ffb4fa34939c05903edc,
+        type: 3}
+      propertyPath: m_Name
+      value: AlgodonPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a86dbf2e2928ffb4fa34939c05903edc, type: 3}

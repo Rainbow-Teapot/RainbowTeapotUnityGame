@@ -10,6 +10,8 @@ public class DalsyPower : MonoBehaviour, IPowerDown
     public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
+
+        FindObjectOfType<AudioManager>().Play("Glup");
         Dalsy dalsy = Instantiate(dalsyPrefab, Vector3.zero, Quaternion.identity).GetComponent<Dalsy>();
         dalsy.car = car;
     }

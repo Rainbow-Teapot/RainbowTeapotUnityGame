@@ -31,6 +31,7 @@ public class MusicManager : MonoBehaviour
             PlayOrPause("MenuTheme");
         }
 
+       /* 
         if (SceneManager.GetActiveScene().name.Equals("MultiplayerTest"))
         {
 
@@ -46,6 +47,8 @@ public class MusicManager : MonoBehaviour
 
             PlayOrPause("Level3");
         }
+        */
+
 
     }
 
