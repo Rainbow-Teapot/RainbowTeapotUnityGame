@@ -454,13 +454,16 @@ namespace Photon.Pun.Demo.Asteroids
 
             if (random < 5)
             {
+                playerInfo.level = levels.SNOWY_MOUNTAIN;
                 PhotonNetwork.LoadLevel("MultiplayerTest");
             }
             else if (random < 10)
             {
+                playerInfo.level = levels.CANDY;
                 PhotonNetwork.LoadLevel("Level2");
             }
             else {
+                playerInfo.level = levels.NIGHTMARES;
                 PhotonNetwork.LoadLevel("Level3");
 
             }

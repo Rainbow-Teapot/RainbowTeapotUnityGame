@@ -212,7 +212,6 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartGame()
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
-            Debug.Log("EEEEEEEEEEEEEEEEEEEE" + playerNumber);
             Vector3 position = startingPositions[playerNumber % 5].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
