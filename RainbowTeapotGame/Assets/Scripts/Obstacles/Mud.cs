@@ -18,6 +18,7 @@ public class Mud : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
+        FindObjectOfType<AudioManager>().Play("Mud");
         //if(car.GetSpeedMultiplier() > speedMultiplier)
         //car.SetSpeedMultiplier(speedMultiplier);
         if (!car.GetSpeedMultiplierDecorators().Contains(mudDecorator))

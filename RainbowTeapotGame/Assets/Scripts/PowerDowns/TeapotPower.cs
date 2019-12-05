@@ -11,6 +11,7 @@ public class TeapotPower : MonoBehaviour, IPowerDown
 
     public void Activate(CarMovement car)
     {
+        FindObjectOfType<AudioManager>().Play("Teapot");
         Debug.Log("[POWER-DOWN]: " + name);
         Vector3 posToSpawn = car.transform.position + Vector3.up * 1.25f + Vector3.back * 2f;
 

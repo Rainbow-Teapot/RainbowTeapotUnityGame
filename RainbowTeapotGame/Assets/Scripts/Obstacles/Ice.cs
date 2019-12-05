@@ -17,6 +17,7 @@ public class Ice : MonoBehaviour, IObstacle
     public void ApplyEffect(CarMovement car)
     {
         //car.SetSpeedMultiplier(1.25f);
+        FindObjectOfType<AudioManager>().Play("Ice");
         if (!car.GetSpeedMultiplierDecorators().Contains(iceDecorator))
         {
             car.AddSpeedDecorator(iceDecorator);

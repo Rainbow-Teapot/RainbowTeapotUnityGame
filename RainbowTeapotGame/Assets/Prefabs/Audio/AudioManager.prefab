@@ -172,7 +172,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: 'Orange2 '
-    clip: {fileID: 8300000, guid: 1b8229eae1085d3428f8ab75b75e6c4c, type: 3}
+    clip: {fileID: 8300000, guid: a470a432bffb355438e6ebb76de808ce, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Paper
     clip: {fileID: 8300000, guid: e4b4333fee1787c438c99243532707f5, type: 3}
-    volume: 0.517
+    volume: 0.353
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -281,6 +281,48 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Countdown3
     clip: {fileID: 8300000, guid: c5ee5cb24884f03418e54104b2842139, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Countdown3
+    clip: {fileID: 8300000, guid: c5ee5cb24884f03418e54104b2842139, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ice
+    clip: {fileID: 8300000, guid: 9754246dea996e046a455cf4612db979, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Mud
+    clip: {fileID: 8300000, guid: b078837a8d6fa144eb60b13bc0b3e996, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PowerDown
+    clip: {fileID: 8300000, guid: 60c05375ecee94d4c83556f6b0414cf5, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: 60c05375ecee94d4c83556f6b0414cf5, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Check
+    clip: {fileID: 8300000, guid: 7fc64e125b97b1d4d902100129d82f54, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Teapot
+    clip: {fileID: 8300000, guid: c9b68e8a94f6b7846a4123519afb609d, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
