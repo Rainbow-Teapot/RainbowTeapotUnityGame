@@ -44,6 +44,7 @@ public class ControllerGUI : MonoBehaviour
 
     public void InitGamblingEffectGUI(powerDown powerID)
     {
+        FindObjectOfType<AudioManager>().Play("PowerDown");
         currentPowerDownImage.GetComponent<SpinGamblingEfect>().GamblingEffect(powerID);
     }
 

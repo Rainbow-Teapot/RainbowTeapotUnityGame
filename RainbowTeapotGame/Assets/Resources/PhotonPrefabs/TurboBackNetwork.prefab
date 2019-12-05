@@ -188,11 +188,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8445444116539935881}
     m_Modifications:
-    - target: {fileID: 2636114456889201217, guid: 56d07f35f417af54f97ba030d78b346f,
-        type: 3}
-      propertyPath: m_Name
-      value: CohetePrefab
-      objectReference: {fileID: 0}
     - target: {fileID: 654534179067021337, guid: 56d07f35f417af54f97ba030d78b346f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,6 +242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636114456889201217, guid: 56d07f35f417af54f97ba030d78b346f,
+        type: 3}
+      propertyPath: m_Name
+      value: CohetePrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d07f35f417af54f97ba030d78b346f, type: 3}

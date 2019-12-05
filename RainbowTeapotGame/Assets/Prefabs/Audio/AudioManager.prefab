@@ -298,13 +298,13 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Mud
-    clip: {fileID: 8300000, guid: b078837a8d6fa144eb60b13bc0b3e996, type: 3}
+    clip: {fileID: 8300000, guid: 3336a4f1071300140a3f88c5a3b9262f, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PowerDown
-    clip: {fileID: 8300000, guid: 60c05375ecee94d4c83556f6b0414cf5, type: 3}
+    clip: {fileID: 8300000, guid: 6184fad2539b790449e30fb03aeebc9e, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Teapot
-    clip: {fileID: 8300000, guid: c9b68e8a94f6b7846a4123519afb609d, type: 3}
+    clip: {fileID: 8300000, guid: 94c88439dc8d2c34192606f8ad04c949, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0

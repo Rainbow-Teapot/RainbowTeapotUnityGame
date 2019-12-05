@@ -13,11 +13,12 @@ public class PowerDownBox : MonoBehaviour, IObstacle
 
     public void ApplyEffect(CarMovement car)
     {
-        FindObjectOfType<AudioManager>().Play("PowerDown");
+        
         if (!hasCrashed)
         {
             hasCrashed = true;
             PowerDownUser user = car.GetComponent<PowerDownUser>();
+            
             //avisar al usuario de que avise al controlador para iniciar la ruleta, se le pasa también
             //el power up que ha salido
             if (user != null)
@@ -26,6 +27,7 @@ public class PowerDownBox : MonoBehaviour, IObstacle
                 int id = Random.Range(0, powerDowns.Length);
                 //Debug.Log("Ha tocado: " + ((powerDown)id).ToString());
                 user.PowerDownBoxPicked(PickPowerDown(0, id), (powerDown)id);
+                
             }
             Destroy(gameObject);
         }
