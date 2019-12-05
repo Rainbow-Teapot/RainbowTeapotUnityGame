@@ -36,6 +36,7 @@ public class GameOverPanel : MonoBehaviour
     {
         playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
         backToMenu.text = lang.getText(playerInfo.lang, 18);
+        playMusic();
 
         if (playerInfo.hasFinishRace)
         {
@@ -62,5 +63,45 @@ public class GameOverPanel : MonoBehaviour
         if(!PhotonNetwork.IsConnected)
             PhotonNetwork.ConnectUsingSettings();
         SceneManager.LoadScene("Lobby");
+    }
+
+    private void playMusic() {
+
+        if ((int)playerInfo.level == 0)
+        {
+            if (playerInfo.finalPos == 1 && playerInfo.hasFinishRace)
+                FindObjectOfType<MusicManager>().PlayOrPause("Victorylvl1");
+            else
+            {
+                FindObjectOfType<MusicManager>().PlayOrPause("Defeatlvl1");
+
+            }
+        }
+        else if ((int)playerInfo.level == 1)
+        {
+
+            if (playerInfo.finalPos == 1 && playerInfo.hasFinishRace)
+                FindObjectOfType<MusicManager>().PlayOrPause("Victorylvl2");
+            else
+            {
+                FindObjectOfType<MusicManager>().PlayOrPause("Defeatlvl2");
+
+            }
+        }
+        else {
+
+            if (playerInfo.finalPos == 1&& playerInfo.hasFinishRace)
+                FindObjectOfType<MusicManager>().PlayOrPause("Victorylvl3");
+            else
+            {
+                FindObjectOfType<MusicManager>().PlayOrPause("Defeatlvl3");
+
+            }
+
+        }
+
+
+
+
     }
 }
