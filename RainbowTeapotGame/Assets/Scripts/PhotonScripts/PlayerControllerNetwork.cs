@@ -28,7 +28,6 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
 {
 
     public GameObject CarPrefab;
-    public float MaximumSpeed = 20;
     public float Drag = 5;
 
     public bool startRacing = false;
