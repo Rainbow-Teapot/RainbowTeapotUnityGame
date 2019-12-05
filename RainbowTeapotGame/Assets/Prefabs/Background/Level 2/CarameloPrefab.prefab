@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1605632098863818442}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CarameloPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,6 +42,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: carameloT
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 83278305fd26c4f4c9e3be13b46678ec, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 83278305fd26c4f4c9e3be13b46678ec, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c50550aa60127f64c93cf862dbb715d1, type: 2}
     - target: {fileID: 400000, guid: 83278305fd26c4f4c9e3be13b46678ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -98,10 +106,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.050000016
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: 83278305fd26c4f4c9e3be13b46678ec, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c50550aa60127f64c93cf862dbb715d1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83278305fd26c4f4c9e3be13b46678ec, type: 3}
 --- !u!4 &205900676908254193 stripped

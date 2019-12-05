@@ -207,9 +207,6 @@ namespace Photon.Pun.Demo.Asteroids
         {
             base.OnPlayerLeftRoom(otherPlayer);
 
-            PlayerControllerNetwork emulatedCar = GameObject.Find("EmulatedCar" + otherPlayer.GetPlayerNumber()).GetComponent<PlayerControllerNetwork>();
-            emulatedCar.DestroyMiniature();
-
             if(PhotonNetwork.IsMasterClient)
             {
                 Hashtable props = new Hashtable

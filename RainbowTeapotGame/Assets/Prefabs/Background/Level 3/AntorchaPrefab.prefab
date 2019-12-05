@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69851096269835106}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AntorchaPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +41,18 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a1996134ce5fa734b9fd67434f20219f, type: 3}
       propertyPath: m_Name
       value: antorchaT
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a1996134ce5fa734b9fd67434f20219f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a1996134ce5fa734b9fd67434f20219f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: a1996134ce5fa734b9fd67434f20219f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a1996134ce5fa734b9fd67434f20219f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -189,6 +189,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     /// </summary>
     private void OnDestroy()
     {
+        Destroy(minimapMiniature.gameObject);
         Destroy(this.CarInstance);
     }
 
@@ -283,11 +284,6 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
         //SceneManager.LoadScene("GameOver");
 
 
-    }
-
-    public void DestroyMiniature()
-    {
-        Destroy(minimapMiniature);
     }
 
     [PunRPC]

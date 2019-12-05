@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class MinimapMiniature : MonoBehaviour
 {
     [SerializeField]
+    private float offsetLocalPlayer;
+    [SerializeField]
     private Sprite[] localMiniatures;
+    [SerializeField]
+    private float offsetRemotePlayer;
     [SerializeField]
     private Sprite[] remoteMiniatures;
 
@@ -16,21 +20,22 @@ public class MinimapMiniature : MonoBehaviour
 
     private Vector3 initialLocalPosition;
 
+
     public void Init(vehicles vehicle, bool scaled)
     {
-        
+
         if (scaled)
         {
             image.sprite = localMiniatures[(int)vehicle];
             transform.SetAsLastSibling();
-            initialLocalPosition = new Vector3(100, maxDistance/2, 0);
+            initialLocalPosition = new Vector3(offsetLocalPlayer, maxDistance/2 , 0);
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
         {
             image.sprite = remoteMiniatures[(int)vehicle];
             transform.SetAsFirstSibling();
-            initialLocalPosition = new Vector3(-50, maxDistance / 2 + 10, 0);
+            initialLocalPosition = new Vector3(offsetRemotePlayer, maxDistance / 2, 0);
             transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         }
 
@@ -56,6 +61,6 @@ public class MinimapMiniature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+ 
     }
 }

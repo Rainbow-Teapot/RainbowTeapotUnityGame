@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5123997962991062221}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReindeerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +41,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b31e712ec54cd1540ba4d756f29362e9, type: 3}
       propertyPath: m_Name
       value: ReindeerKawaiiDesune
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b31e712ec54cd1540ba4d756f29362e9, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b31e712ec54cd1540ba4d756f29362e9, type: 3}
       propertyPath: m_LocalPosition.x
