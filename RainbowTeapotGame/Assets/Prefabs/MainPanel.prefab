@@ -8756,6 +8756,7 @@ GameObject:
   - component: {fileID: 5126609985157760796}
   - component: {fileID: 5126609985157760798}
   - component: {fileID: 5126609985157760797}
+  - component: {fileID: 8556026384924552169}
   - component: {fileID: 5126609985157760799}
   m_Layer: 5
   m_Name: MainPanel
@@ -8859,6 +8860,18 @@ MonoBehaviour:
   StartGameButton: {fileID: 5126609986761860066}
   PlayerListEntryPrefab: {fileID: 195212, guid: d68bf8413681d9b4aa7328277e632e3f,
     type: 3}
+--- !u!114 &8556026384924552169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126609985157760787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfd42ca67dd4bd43b5259019352f836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5126609985157760799
 MonoBehaviour:
   m_ObjectHideFlags: 0
