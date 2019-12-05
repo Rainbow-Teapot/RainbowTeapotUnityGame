@@ -83,6 +83,7 @@ namespace Photon.Pun.UtilityScripts
 
             if((int)countdown == 0){
                 Text.text = "BRAKE DOWN!";
+                
             }
 
             if (countdown > 0.0f)

@@ -13,6 +13,7 @@ public class TurboBackPower : MonoBehaviour, IPowerDown
     public void Activate(CarMovement car)
     {
         Vector3 posToSpawn = car.transform.position + Vector3.down * 0.50f + Vector3.up;
+        FindObjectOfType<AudioManager>().Play("Rocket");
 
         car.GetComponent<PowerDownUser>().ResetPowerDown();
        

@@ -221,13 +221,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Bounce
     clip: {fileID: 8300000, guid: e1d02f70ed82b2c49af231725db466ae, type: 3}
-    volume: 0.517
+    volume: 0.4
     pitch: 1.307
     loop: 0
     source: {fileID: 0}
   - name: Breakable
-    clip: {fileID: 8300000, guid: e24ca1b6d4ce4d4408ccce59b8421e26, type: 3}
-    volume: 0.517
+    clip: {fileID: 8300000, guid: 4c70488c64a5638489bb1e2190ee21c3, type: 3}
+    volume: 0.592
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -239,6 +239,48 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Paper
     clip: {fileID: 8300000, guid: e4b4333fee1787c438c99243532707f5, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Boost
+    clip: {fileID: 8300000, guid: d203ad4e684c546409e84b435c91d564, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Glup
+    clip: {fileID: 8300000, guid: 0917b70ba8fb7ff4fa4620f8c6987fbf, type: 3}
+    volume: 0.623
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Parachute
+    clip: {fileID: 8300000, guid: 9cde0f3137a8b6847b4394b8f03d5a11, type: 3}
+    volume: 0.451
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Rocket
+    clip: {fileID: 8300000, guid: 3be2e98e176545f429d9cea75704ad23, type: 3}
+    volume: 0.482
+    pitch: 0.65
+    loop: 0
+    source: {fileID: 0}
+  - name: Countdown1
+    clip: {fileID: 8300000, guid: 5fa676248c274d24fa3cd6a39e43d7e0, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Countdown2
+    clip: {fileID: 8300000, guid: a64acb6b348de5b4fa52f330283e78af, type: 3}
+    volume: 0.517
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Countdown3
+    clip: {fileID: 8300000, guid: c5ee5cb24884f03418e54104b2842139, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
