@@ -263,10 +263,12 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     private IEnumerator Load()
     {
         PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.Disconnect();
         this.CurrentDistance = 0;
         while (PhotonNetwork.InRoom)
+        //while(PhotonNetwork.IsConnected)
             yield return null;
-        SceneManager.LoadScene("GameOver");
+        //SceneManager.LoadScene("GameOver");
        
         
     }

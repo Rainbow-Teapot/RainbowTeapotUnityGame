@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun.UtilityScripts;
 
 namespace Photon.Pun.Demo.Asteroids
 {
@@ -125,17 +126,10 @@ namespace Photon.Pun.Demo.Asteroids
             Debug.Log(playerInfo.lang);
 
             updateTexts();
-
-
-            
-
         }
 
         private void Update()
-        {
-            
-            
-            
+        {   
         }
 
         #endregion
@@ -231,10 +225,13 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             GameObject entry = Instantiate(PlayerListEntryPrefab);
+            
             entry.transform.SetParent(InsideRoomPanel.transform);
             entry.transform.localScale = Vector3.one;
             entry.GetComponent<PlayerListEntry>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
-
+            object playerVehicle;
+            if (newPlayer.CustomProperties.TryGetValue(GameStateInfo.VEHICLE, out playerVehicle))
+                entry.GetComponent<PlayerListEntry>().SetPlayerVehicleSprite((int)playerVehicle);
             playerListEntries.Add(newPlayer.ActorNumber, entry);
 
             if (PhotonNetwork.CurrentRoom.PlayerCount == MAX_PLAYERS_PER_ROOM)
@@ -398,6 +395,9 @@ namespace Photon.Pun.Demo.Asteroids
             if (playerInfo.online)
             {
                 SetActivePanel(JoinRandomRoomPanel.name);
+                Hashtable props = new Hashtable() { { GameStateInfo.VEHICLE, playerInfo.vehiclePicked } };
+                PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+                
                 PhotonNetwork.JoinRandomRoom();
             }
             else
