@@ -66,6 +66,11 @@ public class GUIManager : MonoBehaviour
         
     }
 
+    public void HideControlsText()
+    {
+        controlsText.gameObject.SetActive(false);
+    }
+
     public void updateTexts() {
         buttonMusic.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
         buttonSound.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;

@@ -19,6 +19,8 @@ public class GameManagerOffline : MonoBehaviour
 
     [SerializeField]
     private ControllerGUI controller;
+    [SerializeField]
+    private GUIManager guiManager;
 
     [SerializeField]
     private Text textCountDown;
@@ -118,7 +120,7 @@ public class GameManagerOffline : MonoBehaviour
         }else if (countDown == 0)
         {
             textCountDown.text = "Brake Down!";
-
+            guiManager.HideControlsText();
             
         }
         else if(countDown == -1)
