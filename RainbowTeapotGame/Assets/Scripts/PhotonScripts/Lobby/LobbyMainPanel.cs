@@ -456,9 +456,13 @@ namespace Photon.Pun.Demo.Asteroids
             {
                 PhotonNetwork.LoadLevel("MultiplayerTest");
             }
-            else
+            else if (random < 0)
             {
                 PhotonNetwork.LoadLevel("Level2");
+            }
+            else {
+                PhotonNetwork.LoadLevel("Level3");
+
             }
 
         }
