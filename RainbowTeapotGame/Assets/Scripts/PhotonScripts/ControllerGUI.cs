@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,12 @@ public class ControllerGUI : MonoBehaviour
 
     [SerializeField]
     private Image currentPowerDownImage;
+
+    [SerializeField]
+    private GameObject miniaturePrefab;
+
+    [SerializeField]
+    private GameObject minimap;
 
     public PowerDownUser user { get; set; }
 
@@ -48,5 +55,12 @@ public class ControllerGUI : MonoBehaviour
     public void WipeOutPowerDown()
     {
         currentPowerDownImage.GetComponent<SpinGamblingEfect>().ClearImage();
+    }
+
+    public MinimapMiniature CreateMinimapMiniature(vehicles vehicle, bool isMine)
+    {
+        MinimapMiniature miniatureObj = Instantiate(miniaturePrefab, minimap.transform).GetComponent<MinimapMiniature>();
+        miniatureObj.Init(vehicle, isMine);
+        return miniatureObj;
     }
 }
