@@ -109,8 +109,10 @@ namespace Photon.Pun.Demo.Asteroids
 
         private void Start()
         {
-            
-                playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+
+            PlayerNameInput.text = GetComponent<RandomNameGenerator>().GetRandomPlayerName();
+
+            playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
                 
 
             if (playerInfo.hasBeenLogged)
@@ -565,7 +567,7 @@ namespace Photon.Pun.Demo.Asteroids
         public void updateTexts() {
 
             nameText.text = lang.getText(playerInfo.lang, 0);
-            PlayerNameInput.text = lang.getText(playerInfo.lang, 17) + " " + Random.Range(1000, 10000);
+            //PlayerNameInput.text = lang.getText(playerInfo.lang, 17) + " " + Random.Range(1000, 10000);
             enterPlayer.text = lang.getText(playerInfo.lang, 1);
             loginText.text = lang.getText(playerInfo.lang, 2);
             trainingText.text = lang.getText(playerInfo.lang, 3);
