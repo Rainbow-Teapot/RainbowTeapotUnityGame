@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class GameOverPanel : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class GameOverPanel : MonoBehaviour
 
     public void OnReturnToMenuButtonClicked()
     {
+        if(!PhotonNetwork.IsConnected)
+            PhotonNetwork.ConnectUsingSettings();
         SceneManager.LoadScene("Lobby");
     }
 }

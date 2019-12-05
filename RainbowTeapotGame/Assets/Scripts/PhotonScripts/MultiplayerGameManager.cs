@@ -83,22 +83,6 @@ namespace Photon.Pun.Demo.Asteroids
 
         #region COROUTINES
 
-        /*private IEnumerator EndOfGame(string winner, int score)
-        {
-            float timer = 5.0f;
-
-            while (timer > 0.0f)
-            {
-                //InfoText.text = string.Format("Player {0} won with {1} points.\n\n\nReturning to login screen in {2} seconds.", winner, score, timer.ToString("n2"));
-
-                yield return new WaitForEndOfFrame();
-
-                timer -= Time.deltaTime;
-            }
-
-            PhotonNetwork.LeaveRoom();
-        }*/
-
         public void EndOfRace()
         {
             //if(playerNumber == PhotonNetwork.LocalPlayer.GetPlayerNumber() && pv.IsOwnerActive && pv.IsMine)
@@ -118,16 +102,17 @@ namespace Photon.Pun.Demo.Asteroids
             //UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             //SceneManager.LoadScene("GameOver");
             //StartCoroutine(Load());
-            player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
+            //player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
+            //PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable() { { PlayerNumbering.RoomPlayerIndexedProp, Random.Range(0,5) } });
         }
 
         public override void OnLeftRoom()
         {
 
             //SceneManager.LoadScene("GameOver");
-
-            //PhotonNetwork.Disconnect();
-            //StartCoroutine(Load());
+            //PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable() { { PlayerNumbering.RoomPlayerIndexedProp, -1 } });
+            PhotonNetwork.Disconnect();
+            StartCoroutine(Load());
         }
 
         private IEnumerator Load()
@@ -228,7 +213,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
             Debug.Log("EEEEEEEEEEEEEEEEEEEE" + playerNumber);
-            Vector3 position = startingPositions[playerNumber].position;
+            Vector3 position = startingPositions[playerNumber % 5].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
 
