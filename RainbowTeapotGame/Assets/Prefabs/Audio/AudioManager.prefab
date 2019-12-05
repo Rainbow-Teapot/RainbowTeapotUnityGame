@@ -143,7 +143,7 @@ MonoBehaviour:
   sounds:
   - name: Cow1
     clip: {fileID: 8300000, guid: e333a2cac47af9e44be4624d7778bf56, type: 3}
-    volume: 0.517
+    volume: 0.62
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Cart1
-    clip: {fileID: 8300000, guid: e9df339dcaeef6348929f2d13b761ff5, type: 3}
+    clip: {fileID: 8300000, guid: 91b7975d0dd48ee4bb5becd15d40b341, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Toilet1
-    clip: {fileID: 8300000, guid: d533de7a333e39644b203e5b01351e51, type: 3}
+    clip: {fileID: 8300000, guid: 61df6287a619f734fa5ecc43b3d6af63, type: 3}
     volume: 0.517
     pitch: 1
     loop: 0

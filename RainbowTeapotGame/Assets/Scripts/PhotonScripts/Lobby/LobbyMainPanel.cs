@@ -450,13 +450,13 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
 
-            float random = Random.Range(0, 10.0f);
+            float random = Random.Range(0, 15.0f);
 
-            if (random < 0)
+            if (random < 5)
             {
                 PhotonNetwork.LoadLevel("MultiplayerTest");
             }
-            else if (random < 0)
+            else if (random < 10)
             {
                 PhotonNetwork.LoadLevel("Level2");
             }
