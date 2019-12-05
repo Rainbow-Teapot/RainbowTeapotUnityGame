@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piru
       objectReference: {fileID: 0}
+    - target: {fileID: 7023098893324261084, guid: 8150725585412994dbef04e0e2aa4405,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3819211536451361963, guid: 8150725585412994dbef04e0e2aa4405,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,5 +77,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7f9cef2f33d3b2a4f92401f2ae2efee6, type: 2}
+    - target: {fileID: 4114438969512380645, guid: 8150725585412994dbef04e0e2aa4405,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8150725585412994dbef04e0e2aa4405, type: 3}

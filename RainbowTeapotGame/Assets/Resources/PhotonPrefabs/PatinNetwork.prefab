@@ -311,6 +311,7 @@ MonoBehaviour:
   startRacing: 0
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
+  vehicle: 2
   velX: 0
   hasDalsy: 0
 --- !u!114 &114072141594798886
@@ -354,6 +355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485264207126728666}
     m_Modifications:
+    - target: {fileID: 100012, guid: df52ed835391d074c917cf4261519806, type: 3}
+      propertyPath: m_Name
+      value: patinT
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -409,10 +414,6 @@ PrefabInstance:
     - target: {fileID: 400012, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalScale.z
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100012, guid: df52ed835391d074c917cf4261519806, type: 3}
-      propertyPath: m_Name
-      value: patinT
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: df52ed835391d074c917cf4261519806, type: 3}
       propertyPath: m_LocalPosition.x
@@ -619,6 +620,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6485264207126728666}
     m_Modifications:
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -666,14 +675,6 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5219009
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r

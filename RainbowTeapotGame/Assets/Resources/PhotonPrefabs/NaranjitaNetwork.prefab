@@ -311,6 +311,7 @@ MonoBehaviour:
   startRacing: 0
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
+  vehicle: 1
   velX: 0
   hasDalsy: 0
 --- !u!114 &5109366919002665650

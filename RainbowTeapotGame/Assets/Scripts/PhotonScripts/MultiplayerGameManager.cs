@@ -25,6 +25,7 @@ namespace Photon.Pun.Demo.Asteroids
     {
         public static MultiplayerGameManager Instance = null;
 
+
         [SerializeField]
         private Camera mainCamera;
         private GameObject player;
@@ -34,11 +35,16 @@ namespace Photon.Pun.Demo.Asteroids
 
         private PhotonView pv;
 
+        private PlayerInfo playerInfo;
+
         [SerializeField]
         private Transform[] startingPositions;
 
         [SerializeField]
         private ControllerGUI controller;
+
+        [SerializeField]
+        private levels currentLevel;
 
         private float[] playerDistances;
 
@@ -53,6 +59,8 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnEnable()
         {
             base.OnEnable();
+            playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+            playerInfo.level = currentLevel;
             PhotonNetwork.AutomaticallySyncScene = false;
             CountdownTimer.OnCountdownTimerHasExpired += OnCountdownTimerIsExpired;
         }
@@ -61,6 +69,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             //InfoText.text = "Waiting for other players...";
             playerDistances = new float[PhotonNetwork.PlayerList.Length];
+            
 
             StartGame();
 
@@ -150,7 +159,8 @@ namespace Photon.Pun.Demo.Asteroids
                     controller.AssignPositionGUI((int)playerPosition);
 
                     //ES AQUÍ
-                    FindObjectOfType<PlayerInfo>().finalPos = (int)playerPosition;
+                    if(!playerInfo.hasFinishRace)
+                        playerInfo.finalPos = (int)playerPosition;
                 }
             }
 
@@ -196,6 +206,7 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
             base.OnPlayerLeftRoom(otherPlayer);
+
             if(PhotonNetwork.IsMasterClient)
             {
                 Hashtable props = new Hashtable
@@ -212,7 +223,6 @@ namespace Photon.Pun.Demo.Asteroids
         private void StartGame()
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
-            Debug.Log("EEEEEEEEEEEEEEEEEEEE" + playerNumber);
             Vector3 position = startingPositions[playerNumber % 5].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
@@ -312,7 +322,6 @@ namespace Photon.Pun.Demo.Asteroids
                 {
                     if((float)currentDistance > playerDistances[i] && playerDistances[i] > 0 && !PhotonNetwork.PlayerList[i].IsInactive)
                     {
-                       
                         position++;
                     }
                 }

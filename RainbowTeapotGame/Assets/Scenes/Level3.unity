@@ -6517,7 +6517,7 @@ PrefabInstance:
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
       propertyPath: quantityPropGroup
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
@@ -6587,7 +6587,17 @@ PrefabInstance:
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
       propertyPath: width
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198513, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198513, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 955557e86d500694fba69ae9874f52d7, type: 3}
@@ -8867,7 +8877,7 @@ PrefabInstance:
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
       propertyPath: quantityPropGroup
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
@@ -8927,7 +8937,12 @@ PrefabInstance:
     - target: {fileID: 8487648422215198518, guid: 955557e86d500694fba69ae9874f52d7,
         type: 3}
       propertyPath: width
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487648422215198513, guid: 955557e86d500694fba69ae9874f52d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 955557e86d500694fba69ae9874f52d7, type: 3}
@@ -8964,7 +8979,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.6698113, g: 0.5689389, b: 0.2938323, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -9036,7 +9051,7 @@ PrefabInstance:
     - target: {fileID: 3182742039330011547, guid: e881ee8eb95c66749ab1e6ac4bd2e9be,
         type: 3}
       propertyPath: pools.Array.data[0].size
-      value: 80
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3182742039330011547, guid: e881ee8eb95c66749ab1e6ac4bd2e9be,
         type: 3}
@@ -16569,6 +16584,7 @@ MonoBehaviour:
   - {fileID: 1417650178}
   - {fileID: 678500178}
   controller: {fileID: 1829025626}
+  currentLevel: 2
 --- !u!4 &1752275180
 Transform:
   m_ObjectHideFlags: 0

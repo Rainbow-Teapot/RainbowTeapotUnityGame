@@ -31,7 +31,6 @@ public class CountDownText : MonoBehaviour
         if (text.Equals(lastText))
         {
             textObject.fontSize -= (int)(reduceSizeSpeed * Time.deltaTime);
-            Debug.Log("CAMBIANDO LA FUENTE: " + textObject.fontSize);
         }
         /*else
         {

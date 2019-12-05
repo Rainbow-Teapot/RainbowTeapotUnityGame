@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grave2
       objectReference: {fileID: 0}
+    - target: {fileID: 5573032564330935258, guid: 289366d293ce3ea4bae37dbab1d7eb7e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6411309050294232840, guid: 289366d293ce3ea4bae37dbab1d7eb7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -72,5 +77,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9457ae4de8145ae47acfbffa78583f3e, type: 2}
+    - target: {fileID: 7707804271475193917, guid: 289366d293ce3ea4bae37dbab1d7eb7e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 289366d293ce3ea4bae37dbab1d7eb7e, type: 3}

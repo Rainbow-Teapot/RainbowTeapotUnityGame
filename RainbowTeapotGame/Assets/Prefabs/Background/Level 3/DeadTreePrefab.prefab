@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801071752154560220}
-  m_Layer: 0
-  m_Name: DeadtreePrefab
+  m_Layer: 2
+  m_Name: DeadTreePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,6 +41,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d85b66e5204574040b97b6a99332614d, type: 3}
       propertyPath: m_Name
       value: arbolT
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d85b66e5204574040b97b6a99332614d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d85b66e5204574040b97b6a99332614d, type: 3}
       propertyPath: m_LocalPosition.x

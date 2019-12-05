@@ -41,6 +41,11 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     private SplineWalker SplineWalker;
     public Vector3 networkPosition;
 
+    public vehicles vehicle;
+
+    private ControllerGUI controller;
+    private MinimapMiniature minimapMiniature;
+
     public float velX = 0;
     /// <summary>
     /// flag to force latest data to avoid initial drifts when player is instantiated.
@@ -154,7 +159,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
         // PlayerNumbering component must be in the scene.
         yield return new WaitUntil(() => this.photonView.Owner.GetPlayerNumber() >= 0);
         //transform.position += Vector3.back * 0.25f;
-        
+
+        controller = GameObject.Find("ControllerGUI").GetComponent<ControllerGUI>();
 
             // now we can set it up.
         this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
@@ -164,14 +170,15 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
             GetComponent<InputedMovement>().enabled = true;
             GetComponent<DoubleClickChecker>().enabled = true;
             GetComponent<PowerDownUser>().enabled = true;
+
         }
         else
         {
             gameObject.name = "EmulatedCar" + playerNumber;
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
-        
 
+        minimapMiniature = controller.CreateMinimapMiniature(vehicle, photonView.IsMine);
         
     }
 
@@ -182,6 +189,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     /// </summary>
     private void OnDestroy()
     {
+        Destroy(minimapMiniature.gameObject);
         Destroy(this.CarInstance);
     }
 
@@ -233,6 +241,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
             }
             
         }
+        if(minimapMiniature)
+            minimapMiniature.SetPosition(CurrentDistance);
 
         // Only activate the car if we are sure we have the proper positioning, else it will glitch visually during the initialisation process.
         if (!this.m_firstTake && !this.CarInstance.activeSelf)
@@ -248,8 +258,10 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
 
     public void LeaveRoom()
     {
+        Destroy(minimapMiniature.gameObject);
         if (photonView.IsMine)
         {
+            
             Hashtable props = new Hashtable
                     {
                         {GameStateInfo.EXIT_GAME, true}
@@ -257,20 +269,21 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
             StartCoroutine(Load());
         }
+        
     }
-
 
     private IEnumerator Load()
     {
         PhotonNetwork.LeaveRoom();
         //PhotonNetwork.Disconnect();
-        this.CurrentDistance = 0;
+        
         while (PhotonNetwork.InRoom)
         //while(PhotonNetwork.IsConnected)
             yield return null;
+        //this.CurrentDistance = 0;
         //SceneManager.LoadScene("GameOver");
-       
-        
+
+
     }
 
     [PunRPC]
