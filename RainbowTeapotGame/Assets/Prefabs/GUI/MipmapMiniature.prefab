@@ -86,16 +86,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localMiniatures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 50b303b70a7e36b4aadd3a1577af403d, type: 3}
+  - {fileID: 21300000, guid: 8a093b53625cf824f8294bbbf6b0080f, type: 3}
+  - {fileID: 21300000, guid: dc92c30323f53f14ba63a944fcbb3e6f, type: 3}
+  - {fileID: 21300000, guid: 369a5eb4dd834a54d9c0edaa223ab402, type: 3}
+  - {fileID: 21300000, guid: 3a906e2d2fc210d4eb612030180fa208, type: 3}
+  - {fileID: 21300000, guid: aa7ec5fc03464034a86e2febe3ea829c, type: 3}
   remoteMiniatures:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 3e305678e7d76494197915845ff15ec9, type: 3}
+  - {fileID: 21300000, guid: e10f07db4fab89248844013168a08487, type: 3}
+  - {fileID: 21300000, guid: be070f6ab3923fc4f87bd43456d367c8, type: 3}
+  - {fileID: 21300000, guid: 399f98473d692d242ac980617d0b9f06, type: 3}
+  - {fileID: 21300000, guid: f4c9985bb255e37419b8dce59c2960fd, type: 3}
+  - {fileID: 21300000, guid: bd783c822216d9f459b666c8b332cdfb, type: 3}
