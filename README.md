@@ -245,7 +245,7 @@
 <p>Durante la carrera, recorreremos una calle de chocolate con caramelos de colores. Podremos encontrarnos con nubes difusas de algodón de azúcar, pareces de nubes esponjosas, y multitud de caramelos, piruletas y bastones.</p>
 
 <p align="center">
-     <img wwidth="180" height="180" src="Imagenes_readme/gingerbreadman.png">
+     <img wwidth="180" height="180" src="Imagenes_readme/gingerbread man.png">
 </p>
 
 <p>También nos encontraremos con algún habitante de tan extraño mundo. Son galletas. Ricas galletas que los juguetes querrán coger para ralentizar su avance y evitar ser comidos por Lucho. Pero no solo eso, sino también ciertos ositos de gelatina dulce, parecida a la gominola, que serán muy pesados y harán que nuestro jugador rebote, debido a su elasticidad. Mientras ocurre todo esto, cada juguete escuchará en su cabeza una melodía un tanto pegadiza, que le hará bajar la montaña de una manera más relajada.</p>
