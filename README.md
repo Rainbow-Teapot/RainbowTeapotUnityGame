@@ -35,7 +35,7 @@
 **Inicio de Juego:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_Iniciar.png">
+     <img width="640" height="480" src="Imagenes_readme/Pantalla_inicio_juego.png">
 </p>
 
 <p>La primera pantalla de nuestro juego. En esta pantalla aparecerá el título del juego con una pequeña animación, el nombre de nuestro jugador y un botón que tiene escrito Login.</p>
@@ -133,7 +133,7 @@
 **Personajes:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/vaca_sinfondo.png">
 </p>
 
 <p>•	La vaca paca: Juguete que lleva mucho tiempo con Lucho, al cual tiene mucho aprecio. Es una vaquita blanca con manchas negras, y unas paletas con ruedas atadas a las patas.</p>
@@ -183,7 +183,7 @@
 <p>Si cogemos una caja teniendo un power down ya en la “mano”, se sobrescribe dicho poder.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/tetera.png">
 </p>
 
 <p>•	Miss Teapot: Tetera con la cara de la protagonista de nuestro otro juego que cuando se lanza, echa té sobre el escenario para que otro jugador se resbale y vaya más rápido, por lo tanto, quede más lejos de poder ganar. No afecta al control de la dirección.</p>
@@ -226,7 +226,7 @@
 **Nivel 1:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/nivel11.png">
 </p>
 
 <p>Nos ponemos en la piel de un juguete lleno de nieve y con frío. No sabemos por qué, pero estamos en medio de la ladera de una montaña de los Alpes. Por la densidad de la nieve, parece que estamos en pleno invierno. Tendremos que ayudar a los intrépidos juguetes a salir de aquel sitio tan helado y conseguir salvarse, pero cuidado, ya que solo el último será de verdad salvado.</p>
