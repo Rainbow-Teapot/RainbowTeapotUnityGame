@@ -49,8 +49,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound " +name+ " not found!");
             return; 
         }
-        if(FindObjectOfType<PlayerInfo>().soundsOn)
-            s.source.Play();
+        if (FindObjectOfType<PlayerInfo>().soundsOn && !s.source.isPlaying)
+        {            
+            s.source.Play();   
+        }
+            
     }
 
     public void Character(string name) {
