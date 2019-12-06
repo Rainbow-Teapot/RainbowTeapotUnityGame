@@ -53,9 +53,12 @@ public class GameOverPanel : MonoBehaviour
 
         GameObject car = carShowcasePrebaf[(int)playerInfo.vehiclePicked];
         carShowcaseObject = Instantiate(car, PositionAppear.position, Quaternion.Euler(0, 200, 0));
-       
+        if(playerInfo.vehiclePicked == vehicles.Vaca)
+        {
+            carShowcaseObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
 
-
+        playerInfo.hasFinishRace = false;
     }
 
     public void OnReturnToMenuButtonClicked()

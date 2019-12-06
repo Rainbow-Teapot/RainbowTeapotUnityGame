@@ -91,11 +91,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
-        type: 3}
-      propertyPath: m_Name
-      value: Osito Offline
-      objectReference: {fileID: 0}
     - target: {fileID: 7400039202909422574, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,6 +146,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: m_Name
+      value: Osito Offline
+      objectReference: {fileID: 0}
     - target: {fileID: 7400039202909422572, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -171,6 +171,11 @@ PrefabInstance:
       propertyPath: audioclip
       value: Bounce
       objectReference: {fileID: 0}
+    - target: {fileID: 114553143228976196, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: particlePrefab
+      value: 
+      objectReference: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
     - target: {fileID: 65248128879624308, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_Size.x

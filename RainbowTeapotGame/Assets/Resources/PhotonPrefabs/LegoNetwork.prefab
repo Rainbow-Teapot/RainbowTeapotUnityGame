@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 0
   audioclip: Lego
+  particlePrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
 --- !u!114 &6946807132930126743
 MonoBehaviour:
   m_ObjectHideFlags: 0

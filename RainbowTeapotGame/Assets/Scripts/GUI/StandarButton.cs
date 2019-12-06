@@ -28,7 +28,8 @@ public class StandarButton : MonoBehaviour
 
     public void MouseDown()
     {
-        FindObjectOfType<AudioManager>().Play("Button");
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if(audioManager)    audioManager.Play("Button");
         anim.SetBool("Pressed", true);
         anim.SetBool("Released", false);
         transform.SetAsLastSibling();

@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 0
   audioclip: Breakable
+  particlePrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
 --- !u!1001 &7864705731523305413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,11 +68,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 746159638189383359}
     m_Modifications:
-    - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
-        type: 3}
-      propertyPath: m_Name
-      value: snowmanT
-      objectReference: {fileID: 0}
     - target: {fileID: 7400039202909422574, guid: 85562bf3ed0186c4082775076221cd4d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -141,6 +137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400039202909422571, guid: 85562bf3ed0186c4082775076221cd4d,
+        type: 3}
+      propertyPath: m_Name
+      value: snowmanT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85562bf3ed0186c4082775076221cd4d, type: 3}
