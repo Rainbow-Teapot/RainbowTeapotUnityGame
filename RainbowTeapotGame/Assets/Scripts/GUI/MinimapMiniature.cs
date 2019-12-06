@@ -8,6 +8,8 @@ public class MinimapMiniature : MonoBehaviour
     [SerializeField]
     private float offsetLocalPlayer;
     [SerializeField]
+    private float offsetLocalPlayerOffline;
+    [SerializeField]
     private Sprite[] localMiniatures;
     [SerializeField]
     private float offsetRemotePlayer;
@@ -28,7 +30,7 @@ public class MinimapMiniature : MonoBehaviour
         {
             image.sprite = localMiniatures[(int)vehicle];
             transform.SetAsLastSibling();
-            initialLocalPosition = new Vector3(offsetLocalPlayer, maxDistance/2 , 0);
+            initialLocalPosition = new Vector3(offsetLocalPlayer, maxDistance / 2, 0);
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else
@@ -61,6 +63,6 @@ public class MinimapMiniature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
+        
     }
 }

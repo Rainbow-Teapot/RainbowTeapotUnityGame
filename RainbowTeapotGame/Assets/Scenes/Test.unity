@@ -4888,6 +4888,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 810218dc0a80ac64d9adc858a6cd789f, type: 3}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.237
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
+        type: 3}
+      propertyPath: sounds.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8000127892788091892, guid: 3db3962c280c7b2499427e955164c012,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4942,36 +4972,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 810218dc0a80ac64d9adc858a6cd789f, type: 3}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: Level1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 0.237
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.data[0].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1239820513401407577, guid: 3db3962c280c7b2499427e955164c012,
-        type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db3962c280c7b2499427e955164c012, type: 3}
@@ -10839,6 +10839,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 918850018}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &919727464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 919727465}
+  m_Layer: 0
+  m_Name: StartPositionGUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &919727465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919727464}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 0.607, z: 41.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &934073542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20633,6 +20663,11 @@ PrefabInstance:
       propertyPath: guiManager
       value: 
       objectReference: {fileID: 2990500689381141790}
+    - target: {fileID: 5344397739376587556, guid: 4ac96539496f9c44d8106dc609a04162,
+        type: 3}
+      propertyPath: startPosition
+      value: 
+      objectReference: {fileID: 919727465}
     - target: {fileID: 5344397739376587555, guid: 4ac96539496f9c44d8106dc609a04162,
         type: 3}
       propertyPath: m_LocalPosition.x

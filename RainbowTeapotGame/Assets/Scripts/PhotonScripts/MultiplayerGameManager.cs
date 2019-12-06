@@ -130,26 +130,9 @@ namespace Photon.Pun.Demo.Asteroids
                 yield return null;
             SceneManager.LoadScene("GameOver");
         }
-        /*public override void OnMasterClientSwitched(Player newMasterClient)
-        {
-            if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
-            {
-                
-            }
-        }
-
-        public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            
-        }*/
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
-            /*if (changedProps.ContainsKey(AsteroidsGame.PLAYER_LIVES))
-            {
-                CheckEndOfGame();
-                return;
-            }*/
             if (targetPlayer.GetPlayerNumber() == PhotonNetwork.LocalPlayer.GetPlayerNumber())
             {
                 if (changedProps.ContainsKey(GameStateInfo.POSITION))

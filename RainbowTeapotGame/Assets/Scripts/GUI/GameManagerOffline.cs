@@ -29,6 +29,9 @@ public class GameManagerOffline : MonoBehaviour
 
     [SerializeField]
     private Transform endPosition;
+    [SerializeField]
+    private Transform startPosition;
+    private Vector3 actualStartingPosition;
 
     private readonly int MAX_VECHICLES = 5;
 
@@ -36,10 +39,13 @@ public class GameManagerOffline : MonoBehaviour
 
     private PlayerInfo playerInfo;
 
+    private MinimapMiniature playerMiniature;
+    private List<MinimapMiniature> aiMiniatures = new List<MinimapMiniature>();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        actualStartingPosition = new Vector3(0, 0, startPosition.position.z);
         playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
         StartGame();
     }
@@ -50,6 +56,8 @@ public class GameManagerOffline : MonoBehaviour
         int playerPosition = CurrentPlayerPosition();
         playerInfo.finalPos = playerPosition;
         controller.AssignPositionGUI(playerPosition);
+        AssignMiniaturesPosition();
+        
     }
 
     private void StartGame()
@@ -60,6 +68,7 @@ public class GameManagerOffline : MonoBehaviour
         player.GetComponent<CarMovement>().enabled = false;
         player.GetComponent<InputedMovement>().SetCarCamera(mainCamera);
         mainCamera.GetComponent<CameraController>().setTarget(player);
+        playerMiniature = controller.CreateMinimapMiniature(vehiclePicked, true);
 
         int totalIaCars = 0;
         for(int i = 0; i < 6; i++)
@@ -70,6 +79,7 @@ public class GameManagerOffline : MonoBehaviour
                 iaCar.GetComponent<CarMovement>().enabled = false;
                 iaCar.GetComponent<DoubleClickChecker>().enabled = false;
                 iaCar.GetComponent<PowerDownUser>().enabled = false;
+                aiMiniatures.Add(controller.CreateMinimapMiniature((vehicles)i, false));
                 vehiclesIAs.Add(iaCar);
                 totalIaCars++;
             }
@@ -93,6 +103,27 @@ public class GameManagerOffline : MonoBehaviour
             }
         }
         return position;
+    }
+
+    private  void AssignMiniaturesPosition()
+    {
+
+        Vector3 playerPosition = new Vector3(0,0,player.transform.position.z);
+        playerMiniature.SetPosition(Vector3.Distance(actualStartingPosition, playerPosition));
+
+        for(int i = 0; i < vehiclesIAs.Count; i++)
+        {
+            if (vehiclesIAs[i] != null)
+            {
+                Vector3 aiPosition = new Vector3(0, 0, vehiclesIAs[i].transform.position.z);
+                aiMiniatures[i].SetPosition(Vector3.Distance(actualStartingPosition, aiPosition));
+            }
+            else
+            {
+                if(aiMiniatures[i] != null)
+                    Destroy(aiMiniatures[i].gameObject);
+            }
+        }
     }
 
     public void OnExitGameButtonCliked()
