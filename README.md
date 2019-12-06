@@ -47,7 +47,7 @@
 **Menú principal:**
 
 <p align="center">
-     <img width="240" height="420" src="Imagenes_readme/Modelo_menu_ppal.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_menu_ppal.PNG">
 </p>
 
 <p>Nos encontraremos con el mismo titulo del juego que en la pantalla anterior. A parte tendremos dos botones, uno para cada modo de juego. El botón de arriba nos llevará al modo de entrenamiento, mientras que el de abajo, al del modo multijugador.</p>
@@ -56,7 +56,7 @@
 **Créditos:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_creditos.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_creditos.PNG">
 </p>
 
 <p>A modo de información adicional, se podrán ver los nombres de los desarrolladores del juego, junto con el estudio. Contendrá información acerca de la red social de éste, por si se quiere hacer algún tipo de contacto con el propio estudio, o para seguir de cerca el desarrollo del estudio. Toda esta información estará recogida dentro de un cuadradito de color diferente al del fondo.</p>
@@ -66,7 +66,7 @@
 **Menú de Opciones:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_opciones.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_opciones.PNG">
 </p>
 <p>En esta pantalla podremos cambiar los ajustes necesarios para que la experiencia de juego sea lo más personalizada posible, dentro de unos estándares. Nos aparecerá un cuadrado en color verde, distinto al color del fondo, donde se recogen todas las configuraciones que podemos hacer del juego de manera general.</p>
 <p>Podemos configurar el sonido del juego general, referido a la música y a los efectos; teniendo un botón diferente para ambos tipos de sonido. Estos botones simplemente apagan o encienden la música y los efectos de sonido, respectivamente.</p>
@@ -76,11 +76,11 @@
 **Selección de Personaje:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_in_game.png">
+     <img width="240" height="420"src="Imagenes_readme/Pantalla_seleccion_01.PNG">
 </p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_in_game.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_seleccion_02.PNG">
 </p>
 
 <p>Tanto si le damos al botón de Entrenamiento o al de Multijugador, nos llevará a la pantalla de selección del personaje, que se compondrá de dos pantallas:</p>
@@ -92,7 +92,7 @@
 **Sala de espera(pre-partida):**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_in_game.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_prepartida.PNG">
 </p>
 <p>Esta sala nos da la información acerca de los jugadores que hay en la sala, nos pone el nombre del jugador junto con una imagen con el juguete que ha escogido. En la parte derecha de la pantalla, al lado de cada jugador, aparecerá un circulo que nos dirá si el jugador está preparado o no para jugar la partida.</p>
 <p>Cuando intentamos unirnos a una sala, o incluso crearla, nos sale una pantalla para avisar al jugador que está intentando unirse, para que se eviten pensamientos de que el juego se ha quedado bloqueado.</p>
@@ -103,7 +103,7 @@
 **Partida:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_in_game.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_partida.PNG">
 </p>
 
 <p>Al comenzar una partida, irán apareciendo todos los jugadores de la sala de uno en uno en la pantalla, como si llegasen y se parasen en la línea de salida para jugar. Podemos observar que en la parte de arriba de la pantalla tenemos dos cosas: A la izquierda tenemos el hueco donde aparecerán los power-downs una vez que cojamos una caja de power-downs.</p>
@@ -114,7 +114,7 @@
 **Menú de Opciones In-Game:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_in_game_opciones.png">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_menú_opciones_ingame.PNG">
 </p>
 
 <p>A este menú solo podremos acceder en el caso de que estemos jugando una partida. Las opciones que podemos configurar aquí son las mismas que en el menú de opciones que hay en el menú principal, exceptuando el cambio de idioma. </p>
@@ -125,7 +125,7 @@
 **Fin del Juego:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="240" height="420" src="Imagenes_readme/Modelo_fin_juego.png">
 </p>
 
 <p>A esta pantalla solo podemos acceder una vez que haya acabado una partida multijugador. En la propia pantalla aparecerá la posición con la que ha quedado tu personaje dentro de la ultima carrera, y, además, un botón para volver al menú principal. </p>
@@ -145,7 +145,7 @@
 <p>•	Patinete Molinete: Uno de los dos patines que regalaron a Lucho con 6 meses. Como de momento es muy pequeño para poder usarlos, los utiliza para jugar con ellos como si fueran coches grandes. Consiste en un patín con estética retro de los años 80 con dos filas de dos ruedas, a modo de cochecito.</p>
 
 <p align="center">
-     <img width="580" height="420" src="Imagenes_readme/vater_sinfondo.png">
+     <img width="380" height="420" src="Imagenes_readme/vater_sinfondo.png">
 </p>
 
 <p>•	Váter Manolo: Un divertido váter de juguete que echa agua cuando le das a la palanca de tirar de la cadena. El padre de Lucho le hizo una pequeña puesta a punto, y le puso cuatro ruedas a los lados para que Lucho pudiera usarlo como un coche que echa agua, ya que siempre a Lucho le ha gustado mucho este tipo de juguetes.</p>
@@ -185,25 +185,25 @@
 <p>•	Miss Teapot: Tetera con la cara de la protagonista de nuestro otro juego que cuando se lanza, echa té sobre el escenario para que otro jugador se resbale y vaya más rápido, por lo tanto, quede más lejos de poder ganar. No afecta al control de la dirección.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img wwidth="180" height="180" src="Imagenes_readme/dalsy.png">
 </p>
 
 <p>•	Medicina Infantil: Un frasco de medicina infantil para el catarro, de una densidad media y color anaranjado. Recuerda a un medicamento de una marca conocida que se da a los niños más pequeños cuando están malos. Produce un mareo al jugador que la utilice que hace que su juguete se mueva en zigzag y no pueda controlar la dirección durante varios segundos</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="180" height="180" src="Imagenes_readme/parachute.png">
 </p>
 
 <p>•	Paracaídas: Se abre una bolsita con un mini paracaídas detrás del juguete del jugador que lance este power-down. Esto hará que dicho juguete vaya más lento durante unos segundos, hasta que el paracaídas se rompa.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="180" height="180" src="Imagenes_readme/cohete.png">
 </p>
 
 <p>•	Cohete: Lanzas un cohete hacia atrás que hace que te defiendas contra los otros jugadores que puedan venir a tus espaldas.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="180" height="180" src="Imagenes_readme/lego.png">
 </p>
 
 <p>•	Brick Madness: Aparece un bloque muy parecido a los bloques de construcción de una conocida marca danesa de juguetes. Este bloque aparece delante del propio jugador, así que en la mayoría de los casos lo cogerá él mismo, pero existirá una pequeña posibilidad de que lo coja otro jugador, si está lo suficientemente avispado.</p>
@@ -222,14 +222,14 @@
 **Nivel 1:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/nivel11.PNG">
+     <img width="240" height="420" src="Imagenes_readme/nivel11.PNG">
 </p>
 
 <p>Nos ponemos en la piel de un juguete lleno de nieve y con frío. No sabemos por qué, pero estamos en medio de la ladera de una montaña de los Alpes. Por la densidad de la nieve, parece que estamos en pleno invierno. Tendremos que ayudar a los intrépidos juguetes a salir de aquel sitio tan helado y conseguir salvarse, pero cuidado, ya que solo el último será de verdad salvado.</p>
 <p>Mientras estamos corriendo montaña abajo nos toparemos con un montón de árboles nevados, algún que otro muñeco de nieve, y también restos helados que han quedado producidos por la acumulación de capas de nieve que se funde y se compacta.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="180" height="180" src="Imagenes_readme/santa.png">
 </p>
 
 <p>También habrá que tener en cuenta que podremos ver a cierto personaje navideño cruzando la montaña, y sería muy divertido chocarse con él. Para no perder el control y bajar de manera segura, tendremos que buscar restos de barro causados por la mezcla de la nieve con la tierra de la propia montaña.</p>
@@ -238,14 +238,14 @@
 **Nivel 2:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="240" height="420" src="Imagenes_readme/nivel2.jpeg">
 </p>
 
 <p>Estamos en nuestro sueño, hemos despertado en un mundo en el que absolutamente todo está hecho de dulces; chocolate, nubes de azúcar, caramelos, piruletas, etc. Pero en este mundo paradisíaco no iba a ser todo bueno, nuestros juguetes deberán recorrer las calles de este sitio en busca de como salir de allí y volver al mundo real. Sin embargo, Lucho sabe su intención, e intentará comerse a los que lleguen primeros a la línea de salida del mundo, solo el último juguete se salvará.</p>
 <p>Durante la carrera, recorreremos una calle de chocolate con caramelos de colores. Podremos encontrarnos con nubes difusas de algodón de azúcar, pareces de nubes esponjosas, y multitud de caramelos, piruletas y bastones.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img wwidth="180" height="180" src="Imagenes_readme/gingerbreadman.png">
 </p>
 
 <p>También nos encontraremos con algún habitante de tan extraño mundo. Son galletas. Ricas galletas que los juguetes querrán coger para ralentizar su avance y evitar ser comidos por Lucho. Pero no solo eso, sino también ciertos ositos de gelatina dulce, parecida a la gominola, que serán muy pesados y harán que nuestro jugador rebote, debido a su elasticidad. Mientras ocurre todo esto, cada juguete escuchará en su cabeza una melodía un tanto pegadiza, que le hará bajar la montaña de una manera más relajada.</p>
@@ -255,7 +255,7 @@
 **Nivel 3:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="240" height="420" src="Imagenes_readme/nivel3.jpeg">
 </p>
 
 <p>Lucho ha tenido una pesadilla, y los juguetes son los que sufren las consecuencias. Tienen que correr para escapar de un sitio aparentemente tenebroso. Los juguetes deberán tener cuidado, porque del suelo salen huesos sospechosos que dan muy mal rollo.</p>
@@ -263,7 +263,7 @@
 
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="180" height="180" src="Imagenes_readme/esqueleto.png">
 </p>
 
 <p>También tendremos algunos habitantes que pasarán por ahí en mal momento. Algún esqueleto que decidió dar un paseo, pero se encontrará con algo de jaleillo.</p>
