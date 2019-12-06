@@ -35,7 +35,7 @@
 **Inicio de Juego:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Pantalla_inicio_juego.PNG">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_inicio_juego.PNG">
 </p>
 
 <p>La primera pantalla de nuestro juego. En esta pantalla aparecerá el título del juego con una pequeña animación, el nombre de nuestro jugador y un botón que tiene escrito Login.</p>
@@ -47,7 +47,7 @@
 **Menú principal:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_menu_ppal.png">
+     <img width="240" height="420" src="Imagenes_readme/Modelo_menu_ppal.png">
 </p>
 
 <p>Nos encontraremos con el mismo titulo del juego que en la pantalla anterior. A parte tendremos dos botones, uno para cada modo de juego. El botón de arriba nos llevará al modo de entrenamiento, mientras que el de abajo, al del modo multijugador.</p>
@@ -133,31 +133,31 @@
 **Personajes:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/vaca_sinfondo.png">
+     <img width="580" height="420" src="Imagenes_readme/vaca_sinfondo.png">
 </p>
 
 <p>•	La vaca paca: Juguete que lleva mucho tiempo con Lucho, al cual tiene mucho aprecio. Es una vaquita blanca con manchas negras, y unas paletas con ruedas atadas a las patas.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/patinete_sinfondo.png">
+     <img width="580" height="420" src="Imagenes_readme/patinete_sinfondo.png">
 </p>
 
 <p>•	Patinete Molinete: Uno de los dos patines que regalaron a Lucho con 6 meses. Como de momento es muy pequeño para poder usarlos, los utiliza para jugar con ellos como si fueran coches grandes. Consiste en un patín con estética retro de los años 80 con dos filas de dos ruedas, a modo de cochecito.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/vater_sinfondo.png">
+     <img width="580" height="420" src="Imagenes_readme/vater_sinfondo.png">
 </p>
 
 <p>•	Váter Manolo: Un divertido váter de juguete que echa agua cuando le das a la palanca de tirar de la cadena. El padre de Lucho le hizo una pequeña puesta a punto, y le puso cuatro ruedas a los lados para que Lucho pudiera usarlo como un coche que echa agua, ya que siempre a Lucho le ha gustado mucho este tipo de juguetes.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/telefono_sinfondo.png">
+     <img width="580" height="420" src="Imagenes_readme/telefono_sinfondo.png">
 </p>
 
 <p>•	Teléfono Loco: Un teléfono de estilo retro de juguete, con sus botones con los números del 1 al 9, cada uno con un sonido diferente, si lo pulsamos. También tiene el propio mango del teléfono, que reproduce una melodía si se toca la combinación correcta de números. Al principio era blanco, pero Lucho le pego unas pegatinas en forma de estrella de colores, para que tuviese más estilo. Aunque él no sabe ni que es el estilo ni nada.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/naranja_sinfondo.png">
+     <img width="580" height="420" src="Imagenes_readme/naranja_sinfondo.png">
 </p>
 
 <p>•	Narangina Carolina: Un juguetito muy curioso que fue regalado a Lucho el mismo día que los patines. Se trata de una media naranja de plástico con dos ruedas, una a cada lado, dos ojitos en la parte superior de la media naranja, y una cuerdecita con una arandela, en forma de hoja, también de plástico, la cual hace que la naranjita se mueva cuando tiramos de esta anilla. Este juguetito tiene una curiosidad y es que cuando se compró venía con un intenso olor a caramelo de naranja, lo que hizo que Lucho quisiera comérselo en un par de ocasiones. Afortunadamente, ese olor se fue perdiendo con el tiempo, y ahora Lucho prefiere jugar con el que chuparlo.</p>
@@ -179,7 +179,7 @@
 <p>Si cogemos una caja teniendo un power down ya en la “mano”, se sobrescribe dicho poder.</p>
 
 <p align="center">
-     <img width="120" height="120" src="Imagenes_readme/tetera.png">
+     <img width="180" height="180" src="Imagenes_readme/tetera.png">
 </p>
 
 <p>•	Miss Teapot: Tetera con la cara de la protagonista de nuestro otro juego que cuando se lanza, echa té sobre el escenario para que otro jugador se resbale y vaya más rápido, por lo tanto, quede más lejos de poder ganar. No afecta al control de la dirección.</p>
