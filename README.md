@@ -126,10 +126,6 @@
 
 **Fin del Juego:**
 
-<p align="center">
-     <img width="240" height="420" src="Imagenes_readme/Modelo_fin_juego.png">
-</p>
-
 <p>A esta pantalla solo se puede acceder una vez que haya acabado una partida multijugador o bien al salirse de ella. En ella aparecerá la posición con la que ha quedado el personaje dentro de la última carrera, el modelo del personaje utilizado durante la cerrera y, además, un botón para volver al menú principal.  </p>
 
 **Personajes:**
