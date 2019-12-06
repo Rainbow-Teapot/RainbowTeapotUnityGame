@@ -406,7 +406,24 @@ namespace Photon.Pun.Demo.Asteroids
             }
             else
             {
-                SceneManager.LoadScene("Test");
+                float random = Random.Range(0, 15.0f);
+
+                if (random < 5)
+                {
+                    playerInfo.level = levels.SNOWY_MOUNTAIN;
+                    PhotonNetwork.LoadLevel("Level1Offline");
+                }
+                else if (random < 10)
+                {
+                    playerInfo.level = levels.CANDY;
+                    PhotonNetwork.LoadLevel("Level2Offline");
+                }
+                else
+                {
+                    playerInfo.level = levels.NIGHTMARES;
+                    PhotonNetwork.LoadLevel("Level3Offline");
+
+                }
             }
         }
         /// <summary>
@@ -459,16 +476,16 @@ namespace Photon.Pun.Demo.Asteroids
             if (random < 5)
             {
                 playerInfo.level = levels.SNOWY_MOUNTAIN;
-                PhotonNetwork.LoadLevel("MultiplayerTest");
+                PhotonNetwork.LoadLevel("Level1Online");
             }
             else if (random < 10)
             {
                 playerInfo.level = levels.CANDY;
-                PhotonNetwork.LoadLevel("Level2");
+                PhotonNetwork.LoadLevel("Level2Online");
             }
             else {
                 playerInfo.level = levels.NIGHTMARES;
-                PhotonNetwork.LoadLevel("Level3");
+                PhotonNetwork.LoadLevel("Level3Online");
 
             }
 

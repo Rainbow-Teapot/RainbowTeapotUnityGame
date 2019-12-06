@@ -189,6 +189,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunIns
     /// </summary>
     private void OnDestroy()
     {
+        if(minimapMiniature != null)
         Destroy(minimapMiniature.gameObject);
         Destroy(this.CarInstance);
     }
