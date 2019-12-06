@@ -139,6 +139,23 @@ public class GameManagerOffline : MonoBehaviour
         {
             carIA.GetComponent<CarMovement>().enabled = true;
         }
+
+        if (SceneManager.GetActiveScene().name.Contains("Level1"))
+        {
+
+            FindObjectOfType<MusicManager>().PlayOrPause("Level1");
+        }
+        if (SceneManager.GetActiveScene().name.Contains("Level2"))
+        {
+            FindObjectOfType<MusicManager>().PlayOrPause("Level2");
+
+        }
+        if (SceneManager.GetActiveScene().name.Contains("Level3"))
+        {
+
+            FindObjectOfType<MusicManager>().PlayOrPause("Level3");
+
+        }
     }
 
 

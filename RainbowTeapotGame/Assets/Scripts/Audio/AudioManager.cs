@@ -25,17 +25,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name.Equals("MultiplayerTest"))
+        if (SceneManager.GetActiveScene().name.Contains("Level1"))
         {
 
             Play("Countdown1");
         }
-        if (SceneManager.GetActiveScene().name.Equals("Level2"))
+        if (SceneManager.GetActiveScene().name.Contains("Level2"))
         {
 
             Play("Countdown2");
         }
-        if (SceneManager.GetActiveScene().name.Equals("Level3"))
+        if (SceneManager.GetActiveScene().name.Contains("Level3"))
         {
 
             Play("Countdown3");
