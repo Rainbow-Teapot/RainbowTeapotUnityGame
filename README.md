@@ -5,28 +5,28 @@
      <img src="Imagenes_readme/tabla.PNG">
 </p>
 
-**Contexto HistÛrico:**
-<p>Europa, siglo XXI. Concretamente, el aÒo 2017. Lucho naciÛ en el seno de una familia de clase media europea. Vive con sus padres y su hermano mayor en un chalÈ a las afueras de la capital. La situaciÛn en su paÌs es bastante buena. El gobierno ha puesto mucho empeÒo en la clase media, lo que hizo que familias como las de Lucho pudieran tener un nivel de vida mucho mejor que el que tenÌan hace 10 aÒos.</p>
+**Contexto Hist√≥rico:**
+<p>Europa, siglo XXI. Concretamente, el a√±o 2017. Lucho naci√≥ en el seno de una familia de clase media europea. Vive con sus padres y su hermano mayor en un chal√© a las afueras de la capital. La situaci√≥n en su pa√≠s es bastante buena. El gobierno ha puesto mucho empe√±o en la clase media, lo que hizo que familias como las de Lucho pudieran tener un nivel de vida mucho mejor que el que ten√≠an hace 10 a√±os.</p>
 
-**DescripciÛn breve del juego:**
+**Descripci√≥n breve del juego:**
 
-<p>En un pequeÒo pueblo de Wisconsin, Lucho, un pequeÒo niÒo de un aÒo ha decidido que es hora de jugar. Es invierno, por lo que hace mucho frÌo y no puede disfrutar de la compaÒÌa de sus perros en la calle. Tiene que encontrar una nueva forma de entretenimientoÖ</p>
-<p>Buscando por su habitaciÛn, ha encontrado un montÛn de juguetes con ruedas y se le ha ocurrido una idea genial: ìVan a hacer una carrera, pero ser· el ˙ltimo el que gane, los dem·s ser·n devoradosî. Como circuito de competiciÛn ha elegido las paredes de su habitaciÛn, °ser· una carrera en caÌda libre!</p>
-<p>Lucho tiene mucha imaginaciÛn, asÌ que los juguetes compiten en una inmensidad de escenarios diferentes de lo m·s dispares, desde un mundo de chucherÌas, hasta el sitio donde podrÌan ocurrir sus peores pesadillas, pero sin perder nunca el aspecto infantil.</p>
-<p>Lo que tendr·n que intentar los juguetes es chocarse con todos los elementos que puedan e ir por las superficies que m·s le retrasen, pues no quieren ser aquellos que acaben en la boca de ese travieso bebÈ llenos de babas y de restos de gusanitos.</p>
+<p>En un peque√±o pueblo de Wisconsin, Lucho, un peque√±o ni√±o de un a√±o ha decidido que es hora de jugar. Es invierno, por lo que hace mucho fr√≠o y no puede disfrutar de la compa√±√≠a de sus perros en la calle. Tiene que encontrar una nueva forma de entretenimiento‚Ä¶</p>
+<p>Buscando por su habitaci√≥n, ha encontrado un mont√≥n de juguetes con ruedas y se le ha ocurrido una idea genial: ‚ÄúVan a hacer una carrera, pero ser√° el √∫ltimo el que gane, los dem√°s ser√°n devorados‚Äù. Como circuito de competici√≥n ha elegido las paredes de su habitaci√≥n, ¬°ser√° una carrera en ca√≠da libre!</p>
+<p>Lucho tiene mucha imaginaci√≥n, as√≠ que los juguetes compiten en una inmensidad de escenarios diferentes de lo m√°s dispares, desde un mundo de chucher√≠as, hasta el sitio donde podr√≠an ocurrir sus peores pesadillas, pero sin perder nunca el aspecto infantil.</p>
+<p>Lo que tendr√°n que intentar los juguetes es chocarse con todos los elementos que puedan e ir por las superficies que m√°s le retrasen, pues no quieren ser aquellos que acaben en la boca de ese travieso beb√© llenos de babas y de restos de gusanitos.</p>
 
-**Prueba nuestro juego aquÌ:**
+**Prueba nuestro juego aqu√≠:**
 
 <p>Itch-io: <strong>https://rainbowteapotstudio.itch.io/braking-down</strong> </p>
 
 
-**Mec·nicas del juego:**
-<p>El jugador deber· elegir el juguete que querr· salvar de las babas del bebÈ. Cuando comience la partida y todos los jugadores estÈn listos, habr· que hacer todo lo posible por quedar en ˙ltima posiciÛn y salvarse de Lucho.</p>
-<p>Para ello, tendremos que darnos de golpes con todos los obst·culos que podamos para reducir nuestra velocidad y hacer que los dem·s jugadores nos adelanten. Solo asÌ podremos quedar en ˙ltima posiciÛn y ganar la partida, vÈase la moreleja. TambiÈn existir·n diversos eventos dentro de cada mapa que influir·n en la velocidad y direcciÛn del juguete que manejemos.</p>
-<p>Por si esto no fuera suficiente, existir·n diferentes objetos que los jugadores podr·n recoger para cambiar las tornas en la posiciÛn dentro de carrera.</p>
+**Mec√°nicas del juego:**
+<p>El jugador deber√° elegir el juguete que querr√° salvar de las babas del beb√©. Cuando comience la partida y todos los jugadores est√©n listos, habr√° que hacer todo lo posible por quedar en √∫ltima posici√≥n y salvarse de Lucho.</p>
+<p>Para ello, el juguete tendr√° que darse golpes con todos los obst√°culos que pueda para reducir su velocidad y hacer que los dem√°s jugadores le adelanten. Solo as√≠ podr√° quedar en √∫ltima posici√≥n y ganar la partida, v√©ase la moreleja. Tambi√©n existir√°n diversos eventos dentro de cada mapa que influir√°n en la velocidad y direcci√≥n del juguete que se maneje.</p>
+<p>Por si esto no fuera suficiente, existir√°n diferentes objetos que los jugadores podr√°n recoger para cambiar las tornas en la posici√≥n dentro de carrera.</p>
 <p></p>
 
-**ProgesiÛn del Juego:**
+**Progesi√≥n del Juego:**
 
 <p align="center">
      <img src="Imagenes_readme/Diagrama_De_Flujo.jpeg">
@@ -38,42 +38,42 @@
      <img width="240" height="420" src="Imagenes_readme/Pantalla_inicio_juego.PNG">
 </p>
 
-<p>La primera pantalla de nuestro juego. En esta pantalla aparecer· el tÌtulo del juego con una pequeÒa animaciÛn, el nombre de nuestro jugador y un botÛn que tiene escrito Login.</p>
-<p>Para cambiar el nombre simplemente tendremos que pulsar o clicar sobre el propio texto, y podremos poner el nombre que tendr· nuestro jugador durante el resto del tiempo que estÈ jugando al juego. Una vez tengamos nuestro nombre, pulsaremos el botÛn de Login, que nos llevar· al men˙ principal.</p>
+<p>La primera pantalla del juego. En esta pantalla aparece el t√≠tulo del juego, junto con su subt√≠tulo con una peque√±a animaci√≥n, el nombre del jugador y un bot√≥n que tiene escrito Login.</p>
+<p>Por defecto se generar√° un nombre aleatorio. Para cambiarlo simplemente habr√° que pulsar o clicar sobre el propio texto, y se podr√° poner el nombre que tendr√° el jugador durante el resto del tiempo que est√© jugando al juego. Una vez puesto el nombre, se pulsar√° el bot√≥n de Login, para acceder al men√∫ principal.</p>
 
 
 
 
-**Men˙ principal:**
+**Men√∫ principal:**
 
 <p align="center">
      <img width="240" height="420" src="Imagenes_readme/Pantalla_menu_ppal.PNG">
 </p>
 
-<p>Nos encontraremos con el mismo titulo del juego que en la pantalla anterior. A parte tendremos dos botones, uno para cada modo de juego. El botÛn de arriba nos llevar· al modo de entrenamiento, mientras que el de abajo, al del modo multijugador.</p>
-<p>Adicionalmente, tendremos dos botones, debajo de los otros dos ya mencionados. Estos dos botones corresponden a los ajustes de juego y a los crÈditos. El de la izquierda, con una ìiî, corresponde al apartado de crÈditos, mientras que el de la derecha, en azul con una rueda, nos llevar· al men˙ de opciones.</p>
+<p>Aparece el mismo logo junto con el subt√≠tulo que aparec√≠a en la pantalla anterior. A parte hay dos botones, uno para cada modo de juego. El bot√≥n superior permite acceder al modo de entrenamiento mientras que el inferior, al modo multijugador.</p>
+<p>Adicionalmente, hay dos botones m√°s peque√±os debajo de los otros dos ya mencionados. Estos dos botones corresponden a los ajustes de juego y a los cr√©ditos. El de la izquierda, con una ‚Äúi‚Äù, corresponde al apartado de cr√©ditos, mientras que el de la derecha, en azul con una rueda, nos llevar√° al men√∫ de opciones. </p>
 
-**CrÈditos:**
+**Cr√©ditos:**
 
 <p align="center">
      <img width="240" height="420" src="Imagenes_readme/Pantalla_creditos.PNG">
 </p>
 
-<p>A modo de informaciÛn adicional, se podr·n ver los nombres de los desarrolladores del juego, junto con el estudio. Contendr· informaciÛn acerca de la red social de Èste, por si se quiere hacer alg˙n tipo de contacto con el propio estudio, o para seguir de cerca el desarrollo del estudio. Toda esta informaciÛn estar· recogida dentro de un cuadradito de color diferente al del fondo.</p>
-<p>Al igual que en la pantalla del men˙ de opciones, en la parte superior izquierda de la pantalla, tenemos un botÛn con forma de flecha que nos har· volver al men˙ principal.</p>
+<p>A modo de informaci√≥n adicional, se podr√°n ver los nombres de los desarrolladores del juego, junto con el estudio. Contendr√° informaci√≥n acerca de la red social de √©ste, por si se quiere hacer alg√∫n tipo de contacto con el propio estudio, o para seguir de cerca el desarrollo del estudio. Toda esta informaci√≥n estar√° recogida dentro de un cuadradito de color diferente al del fondo.</p>
+<p>Al igual que en la pantalla del men√∫ de opciones, en la parte superior izquierda de la pantalla, hay un bot√≥n con forma de flecha que permite volver al men√∫ principal.</p>
 
 
-**Men˙ de Opciones:**
+**Men√∫ de Opciones:**
 
 <p align="center">
      <img width="240" height="420" src="Imagenes_readme/Pantalla_opciones.PNG">
 </p>
-<p>En esta pantalla podremos cambiar los ajustes necesarios para que la experiencia de juego sea lo m·s personalizada posible, dentro de unos est·ndares. Nos aparecer· un cuadrado en color verde, distinto al color del fondo, donde se recogen todas las configuraciones que podemos hacer del juego de manera general.</p>
-<p>Podemos configurar el sonido del juego general, referido a la m˙sica y a los efectos; teniendo un botÛn diferente para ambos tipos de sonido. Estos botones simplemente apagan o encienden la m˙sica y los efectos de sonido, respectivamente.</p>
-<p>Adem·s, tenemos un botÛn que nos permite cambiar de idioma, entre inglÈs y espaÒol. Cuando aparezca la bandera de un paÌs, indicar· que para cambiar al idioma de ese paÌs deberemos de clicar sobre la bandera.</p>
-<p>Por ˙ltimo, en la parte superior izquierda de la pantalla, tenemos un botÛn con forma de flecha que nos har· volver al men˙ principal.</p>
+<p>En esta pantalla se pueden cambiar los ajustes necesarios para que la experiencia de juego sea lo m√°s personalizada posible, dentro de unos est√°ndares. Aparecer√° un cuadrado en color verde, distinto al color del fondo, donde se recogen todas las configuraciones se pueden hacer del juego de manera general. </p>
+<p>Se puede configurar el sonido del juego general, referido a la m√∫sica y a los efectos; teniendo un bot√≥n diferente para ambos tipos de sonido. Estos botones simplemente apagan o encienden la m√∫sica y los efectos de sonido, respectivamente.</p>
+<p>Adem√°s, hay un bot√≥n que permite cambiar de idioma, entre ingl√©s y espa√±ol. Cuando aparezca la bandera de un pa√≠s, indicar√° que para cambiar al idioma de ese pa√≠s deberemos de clicar sobre la bandera. </p>
+<p>Por √∫ltimo, en la parte superior izquierda de la pantalla, hay un bot√≥n con forma de flecha que har√° volver al men√∫ principal</p>
 
-**SelecciÛn de Personaje:**
+**Selecci√≥n de Personaje:**
 
 <p align="center">
      <img width="240" height="420"src="Imagenes_readme/Pantalla_seleccion_01.PNG">
@@ -83,20 +83,20 @@
      <img width="240" height="420" src="Imagenes_readme/Pantalla_seleccion_02.PNG">
 </p>
 
-<p>Tanto si le damos al botÛn de Entrenamiento o al de Multijugador, nos llevar· a la pantalla de selecciÛn del personaje, que se compondr· de dos pantallas:</p>
-<p>Primero nos aparecer· un cuadradito flotando donde se podr· ver la totalidad de los personajes que tiene el jugador en cuestiÛn. Aparecer·n todos seguidos unos de otros, formando una especie de cuadrÌcula. En cada uno de los cuadraditos aparecer· una imagen que representar· a cada uno de los personajes jugables.</p>
-<p>Cuando seleccionemos el personaje que queremos usar, nos llevar· a la segunda pantalla, donde podremos ver como es el personaje en 3D con su animaciÛn propia de idle. En esta pantalla tambiÈn podemos girar el juguete 360 grados para poder verlo desde la perspectiva que queramos. Asimismo, podremos cambiar nuestro personaje con las flechas que aparecen a los lados del modelo. Cada vez que cambiemos de personaje, sonar· el efecto de sonido propio que tiene, porque cada uno tiene el suyo.</p>
-<p>En la parte superior izquierda de la pantalla, tendremos el botÛn con la flecha, que nos permitir· volver a la pantalla anterior de la selecciÛn de personajes. Para volver al men˙ principal deberemos volver a clicar sobre la flecha en esta segunda pantalla</p>
-<p>Cuando hayamos decidido nuestro personaje, le daremos al botÛn que aparece en la parte de debajo de la pantalla, para unirnos a una sala si hay alguna con hueco, o crearemos una sala nueva en caso contrario.</p>
+<p>Tanto si se hace click en al bot√≥n de Entrenamiento o en el de Multijugador, se accede a la pantalla de selecci√≥n del personaje, que se compone a su vez de dos paneles:</p>
+<p>Primero aparecer√° un cuadradito flotando donde se puede ver la totalidad de los personajes que tiene el jugador en cuesti√≥n. Aparecen todos seguidos unos de otros, formando una especie de cuadr√≠cula. En cada uno de los cuadraditos aparecer√° una imagen que representar√° a cada uno de los personajes jugables.</p>
+<p>Al seleccionar el personaje que se quiere usar, se acceder√° a la segunda pantalla, donde se puede ver c√≥mo es el personaje en 3D con su animaci√≥n propia de idle. En esta pantalla tambi√©n se permite girar el juguete 360 grados para poder verlo desde diferentes perspectivas. Asimismo, se puede cambiar el personaje a mostrar con las flechas que aparecen a los lados del modelo. Cada vez que se cambie de personaje, sonar√° su efecto de sonido propio. </p>
+<p>En la parte superior izquierda de la pantalla, aparece un bot√≥n con una flecha, que permitir√° volver a la pantalla anterior de la selecci√≥n de personajes. Para volver al men√∫ principal habr√° que volver a clicar sobre la flecha en esta segunda pantalla.</p>
+<p>Una vez decidido el personaje, se podr√° hacer click en el bot√≥n que aparece en la parte de debajo de la pantalla, para unirse a una sala si hay alguna con hueco, o se crear√° una sala nueva autom√°ticamente en caso contrario. </p>
 
 **Sala de espera(pre-partida):**
 
 <p align="center">
      <img width="240" height="420" src="Imagenes_readme/Pantalla_prepartida.PNG">
 </p>
-<p>Esta sala nos da la informaciÛn acerca de los jugadores que hay en la sala, nos pone el nombre del jugador junto con una imagen con el juguete que ha escogido. En la parte derecha de la pantalla, al lado de cada jugador, aparecer· un circulo que nos dir· si el jugador est· preparado o no para jugar la partida.</p>
-<p>Cuando intentamos unirnos a una sala, o incluso crearla, nos sale una pantalla para avisar al jugador que est· intentando unirse, para que se eviten pensamientos de que el juego se ha quedado bloqueado.</p>
-<p>En la parte de debajo de la pantalla, tendremos un botÛn, que nos permitir· salir de la sala en la que estamos. De manera excepcional, el jugador que haya creado la sala podr· darle al botÛn de jugar la partida, pero solo cuando todos los jugadores que hay en la sala hayan aceptado empezar la partida.</p>
+<p> Mientras se intenta acceder a esta pantalla y por tanto se est√° accediendo o creando una nueva sala, se informa al usuario con un mensaje. </p>
+<p>Esta sala da informaci√≥n acerca de los jugadores que hay en la sala, aparece el nombre del jugador junto con una imagen con el juguete que ha escogido. En la parte derecha de la pantalla, al lado de cada jugador, aparecer√° un circulo que indicar√° si el jugador est√° preparado o no para jugar la partida. Adem√°s, por si no queda suficientemente claro, aparece un mensaje con las instrucciones.</p>
+<p>En la parte de debajo de la pantalla, aparece un bot√≥n que permite salir de la sala y por tanto de esta pantalla. Por otro lado, a la derecha aparece un bot√≥n en blanco y negro que s√≥lo se activar√° al creador de la pantalla cuando todos los jugadores est√©n listos. Tambi√©n se informar√° al usuario de c√≥mo hacerlo. </p>
 <p></p>
 
 
@@ -106,29 +106,27 @@
      <img width="240" height="420" src="Imagenes_readme/Pantalla_partida.PNG">
 </p>
 
-<p>Al comenzar una partida, ir·n apareciendo todos los jugadores de la sala de uno en uno en la pantalla, como si llegasen y se parasen en la lÌnea de salida para jugar. Podemos observar que en la parte de arriba de la pantalla tenemos dos cosas: A la izquierda tenemos el hueco donde aparecer·n los power-downs una vez que cojamos una caja de power-downs.</p>
-<p>TambiÈn en la parte de arriba, justo debajo de la cajita de los power-down, tenemos una ruedecita de ajustes, que nos llevar· al men˙ de ajustes in game. Volviendo a la partida, en la parte de la derecha de la pantalla, siguiendo en la vista de arriba, tenemos un n˙mero que nos indica la posiciÛn en la que estamos respecto de los dem·s jugadores, pero no el que va primero o ˙ltimo en el nivel, sino en la carrera.</p>
-<p>El juego se desarrolla en el escenario que se ve, pudiendo mover el personaje por toda la zona que tiene el jugador a la vista. Los bordes est·n decorados con objetos tem·ticos, junto con el resto de los objetos interactivos dentro del escenario.</p>
+<p>Una vez creada la partida nueva, el nivel se seleccionar√° aleatoriamente entre los disponibles.</p>
+<p>Al comenzar una partida, ir√°n apareciendo todos los jugadores de la sala de uno en uno en la pantalla, como si llegasen y se parasen en la l√≠nea de salida para jugar. En cuanto a la informaci√≥n por pantalla durante la carrera, se cuenta con, a la izquierda, un hueco donde aparecer√°n los power-downs una vez se coja alguna de las cajas de power-down que hay a lo largo del nivel. </p>
+<p>Tambi√©n en la parte de arriba, justo debajo de los power-down, hay un bot√≥n de ajustes, que permitir√° acceder al men√∫ de ajustes in game. Volviendo a la partida, en la parte de la derecha de la pantalla, aparece la posici√≥n en la que se encuentra el usuario con respecto a los dem√°s jugadores. Esta informaci√≥n se ver√° acompa√±ada con un peque√±o mapa donde se puede ver la posici√≥n de cada jugador con respecto a los dem√°s.</p>
+<p>Antes del comienzo de la carrera, aparece una cuenta atr√°s por pantalla, acompa√±ado de un efecto de sonido. Durante ese tiempo tambi√©n se informar√° de los controles por pantalla en la parte superior central. </p>
+<p>El juego se desarrolla en el escenario que se ve, pudiendo mover el personaje por toda la zona que tiene el jugador a la vista. Los bordes est√°n decorados con objetos tem√°ticos, junto con el resto de los objetos interactivos dentro del escenario. </p>
 
 
-**Men˙ de Opciones In-Game:**
+**Men√∫ de Opciones In-Game:**
 
 <p align="center">
-     <img width="240" height="420" src="Imagenes_readme/Pantalla_men˙_opciones_ingame.PNG">
+     <img width="240" height="420" src="Imagenes_readme/Pantalla_men√∫_opciones_ingame.PNG">
 </p>
 
-<p>A este men˙ solo podremos acceder en el caso de que estemos jugando una partida. Las opciones que podemos configurar aquÌ son las mismas que en el men˙ de opciones que hay en el men˙ principal, exceptuando el cambio de idioma. </p>
-<p>Sin embargo, al ser una partida multijugador, aunque estemos en el men˙, la partida no se parar· puesto que molestarÌa al resto de jugadores. A travÈs de esta pantalla, podemos salirnos de la partida en cualquier momento para volver al men˙ principal si pulsamos el botÛn que tenemos debajo de los ajustes de sonido. </p>
-<p>Para volver a la partida, tendremos que pulsar el botÛn que est· encima del men˙, que aparece como una flecha, al igual que en otras pantallas anteriores. </p>
+<p>A este men√∫ se puede acceder s√≥lo en el caso de estar en partida. Los ajustes que se pueden modificar son los mismos que en el men√∫ de opciones que hay en el men√∫ principal, exceptuando el cambio de idioma. </p>
+<p>Sin embargo, al ser una partida multijugador, pese a acceder al men√∫ de ajustes, la partida no se parar√° puesto que afectar√≠a al resto de jugadores. Tambi√©n a trav√©s de esta pantalla se puede salir de la partida en cualquier momento, accediendo a la pantalla de fin de juego, a trav√©s de la cual se podr√° volver al men√∫ principal. </p>
+<p>Para volver a la partida, hay que pulsar el bot√≥n que est√° encima del men√∫, igual que en las pantallas anteriores.  </p>
 
 
 **Fin del Juego:**
 
-<p align="center">
-     <img width="240" height="420" src="Imagenes_readme/Modelo_fin_juego.png">
-</p>
-
-<p>A esta pantalla solo podemos acceder una vez que haya acabado una partida multijugador. En la propia pantalla aparecer· la posiciÛn con la que ha quedado tu personaje dentro de la ultima carrera, y, adem·s, un botÛn para volver al men˙ principal. </p>
+<p>A esta pantalla solo se puede acceder una vez que haya acabado una partida multijugador o bien al salirse de ella. En ella aparecer√° la posici√≥n con la que ha quedado el personaje dentro de la √∫ltima carrera, el modelo del personaje utilizado durante la cerrera y, adem√°s, un bot√≥n para volver al men√∫ principal.  </p>
 
 **Personajes:**
 
@@ -136,104 +134,109 @@
      <img width="580" height="420" src="Imagenes_readme/vaca_sinfondo.png">
 </p>
 
-<p>ï	La vaca paca: Juguete que lleva mucho tiempo con Lucho, al cual tiene mucho aprecio. Es una vaquita blanca con manchas negras, y unas paletas con ruedas atadas a las patas.</p>
+<p>‚Ä¢	La vaca paca: Juguete que lleva mucho tiempo con Lucho, al cual tiene mucho aprecio. Es un balanc√≠n con forma de vaca blanca con manchas negras. </p>
 
 <p align="center">
      <img width="580" height="420" src="Imagenes_readme/patinete_sinfondo.png">
 </p>
 
-<p>ï	Patinete Molinete: Uno de los dos patines que regalaron a Lucho con 6 meses. Como de momento es muy pequeÒo para poder usarlos, los utiliza para jugar con ellos como si fueran coches grandes. Consiste en un patÌn con estÈtica retro de los aÒos 80 con dos filas de dos ruedas, a modo de cochecito.</p>
+<p>‚Ä¢	Patinete Molinete: Uno de los dos patines que regalaron a Lucho con 6 meses. Como de momento es muy peque√±o para poder usarlos, los utiliza para jugar con ellos como si fueran coches grandes. Consiste en un pat√≠n con est√©tica retro de los a√±os 80 con dos filas de dos ruedas, a modo de cochecito.</p>
 
 <p align="center">
      <img width="380" height="420" src="Imagenes_readme/vater_sinfondo.png">
 </p>
 
-<p>ï	V·ter Manolo: Un divertido v·ter de juguete que echa agua cuando le das a la palanca de tirar de la cadena. El padre de Lucho le hizo una pequeÒa puesta a punto, y le puso cuatro ruedas a los lados para que Lucho pudiera usarlo como un coche que echa agua, ya que siempre a Lucho le ha gustado mucho este tipo de juguetes.</p>
+<p>‚Ä¢	V√°ter Manolo: Un divertido v√°ter de juguete que echa agua cuando le das a la palanca de tirar de la cadena. El padre de Lucho le hizo una peque√±a puesta a punto, y le puso cuatro ruedas a los lados para que Lucho pudiera usarlo como un coche que echa agua, ya que siempre a Lucho le ha gustado mucho este tipo de juguetes.</p>
 
 <p align="center">
      <img width="580" height="420" src="Imagenes_readme/telefono_sinfondo.png">
 </p>
 
-<p>ï	TelÈfono Loco: Un telÈfono de estilo retro de juguete, con sus botones con los n˙meros del 1 al 9, cada uno con un sonido diferente, si lo pulsamos. TambiÈn tiene el propio mango del telÈfono, que reproduce una melodÌa si se toca la combinaciÛn correcta de n˙meros. Al principio era blanco, pero Lucho le pego unas pegatinas en forma de estrella de colores, para que tuviese m·s estilo. Aunque Èl no sabe ni que es el estilo ni nada.</p>
+<p>‚Ä¢	Tel√©fono Loco: Un tel√©fono de estilo retro de juguete, con botones con los n√∫meros del 1 al 9, cada uno con un sonido diferente, al pulsarlos. Tambi√©n tiene el propio mango del tel√©fono, que reproduce una melod√≠a si se toca la combinaci√≥n correcta de n√∫meros. Al principio era blanco, pero Lucho le peg√≥ unas pegatinas en forma de estrella de colores, para que tuviese m√°s estilo. </p>
+
+<p align="center">
+     <img width="580" height="420" src="Imagenes_readme/carrito_sinfondo.png">
+</p>
+<p>‚Ä¢	Carrito Mercadino: Un carrito de la compra normal y corriente, pero de tama√±o reducido. La madre de Lucho lo compr√≥ en un inicio como lugar para servir alg√∫n tipo de comida de forma curiosa y diferente, pero Lucho sinti√≥ una gran admiraci√≥n por este objeto nada m√°s verlo, asique su madre se lo cedi√≥, a√±adi√©ndole una cara graciosa. </p>
 
 <p align="center">
      <img width="580" height="420" src="Imagenes_readme/naranja_sinfondo.png">
 </p>
 
-<p>ï	Narangina Carolina: Un juguetito muy curioso que fue regalado a Lucho el mismo dÌa que los patines. Se trata de una media naranja de pl·stico con dos ruedas, una a cada lado, dos ojitos en la parte superior de la media naranja, y una cuerdecita con una arandela, en forma de hoja, tambiÈn de pl·stico, la cual hace que la naranjita se mueva cuando tiramos de esta anilla. Este juguetito tiene una curiosidad y es que cuando se comprÛ venÌa con un intenso olor a caramelo de naranja, lo que hizo que Lucho quisiera comÈrselo en un par de ocasiones. Afortunadamente, ese olor se fue perdiendo con el tiempo, y ahora Lucho prefiere jugar con el que chuparlo.</p>
+<p>‚Ä¢	Narangina Carolina: Un juguetito muy curioso que fue regalado a Lucho el mismo d√≠a que los patines. Se trata de una media naranja de pl√°stico con dos ruedas, una a cada lado, dos ojitos en la parte superior de la media naranja, y una cuerdecita con una arandela, en forma de hoja, tambi√©n de pl√°stico, la cual hace que la naranjita se mueva cuando tiramos de esta anilla. Este juguetito tiene una curiosidad y es que cuando se compr√≥ ven√≠a con un intenso olor a caramelo de naranja, lo que hizo que Lucho quisiera com√©rselo en un par de ocasiones. Afortunadamente, ese olor se fue perdiendo con el tiempo, y ahora Lucho prefiere jugar con el que chuparlo.</p>
 
-<p>ï	Lucho: Nuestro protagonista Es el creador y todopoderoso jefe de este juego. QuiÈn sabe que rondar· por su cabeza para que sea capaz de imaginarse tantas cosas, como las historias de cada uno de sus juguetes, y como van a interactuar unos con otros y con el entorno. Lamentablemente, no es un personaje jugable, pero tendr· controlado en todo momento la situaciÛn de sus juguetes en la partida.</p>
-<p>Lucho es el segundo hijo de una familia de clase media europea. Tiene mucho interÈs por todo lo que tiene ruedecitas y se mueve, seguramente tendr· mucho futuro en alg˙n trabajo que tenga que ver con vehÌculos con ruedas. Es un niÒo algo rebelde, pero por lo general se porta bien con sus padres y su hermano mayor, no es demasiado trasto. Algo dentro de los baremos normales de un niÒo de 2 aÒos.</p>
+<p>‚Ä¢	Lucho: Nuestro protagonista Es el creador y todopoderoso jefe de este juego. Qui√©n sabe que rondar√° por su cabeza para que sea capaz de imaginarse tantas cosas, como las historias de cada uno de sus juguetes, y como van a interactuar unos con otros y con el entorno. Lamentablemente, no es un personaje jugable, pero tendr√° controlado en todo momento la situaci√≥n de sus juguetes en la partida.</p>
+<p>Lucho es el segundo hijo de una familia de clase media europea. Tiene mucho inter√©s por todo lo que tiene ruedecitas y se mueve, seguramente tendr√° mucho futuro en alg√∫n trabajo que tenga que ver con veh√≠culos con ruedas. Es un ni√±o algo rebelde, pero por lo general se porta bien con sus padres y su hermano mayor, no es demasiado trasto. Algo dentro de los baremos normales de un ni√±o de 2 a√±os.</p>
 <p></p>
 
 **Controles:**
 
-<p>El juguete se mover· de manera autom·tica hacia abajo, nosotros solo tendremos que controlar la direcciÛn de Èste durante el recorrido.</p>
-<p>En caso de jugar en un ordenador, moveremos nuestro juguete con el ratÛn de izquierda a derecha. Si dejamos de pulsar el botÛn del ratÛn, el personaje se quedar· en la posiciÛn en la cual se haya dejado de pulsar dicho botÛn.</p>
-<p>Si jugamos desde un dispositivo mÛvil, tendremos que pulsar la pantalla, y mantener el dedo para que el personaje pueda moverse. Al igual que en un ordenador con el ratÛn, si dejamos el pulsar la pantalla, el juguete se quedar· en esa posiciÛn. Para usar el power down tendremos que hacer un double tap en la pantalla.</p>
+<p>El juguete se mover√° de manera autom√°tica hacia abajo, el usuario solo tendr√° que controlar la direcci√≥n de √©ste durante el recorrido.</p>
+<p>En caso de jugar en un ordenador, se controlar√° el juguete con el rat√≥n de izquierda a derecha. Al dejar de pulsar el bot√≥n izquierdo del rat√≥n, el personaje se quedar√° en la posici√≥n en la cual se haya dejado de pulsar dicho bot√≥n.</p>
+<p>Al jugar desde un dispositivo m√≥vil, este control se basar√° en deslizar el dedo de un lado a otro de la pantalla. Al igual que en un ordenador con el rat√≥n, al dejar de pulsar la pantalla, el juguete se quedar√° en esa posici√≥n. Para usar el power down habr√° que hacer un double tap o bien un doble click en la pantalla.</p>
 
 
 **Power-Downs:**
 
-<p>Todos los Power-downs son seleccionados de manera aleatoria dentro de una caja. Cuando coges una caja en una partida, se seleccionar· uno de estos poderes de manera aleatoria. Todos tendr·n un solo uso.</p>
-<p>Si cogemos una caja teniendo un power down ya en la ìmanoî, se sobrescribe dicho poder.</p>
+<p>Todos los Power-downs son seleccionados de manera aleatoria dentro de una caja. Al coger una caja en una partida, se seleccionar√° uno de estos poderes de manera aleatoria. Todos tendr√°n un solo uso. </p>
+<p>Si cogemos una caja teniendo un power down ya en la ‚Äúmano‚Äù, se sobrescribe dicho poder.</p>
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/tetera.png">
 </p>
 
-<p>ï	Miss Teapot: Tetera con la cara de la protagonista de nuestro otro juego que cuando se lanza, echa tÈ sobre el escenario para que otro jugador se resbale y vaya m·s r·pido, por lo tanto, quede m·s lejos de poder ganar. No afecta al control de la direcciÛn.</p>
+<p>‚Ä¢	Miss Teapot: Tetera con la cara de la protagonista del ‚ÄúDetec-tea Miss Teapot‚Äù, primer juego desarrollado por Rainbow Teapot Studio. Cuando se lanza, echa t√© sobre el escenario para que otro jugador se resbale y vaya m√°s r√°pido, por lo tanto, quede m√°s lejos de poder ganar. No afecta al control de la direcci√≥n.</p>
 
 <p align="center">
      <img wwidth="180" height="180" src="Imagenes_readme/dalsy.png">
 </p>
 
-<p>ï	Medicina Infantil: Un frasco de medicina infantil para el catarro, de una densidad media y color anaranjado. Recuerda a un medicamento de una marca conocida que se da a los niÒos m·s pequeÒos cuando est·n malos. Produce un mareo al jugador que la utilice que hace que su juguete se mueva en zigzag y no pueda controlar la direcciÛn durante varios segundos</p>
+<p>‚Ä¢	Medicina Infantil: : Un frasco de medicina infantil para el catarro, de una densidad media y color anaranjado. Produce un mareo al jugador que la utilice que hace que su juguete se mueva en zigzag y no pueda controlar la direcci√≥n durante varios segundos, adem√°s hace que pase a color rojo. </p>
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/parachute.png">
 </p>
 
-<p>ï	ParacaÌdas: Se abre una bolsita con un mini paracaÌdas detr·s del juguete del jugador que lance este power-down. Esto har· que dicho juguete vaya m·s lento durante unos segundos, hasta que el paracaÌdas se rompa.</p>
+<p>‚Ä¢	Paraca√≠das: Se abre una bolsita con un mini paraca√≠das detr√°s del juguete del jugador que lance este power-down. Esto har√° que dicho juguete vaya m√°s lento durante unos segundos, hasta que el paraca√≠das se rompa.</p>
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/cohete.png">
 </p>
 
-<p>ï	Cohete: Lanzas un cohete hacia atr·s que hace que te defiendas contra los otros jugadores que puedan venir a tus espaldas.</p>
+<p>‚Ä¢	Cohete: Se lanza un cohete hacia atr√°s que, si colisiona con alg√∫n otro jugador, hace que se desplace a una velocidad mucho mayor durante un tiempo determinado. </p>
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/lego.png">
 </p>
 
-<p>ï	Brick Madness: Aparece un bloque muy parecido a los bloques de construcciÛn de una conocida marca danesa de juguetes. Este bloque aparece delante del propio jugador, asÌ que en la mayorÌa de los casos lo coger· Èl mismo, pero existir· una pequeÒa posibilidad de que lo coja otro jugador, si est· lo suficientemente avispado.</p>
+<p>‚Ä¢	Brick Madness: Aparece un bloque muy parecido a los bloques de construcci√≥n de una conocida marca danesa de juguetes. Este bloque aparece delante del propio jugador, as√≠ que en la mayor√≠a de los casos lo coger√° √©l mismo, pero existir√° una peque√±a posibilidad de que lo coja otro jugador, si est√° lo suficientemente avispado. Al colisionar con √©l se reducir√° la velocidad del jugador.</p>
 
 **Niveles:**
 
-<p>	Los niveles se desarrollar·n en distintos escenarios con diferentes tem·ticas. Las diferencias de unos con otros ser·n, mayormente, claves en los obst·culos y objetos interactivos del propio mapa, asÌ como la estÈtica entera del propio escenario.</p>
+<p>	Los niveles se desarrollar√°n en distintos escenarios con diferentes tem√°ticas. Las diferencias de unos con otros ser√°n, mayormente, claves en los obst√°culos y objetos interactivos del propio mapa, as√≠ como la est√©tica entera del propio escenario. </p>
 
 **Modos de Juego:**
 
-<p>Distinguiremos dos modos de juego:</p>
-<p>ï	Entrenamiento: El jugador podr· disfrutar de todos los escenarios y niveles que tendr· el juego de manera individual. Podr· desarrollar las habilidades necesarias para garantizar su victoria frente a otros jugadores. No tendr· ninguna diferencia con el modo multijugador, salvo por la restricciÛn de que jugar· un ˙nico jugador.</p>
-<p>ï	Multijugador Competitivo: Consistir· en un buscador y selector de salas donde se podr·n unir desde dos hasta seis jugadores como m·ximo. Una vez la sala estÈ llena, o se decida empezar una partida, se podr· elegir uno de los niveles disponibles. Una vez empezado la partida, todos los jugadores empezar·n la partida al mismo nivel, al contrario que otros juegos de carreras, y deber·n competir unos con otros para evitar ser el premio que Lucho se meter· en la boca.</p>
+<p>Se pueden distinguir dos modos de juego:</p>
+<p>‚Ä¢	Entrenamiento: El jugador podr√° disfrutar de todos los escenarios y niveles que tendr√° el juego de manera individual. Podr√° desarrollar las habilidades necesarias para garantizar su victoria frente a otros jugadores. No tendr√° ninguna diferencia con el modo multijugador, salvo por la restricci√≥n de que jugar√° un √∫nico jugador.</p>
+<p>‚Ä¢	Multijugador Competitivo: Se crear√° o acceder√° a una sala, en caso de haber alguna con disponibilidad de plazas. Podr√°n jugar de 1 a 5 jugadores. Una vez la sala est√© llena, o se decida empezar una partida, se acceder√° a uno de los niveles disponibles de forma aleatoria. Una vez empezado la partida, los jugadores deber√°n competir unos con otros para evitar ser el premio que Lucho se meta en la boca.</p>
 
-
+**Niveles y obst√°culos:**
 **Nivel 1:**
 
 <p align="center">
      <img width="240" height="420" src="Imagenes_readme/nivel11.PNG">
 </p>
 
-<p>Nos ponemos en la piel de un juguete lleno de nieve y con frÌo. No sabemos por quÈ, pero estamos en medio de la ladera de una montaÒa de los Alpes. Por la densidad de la nieve, parece que estamos en pleno invierno. Tendremos que ayudar a los intrÈpidos juguetes a salir de aquel sitio tan helado y conseguir salvarse, pero cuidado, ya que solo el ˙ltimo ser· de verdad salvado.</p>
-<p>Mientras estamos corriendo montaÒa abajo nos toparemos con un montÛn de ·rboles nevados, alg˙n que otro muÒeco de nieve, y tambiÈn restos helados que han quedado producidos por la acumulaciÛn de capas de nieve que se funde y se compacta.</p>
+<p>Este nivel se desarrolla en un escenario lleno de nieve, y por tanto, fr√≠o. Sin saber por qu√©, el jugador se encuentra en una ladera de una monta√±a de los Alpes. Por la densidad de la nieve, podr√≠a tratarse de pleno invierno. El usuario tendr√° que ayudar a los intr√©pidos juguetes a salir de aquel sitio helado y conseguir salvarse, pero cuidado, ya que solo el √∫ltimo ser√° de verdad salvado.</p>
+<p>Durante la ca√≠da monta√±a abajo los jugadores podr√°n colisionar con mu√±ecos de nieve, se ver√°n rodeado de un mont√≥n de √°rboles nevados, se√±ales nevadas, y algunos bastones de navidad. </p>
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/santa.png">
 </p>
 
-<p>TambiÈn habr· que tener en cuenta que podremos ver a cierto personaje navideÒo cruzando la montaÒa, y serÌa muy divertido chocarse con Èl. Para no perder el control y bajar de manera segura, tendremos que buscar restos de barro causados por la mezcla de la nieve con la tierra de la propia montaÒa.</p>
-<p>Mientras ocurre todo esto, cada juguete escuchar· en su cabeza una melodÌa un tanto pegadiza, que le har· bajar la montaÒa de una manera m·s relajada</p>
+<p>Tambi√©n habr√° que tener en cuenta que puede aparecer cierto personaje navide√±o cruzando la monta√±a, y que ser√° divertido chocarse con √©l. Para no perder el control y bajar de manera segura, adem√°s habr√° que buscar restos de barro causados por la mezcla de la nieve con la tierra de la propia monta√±a y evitar los charcos helados y las rampas. </p>
+<p>Mientras ocurre todo esto, cada juguete escuchar√° en su cabeza una melod√≠a un tanto pegadiza y navide√±a, que le har√° bajar la monta√±a de una manera m√°s relajada. Cada colisi√≥n adem√°s reproducir√° un efecto de sonido adecuado. </p>
 
 **Nivel 2:**
 
@@ -241,15 +244,15 @@
      <img width="240" height="420" src="Imagenes_readme/nivel2.jpeg">
 </p>
 
-<p>Estamos en nuestro sueÒo, hemos despertado en un mundo en el que absolutamente todo est· hecho de dulces; chocolate, nubes de az˙car, caramelos, piruletas, etc. Pero en este mundo paradisÌaco no iba a ser todo bueno, nuestros juguetes deber·n recorrer las calles de este sitio en busca de como salir de allÌ y volver al mundo real. Sin embargo, Lucho sabe su intenciÛn, e intentar· comerse a los que lleguen primeros a la lÌnea de salida del mundo, solo el ˙ltimo juguete se salvar·.</p>
-<p>Durante la carrera, recorreremos una calle de chocolate con caramelos de colores. Podremos encontrarnos con nubes difusas de algodÛn de az˙car, pareces de nubes esponjosas, y multitud de caramelos, piruletas y bastones.</p>
+<p>En este escenario, los juguetes despiertan en un mundo en el que absolutamente todo est√° hecho de dulces; chocolate, nubes de az√∫car, caramelos, piruletas, etc. Pero en este mundo paradis√≠aco no iba a ser todo bueno, los juguetes deber√°n recorrer la carretera de chocolate en busca de c√≥mo salir de all√≠ y volver al mundo real. Sin embargo, Lucho sabe su intenci√≥n, e intentar√° comerse a los que lleguen primeros a la l√≠nea de salida del mundo, solo el √∫ltimo juguete se salvar√°.</p>
+<p>Durante la carrera, los personajes recorren una calle de chocolate con caramelos de colores. Se pueden encontrar con nubes difusas de algod√≥n de az√∫car, y multitud de caramelos, piruletas y bastones. </p>
 
 <p align="center">
      <img wwidth="180" height="180" src="Imagenes_readme/gingerbread man.png">
 </p>
 
-<p>TambiÈn nos encontraremos con alg˙n habitante de tan extraÒo mundo. Son galletas. Ricas galletas que los juguetes querr·n coger para ralentizar su avance y evitar ser comidos por Lucho. Pero no solo eso, sino tambiÈn ciertos ositos de gelatina dulce, parecida a la gominola, que ser·n muy pesados y har·n que nuestro jugador rebote, debido a su elasticidad. Mientras ocurre todo esto, cada juguete escuchar· en su cabeza una melodÌa un tanto pegadiza, que le har· bajar la montaÒa de una manera m·s relajada.</p>
-<p></p>
+<p>Tambi√©n aparecer√° alg√∫n habitante de tan extra√±o mundo. Ser√°n ricas galletas de jengibre que los juguetes querr√°n coger para ralentizar su avance y evitar ser comidos por Lucho. Pero no solo eso, sino tambi√©n ciertos ositos de gelatina dulce, parecida a la gominola, que ser√°n muy pesados y har√°n que nuestro jugador rebote, debido a su elasticidad, helado en el suelo que le har√° derrapar y charcos de chocolate denso que ralentizar√°n la ca√≠da.</p>
+<p>De nuevo, el viaje se ver√° acompa√±ado de una m√∫sica adecuada al ambiente y de unos efectos de sonido adecuados a cada obst√°culo. </p>
 
 
 **Nivel 3:**
@@ -258,28 +261,39 @@
      <img width="240" height="420" src="Imagenes_readme/nivel3.jpeg">
 </p>
 
-<p>Lucho ha tenido una pesadilla, y los juguetes son los que sufren las consecuencias. Tienen que correr para escapar de un sitio aparentemente tenebroso. Los juguetes deber·n tener cuidado, porque del suelo salen huesos sospechosos que dan muy mal rollo.</p>
-<p>Nos encontraremos una gran cantidad de ·rboles sin hojas, ser· una noche frÌa y oscura. Pero lo m·s inquietante de todo es que los juguetes no ser·n los ˙nicos habitantes de ese mundo; no. Podremos toparnos con fantasmas que nos har·n ralentizar nuestra carrera.</p>
+<p>Lucho ha tenido una pesadilla, y los juguetes son los que sufren las consecuencias. Tienen que correr para escapar de un sitio aparentemente tenebroso. Los juguetes deber√°n tener cuidado, porque del suelo salen huesos sospechosos y alguna que otra tumba.</p>
+<p>Adem√°s, se cruzar√°n con una gran cantidad de √°rboles sin hojas, ser√° una noche fr√≠a y oscura. Pero lo m√°s inquietante de todo es que los juguetes no ser√°n los √∫nicos habitantes de ese mundo; no, podr√°n aparecer fantasmas que les har√°n ralentizar su bajada.  </p>
 
 
 <p align="center">
      <img width="180" height="180" src="Imagenes_readme/esqueleto.png">
 </p>
 
-<p>TambiÈn tendremos algunos habitantes que pasar·n por ahÌ en mal momento. Alg˙n esqueleto que decidiÛ dar un paseo, pero se encontrar· con algo de jaleillo.</p>
-<p>Debido a que es un sitio abandonado, habr· telaraÒas muy antiguas, que ser·n tan resistentes que podr·n hacer que nuestros juguetes reboten y salgan disparados hacia atr·s. Nos podremos encontrar con manchas sospechosas de color rojo, que har·n perder el control a nuestros juguetitos, ser· algo a tener en cuenta tambiÈn. Mientras ocurre todo esto, cada juguete escuchar· en su cabeza una melodÌa un tanto pegadiza, que le har· bajar la montaÒa de una manera m·s relajada.</p>
+<p>Los habitantes que se pueden encontrar en este mundo son esqueletos, que se cruzar√°n por la carretera y los juguetes tendr√°n que intentar ralentizarse con ellos.  </p>
+<p>Debido a que es un sitio abandonado, habr√° telara√±as muy antiguas, que ser√°n tan resistentes que podr√°n hacer que los juguetes reboten y salgan disparados hacia atr√°s. Tambi√©n habr√° manchas sospechosas de color rojo, que har√°n perder el control a los juguetes. Mientras ocurre todo esto, cada juguete escuchar√° en su cabeza una melod√≠a un tanto tenebrosa que acompa√±ar√° al ambiente y unos efectos de sonido por cada obst√°culo. </p>
 
+<p>De manera general, en todos los niveles, surgen una serie de rampas de velocidad, puestas por nuestro querido Dios todopoderoso Lucho, para que la batalla sea un poco m√°s emocionante.</p>
+
+<p align="center">
+     <img width="180" height="180" src="Imagenes_readme/rampa_square.png">
+</p>
+
+
+
+**Tecnolog√≠as Utilizadas:**
+
+<p>Para el desarrollo art√≠stico del proyecto se han usado Adobe Photoshop con licencia de estudiante, junto con otras herramientas de dibujo, como tabletas gr√°ficas.</p>
+<p>Para el desarrollo del modelado 3D se ha usado 3ds Max 2019 de Autodesk con licencia de estudiante.  </p>
+<p>Para el desarrollo del juego, se ha utilizado Visual Studio 2017 y el entorno propio de Unity de C#, versi√≥n 2018.3.12f. </p>
+<p>Para el desarrollo musical se ha usado Musescore y Audacity, ambos con licencia libre. </p>
 <p></p>
 
-
-
-**TecnologÌas Utilizadas:**
-
-<p>Para el desarrollo artÌstico del proyecto se han usado Adobe Photoshop con licencia de estudiante, junto con otras herramientas de dibujo, como tabletas gr·ficas.</p>
-<p>Para el desarrollo del modelado 3D se ha usado 3Ds Max de Autodesk con licencia de estudiante. </p>
-<p>Para el desarrollo del juego, es decir, la programaciÛn, se ha usado el Visual Studio 2017 y el entorno propio de Unity de C#.</p>
-<p>Para el desarrollo musical se ha usado Musescore y Audacity, ambos con licencias estudiantiles</p>
-<p></p>
+**Recursos Utilizados:**
+<p>Part√≠culas de rastro de polvo de los coches: https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834 </p>
+<p>FX al chocar con obst√°culos: https://assetstore.unity.com/packages/vfx/particles/simple-fx-cartoon-particles-67834 </p>
+<p>Resoluci√≥n adaptable para webGL: https://assetstore.unity.com/packages/tools/gui/responsive-webgl-template-117308 </p>
+<p>Para la interfaz del lobby se ha utilizado de base la demo que proporciona Photon de Asteroids y el multijugador utiliza curvas de Beziers proporcionadas en la demo de slotRacers pertenecientes a www.catlikecoding.com </p>
+<p>Los efectos de sonido as√≠ como la m√∫sica han sido √≠ntegramente compuestos por el equipo exceptuando el efecto de rotura de la tetera (https://youtu.be/ikkaH5DKRbc ) y el del barro (https://www.youtube.com/watch?v=2kduqFb19os ).  </p>
 
 **Equipo:**
 
@@ -287,16 +301,13 @@
 
 ![Logotipo](Imagenes_readme/RTLogoClara.png)
 
-
-<p align="center">Andrea RodrÌguez Gonz·lez- ProgramaciÛn / Modelado 3D / RRPP</p>
-
-<p align="center">Marcos Agudo AlarcÛn - Programador / RRPP </p>
-
+<p align="center">Marcos Agudo Alarc√≥n - Programador / RRPP </p>
+<p align="center">Carlos Marques Gonz√°lez - Game Designer / Modelado 3D</p>
 <p align="center">Celia  Merino Valladolid- Arte</p>
+<p align="center">Andrea Rodr√≠guez Gonz√°lez- Programaci√≥n / Modelado 3D / RRPP</p>
+<p align="center">Juan Antonio Ruiz Ramirez- Ingenier√≠a de Sonido</p>
 
-<p align="center">Juan Antonio Ruiz Ramirez- IngenierÌa de Sonido</p>
 
-<p align="center">Carlos Marques Gonz·lez - Game Designer / Modelado 3D</p>
 
 **Contacto:**
 
