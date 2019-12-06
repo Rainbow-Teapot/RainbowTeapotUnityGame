@@ -35,7 +35,7 @@
 **Inicio de Juego:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Pantalla_inicio_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/Pantalla_inicio_juego.PNG">
 </p>
 
 <p>La primera pantalla de nuestro juego. En esta pantalla aparecerá el título del juego con una pequeña animación, el nombre de nuestro jugador y un botón que tiene escrito Login.</p>
@@ -139,32 +139,28 @@
 <p>•	La vaca paca: Juguete que lleva mucho tiempo con Lucho, al cual tiene mucho aprecio. Es una vaquita blanca con manchas negras, y unas paletas con ruedas atadas a las patas.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/patinete_sinfondo.png">
 </p>
 
 <p>•	Patinete Molinete: Uno de los dos patines que regalaron a Lucho con 6 meses. Como de momento es muy pequeño para poder usarlos, los utiliza para jugar con ellos como si fueran coches grandes. Consiste en un patín con estética retro de los años 80 con dos filas de dos ruedas, a modo de cochecito.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/vater_sinfondo.png">
 </p>
 
 <p>•	Váter Manolo: Un divertido váter de juguete que echa agua cuando le das a la palanca de tirar de la cadena. El padre de Lucho le hizo una pequeña puesta a punto, y le puso cuatro ruedas a los lados para que Lucho pudiera usarlo como un coche que echa agua, ya que siempre a Lucho le ha gustado mucho este tipo de juguetes.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/telefono_sinfondo.png">
 </p>
 
 <p>•	Teléfono Loco: Un teléfono de estilo retro de juguete, con sus botones con los números del 1 al 9, cada uno con un sonido diferente, si lo pulsamos. También tiene el propio mango del teléfono, que reproduce una melodía si se toca la combinación correcta de números. Al principio era blanco, pero Lucho le pego unas pegatinas en forma de estrella de colores, para que tuviese más estilo. Aunque él no sabe ni que es el estilo ni nada.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
+     <img width="640" height="480" src="Imagenes_readme/naranja_sinfondo.png">
 </p>
 
 <p>•	Narangina Carolina: Un juguetito muy curioso que fue regalado a Lucho el mismo día que los patines. Se trata de una media naranja de plástico con dos ruedas, una a cada lado, dos ojitos en la parte superior de la media naranja, y una cuerdecita con una arandela, en forma de hoja, también de plástico, la cual hace que la naranjita se mueva cuando tiramos de esta anilla. Este juguetito tiene una curiosidad y es que cuando se compró venía con un intenso olor a caramelo de naranja, lo que hizo que Lucho quisiera comérselo en un par de ocasiones. Afortunadamente, ese olor se fue perdiendo con el tiempo, y ahora Lucho prefiere jugar con el que chuparlo.</p>
-
-<p align="center">
-     <img width="640" height="480" src="Imagenes_readme/Modelo_fin_juego.png">
-</p>
 
 <p>•	Lucho: Nuestro protagonista Es el creador y todopoderoso jefe de este juego. Quién sabe que rondará por su cabeza para que sea capaz de imaginarse tantas cosas, como las historias de cada uno de sus juguetes, y como van a interactuar unos con otros y con el entorno. Lamentablemente, no es un personaje jugable, pero tendrá controlado en todo momento la situación de sus juguetes en la partida.</p>
 <p>Lucho es el segundo hijo de una familia de clase media europea. Tiene mucho interés por todo lo que tiene ruedecitas y se mueve, seguramente tendrá mucho futuro en algún trabajo que tenga que ver con vehículos con ruedas. Es un niño algo rebelde, pero por lo general se porta bien con sus padres y su hermano mayor, no es demasiado trasto. Algo dentro de los baremos normales de un niño de 2 años.</p>
@@ -183,7 +179,7 @@
 <p>Si cogemos una caja teniendo un power down ya en la “mano”, se sobrescribe dicho poder.</p>
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/tetera.png">
+     <img width="120" height="120" src="Imagenes_readme/tetera.png">
 </p>
 
 <p>•	Miss Teapot: Tetera con la cara de la protagonista de nuestro otro juego que cuando se lanza, echa té sobre el escenario para que otro jugador se resbale y vaya más rápido, por lo tanto, quede más lejos de poder ganar. No afecta al control de la dirección.</p>
@@ -226,7 +222,7 @@
 **Nivel 1:**
 
 <p align="center">
-     <img width="640" height="480" src="Imagenes_readme/nivel11.png">
+     <img width="640" height="480" src="Imagenes_readme/nivel11.PNG">
 </p>
 
 <p>Nos ponemos en la piel de un juguete lleno de nieve y con frío. No sabemos por qué, pero estamos en medio de la ladera de una montaña de los Alpes. Por la densidad de la nieve, parece que estamos en pleno invierno. Tendremos que ayudar a los intrépidos juguetes a salir de aquel sitio tan helado y conseguir salvarse, pero cuidado, ya que solo el último será de verdad salvado.</p>
