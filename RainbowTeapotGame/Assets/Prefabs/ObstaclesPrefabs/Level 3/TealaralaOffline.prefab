@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: -2
   audioclip: Bounce
+  particlePrefab: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
 --- !u!1001 &5514957342594737410
 PrefabInstance:
   m_ObjectHideFlags: 0

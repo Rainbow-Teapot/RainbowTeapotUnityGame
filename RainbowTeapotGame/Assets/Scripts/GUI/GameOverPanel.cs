@@ -58,7 +58,7 @@ public class GameOverPanel : MonoBehaviour
             carShowcaseObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
 
-
+        playerInfo.hasFinishRace = false;
     }
 
     public void OnReturnToMenuButtonClicked()

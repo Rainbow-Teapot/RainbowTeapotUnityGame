@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 0
   audioclip: Lego
+  particlePrefab: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
 --- !u!1001 &1629779967063707679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67,6 +68,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7511625997405088955}
     m_Modifications:
+    - target: {fileID: 100000, guid: 38e5cb3e9ec4d694c9a1c7e825850c59, type: 3}
+      propertyPath: m_Name
+      value: legoT
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38e5cb3e9ec4d694c9a1c7e825850c59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -110,10 +115,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 38e5cb3e9ec4d694c9a1c7e825850c59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 38e5cb3e9ec4d694c9a1c7e825850c59, type: 3}
-      propertyPath: m_Name
-      value: legoT
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38e5cb3e9ec4d694c9a1c7e825850c59, type: 3}
