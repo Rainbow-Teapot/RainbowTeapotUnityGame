@@ -17,7 +17,7 @@
 
 **Prueba nuestro juego aquí:**
 
-<p>Github-pages: <strong>https://rainbow-teapot.github.io/RainbowTeapotGame/</strong> </p>
+<p>Itch-io: <strong>https://rainbowteapotstudio.itch.io/braking-down</strong> </p>
 
 
 **Mecánicas del juego:**
@@ -29,7 +29,7 @@
 **Progesión del Juego:**
 
 <p align="center">
-     <img src="Imagenes_readme/Diagrama_De_Flujo.png">
+     <img src="Imagenes_readme/Diagrama_De_Flujo.jpeg">
 </p>
 
 **Inicio de Juego:**
