@@ -119,6 +119,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
            // PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
             PlayerReadyButton.image.overrideSprite = playerReady ? tickOK : tick;
+            
             FindObjectOfType<AudioManager>().Play("Check");
             if (PhotonNetwork.LocalPlayer.ActorNumber != ownerId)
                 PlayerReadyImage.enabled = playerReady;

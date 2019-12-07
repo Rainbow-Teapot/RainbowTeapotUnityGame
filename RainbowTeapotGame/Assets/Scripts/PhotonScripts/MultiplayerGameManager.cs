@@ -252,17 +252,17 @@ namespace Photon.Pun.Demo.Asteroids
         private void OnCountdownTimerIsExpired()
         {
 
-            if (SceneManager.GetActiveScene().name.Equals("MultiplayerTest"))
+            if (SceneManager.GetActiveScene().name.Contains("Level1"))
             {
 
                 FindObjectOfType<MusicManager>().PlayOrPause("Level1");
             }
-            if (SceneManager.GetActiveScene().name.Equals("Level2"))
+            if (SceneManager.GetActiveScene().name.Contains("Level2"))
             {
                 FindObjectOfType<MusicManager>().PlayOrPause("Level2");
 
             }
-            if (SceneManager.GetActiveScene().name.Equals("Level3"))
+            if (SceneManager.GetActiveScene().name.Contains("Level3"))
             {
 
                 FindObjectOfType<MusicManager>().PlayOrPause("Level3");
