@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff06ced67428eb74d9f4496991dee80a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teapotPrefab: {fileID: 5085640270000629795, guid: 5833fbc89c9d480439b20084804dffac,
+  teapotPrefab: {fileID: 7699406017150460082, guid: 6efd5bec9e285294794462a43e3b3623,
     type: 3}

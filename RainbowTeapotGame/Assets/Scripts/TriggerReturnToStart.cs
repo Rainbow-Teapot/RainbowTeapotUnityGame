@@ -1,4 +1,6 @@
-﻿using Photon.Pun.Demo.Asteroids;
+﻿using Photon.Pun;
+using Photon.Pun.Demo.Asteroids;
+using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,12 +35,22 @@ public class TriggerReturnToStart : MonoBehaviour
         else if (playerInfo != null && manager != null)
         {
             Debug.Log("ME DESCONECTO");
-            manager.EndOfRace();
+            playerInfo.hasFinishRace = true;
+            other.GetComponent<PlayerControllerNetwork>().LeaveRoom();
+            //manager.EndOfRace(PhotonNetwork.LocalPlayer.GetPlayerNumber());
 
         }
         else
         {
-            SceneManager.LoadScene("GameOver");
+            if (other.GetComponent<InputedMovement>().enabled)
+            {
+                playerInfo.hasFinishRace = true;
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }

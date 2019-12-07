@@ -40,7 +40,7 @@ public class Carril : MonoBehaviour
     {
         isRegenerating = true;
         Debug.Log("voy a regenar el bloque");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.0f);
         CreateBreakable();
     }
 }

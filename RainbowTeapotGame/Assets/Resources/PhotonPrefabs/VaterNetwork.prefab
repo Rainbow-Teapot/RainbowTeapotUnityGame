@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 3370274664523775841}
   - component: {fileID: 2340959445912644461}
   - component: {fileID: 537953862317207326}
+  - component: {fileID: 6027782273371590705}
   m_Layer: 0
   m_Name: VaterNetwork
   m_TagString: Untagged
@@ -110,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.45, z: 0}
+  m_Size: {x: 1.2, y: 2, z: 2.5}
+  m_Center: {x: 0, y: 1, z: 0.8}
 --- !u!54 &1133447923024010092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,10 +157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 10
+  maxVertSpeed: 9
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -296,18 +298,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4347562700194382530}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebug: 1
+  isDebug: 0
   powerDownsToDebug:
   - {fileID: 8367007788799292446, guid: a6752fd77b4923949a06717179356818, type: 3}
   - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+  powerDownActivated: 0
+  canUsePowerDown: 0
 --- !u!114 &4505045021962836726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,12 +345,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPrefab: {fileID: 807215197610619909}
-  MaximumSpeed: 20
   Drag: 5
   startRacing: 0
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
+  vehicle: 4
   velX: 0
+  hasDalsy: 0
 --- !u!114 &2340959445912644461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +393,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6027782273371590705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347562700194382530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &807215197610652323
 PrefabInstance:
   m_ObjectHideFlags: 0

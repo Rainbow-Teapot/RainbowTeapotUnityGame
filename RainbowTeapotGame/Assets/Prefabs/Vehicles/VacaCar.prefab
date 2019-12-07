@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 159381342983773118}
   - component: {fileID: 2371114229846873657}
   - component: {fileID: 2472793550204993067}
+  - component: {fileID: 8629573409400068168}
   m_Layer: 0
   m_Name: VacaCar
   m_TagString: Untagged
@@ -49,8 +50,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9, y: 2.21, z: 3.5}
-  m_Center: {x: 0, y: 1.15, z: -0.06}
+  m_Size: {x: 2.1, y: 3, z: 3.5}
+  m_Center: {x: 0, y: 1.1, z: -0.06}
 --- !u!54 &7441549599225099489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95,10 +96,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 20
+  maxVertSpeed: 20
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -175,8 +177,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.050106704
-      value: -0.020432472
+      time: 0.11529301
+      value: 3.5972707
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -184,8 +186,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.15176225
-      value: 5.0043573
+      time: 0.16608918
+      value: 1.6715372
       inSlope: -0.09641887
       outSlope: -0.09641887
       tangentMode: 0
@@ -193,17 +195,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.13123171
     - serializedVersion: 3
-      time: 0.3000816
-      value: 1.9976776
-      inSlope: -21.21441
-      outSlope: -21.21441
+      time: 0.2883858
+      value: 1.117693
+      inSlope: -3.9252155
+      outSlope: -3.9252155
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.20075908
     - serializedVersion: 3
-      time: 0.3986748
-      value: 1.5013113
+      time: 0.397332
+      value: 1.0422049
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -215,7 +217,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   xOffset: 0
   velZ: 0
-  carPrefab: {fileID: 0}
+  carPrefab: {fileID: 1469742618945938826, guid: b7adaab2b7063004f8642c6c249ed1aa,
+    type: 3}
 --- !u!114 &2371114229846873657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +250,20 @@ MonoBehaviour:
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+  powerDownActivated: 0
+  canUsePowerDown: 0
+--- !u!114 &8629573409400068168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946241541733676504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8136886326255620582
 Animator:
   serializedVersion: 3
@@ -273,14 +290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7946241541733676505}
     m_Modifications:
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03
@@ -336,6 +345,14 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.4285719
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -406,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5911674ffaefdc743969d67f027e7377, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5911674ffaefdc743969d67f027e7377, type: 3}
       propertyPath: m_LocalPosition.z

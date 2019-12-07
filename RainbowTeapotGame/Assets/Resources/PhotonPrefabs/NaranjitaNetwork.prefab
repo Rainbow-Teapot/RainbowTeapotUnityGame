@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 114241308328755286}
   - component: {fileID: 114517054206707144}
   - component: {fileID: 5109366919002665650}
+  - component: {fileID: 70553262228213350}
   m_Layer: 0
   m_Name: NaranjitaNetwork
   m_TagString: Untagged
@@ -118,10 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carCamera: {fileID: 0}
   horSpeed: 20
-  vertSpeed: 10
+  maxVertSpeed: 9
   speedRotation: 1
   speedMultiplier: 1
-  brakingMultiplier: 0.05
+  brakingMultiplier: 20
+  accelerationMultiplier: 0.4
   recoilDistance: 6
   currentRecoil: 0
   recoilSumMultiplier: 10
@@ -258,18 +260,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4936954752930164098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32caebdc7176e0a4c9aa7e125603d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDebug: 1
+  isDebug: 0
   powerDownsToDebug:
   - {fileID: 8367007788799292446, guid: a6752fd77b4923949a06717179356818, type: 3}
   - {fileID: 7756879726659528919, guid: 9f1f6eb6f4bff1d4a9e03d2f3d0ecdde, type: 3}
   - {fileID: 8642046763015002341, guid: c37198182456a2f44b9ae0939aea0c7e, type: 3}
   - {fileID: 6681474129395653151, guid: 4d71dfa4b773f624db9991cf8ce1d322, type: 3}
   - {fileID: 8274678547286909840, guid: 2719f2ccceb47db40b862ab49d54dd56, type: 3}
+  powerDownActivated: 0
+  canUsePowerDown: 0
 --- !u!114 &114241308328755286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,12 +307,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPrefab: {fileID: 7193749305536348457}
-  MaximumSpeed: 20
   Drag: 5
   startRacing: 0
   CurrentSpeed: 0
   networkPosition: {x: 0, y: 0, z: 0}
+  vehicle: 1
   velX: 0
+  hasDalsy: 0
 --- !u!114 &5109366919002665650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +336,18 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &70553262228213350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936954752930164098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73e3e54381e580428b5a86cd4dbe11b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &3945065059220036634
 Animator:
   serializedVersion: 3

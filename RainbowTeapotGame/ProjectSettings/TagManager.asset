@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Car
   - IceTrigger
+  - Floor
+  - Border
+  - DecoratorTrigger
   layers:
   - Default
   - TransparentFX

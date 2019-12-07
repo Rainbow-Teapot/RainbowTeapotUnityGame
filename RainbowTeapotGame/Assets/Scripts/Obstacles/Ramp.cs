@@ -11,12 +11,22 @@ public class Ramp : MonoBehaviour, IObstacle
     {
         //Debug.Log("Estoy acelerando: ");
         //car.SetSpeedMultiplier(speedMultiplier);
-        car.SetCurrentCarState(carStates.BOOST);
+        FindObjectOfType<AudioManager>().Play("Boost");
+        car.SetVertSpeed(speedMultiplier);
+        //car.SetCurrentCarState(carStates.BOOST);
         //car.Boost();
     }
 
     public void DeApplyEffect(CarMovement car)
     {
         //throw new System.NotImplementedException();
+    }
+
+    private void Start()
+    {
+        if (GameObject.Find("GameManager"))
+        {
+            speedMultiplier *= 0.6f;
+        }
     }
 }

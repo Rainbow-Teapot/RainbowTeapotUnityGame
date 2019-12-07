@@ -25,6 +25,7 @@ namespace Photon.Pun.Demo.Asteroids
     {
         public static MultiplayerGameManager Instance = null;
 
+
         [SerializeField]
         private Camera mainCamera;
         private GameObject player;
@@ -34,8 +35,18 @@ namespace Photon.Pun.Demo.Asteroids
 
         private PhotonView pv;
 
+        private PlayerInfo playerInfo;
+
         [SerializeField]
-        private Transform startPosition;
+        private Transform[] startingPositions;
+
+        [SerializeField]
+        private ControllerGUI controller;
+
+        [SerializeField]
+        private levels currentLevel;
+
+        private float[] playerDistances;
 
         #region UNITY
 
@@ -48,13 +59,17 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnEnable()
         {
             base.OnEnable();
-
+            playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+            playerInfo.level = currentLevel;
+            PhotonNetwork.AutomaticallySyncScene = false;
             CountdownTimer.OnCountdownTimerHasExpired += OnCountdownTimerIsExpired;
         }
 
         public void Start()
         {
             //InfoText.text = "Waiting for other players...";
+            playerDistances = new float[PhotonNetwork.PlayerList.Length];
+            
 
             StartGame();
 
@@ -63,6 +78,7 @@ namespace Photon.Pun.Demo.Asteroids
                 {GameStateInfo.PLAYER_LOADED_LEVEL, true}
             };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+            
         }
 
         public override void OnDisable()
@@ -76,27 +92,10 @@ namespace Photon.Pun.Demo.Asteroids
 
         #region COROUTINES
 
-        private IEnumerator EndOfGame(string winner, int score)
-        {
-            float timer = 5.0f;
-
-            while (timer > 0.0f)
-            {
-                //InfoText.text = string.Format("Player {0} won with {1} points.\n\n\nReturning to login screen in {2} seconds.", winner, score, timer.ToString("n2"));
-
-                yield return new WaitForEndOfFrame();
-
-                timer -= Time.deltaTime;
-            }
-
-            PhotonNetwork.LeaveRoom();
-        }
-
         public void EndOfRace()
         {
-            PhotonNetwork.LeaveRoom();
-            
-            
+            //if(playerNumber == PhotonNetwork.LocalPlayer.GetPlayerNumber() && pv.IsOwnerActive && pv.IsMine)
+            player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
         }
 
         #endregion
@@ -111,40 +110,66 @@ namespace Photon.Pun.Demo.Asteroids
             //}*/
             //UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             //SceneManager.LoadScene("GameOver");
+            //StartCoroutine(Load());
+            //player.GetComponent<PlayerControllerNetwork>().LeaveRoom();
+            //PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable() { { PlayerNumbering.RoomPlayerIndexedProp, Random.Range(0,5) } });
         }
 
         public override void OnLeftRoom()
         {
-            
-                SceneManager.LoadScene("GameOver");
-            
-            //PhotonNetwork.Disconnect();
+
+            //SceneManager.LoadScene("GameOver");
+            //PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable() { { PlayerNumbering.RoomPlayerIndexedProp, -1 } });
+            PhotonNetwork.Disconnect();
+            StartCoroutine(Load());
         }
 
-        public override void OnMasterClientSwitched(Player newMasterClient)
+        private IEnumerator Load()
         {
-            if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
-            {
-                
-            }
-        }
-
-        public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            //CheckEndOfGame();
+            while (PhotonNetwork.IsConnected)
+                yield return null;
+            SceneManager.LoadScene("GameOver");
         }
 
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
-            if (changedProps.ContainsKey(AsteroidsGame.PLAYER_LIVES))
+            if (targetPlayer.GetPlayerNumber() == PhotonNetwork.LocalPlayer.GetPlayerNumber())
             {
-                CheckEndOfGame();
-                return;
+                if (changedProps.ContainsKey(GameStateInfo.POSITION))
+                {
+                    object playerPosition;
+                    targetPlayer.CustomProperties.TryGetValue(GameStateInfo.POSITION, out playerPosition);
+                    controller.AssignPositionGUI((int)playerPosition);
+
+                    //ES AQUÍ
+                    if(!playerInfo.hasFinishRace)
+                        playerInfo.finalPos = (int)playerPosition;
+                }
             }
+
 
             if (!PhotonNetwork.IsMasterClient)
             {
                 return;
+            }
+            if (changedProps.ContainsKey(GameStateInfo.EXIT_GAME)) {
+
+                object hasExitedGame;
+                targetPlayer.CustomProperties.TryGetValue(GameStateInfo.EXIT_GAME, out hasExitedGame);
+                if (!(bool)hasExitedGame)
+                {
+                    playerDistances[targetPlayer.GetPlayerNumber()] = 0;
+                }
+            }
+            if (changedProps.ContainsKey(GameStateInfo.CURRENT_DISTANCE))
+            {
+                int position = GetCurrentPosition(targetPlayer);
+                Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.POSITION, position}
+                    };
+                targetPlayer.SetCustomProperties(props);
+                //Debug.Log("[MASTER_CLIENT]For player: " + targetPlayer.GetPlayerNumber() + " position: " + position);
             }
 
             if (changedProps.ContainsKey(GameStateInfo.PLAYER_LOADED_LEVEL))
@@ -160,13 +185,28 @@ namespace Photon.Pun.Demo.Asteroids
             }
         }
 
+        //OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            base.OnPlayerLeftRoom(otherPlayer);
+
+            if(PhotonNetwork.IsMasterClient)
+            {
+                Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.CURRENT_DISTANCE, 0}
+                    };
+                otherPlayer.SetCustomProperties(props);
+                playerDistances[otherPlayer.GetPlayerNumber()] = 0;
+            }
+        }
+
         #endregion
 
         private void StartGame()
         {
             int playerNumber = PhotonNetwork.LocalPlayer.GetPlayerNumber();
-
-            Vector3 position = new Vector3((playerNumber * 3 - 3), startPosition.position.y, startPosition.position.z);
+            Vector3 position = startingPositions[playerNumber % 5].position;
 
             //Vector3 position = new Vector3(playerNumber * 3 - 3, 0.5f, 0.0f);
 
@@ -177,13 +217,16 @@ namespace Photon.Pun.Demo.Asteroids
                 vehicleName = ChooseVehicle();
             }
 
-            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", vehicleName), position, Quaternion.identity, 0);
+            object[] data = new object[1];
+            data[0] = playerNumber;
+            player = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", vehicleName), position, Quaternion.identity, 0,data);
 
             //PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), position, Quaternion.identity, 0);
 
             player.GetComponent<InputedMovement>().SetCarCamera(mainCamera);
-            //player.GetComponent<CarMovement>().horSpeed = 0.0f;
             mainCamera.GetComponent<CameraController>().setTarget(player);
+
+            
         }
 
         private bool CheckAllPlayerLoadedLevel()
@@ -206,48 +249,28 @@ namespace Photon.Pun.Demo.Asteroids
             return true;
         }
 
-        public void CheckEndOfGame()
-        {
-            bool allDestroyed = true;
-
-            foreach (Player p in PhotonNetwork.PlayerList)
-            {
-                object lives;
-                if (p.CustomProperties.TryGetValue(AsteroidsGame.PLAYER_LIVES, out lives))
-                {
-                    if ((int) lives > 0)
-                    {
-                        allDestroyed = false;
-                        break;
-                    }
-                }
-            }
-
-            if (allDestroyed)
-            {
-                if (PhotonNetwork.IsMasterClient)
-                {
-                    StopAllCoroutines();
-                }
-
-                string winner = "";
-                int score = -1;
-
-                foreach (Player p in PhotonNetwork.PlayerList)
-                {
-                    if (p.GetScore() > score)
-                    {
-                        winner = p.NickName;
-                        score = p.GetScore();
-                    }
-                }
-
-                StartCoroutine(EndOfGame(winner, score));
-            }
-        }
-
         private void OnCountdownTimerIsExpired()
         {
+
+            if (SceneManager.GetActiveScene().name.Equals("MultiplayerTest"))
+            {
+
+                FindObjectOfType<MusicManager>().PlayOrPause("Level1");
+            }
+            if (SceneManager.GetActiveScene().name.Equals("Level2"))
+            {
+                FindObjectOfType<MusicManager>().PlayOrPause("Level2");
+
+            }
+            if (SceneManager.GetActiveScene().name.Equals("Level3"))
+            {
+
+                FindObjectOfType<MusicManager>().PlayOrPause("Level3");
+
+            }
+
+
+
             StartRace();
         }
 
@@ -263,6 +286,31 @@ namespace Photon.Pun.Demo.Asteroids
         {
             PlayerInfo vehicleChosen = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
             return vehicleChosen.vehiclePicked.ToString() + "Network";
+        }
+
+        private int GetCurrentPosition(Player player)
+        {
+            object currentDistance;
+            int playerNumber = player.GetPlayerNumber();
+            player.CustomProperties.TryGetValue(GameStateInfo.CURRENT_DISTANCE, out currentDistance);
+            if(playerNumber < 0 || playerNumber > playerDistances.Length)
+            {
+                return playerDistances.Length;
+            }
+            playerDistances[playerNumber] = (float)currentDistance;
+            int position = 1;
+            for(int i = 0; i < playerDistances.Length; i++)
+            {
+                if(i != playerNumber)
+                {
+                    if((float)currentDistance > playerDistances[i] && playerDistances[i] > 0 && !PhotonNetwork.PlayerList[i].IsInactive)
+                    {
+                        position++;
+                    }
+                }
+            }
+
+            return position;
         }
     }
 }

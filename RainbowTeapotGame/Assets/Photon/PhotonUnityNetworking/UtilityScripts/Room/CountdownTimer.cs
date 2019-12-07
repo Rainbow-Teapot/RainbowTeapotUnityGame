@@ -47,6 +47,11 @@ namespace Photon.Pun.UtilityScripts
 
         private float startTime;
 
+        [SerializeField]
+        private Text texto;
+
+        
+
         [Header("Reference to a Text component for visualizing the countdown")]
         public Text Text;
 
@@ -72,7 +77,14 @@ namespace Photon.Pun.UtilityScripts
             float timer = (float)PhotonNetwork.Time - startTime;
             float countdown = Countdown - timer;
 
-            Text.text = string.Format("Game starts in {0} seconds", countdown.ToString("n2"));
+            //Text.text = string.Format("{0}", countdown.ToString("n2"));
+
+            Text.text = ((int)countdown).ToString();
+
+            if((int)countdown == 0){
+                Text.text = "BRAKE DOWN!";
+                
+            }
 
             if (countdown > 0.0f)
             {
@@ -82,6 +94,7 @@ namespace Photon.Pun.UtilityScripts
             isTimerRunning = false;
 
             Text.text = string.Empty;
+            texto.text = string.Empty;
 
             if (OnCountdownTimerHasExpired != null)
             {

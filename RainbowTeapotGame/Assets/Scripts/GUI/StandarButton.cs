@@ -12,7 +12,7 @@ public class StandarButton : MonoBehaviour
 
     private void Start()
     {
-        image.alphaHitTestMinimumThreshold = 0.5f;
+        //image.alphaHitTestMinimumThreshold = 0.5f;
     }
 
     public void MouseOver()
@@ -28,6 +28,8 @@ public class StandarButton : MonoBehaviour
 
     public void MouseDown()
     {
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if(audioManager)    audioManager.Play("Button");
         anim.SetBool("Pressed", true);
         anim.SetBool("Released", false);
         transform.SetAsLastSibling();

@@ -102,17 +102,24 @@ namespace Photon.Pun.Demo.Asteroids
                     //PlayerColorImage.color = GameStateInfo.GetColor(p.GetPlayerNumber());
                     object playerVehicle;
                     if(p.CustomProperties.TryGetValue(GameStateInfo.VEHICLE, out playerVehicle))
-                    PlayerColorImage.sprite = GetImageVehiclePicked((vehicles) playerVehicle);
+                        PlayerColorImage.sprite = GetImageVehiclePicked((vehicles) playerVehicle);
                     PlayerColorImage.color = Color.white;
                 }
             }
+        }
+
+        public void SetPlayerVehicleSprite(int vehiclePicked)
+        {
+            PlayerColorImage.sprite = GetImageVehiclePicked((vehicles)vehiclePicked);
+            PlayerColorImage.color = Color.white;
+            //PlayerColorImage.sprite = GetImageVehiclePicked((vehicles)playerVehicle);
         }
 
         public void SetPlayerReady(bool playerReady)
         {
            // PlayerReadyButton.GetComponentInChildren<Text>().text = playerReady ? "Ready!" : "Ready?";
             PlayerReadyButton.image.overrideSprite = playerReady ? tickOK : tick;
-
+            FindObjectOfType<AudioManager>().Play("Check");
             if (PhotonNetwork.LocalPlayer.ActorNumber != ownerId)
                 PlayerReadyImage.enabled = playerReady;
         }

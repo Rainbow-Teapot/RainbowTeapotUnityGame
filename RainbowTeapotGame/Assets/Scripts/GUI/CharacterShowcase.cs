@@ -86,16 +86,15 @@ public class CharacterShowcase : MonoBehaviour
 
     public void NextVehicle()
     {
-        carPicked = (vehicles)(((int)carPicked + 1) % carShowcasePrebaf.Length);
-        
+        carPicked = (vehicles)(((int)carPicked + 1) % carShowcasePrebaf.Length);        
+        FindObjectOfType<AudioManager>().Character(carPicked.ToString());
         SwapVehicle();
     }
 
     public void PreviousVehicle()
     {
-
+        
         int value = 0;
-
         if (carPicked == 0)
         {
             value = carShowcasePrebaf.Length - 1;
@@ -105,6 +104,7 @@ public class CharacterShowcase : MonoBehaviour
         }
 
         carPicked = (vehicles)value;
+        FindObjectOfType<AudioManager>().Character(carPicked.ToString());
         SwapVehicle();
     }
 

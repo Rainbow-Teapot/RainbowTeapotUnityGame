@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IPowerDown 
 {
+    
     void Activate(CarMovement car);
 }

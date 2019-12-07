@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class Ice : MonoBehaviour, IObstacle
 {
+    [SerializeField]
+    private float speedMultiplier = 1.55f;
+
+    private SpeedMultiplierDecorator iceDecorator;
+
+    private void Start()
+    {
+        iceDecorator = new SpeedMultiplierDecorator(speedMultiplier);
+    }
+
     public void ApplyEffect(CarMovement car)
     {
-        car.SetSpeedMultiplier(1.25f);
-        car.SetCurrentCarState(carStates.ZIGZAG);
+        //car.SetSpeedMultiplier(1.25f);
+        FindObjectOfType<AudioManager>().Play("Ice");
+        if (!car.GetSpeedMultiplierDecorators().Contains(iceDecorator))
+        {
+            car.AddSpeedDecorator(iceDecorator);
+            car.SetCurrentCarState(carStates.ZIGZAG);
+        }
     }
 
     public void DeApplyEffect(CarMovement car)
     {
-        car.SetSpeedMultiplier(1.0f);
+        //car.SetSpeedMultiplier(1.0f);
+        
+        car.RemoveSpeedDecorator(iceDecorator);
         car.SetCurrentCarState(carStates.IDLE);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

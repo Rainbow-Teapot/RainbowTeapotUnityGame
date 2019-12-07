@@ -11,11 +11,12 @@
 using UnityEngine;
 
 using System.Collections;
-
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 using Photon.Pun.Demo.SlotRacer.Utils;
 using Photon.Pun.UtilityScripts;
 using Photon.Pun;
 using Photon.Pun.Demo.SlotRacer;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Player control. 
@@ -23,11 +24,10 @@ using Photon.Pun.Demo.SlotRacer;
 /// Handle the Car instance 
 /// </summary>
 [RequireComponent(typeof(SplineWalker))]
-public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
+public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable, IPunInstantiateMagicCallback
 {
 
     public GameObject CarPrefab;
-    public float MaximumSpeed = 20;
     public float Drag = 5;
 
     public bool startRacing = false;
@@ -41,15 +41,24 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     private SplineWalker SplineWalker;
     public Vector3 networkPosition;
 
+    public vehicles vehicle;
+
+    private ControllerGUI controller;
+    private MinimapMiniature minimapMiniature;
+
     public float velX = 0;
     /// <summary>
     /// flag to force latest data to avoid initial drifts when player is instantiated.
     /// </summary>
     private bool m_firstTake = true;
 
+    private int playerNumber;
 
     private float m_input;
 
+    private ChangeMaterialColors ChangeColors;
+    public bool hasDalsy = false;
+    private bool firstTimeDalsy = true;
 
     #region IPunObservable implementation
 
@@ -71,6 +80,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             stream.SendNext(this.m_input);
             stream.SendNext(transform.position);
             stream.SendNext(velX);
+            stream.SendNext(hasDalsy);
+            
         }
         else
         {
@@ -84,10 +95,12 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             this.m_input = (float)stream.ReceiveNext();
             networkPosition = (Vector3)stream.ReceiveNext();
             this.velX = (float)stream.ReceiveNext();
-            
+            this.hasDalsy = (bool)stream.ReceiveNext();
         }
     }
 
+
+    
 
     #region private
 
@@ -132,6 +145,7 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     private void Awake()
     {
         this.SplineWalker = this.GetComponent<SplineWalker>();
+        this.ChangeColors = this.GetComponent<ChangeMaterialColors>();
         this.m_firstTake = true;
     }
 
@@ -145,7 +159,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         // PlayerNumbering component must be in the scene.
         yield return new WaitUntil(() => this.photonView.Owner.GetPlayerNumber() >= 0);
         //transform.position += Vector3.back * 0.25f;
-        
+
+        controller = GameObject.Find("ControllerGUI").GetComponent<ControllerGUI>();
 
             // now we can set it up.
         this.SetupCarOnTrack(this.photonView.Owner.GetPlayerNumber());
@@ -153,8 +168,17 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         {
             GetComponent<CarMovement>().enabled = true;
             GetComponent<InputedMovement>().enabled = true;
+            GetComponent<DoubleClickChecker>().enabled = true;
+            GetComponent<PowerDownUser>().enabled = true;
+
+        }
+        else
+        {
+            gameObject.name = "EmulatedCar" + playerNumber;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
+        minimapMiniature = controller.CreateMinimapMiniature(vehicle, photonView.IsMine);
         
     }
 
@@ -165,6 +189,8 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     /// </summary>
     private void OnDestroy()
     {
+        if(minimapMiniature != null)
+        Destroy(minimapMiniature.gameObject);
         Destroy(this.CarInstance);
     }
 
@@ -179,12 +205,17 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         if (this.photonView.IsMine)
         {
             
-                //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
-                //la POSICIÓN EN Z la pone la CURVA DE BEZIER
-                this.SplineWalker.Speed = this.CurrentSpeed;
-                this.CurrentDistance = this.SplineWalker.currentDistance;
-                this.SplineWalker.velX = velX;
-            
+            //simplemente se le pasa la currentSpeed, que es la componente z de la velocidad.
+            //la POSICIÓN EN Z la pone la CURVA DE BEZIER
+            this.SplineWalker.Speed = this.CurrentSpeed;
+            this.CurrentDistance = this.SplineWalker.currentDistance;
+            this.SplineWalker.velX = velX;
+
+            Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.CURRENT_DISTANCE, this.CurrentDistance}
+                    };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
 
         } else //EL COCHE SIMULADO
         {
@@ -200,8 +231,19 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
             //para la posición en la X
             this.SplineWalker.networkPosition = networkPosition;
             this.SplineWalker.velX = velX;
+
+            if (this.hasDalsy)
+            {
+                ChangeColors.ChangeColor(Color.red);
+                firstTimeDalsy = false;
+            }
+            else if(!this.firstTimeDalsy){
+                ChangeColors.ResetColor();
+            }
             
         }
+        if(minimapMiniature)
+            minimapMiniature.SetPosition(CurrentDistance);
 
         // Only activate the car if we are sure we have the proper positioning, else it will glitch visually during the initialisation process.
         if (!this.m_firstTake && !this.CarInstance.activeSelf)
@@ -215,6 +257,35 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
     
     #endregion Monobehaviour
 
+    public void LeaveRoom()
+    {
+        Destroy(minimapMiniature.gameObject);
+        if (photonView.IsMine)
+        {
+            
+            Hashtable props = new Hashtable
+                    {
+                        {GameStateInfo.EXIT_GAME, true}
+                    };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+            StartCoroutine(Load());
+        }
+        
+    }
+
+    private IEnumerator Load()
+    {
+        PhotonNetwork.LeaveRoom();
+        //PhotonNetwork.Disconnect();
+        
+        while (PhotonNetwork.InRoom)
+        //while(PhotonNetwork.IsConnected)
+            yield return null;
+        //this.CurrentDistance = 0;
+        //SceneManager.LoadScene("GameOver");
+
+
+    }
 
     [PunRPC]
     void RPC_StartRacing()
@@ -227,5 +298,12 @@ public class PlayerControllerNetwork : MonoBehaviourPun, IPunObservable
         this.photonView.RPC("RPC_StartRacing", RpcTarget.AllViaServer);
     }
 
+    public void OnPhotonInstantiate(PhotonMessageInfo info)
+    {
+        
+        playerNumber = (int)info.photonView.InstantiationData[0];
+        Debug.Log(playerNumber);
+        
+    }
 }
 #endregion

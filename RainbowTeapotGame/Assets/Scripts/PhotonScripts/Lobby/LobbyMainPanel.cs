@@ -5,24 +5,49 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+using Photon.Pun.UtilityScripts;
 
 namespace Photon.Pun.Demo.Asteroids
 {
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
+
+        LanguageManager lang = new LanguageManager();
+        Animator animLogin;
+       
+
         [Header("Login Panel")]
         public GameObject LoginPanel;
-
+        public TextMeshProUGUI breakToWinText;
+        public TextMeshProUGUI nameText;
+        public TextMeshProUGUI enterPlayer;
+        public TextMeshProUGUI loginText;       
         public InputField PlayerNameInput;
 
         [Header("Selection Panel")]
         public GameObject SelectionPanel;
+        public TextMeshProUGUI trainingText;
+        public TextMeshProUGUI multiplayerText;
+        public TextMeshProUGUI breakToWinText2;
 
         [Header("Configuration Panel")]
         public GameObject ConfigurationPanel;
+        public TextMeshProUGUI configText;
+        public TextMeshProUGUI musicText;
+        public TextMeshProUGUI soundText;
+        public TextMeshProUGUI languageText;
+        public Button buttonFlag;
+        public Sprite EngFlag;
+        public Sprite SpaFlag;
+        public Button buttonSound;
+        public Button buttonMusic;
+        public Sprite tick;
+        public Sprite tickOK; 
 
         [Header("Credits Panel")]
         public GameObject CreditsPanel;
+        public TextMeshProUGUI creditsText;
 
         [Header("Create Room Panel")]
         public GameObject CreateRoomPanel;
@@ -35,19 +60,28 @@ namespace Photon.Pun.Demo.Asteroids
         public GameObject CharacterSelector;
         public GameObject CharacterShowcasePanel;
         public CharacterShowcase CharacterShowcase;
+        public TextMeshProUGUI chooseRiderText;
+        public TextMeshProUGUI startText;
         
 
         [Header("Join Random Room Panel")]
         public GameObject JoinRandomRoomPanel;
+        public TextMeshProUGUI tryingToJoinText;
+        private readonly int MAX_PLAYERS_PER_ROOM = 5;
 
         [Header("Room List Panel")]
         public GameObject RoomListPanel;
-
         public GameObject RoomListContent;
         public GameObject RoomListEntryPrefab;
 
         [Header("Inside Room Panel")]
         public GameObject InsideRoomPanel;
+        public TextMeshProUGUI leaveGameText;
+        public TextMeshProUGUI startGameText;
+        public TextMeshProUGUI startGameText2;
+        public TextMeshProUGUI readyText;
+        public TextMeshProUGUI messageReadyText;
+        public TextMeshProUGUI messageStartGameText;
 
         [Header("End Game Panel")]
         public GameObject EndGamePanel;
@@ -55,7 +89,7 @@ namespace Photon.Pun.Demo.Asteroids
         [Header("Player Info")]
         public PlayerInfo playerInfo;
 
-        public Button StartGameButton;
+        public Button StartGameButton;        
         public GameObject PlayerListEntryPrefab;
 
         private Dictionary<string, RoomInfo> cachedRoomList;
@@ -70,25 +104,34 @@ namespace Photon.Pun.Demo.Asteroids
 
             cachedRoomList = new Dictionary<string, RoomInfo>();
             roomListEntries = new Dictionary<string, GameObject>();
-            
-            PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+
+            animLogin = LoginPanel.GetComponent<Animator>();          
+
+
         }
 
         private void Start()
         {
-            
-                playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
-            
+
+            PlayerNameInput.text = GetComponent<RandomNameGenerator>().GetRandomPlayerName();
+
+            playerInfo = GameObject.Find("PlayerInfo").GetComponent<PlayerInfo>();
+                
 
             if (playerInfo.hasBeenLogged)
             {
+
+                
                 SetActivePanel(SelectionPanel.name);
             }
+
+            Debug.Log(playerInfo.lang);
+
+            updateTexts();
         }
 
         private void Update()
-        {
-            
+        {   
         }
 
         #endregion
@@ -129,7 +172,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             string roomName = "Room " + Random.Range(1000, 10000);
 
-            RoomOptions options = new RoomOptions {MaxPlayers = 8};
+            RoomOptions options = new RoomOptions {MaxPlayers = (byte)MAX_PLAYERS_PER_ROOM};
 
             PhotonNetwork.CreateRoom(roomName, options, null);
         }
@@ -158,7 +201,7 @@ namespace Photon.Pun.Demo.Asteroids
 
                 playerListEntries.Add(p.ActorNumber, entry);
             }
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
 
             Hashtable props = new Hashtable
@@ -184,12 +227,21 @@ namespace Photon.Pun.Demo.Asteroids
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             GameObject entry = Instantiate(PlayerListEntryPrefab);
+            
             entry.transform.SetParent(InsideRoomPanel.transform);
             entry.transform.localScale = Vector3.one;
             entry.GetComponent<PlayerListEntry>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
-
+            object playerVehicle;
+            if (newPlayer.CustomProperties.TryGetValue(GameStateInfo.VEHICLE, out playerVehicle))
+                entry.GetComponent<PlayerListEntry>().SetPlayerVehicleSprite((int)playerVehicle);
             playerListEntries.Add(newPlayer.ActorNumber, entry);
 
+            if (PhotonNetwork.CurrentRoom.PlayerCount == MAX_PLAYERS_PER_ROOM)
+            {
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+            }
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -198,6 +250,9 @@ namespace Photon.Pun.Demo.Asteroids
             Destroy(playerListEntries[otherPlayer.ActorNumber].gameObject);
             playerListEntries.Remove(otherPlayer.ActorNumber);
 
+            PhotonNetwork.CurrentRoom.IsOpen = true;
+            PhotonNetwork.CurrentRoom.IsVisible = true;
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -205,6 +260,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
             {
+                messageStartGameText.gameObject.SetActive(CheckPlayersReady());
                 StartGameButton.gameObject.SetActive(CheckPlayersReady());
             }
         }
@@ -225,7 +281,7 @@ namespace Photon.Pun.Demo.Asteroids
                     entry.GetComponent<PlayerListEntry>().SetPlayerReady((bool) isPlayerReady);
                 }
             }
-
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -250,7 +306,7 @@ namespace Photon.Pun.Demo.Asteroids
 
             byte maxPlayers;
             byte.TryParse(MaxPlayersInputField.text, out maxPlayers);
-            maxPlayers = (byte) Mathf.Clamp(maxPlayers, 2, 8);
+            maxPlayers = (byte) Mathf.Clamp(maxPlayers, 2, MAX_PLAYERS_PER_ROOM);
 
             RoomOptions options = new RoomOptions {MaxPlayers = maxPlayers};
 
@@ -260,12 +316,14 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnTrainingButtonClicked()
         {
             playerInfo.online = false;
+            
             SetActivePanel(CharacterSelectionPanel.name);
         }
 
         public void OnJoinRandomRoomButtonClicked()
         {
             playerInfo.online = true;
+            
             SetActivePanel(CharacterSelectionPanel.name);
         }
         public void OnCharacterClicked(Button button) {
@@ -274,14 +332,43 @@ namespace Photon.Pun.Demo.Asteroids
             
             playerInfo.vehiclePicked = vehicleClicked.vehicle;
 
-            //iniciar animación y después de un segundo mostrar el coche
-            
-            CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
+            FindObjectOfType<AudioManager>().Character(playerInfo.vehiclePicked.ToString());
+        
+        
+        //iniciar animación y después de un segundo mostrar el coche
+
+        CharacterShowcase.SetCarPicked(vehicleClicked.vehicle);
             StartCoroutine("ShowShowcaseCoroutine");
-            //Asign the character to the player
-            //SetActivePanel(JoinRandomRoomPanel.name);
-            //PhotonNetwork.JoinRandomRoom();
+            
         }
+
+        public void OnMusicButtonClicked(Button button) {
+            FindObjectOfType<AudioManager>().Play("Check");
+            FindObjectOfType<PlayerInfo>().musicOn = (!FindObjectOfType<PlayerInfo>().musicOn);            
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().musicOn ? tickOK : tick;
+            FindObjectOfType<MusicManager>().PlayOrPause("MenuTheme");
+        }
+
+        public void OnSoundButtonClicked(Button button) {
+            FindObjectOfType<AudioManager>().Play("Check");
+            FindObjectOfType<PlayerInfo>().soundsOn = (!FindObjectOfType<PlayerInfo>().soundsOn);
+            button.image.overrideSprite = FindObjectOfType<PlayerInfo>().soundsOn ? tickOK : tick;
+        }
+
+        public void OnChangeLanguageClicked()
+        {
+            if (playerInfo.lang == 0) //ENG --> SPA
+            {
+                playerInfo.lang = 1;               
+            }
+            else { //SPA --> ENG
+                playerInfo.lang = 0;
+                
+            }
+            updateTexts();
+
+        }
+
 
         private System.Collections.IEnumerator ShowShowcaseCoroutine()
         {
@@ -296,11 +383,11 @@ namespace Photon.Pun.Demo.Asteroids
             CharacterShowcasePanel.SetActive(false);
         }
 
-        public void OnConfigurationButtonClicked() {
+        public void OnConfigurationButtonClicked() {            
             SetActivePanel(ConfigurationPanel.name);
         }
 
-        public void OnCreditsButtonClicked() {
+        public void OnCreditsButtonClicked() {            
             SetActivePanel(CreditsPanel.name);
         }
 
@@ -312,11 +399,31 @@ namespace Photon.Pun.Demo.Asteroids
             if (playerInfo.online)
             {
                 SetActivePanel(JoinRandomRoomPanel.name);
+                Hashtable props = new Hashtable() { { GameStateInfo.VEHICLE, playerInfo.vehiclePicked } };
+                PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+                
                 PhotonNetwork.JoinRandomRoom();
             }
             else
             {
-                SceneManager.LoadScene("Test");
+                float random = Random.Range(0, 15.0f);
+
+                if (random < 5)
+                {
+                    playerInfo.level = levels.SNOWY_MOUNTAIN;
+                    PhotonNetwork.LoadLevel("Level1Offline");
+                }
+                else if (random < 10)
+                {
+                    playerInfo.level = levels.CANDY;
+                    PhotonNetwork.LoadLevel("Level2Offline");
+                }
+                else
+                {
+                    playerInfo.level = levels.NIGHTMARES;
+                    PhotonNetwork.LoadLevel("Level3Offline");
+
+                }
             }
         }
         /// <summary>
@@ -330,15 +437,20 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void OnLoginButtonClicked()
         {
+            
             string playerName = PlayerNameInput.text;
             playerInfo.hasBeenLogged = true;
             if (!playerName.Equals(""))
             {
+                animLogin.SetBool("NextScreen", true);
                 PhotonNetwork.LocalPlayer.NickName = playerName;
                 PhotonNetwork.ConnectUsingSettings();
+                
+
             }
             else
             {
+                animLogin.SetBool("NextScreen", false);
                 Debug.LogError("Player Name is invalid.");
             }
         }
@@ -358,7 +470,25 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("MultiplayerTest");
+
+            float random = Random.Range(0, 15.0f);
+
+            if (random < 5)
+            {
+                playerInfo.level = levels.SNOWY_MOUNTAIN;
+                PhotonNetwork.LoadLevel("Level1Online");
+            }
+            else if (random < 10)
+            {
+                playerInfo.level = levels.CANDY;
+                PhotonNetwork.LoadLevel("Level2Online");
+            }
+            else {
+                playerInfo.level = levels.NIGHTMARES;
+                PhotonNetwork.LoadLevel("Level3Online");
+
+            }
+
         }
 
         #endregion
@@ -401,6 +531,7 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void LocalPlayerPropertiesUpdated()
         {
+            messageStartGameText.gameObject.SetActive(CheckPlayersReady());
             StartGameButton.gameObject.SetActive(CheckPlayersReady());
         }
 
@@ -458,6 +589,46 @@ namespace Photon.Pun.Demo.Asteroids
 
                 roomListEntries.Add(info.Name, entry);
             }
+        }
+
+
+        public void updateTexts() {
+
+            nameText.text = lang.getText(playerInfo.lang, 0);
+            //PlayerNameInput.text = lang.getText(playerInfo.lang, 17) + " " + Random.Range(1000, 10000);
+            enterPlayer.text = lang.getText(playerInfo.lang, 1);
+            loginText.text = lang.getText(playerInfo.lang, 2);
+            trainingText.text = lang.getText(playerInfo.lang, 3);
+            multiplayerText.text = lang.getText(playerInfo.lang, 4);
+            creditsText.text = lang.getText(playerInfo.lang, 5);
+            configText.text = lang.getText(playerInfo.lang, 6);
+            musicText.text = lang.getText(playerInfo.lang, 7);
+            soundText.text = lang.getText(playerInfo.lang, 8);
+            languageText.text = lang.getText(playerInfo.lang, 9);
+            chooseRiderText.text = lang.getText(playerInfo.lang, 10);
+            startText.text = lang.getText(playerInfo.lang, 11);
+            tryingToJoinText.text = lang.getText(playerInfo.lang, 12);
+            leaveGameText.text = lang.getText(playerInfo.lang, 13);
+            startGameText.text = lang.getText(playerInfo.lang, 14);
+            startGameText2.text = lang.getText(playerInfo.lang, 14);
+            readyText.text = lang.getText(playerInfo.lang, 15);
+            messageReadyText.text = lang.getText(playerInfo.lang, 19);
+            messageStartGameText.text = lang.getText(playerInfo.lang, 20);
+            breakToWinText.text = lang.getText(playerInfo.lang, 24);
+            breakToWinText2.text = lang.getText(playerInfo.lang, 24);
+
+
+            if (playerInfo.lang == 0)
+            {
+                buttonFlag.image.overrideSprite = SpaFlag;
+            }
+            else {
+                buttonFlag.image.overrideSprite = EngFlag;
+            }
+
+            buttonSound.image.overrideSprite = playerInfo.soundsOn ? tickOK : tick;
+            buttonMusic.image.overrideSprite = playerInfo.musicOn ? tickOK : tick;
+
         }
     }
 }

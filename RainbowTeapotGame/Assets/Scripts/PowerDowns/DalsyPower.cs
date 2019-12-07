@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class DalsyPower : MonoBehaviour, IPowerDown
 {
+    [SerializeField]
+    private GameObject dalsyPrefab;
+
     public void Activate(CarMovement car)
     {
         Debug.Log("[POWER-DOWN]: " + name);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        FindObjectOfType<AudioManager>().Play("Glup");
+        Dalsy dalsy = Instantiate(dalsyPrefab, Vector3.zero, Quaternion.identity).GetComponent<Dalsy>();
+        dalsy.car = car;
     }
 }
