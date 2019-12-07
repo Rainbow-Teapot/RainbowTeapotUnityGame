@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3.5}
-  m_Center: {x: 0, y: 0, z: 1.5}
+  m_Size: {x: 1, y: 1, z: 1.54}
+  m_Center: {x: 0, y: 0, z: 2.69}
 --- !u!114 &114250059911596834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +188,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8445444116539935881}
     m_Modifications:
+    - target: {fileID: 2636114456889201217, guid: 56d07f35f417af54f97ba030d78b346f,
+        type: 3}
+      propertyPath: m_Name
+      value: CohetePrefab
+      objectReference: {fileID: 0}
     - target: {fileID: 654534179067021337, guid: 56d07f35f417af54f97ba030d78b346f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -243,11 +248,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2636114456889201217, guid: 56d07f35f417af54f97ba030d78b346f,
-        type: 3}
-      propertyPath: m_Name
-      value: CohetePrefab
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d07f35f417af54f97ba030d78b346f, type: 3}
 --- !u!4 &4867213792534450213 stripped
@@ -263,6 +263,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8445444116539935881}
     m_Modifications:
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Name
+      value: FX_TireSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -314,14 +322,6 @@ PrefabInstance:
     - target: {fileID: 445260, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: m_LocalScale.y
       value: 2.0671835
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Name
-      value: FX_TireSmoke
-      objectReference: {fileID: 0}
-    - target: {fileID: 101130, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
-      propertyPath: m_Layer
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 19885000, guid: d7bf18dd20422304ea868e95c3518f19, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
