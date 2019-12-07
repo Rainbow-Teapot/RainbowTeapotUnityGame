@@ -30,26 +30,7 @@ public class MusicManager : MonoBehaviour
         {
             PlayOrPause("MenuTheme");
         }
-
-
-        if (SceneManager.GetActiveScene().name.Contains("Level1"))
-        {
-
-            PlayOrPause("Level1");
-        }
-        if (SceneManager.GetActiveScene().name.Contains("Level2"))
-        {
-
-            PlayOrPause("Level2");
-        }
-        if (SceneManager.GetActiveScene().name.Contains("Level3"))
-        {
-
-            PlayOrPause("Level3");
-        }
         
-
-
     }
 
     public void PlayOrPause(string name)

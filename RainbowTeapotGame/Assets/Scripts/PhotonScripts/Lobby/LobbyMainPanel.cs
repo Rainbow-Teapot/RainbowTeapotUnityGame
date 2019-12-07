@@ -95,6 +95,7 @@ namespace Photon.Pun.Demo.Asteroids
         private Dictionary<string, RoomInfo> cachedRoomList;
         private Dictionary<string, GameObject> roomListEntries;
         private Dictionary<int, GameObject> playerListEntries;
+        private string playerName;
 
         #region UNITY
 
@@ -140,7 +141,9 @@ namespace Photon.Pun.Demo.Asteroids
 
         public override void OnConnectedToMaster()
         {
-            this.SetActivePanel(SelectionPanel.name);
+            //this.SetActivePanel(SelectionPanel.name);
+            
+            //this.SetActivePanel(CharacterSelectionPanel.name);
         }
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -322,8 +325,10 @@ namespace Photon.Pun.Demo.Asteroids
 
         public void OnJoinRandomRoomButtonClicked()
         {
+            if (!PhotonNetwork.IsConnected)
+                PhotonNetwork.ConnectUsingSettings();
+
             playerInfo.online = true;
-            
             SetActivePanel(CharacterSelectionPanel.name);
         }
         public void OnCharacterClicked(Button button) {
@@ -438,14 +443,14 @@ namespace Photon.Pun.Demo.Asteroids
         public void OnLoginButtonClicked()
         {
             
-            string playerName = PlayerNameInput.text;
+            playerName = PlayerNameInput.text;
             playerInfo.hasBeenLogged = true;
             if (!playerName.Equals(""))
             {
                 animLogin.SetBool("NextScreen", true);
                 PhotonNetwork.LocalPlayer.NickName = playerName;
-                PhotonNetwork.ConnectUsingSettings();
-                
+                this.SetActivePanel(SelectionPanel.name);
+
 
             }
             else
